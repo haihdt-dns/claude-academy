@@ -1,0 +1,12 @@
+extends ../utils/_lesson.pug
+
+block append meta
+  -
+    var courseId = 'claude-101'
+    var currentSlug = 'certificate'
+    var lessonData = JSON.parse(nodeFs.readFileSync(nodePath.join(process.cwd(), '../data/claude-101/certificate.json'), 'utf8'))
+    title = lessonData.titleEn + ' · Claude 101 · Claude Academy'
+    description = 'Complete the final quiz to earn your Claude 101 Certificate of Completion and share it on LinkedIn or with your team.'
+    baseURL = 'https://chobadon.com/claude-academy/'
+    ogImageURL = baseURL + 'assets/images/ogp.png'
+    canonicalURL = `${baseURL}${courseId}/${currentSlug}/`

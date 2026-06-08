@@ -1,0 +1,94 @@
+{
+  "slug": "other-ways-to-work",
+  "titleEn": "Other ways to work with Claude",
+  "titleVi": "Các cách khác để làm việc với Claude",
+  "estimatedTimeEn": "10 minutes",
+  "estimatedTimeVi": "10 phút",
+  "prevLesson": "use-cases-by-role",
+  "nextLesson": "whats-next",
+  "summaryEn": "Beyond claude.ai, Claude is available in specialized tools—Claude Code, Claude in Slack, Claude for Excel, Claude for PowerPoint, and Claude for Chrome—each designed to meet you where you already work.",
+  "summaryVi": "Ngoài claude.ai, Claude còn có trong các công cụ chuyên biệt—Claude Code, Claude trong Slack, Claude cho Excel, Claude cho PowerPoint và Claude cho Chrome—mỗi công cụ được thiết kế để phù hợp với nơi bạn đang làm việc.",
+  "sections": [
+    {
+      "id": "objectives",
+      "titleEn": "Learning objectives",
+      "titleVi": "Mục tiêu học tập",
+      "en": "<p>By the end of this lesson, you will be able to:</p><ul><li>Understand when to use additional Claude products including Claude Code, Claude for Slack, Claude for Excel, Claude for PowerPoint, and Claude for Chrome</li></ul>",
+      "vi": "<p>Sau khi hoàn thành bài học này, bạn sẽ có thể:</p><ul><li>Hiểu khi nào nên sử dụng các sản phẩm Claude bổ sung bao gồm Claude Code, Claude cho Slack, Claude cho Excel, Claude cho PowerPoint và Claude cho Chrome</li></ul>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "intro",
+      "titleEn": "Claude beyond claude.ai",
+      "titleVi": "Claude ngoài claude.ai",
+      "en": "<p>As we mentioned at the start of this course, Claude is an intelligence. <a href=\"https://claude.ai/\">Claude.ai</a> is just one way of working with it.</p><p>Claude is also available in several specialized tools designed to meet you where you already work. This lesson introduces five additional ways to work with Claude, each tailored to specific workflows and use cases.</p>",
+      "vi": "<p>Như đã đề cập ở đầu khóa học, Claude là một trí tuệ. <a href=\"https://claude.ai/\">Claude.ai</a> chỉ là một trong những cách làm việc với nó.</p><p>Claude còn có mặt trong nhiều công cụ chuyên biệt được thiết kế để phù hợp với nơi bạn đã làm việc. Bài học này giới thiệu năm cách bổ sung để làm việc với Claude, mỗi cách được tùy chỉnh cho các quy trình và trường hợp sử dụng cụ thể.</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "claude-code",
+      "titleEn": "Claude Code",
+      "titleVi": "Claude Code",
+      "en": "<p>Claude Code is an agentic coding tool that works where you work — in your terminal, IDE, browser, or even in Slack. It understands your codebase, executes commands, and handles entire development workflows through natural language.</p><p><strong>When to use Claude Code:</strong></p><ul><li>You want to build features by describing what you need in plain English, and have Claude write the code, run tests, and create commits</li><li>You need to debug issues by pasting error messages and having Claude analyze your codebase to identify and fix problems</li><li>You're navigating an unfamiliar codebase and want to ask questions about how different parts work together</li><li>You want to automate tedious tasks like fixing lint errors, resolving merge conflicts, or writing release notes</li><li>You prefer working in your terminal alongside your existing IDE and development tools rather than switching to a separate interface</li></ul>",
+      "vi": "<p>Claude Code là một công cụ coding agentic hoạt động tại nơi bạn làm việc — trong terminal, IDE, trình duyệt hoặc thậm chí trong Slack. Nó hiểu codebase của bạn, thực thi lệnh và xử lý toàn bộ quy trình phát triển thông qua ngôn ngữ tự nhiên.</p><p><strong>Khi nào nên dùng Claude Code:</strong></p><ul><li>Bạn muốn xây dựng tính năng bằng cách mô tả những gì cần bằng tiếng Anh đơn giản, và để Claude viết code, chạy test và tạo commit</li><li>Bạn cần debug lỗi bằng cách dán thông báo lỗi và để Claude phân tích codebase để xác định và sửa vấn đề</li><li>Bạn đang điều hướng trong codebase chưa quen và muốn đặt câu hỏi về cách các phần khác nhau hoạt động cùng nhau</li><li>Bạn muốn tự động hóa các tác vụ tẻ nhạt như sửa lỗi lint, giải quyết xung đột merge hoặc viết release notes</li><li>Bạn thích làm việc trong terminal cùng với IDE và công cụ phát triển hiện có thay vì chuyển sang giao diện riêng</li></ul>",
+      "image": "",
+      "video": "https://www.youtube.com/embed/s-avRazvmLg"
+    },
+    {
+      "id": "claude-in-slack",
+      "titleEn": "Claude in Slack",
+      "titleVi": "Claude trong Slack",
+      "en": "<p>Claude integrates directly with Slack, allowing you to get help in channels and threads or bring Slack context into your Claude conversations.</p><p><strong>When to use Claude in Slack:</strong></p><ul><li>You want to draft responses to messages, summarize lengthy threads, or break down complex discussions without leaving Slack</li><li>You need to prepare for meetings by having Claude pull together relevant conversations and shared documents from your workspace</li><li>You're onboarding to a new team and want help understanding ongoing projects by reviewing channel history</li><li>You want to hand off coding tasks directly from a bug report or feature discussion—just tag @Claude and it can spin up a Claude Code session using the surrounding context</li><li>You need to quickly get answers about industry trends, technical concepts, or company information during a conversation</li></ul>",
+      "vi": "<p>Claude tích hợp trực tiếp với Slack, cho phép bạn nhận trợ giúp trong các kênh và thread hoặc đưa ngữ cảnh Slack vào cuộc trò chuyện Claude.</p><p><strong>Khi nào nên dùng Claude trong Slack:</strong></p><ul><li>Bạn muốn soạn phản hồi tin nhắn, tóm tắt các thread dài hoặc phân tích các cuộc thảo luận phức tạp mà không rời Slack</li><li>Bạn cần chuẩn bị cho cuộc họp bằng cách để Claude tổng hợp các cuộc trò chuyện và tài liệu chia sẻ liên quan từ workspace</li><li>Bạn đang onboarding vào nhóm mới và muốn được giúp hiểu các dự án đang diễn ra bằng cách xem lại lịch sử kênh</li><li>Bạn muốn giao nhiệm vụ coding trực tiếp từ báo cáo lỗi hoặc thảo luận tính năng — chỉ cần tag @Claude và nó có thể khởi động phiên Claude Code bằng ngữ cảnh xung quanh</li><li>Bạn cần nhanh chóng tìm câu trả lời về xu hướng ngành, khái niệm kỹ thuật hoặc thông tin công ty trong cuộc trò chuyện</li></ul>",
+      "image": "",
+      "video": "https://www.youtube.com/embed/tI1uzSJuSxc"
+    },
+    {
+      "id": "claude-for-excel",
+      "titleEn": "Claude for Excel",
+      "titleVi": "Claude cho Excel",
+      "en": "<p>Claude for Excel brings Claude directly into Microsoft Excel through a sidebar, allowing you to analyze, understand, and modify spreadsheets through conversation.</p><p><strong>When to use Claude for Excel:</strong></p><ul><li>You're working with a complex multi-tab workbook and want to understand how specific formulas or calculation flows work across sheets</li><li>You need to update assumptions or inputs across your model while preserving formula dependencies and relationships</li><li>You're debugging spreadsheet errors like #REF!, #VALUE!, or circular references and want Claude to trace them to their source and suggest fixes</li><li>You want to create new spreadsheets or populate existing templates with data while maintaining proper formula structure</li><li>You need to quickly build pivot tables or charts to visualize your data</li></ul>",
+      "vi": "<p>Claude cho Excel đưa Claude trực tiếp vào Microsoft Excel thông qua sidebar, cho phép bạn phân tích, hiểu và chỉnh sửa bảng tính thông qua hội thoại.</p><p><strong>Khi nào nên dùng Claude cho Excel:</strong></p><ul><li>Bạn đang làm việc với workbook nhiều tab phức tạp và muốn hiểu cách các công thức hoặc luồng tính toán cụ thể hoạt động trên các sheet</li><li>Bạn cần cập nhật các giả định hoặc đầu vào trong mô hình trong khi vẫn giữ nguyên các phụ thuộc và mối quan hệ công thức</li><li>Bạn đang debug các lỗi bảng tính như #REF!, #VALUE! hoặc tham chiếu vòng và muốn Claude truy tìm nguyên nhân gốc rễ và đề xuất cách sửa</li><li>Bạn muốn tạo bảng tính mới hoặc điền dữ liệu vào các mẫu hiện có trong khi duy trì cấu trúc công thức phù hợp</li><li>Bạn cần nhanh chóng tạo bảng pivot hoặc biểu đồ để trực quan hóa dữ liệu</li></ul>",
+      "image": "",
+      "video": "https://www.youtube.com/embed/8ZRTSIRWLu4"
+    },
+    {
+      "id": "claude-for-powerpoint",
+      "titleEn": "Claude for PowerPoint",
+      "titleVi": "Claude cho PowerPoint",
+      "en": "<p>Claude for PowerPoint brings Claude into Microsoft PowerPoint as a sidebar, so you can draft, edit, and restructure presentations through conversation while keeping your existing template and brand styling intact.</p><p><strong>When to use Claude for PowerPoint:</strong></p><ul><li>You want to turn an outline, document, or set of notes into a first-draft slide deck without building each slide by hand</li><li>You need to rewrite or tighten slide copy — shortening bullets, adding speaker notes, or adjusting tone for a specific audience</li><li>You're restructuring an existing deck and want help reordering sections, splitting dense slides, or merging overlapping ones</li><li>You want consistent formatting applied across the deck — titles, bullet styles, and layouts — without manually fixing each slide</li><li>You'd like quick visual suggestions for a slide, such as which layout or chart type best fits the point you're making</li></ul>",
+      "vi": "<p>Claude cho PowerPoint đưa Claude vào Microsoft PowerPoint dưới dạng sidebar, để bạn có thể soạn thảo, chỉnh sửa và cơ cấu lại bài thuyết trình qua hội thoại trong khi vẫn giữ nguyên template và phong cách thương hiệu hiện có.</p><p><strong>Khi nào nên dùng Claude cho PowerPoint:</strong></p><ul><li>Bạn muốn biến outline, tài liệu hoặc bộ ghi chú thành bản nháp slide đầu tiên mà không cần tự tay tạo từng slide</li><li>Bạn cần viết lại hoặc gọn hóa nội dung slide — rút ngắn bullets, thêm speaker notes hoặc điều chỉnh giọng điệu cho đối tượng cụ thể</li><li>Bạn đang cơ cấu lại một deck hiện có và muốn được giúp sắp xếp lại các phần, tách các slide dày đặc hoặc gộp các slide trùng lặp</li><li>Bạn muốn định dạng nhất quán được áp dụng trên toàn bộ deck — tiêu đề, kiểu bullet và layout — mà không cần sửa thủ công từng slide</li><li>Bạn muốn gợi ý hình ảnh nhanh cho một slide, chẳng hạn layout hoặc loại biểu đồ nào phù hợp nhất với điểm bạn đang trình bày</li></ul>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "claude-for-chrome",
+      "titleEn": "Claude for Chrome",
+      "titleVi": "Claude cho Chrome",
+      "en": "<p>Claude for Chrome is a browser extension that adds Claude as a sidebar in Google Chrome. It can observe what you're working on and take actions directly within your browser.</p><p><strong>When to use Claude for Chrome:</strong></p><ul><li>You want to summarize articles, research papers, or web pages while browsing</li><li>You need help drafting email responses or managing your inbox</li><li>You're filling out repetitive forms and want to automate the process</li><li>You want to test website features or navigate multi-step workflows without manually clicking through each step</li><li>You need a browsing assistant that maintains context as you move between tabs and tasks. This makes it great for pulling context from niche internal tools, CRMs, or dashboards.</li></ul><p><strong>Important note:</strong> Claude for Chrome is currently in research preview. Anthropic recommends using it for low-risk tasks on trusted websites. The extension asks for permission before taking high-risk actions like purchasing or sharing personal data, and certain categories of websites (financial services, adult content) are blocked by default.</p>",
+      "vi": "<p>Claude cho Chrome là tiện ích mở rộng trình duyệt thêm Claude dưới dạng sidebar trong Google Chrome. Nó có thể quan sát những gì bạn đang làm và thực hiện các hành động trực tiếp trong trình duyệt.</p><p><strong>Khi nào nên dùng Claude cho Chrome:</strong></p><ul><li>Bạn muốn tóm tắt bài viết, tài liệu nghiên cứu hoặc trang web trong khi duyệt</li><li>Bạn cần giúp soạn phản hồi email hoặc quản lý hộp thư đến</li><li>Bạn đang điền vào các biểu mẫu lặp đi lặp lại và muốn tự động hóa quy trình</li><li>Bạn muốn kiểm tra tính năng website hoặc điều hướng quy trình nhiều bước mà không cần nhấp thủ công từng bước</li><li>Bạn cần trợ lý duyệt web duy trì ngữ cảnh khi bạn di chuyển giữa các tab và tác vụ — rất tốt để kéo ngữ cảnh từ các công cụ nội bộ, CRM hoặc dashboard.</li></ul><p><strong>Lưu ý quan trọng:</strong> Claude cho Chrome hiện đang trong giai đoạn research preview. Anthropic khuyến nghị sử dụng cho các tác vụ rủi ro thấp trên các website đáng tin cậy. Tiện ích mở rộng yêu cầu cấp phép trước khi thực hiện các hành động rủi ro cao như mua hàng hoặc chia sẻ dữ liệu cá nhân, và một số danh mục website nhất định (dịch vụ tài chính, nội dung người lớn) bị chặn theo mặc định.</p>",
+      "image": "",
+      "video": "https://www.youtube.com/embed/IypXvHej9eY"
+    },
+    {
+      "id": "summary",
+      "titleEn": "Summary",
+      "titleVi": "Tóm tắt",
+      "en": "<p>Each of these tools extends Claude's capabilities into the specific environments where you work:</p><table><thead><tr><th>Tool</th><th>Best for</th><th>Where it runs</th></tr></thead><tbody><tr><td>Claude.ai</td><td>General tasks, research, writing, analysis, file creation</td><td>Web, desktop, and mobile apps</td></tr><tr><td>Claude Code</td><td>Software development, codebase navigation, git workflows</td><td>Terminal/command line, IDE, or your browser</td></tr><tr><td>Claude Cowork</td><td>Complex, multi-step tasks: research briefs, document creation, file organization, data analysis</td><td>Desktop (and mobile apps via Dispatch)</td></tr><tr><td>Claude/Claude Code in Slack</td><td>Team collaboration, meeting prep, quick answers in context</td><td>Slack workspace</td></tr><tr><td>Claude for Excel</td><td>Spreadsheet analysis, financial modeling, formula debugging</td><td>Microsoft Excel sidebar</td></tr><tr><td>Claude for PowerPoint</td><td>Slide creation, presentation editing, formatting and design</td><td>Microsoft PowerPoint sidebar</td></tr><tr><td>Claude for Chrome</td><td>Web research, email management, browser automation</td><td>Chrome browser sidebar</td></tr></tbody></table>",
+      "vi": "<p>Mỗi công cụ này mở rộng khả năng của Claude vào các môi trường cụ thể nơi bạn làm việc:</p><table><thead><tr><th>Công cụ</th><th>Phù hợp nhất cho</th><th>Chạy trên</th></tr></thead><tbody><tr><td>Claude.ai</td><td>Tác vụ tổng quát, nghiên cứu, viết lách, phân tích, tạo file</td><td>Web, ứng dụng desktop và di động</td></tr><tr><td>Claude Code</td><td>Phát triển phần mềm, điều hướng codebase, quy trình git</td><td>Terminal/dòng lệnh, IDE hoặc trình duyệt</td></tr><tr><td>Claude Cowork</td><td>Các tác vụ phức tạp, nhiều bước: tóm tắt nghiên cứu, tạo tài liệu, tổ chức file, phân tích dữ liệu</td><td>Desktop (và ứng dụng di động qua Dispatch)</td></tr><tr><td>Claude/Claude Code trong Slack</td><td>Cộng tác nhóm, chuẩn bị cuộc họp, câu trả lời nhanh theo ngữ cảnh</td><td>Slack workspace</td></tr><tr><td>Claude cho Excel</td><td>Phân tích bảng tính, mô hình tài chính, debug công thức</td><td>Sidebar Microsoft Excel</td></tr><tr><td>Claude cho PowerPoint</td><td>Tạo slide, chỉnh sửa thuyết trình, định dạng và thiết kế</td><td>Sidebar Microsoft PowerPoint</td></tr><tr><td>Claude cho Chrome</td><td>Nghiên cứu web, quản lý email, tự động hóa trình duyệt</td><td>Sidebar trình duyệt Chrome</td></tr></tbody></table>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "next",
+      "titleEn": "What's next",
+      "titleVi": "Tiếp theo là gì",
+      "en": "<p>Wrap up with a short recap of this course and a quiz to earn your certificate of completion that you can share on LinkedIn, and with your team.</p>",
+      "vi": "<p>Kết thúc bằng một tóm tắt ngắn về khóa học này và một bài kiểm tra để nhận chứng chỉ hoàn thành mà bạn có thể chia sẻ trên LinkedIn và với nhóm của mình.</p>",
+      "image": "",
+      "video": ""
+    }
+  ]
+}

@@ -51,13 +51,14 @@
 
     &__btn {
       flex: 1;
-      padding: 6px 8px;
+      padding: 6px 12px;
       border: none;
       border-radius: 5px;
       background-color: transparent;
       color: var(--color-text-sub);
       font-size: rem(11);
       font-weight: 600;
+      white-space: nowrap;
       cursor: pointer;
       transition:
         background-color 0.15s ease,
@@ -103,7 +104,7 @@
       padding: 20px 10px 10px;
       border: 1px solid var(--color-border);
       border-left-width: 3px;
-      border-radius: 0 4px 4px 0;
+      border-radius: 0 8px 8px 0;
       background-color: var(--color-white);
 
       & + & {
@@ -235,38 +236,31 @@
     bottom: 20px;
     z-index: 300;
     display: flex;
-    gap: 6px;
     align-items: center;
-    padding: 10px 14px;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
     border: none;
-    border-radius: 999px;
+    border-radius: 50%;
     background-color: var(--primary-color);
     color: var(--color-white);
-    font-size: rem(12);
-    font-weight: 700;
     cursor: pointer;
     box-shadow: 0 4px 16px rgb(0 0 0 / 0.18);
   }
 
+  .lesson-summary-btn__label-en,
   .lesson-summary-btn__label-vi {
     display: none;
-  }
-
-  [data-lang='vi'] .lesson-summary-btn__label-en {
-    display: none;
-  }
-
-  [data-lang='vi'] .lesson-summary-btn__label-vi {
-    display: inline;
   }
 
   /* summary modal */
   .lesson-summary-modal {
     position: fixed;
+    top: 0;
     inset: 0;
-    z-index: 400;
+    z-index: calc(var(--z_upper) + 10);
     display: flex;
-    align-items: flex-end;
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.2s ease;
@@ -287,9 +281,9 @@
     position: relative;
     z-index: 1;
     width: 100%;
-    max-height: 80vh;
+    max-height: 100vh;
     overflow-y: auto;
-    border-radius: 16px 16px 0 0;
+    border-radius: 0;
     background-color: var(--color-bg);
     transform: translateY(20px);
     transition: transform 0.25s ease;
@@ -334,7 +328,6 @@
   }
 
   .lesson-summary-modal__toggle-btn {
-    flex: 1;
     padding: 5px 10px;
     border: none;
     border-radius: 5px;
@@ -378,18 +371,13 @@
 
   .lesson-summary-modal__card {
     position: relative;
-    padding: 28px 14px 16px;
+    padding: 14px;
     border: 1px solid var(--color-border);
-    border-left-width: 3px;
-    border-radius: 0 8px 8px 0;
+    border-radius: 8px;
     background-color: var(--color-white);
 
-    &--en {
-      border-left-color: #4a90d9;
-    }
-
+    &--en,
     &--vi {
-      border-left-color: var(--primary-color);
     }
 
     ul {
@@ -529,11 +517,21 @@
     line-height: 1.4;
     text-align: center;
 
-    &.c1 { background-color: #6b9fd4; }
-    &.c2 { background-color: #7ab5a0; }
-    &.c3 { background-color: #c4956a; }
-    &.c4 { background-color: #9b7fc4; }
-    &.c5 { background-color: #d47a7a; }
+    &.c1 {
+      background-color: #6b9fd4;
+    }
+    &.c2 {
+      background-color: #7ab5a0;
+    }
+    &.c3 {
+      background-color: #c4956a;
+    }
+    &.c4 {
+      background-color: #9b7fc4;
+    }
+    &.c5 {
+      background-color: #d47a7a;
+    }
   }
 
   .roadmap-desc {
@@ -581,10 +579,6 @@
     margin-top: 40px;
     padding-top: 24px;
     border-top: 1px solid var(--color-border);
-  }
-
-  .lesson-nav-footer__spacer {
-    display: none;
   }
 
   .lesson-nav-footer__prev,

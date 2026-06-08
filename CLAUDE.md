@@ -105,7 +105,8 @@ block append meta
 5. Create `_develop/src/pug/claude-101/<slug>.pug` stub
 6. Update previous lesson's JSON: set `nextLesson` to new slug
 7. Create stub JSON for the *next* lesson (if not exists): empty sections, `prevLesson` set
-8. Build and verify
+8. Run `npm run build:pug` from `_develop/` to compile HTML output
+9. Verify build output in `public_html/claude-academy/claude-101/`
 
 ---
 
@@ -117,7 +118,7 @@ block append meta
 | 2 | `working-with-skills` | done |
 | 3 | `connecting-your-tools` | done |
 | 4 | `enterprise-search` | stub only |
-| 5 | `research-mode` | pending |
+| 5 | `research-mode` | done |
 | 6 | `use-cases-by-role` | pending |
 | 7 | `other-ways-to-work` | pending |
 | 8 | `whats-next` | pending |

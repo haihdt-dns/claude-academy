@@ -1,0 +1,112 @@
+{
+  "slug": "use-cases-by-role",
+  "titleEn": "Claude in action: use cases by role",
+  "titleVi": "Claude trong thực tế: trường hợp sử dụng theo vai trò",
+  "estimatedTimeEn": "10 minutes",
+  "estimatedTimeVi": "10 phút",
+  "prevLesson": "research-mode",
+  "nextLesson": "other-ways-to-work",
+  "summaryEn": "Discover practical ways Claude can help in your specific role—from sales and marketing to finance, HR, legal, and research—with links to step-by-step guides in the Use Case Gallery.",
+  "summaryVi": "Khám phá những cách thực tế Claude có thể hỗ trợ trong vai trò cụ thể của bạn — từ bán hàng và marketing đến tài chính, HR, pháp lý và nghiên cứu — kèm liên kết đến hướng dẫn chi tiết trong Use Case Gallery.",
+  "sections": [
+    {
+      "id": "objectives",
+      "titleEn": "Learning objectives",
+      "titleVi": "Mục tiêu học tập",
+      "en": "<p>By the end of this lesson, you will be able to:</p><ul><li>Describe 2–3 use cases for claude.ai that you can try right away</li><li>Know where to go to find additional use-case inspiration</li></ul>",
+      "vi": "<p>Sau khi hoàn thành bài học này, bạn sẽ có thể:</p><ul><li>Mô tả 2–3 trường hợp sử dụng claude.ai mà bạn có thể thử ngay</li><li>Biết nơi để tìm thêm cảm hứng về các trường hợp sử dụng</li></ul>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "intro",
+      "titleEn": "Claude for every role",
+      "titleVi": "Claude cho mọi vai trò",
+      "en": "<p>No matter what you do, Claude can help streamline your work. This lesson highlights practical use cases organized by role, so you can see how Claude applies to your specific work context.</p><p>Each use case below links to a detailed guide in our Use Case Gallery with step-by-step instructions you can follow.</p>",
+      "vi": "<p>Dù bạn làm gì, Claude đều có thể giúp tối ưu hóa công việc. Bài học này nêu bật các trường hợp sử dụng thực tế được sắp xếp theo vai trò, để bạn thấy Claude áp dụng như thế nào vào ngữ cảnh công việc cụ thể của mình.</p><p>Mỗi trường hợp sử dụng bên dưới đều liên kết đến hướng dẫn chi tiết trong Use Case Gallery với các hướng dẫn từng bước mà bạn có thể làm theo.</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "general",
+      "titleEn": "General professional use",
+      "titleVi": "Sử dụng cho chuyên gia nói chung",
+      "en": "<p>These use cases apply across many roles and industries.</p><ul><li><a href=\"https://claude.com/resources/use-cases/generate-project-status-reports\">Generate project status reports</a> – Keep stakeholders informed with clear, consistent updates</li><li><a href=\"https://claude.com/resources/use-cases/analyze-patterns-in-user-feedback\">Analyze patterns in user feedback</a> – Extract insights from customer comments and survey responses</li><li><a href=\"https://claude.com/resources/use-cases/package-your-brand-guidelines-in-a-skill\">Package your brand guidelines in a skill</a> – Create a reusable Claude skill that applies your brand standards</li></ul>",
+      "vi": "<p>Những trường hợp sử dụng này áp dụng cho nhiều vai trò và ngành nghề.</p><ul><li><a href=\"https://claude.com/resources/use-cases/generate-project-status-reports\">Tạo báo cáo tiến độ dự án</a> – Cập nhật thông tin cho các bên liên quan với các bản cập nhật rõ ràng, nhất quán</li><li><a href=\"https://claude.com/resources/use-cases/analyze-patterns-in-user-feedback\">Phân tích xu hướng trong phản hồi người dùng</a> – Trích xuất thông tin từ bình luận khách hàng và phản hồi khảo sát</li><li><a href=\"https://claude.com/resources/use-cases/package-your-brand-guidelines-in-a-skill\">Đóng gói hướng dẫn thương hiệu vào một skill</a> – Tạo Claude skill có thể tái sử dụng để áp dụng tiêu chuẩn thương hiệu của bạn</li></ul>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "sales",
+      "titleEn": "Sales",
+      "titleVi": "Bán hàng",
+      "en": "<p>Sales professionals can use Claude to accelerate deal preparation, create compelling materials, and stay on top of competitive intelligence.</p><ul><li><a href=\"https://claude.com/resources/use-cases/build-a-battle-card-library\">Build a battle card library</a> – Create competitive intelligence resources that help your team win deals</li><li><a href=\"https://claude.com/resources/use-cases/prepare-for-sales-deals\">Prepare for sales deals</a> – Research prospects and organize your talking points before important meetings</li><li><a href=\"https://claude.com/resources/use-cases/create-sales-reports\">Create sales reports</a> – Turn your pipeline data into clear, actionable reports</li></ul>",
+      "vi": "<p>Các chuyên gia bán hàng có thể dùng Claude để đẩy nhanh chuẩn bị deal, tạo tài liệu thuyết phục và nắm bắt thông tin cạnh tranh.</p><ul><li><a href=\"https://claude.com/resources/use-cases/build-a-battle-card-library\">Xây dựng thư viện battle card</a> – Tạo tài nguyên thông tin cạnh tranh giúp nhóm của bạn chốt deal</li><li><a href=\"https://claude.com/resources/use-cases/prepare-for-sales-deals\">Chuẩn bị cho các deal bán hàng</a> – Nghiên cứu khách hàng tiềm năng và tổ chức các điểm thảo luận trước cuộc họp quan trọng</li><li><a href=\"https://claude.com/resources/use-cases/create-sales-reports\">Tạo báo cáo bán hàng</a> – Biến dữ liệu pipeline thành các báo cáo rõ ràng, có thể hành động</li></ul>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "marketing",
+      "titleEn": "Marketing",
+      "titleVi": "Marketing",
+      "en": "<p>Marketers can leverage Claude to analyze performance data and efficiently repurpose content across channels.</p><ul><li><a href=\"https://claude.com/resources/use-cases/analyze-campaign-performance\">Analyze campaign performance</a> – Extract insights from campaign metrics to inform your strategy</li><li><a href=\"https://claude.com/resources/use-cases/adapt-content-across-platforms\">Adapt content across platforms</a> – Efficiently repurpose content for different channels and audiences</li></ul>",
+      "vi": "<p>Các marketer có thể tận dụng Claude để phân tích dữ liệu hiệu suất và tái sử dụng nội dung hiệu quả trên các kênh.</p><ul><li><a href=\"https://claude.com/resources/use-cases/analyze-campaign-performance\">Phân tích hiệu suất chiến dịch</a> – Trích xuất thông tin từ các chỉ số chiến dịch để định hướng chiến lược</li><li><a href=\"https://claude.com/resources/use-cases/adapt-content-across-platforms\">Điều chỉnh nội dung theo từng nền tảng</a> – Tái sử dụng nội dung hiệu quả cho các kênh và đối tượng khác nhau</li></ul>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "finance",
+      "titleEn": "Finance",
+      "titleVi": "Tài chính",
+      "en": "<p>Finance professionals can use Claude to build models, draft documents, and make sense of complex spreadsheets.</p><ul><li><a href=\"https://claude.com/resources/use-cases/build-financial-models\">Build financial models</a> – Create and refine financial projections with Claude's help</li><li><a href=\"https://claude.com/resources/use-cases/draft-investment-memos\">Draft investment memos</a> – Structure and write investment analyses more efficiently</li><li><a href=\"https://claude.com/resources/use-cases/understand-and-extend-an-inherited-spreadsheet\">Understand and extend an inherited spreadsheet</a> – Decode complex spreadsheets and add new functionality</li></ul>",
+      "vi": "<p>Các chuyên gia tài chính có thể dùng Claude để xây dựng mô hình, soạn thảo tài liệu và hiểu các bảng tính phức tạp.</p><ul><li><a href=\"https://claude.com/resources/use-cases/build-financial-models\">Xây dựng mô hình tài chính</a> – Tạo và tinh chỉnh các dự báo tài chính với sự hỗ trợ của Claude</li><li><a href=\"https://claude.com/resources/use-cases/draft-investment-memos\">Soạn thảo bản ghi nhớ đầu tư</a> – Cấu trúc và viết phân tích đầu tư hiệu quả hơn</li><li><a href=\"https://claude.com/resources/use-cases/understand-and-extend-an-inherited-spreadsheet\">Hiểu và mở rộng bảng tính kế thừa</a> – Giải mã các bảng tính phức tạp và thêm chức năng mới</li></ul>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "hr",
+      "titleEn": "HR",
+      "titleVi": "Nhân sự",
+      "en": "<p>HR teams can use Claude to create better onboarding experiences and documentation.</p><ul><li><a href=\"https://claude.com/resources/use-cases/create-new-hire-onboarding-guides\">Create new hire onboarding guides</a> – Develop comprehensive onboarding materials tailored to different roles</li></ul>",
+      "vi": "<p>Nhóm HR có thể dùng Claude để tạo trải nghiệm onboarding tốt hơn và chuẩn bị tài liệu.</p><ul><li><a href=\"https://claude.com/resources/use-cases/create-new-hire-onboarding-guides\">Tạo hướng dẫn onboarding nhân viên mới</a> – Phát triển tài liệu onboarding toàn diện phù hợp với từng vai trò</li></ul>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "legal",
+      "titleEn": "Legal",
+      "titleVi": "Pháp lý",
+      "en": "<p>Legal professionals can use Claude to track complex timelines and manage discovery processes.</p><ul><li><a href=\"https://claude.com/resources/use-cases/track-discovery-timelines-and-analyze-patterns\">Track discovery timelines and analyze patterns</a> – Organize case timelines and identify key patterns in legal documents</li></ul>",
+      "vi": "<p>Các chuyên gia pháp lý có thể dùng Claude để theo dõi các mốc thời gian phức tạp và quản lý quy trình thu thập bằng chứng.</p><ul><li><a href=\"https://claude.com/resources/use-cases/track-discovery-timelines-and-analyze-patterns\">Theo dõi mốc thời gian thu thập bằng chứng và phân tích xu hướng</a> – Tổ chức mốc thời gian vụ án và xác định các xu hướng chính trong tài liệu pháp lý</li></ul>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "research",
+      "titleEn": "Research",
+      "titleVi": "Nghiên cứu",
+      "en": "<p>Researchers can use Claude to plan literature reviews and verify data analysis.</p><ul><li><a href=\"https://claude.com/resources/use-cases/plan-your-literature-review\">Plan your literature review</a> – Organize your approach to reviewing academic sources</li><li><a href=\"https://claude.com/resources/use-cases/verify-statistics-from-raw-data\">Verify statistics from raw data</a> – Double-check calculations and statistical analyses</li></ul>",
+      "vi": "<p>Các nhà nghiên cứu có thể dùng Claude để lập kế hoạch tổng quan tài liệu và xác minh phân tích dữ liệu.</p><ul><li><a href=\"https://claude.com/resources/use-cases/plan-your-literature-review\">Lập kế hoạch tổng quan tài liệu</a> – Tổ chức cách tiếp cận để xem xét các nguồn học thuật</li><li><a href=\"https://claude.com/resources/use-cases/verify-statistics-from-raw-data\">Xác minh số liệu thống kê từ dữ liệu thô</a> – Kiểm tra lại các phép tính và phân tích thống kê</li></ul>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "explore-more",
+      "titleEn": "Explore more",
+      "titleVi": "Khám phá thêm",
+      "en": "<p>These examples are just the beginning. Visit the <a href=\"https://claude.com/resources/use-cases\">Use Case Gallery</a> to browse the full collection and find inspiration for how Claude can help with your specific work.</p>",
+      "vi": "<p>Những ví dụ này chỉ là khởi đầu. Truy cập <a href=\"https://claude.com/resources/use-cases\">Use Case Gallery</a> để duyệt toàn bộ bộ sưu tập và tìm cảm hứng cho cách Claude có thể hỗ trợ công việc cụ thể của bạn.</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "next",
+      "titleEn": "What's next",
+      "titleVi": "Tiếp theo là gì",
+      "en": "<p>In our final module, you'll meet a few more versions of Claude including Claude Code, Claude in Chrome, Claude in Excel, and Claude in Slack — each tailored to different types of working.</p>",
+      "vi": "<p>Trong mô-đun cuối cùng, bạn sẽ làm quen với một số phiên bản khác của Claude bao gồm Claude Code, Claude in Chrome, Claude in Excel và Claude in Slack — mỗi phiên bản được thiết kế riêng cho các loại công việc khác nhau.</p>",
+      "image": "",
+      "video": ""
+    }
+  ]
+}

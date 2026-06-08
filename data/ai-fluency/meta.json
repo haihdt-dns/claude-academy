@@ -1,0 +1,81 @@
+{
+  "id": "ai-fluency",
+  "title": "AI Fluency",
+  "sections": [
+    {
+      "titleEn": "Introduction to AI Fluency",
+      "titleVi": "Giới thiệu về AI Fluency",
+      "lessons": [
+        { "slug": "introduction-to-ai-fluency", "titleEn": "Introduction to AI Fluency", "titleVi": "Giới thiệu về AI Fluency" }
+      ]
+    },
+    {
+      "titleEn": "The AI Fluency Framework",
+      "titleVi": "Khung AI Fluency",
+      "lessons": [
+        { "slug": "why-do-we-need-ai-fluency", "titleEn": "Why do we need AI Fluency?", "titleVi": "Tại sao cần AI Fluency?" },
+        { "slug": "the-4d-framework", "titleEn": "The 4D Framework", "titleVi": "Khung 4D" }
+      ]
+    },
+    {
+      "titleEn": "Deep Dive 1: What is Generative AI?",
+      "titleVi": "Chuyên sâu 1: Generative AI là gì?",
+      "lessons": [
+        { "slug": "generative-ai-fundamentals", "titleEn": "Generative AI fundamentals", "titleVi": "Nền tảng Generative AI" },
+        { "slug": "capabilities-and-limitations", "titleEn": "Capabilities & limitations", "titleVi": "Khả năng & giới hạn" }
+      ]
+    },
+    {
+      "titleEn": "Delegation",
+      "titleVi": "Ủy thác",
+      "lessons": [
+        { "slug": "a-closer-look-at-delegation", "titleEn": "A closer look at Delegation", "titleVi": "Tìm hiểu sâu về Delegation" },
+        { "slug": "project-planning-and-delegation", "titleEn": "Project planning and Delegation", "titleVi": "Lập kế hoạch dự án và Delegation" }
+      ]
+    },
+    {
+      "titleEn": "Description",
+      "titleVi": "Mô tả",
+      "lessons": [
+        { "slug": "a-closer-look-at-description", "titleEn": "A closer look at Description", "titleVi": "Tìm hiểu sâu về Description" }
+      ]
+    },
+    {
+      "titleEn": "Deep Dive 2: Effective prompting techniques",
+      "titleVi": "Chuyên sâu 2: Kỹ thuật prompting hiệu quả",
+      "lessons": [
+        { "slug": "effective-prompting-techniques", "titleEn": "Effective prompting techniques", "titleVi": "Kỹ thuật prompting hiệu quả" }
+      ]
+    },
+    {
+      "titleEn": "Discernment",
+      "titleVi": "Phán đoán",
+      "lessons": [
+        { "slug": "a-closer-look-at-discernment", "titleEn": "A closer look at Discernment", "titleVi": "Tìm hiểu sâu về Discernment" }
+      ]
+    },
+    {
+      "titleEn": "The Description-Discernment loop",
+      "titleVi": "Vòng lặp Description-Discernment",
+      "lessons": [
+        { "slug": "the-description-discernment-loop", "titleEn": "The Description-Discernment loop", "titleVi": "Vòng lặp Description-Discernment" }
+      ]
+    },
+    {
+      "titleEn": "Diligence",
+      "titleVi": "Cẩn trọng",
+      "lessons": [
+        { "slug": "a-closer-look-at-diligence", "titleEn": "A closer look at Diligence", "titleVi": "Tìm hiểu sâu về Diligence" }
+      ]
+    },
+    {
+      "titleEn": "Conclusion & certificate",
+      "titleVi": "Kết luận & chứng chỉ",
+      "lessons": [
+        { "slug": "conclusion", "titleEn": "Conclusion", "titleVi": "Kết luận" },
+        { "slug": "certificate-of-completion", "titleEn": "Certificate of completion", "titleVi": "Chứng chỉ hoàn thành" },
+        { "slug": "additional-activities", "titleEn": "Additional activities", "titleVi": "Hoạt động bổ sung" }
+      ]
+    }
+  ]
+}

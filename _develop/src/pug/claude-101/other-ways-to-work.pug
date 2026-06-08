@@ -1,0 +1,12 @@
+extends ../utils/_lesson.pug
+
+block append meta
+  -
+    var courseId = 'claude-101'
+    var currentSlug = 'other-ways-to-work'
+    var lessonData = JSON.parse(nodeFs.readFileSync(nodePath.join(process.cwd(), '../data/claude-101/other-ways-to-work.json'), 'utf8'))
+    title = lessonData.titleEn + ' · Claude 101 · Claude Academy'
+    description = 'Discover Claude Code, Claude in Slack, Claude for Excel, Claude for PowerPoint, and Claude for Chrome—specialized tools that bring Claude into the environments where you already work.'
+    baseURL = 'https://chobadon.com/claude-academy/'
+    ogImageURL = baseURL + 'assets/images/ogp.png'
+    canonicalURL = `${baseURL}${courseId}/${currentSlug}/`

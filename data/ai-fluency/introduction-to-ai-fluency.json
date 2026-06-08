@@ -1,0 +1,58 @@
+{
+  "slug": "introduction-to-ai-fluency",
+  "titleEn": "Introduction to AI Fluency",
+  "titleVi": "Giới thiệu về AI Fluency",
+  "estimatedTimeEn": "10–15 minutes",
+  "estimatedTimeVi": "10–15 phút",
+  "prevLesson": "",
+  "nextLesson": "why-do-we-need-ai-fluency",
+  "summaryEn": "<ul><li>This course focuses on human-AI collaboration, not just understanding AI as a technology</li><li>AI Fluency means engaging with AI systems effectively, efficiently, ethically, and safely</li><li>The AI Fluency Framework centers on the \"4D\" competencies: Delegation, Description, Discernment, and Diligence</li><li>The goal is to develop lasting skills that remain relevant as AI technology evolves</li><li>Effective AI collaboration requires both practical skills and a fundamental shift in how we think about working with AI</li></ul>",
+  "summaryVi": "<ul><li>Khóa học này tập trung vào sự cộng tác giữa con người và AI, không chỉ là hiểu AI như một công nghệ</li><li>AI Fluency có nghĩa là tương tác với các hệ thống AI một cách hiệu quả, hiệu suất, có đạo đức và an toàn</li><li>Khung AI Fluency xoay quanh 4 năng lực cốt lõi \"4D\": Delegation (Ủy thác), Description (Mô tả), Discernment (Phán đoán) và Diligence (Cẩn trọng)</li><li>Mục tiêu là phát triển các kỹ năng bền vững, còn giá trị khi công nghệ AI tiếp tục phát triển</li><li>Cộng tác AI hiệu quả đòi hỏi cả kỹ năng thực tiễn lẫn sự thay đổi tư duy về cách làm việc với AI</li></ul>",
+  "sections": [
+    {
+      "id": "objectives",
+      "titleEn": "Learning Objectives",
+      "titleVi": "Mục tiêu học tập",
+      "en": "<p>By the end of this lesson, you will be able to:</p><ul><li>Understand the purpose and structure of the course</li><li>Recognize the importance of AI Fluency in today's world</li><li>Identify key components of your learning journey ahead</li><li>Set clear expectations for what you'll gain from this course</li></ul>",
+      "vi": "<p>Sau bài học này, bạn sẽ có thể:</p><ul><li>Hiểu mục đích và cấu trúc của khóa học</li><li>Nhận ra tầm quan trọng của AI Fluency trong thế giới hiện nay</li><li>Xác định các thành phần chính trong hành trình học tập phía trước</li><li>Đặt ra kỳ vọng rõ ràng về những gì bạn sẽ đạt được từ khóa học này</li></ul>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "intro-video",
+      "titleEn": "Introduction to AI Fluency",
+      "titleVi": "Giới thiệu về AI Fluency",
+      "en": "<p><em>(4 minutes)</em></p><p>Welcome! This video introduces you to this course's focus: developing meaningful collaboration with AI rather than just learning about AI technology. We explain that this course explores how to build a lasting framework for working with AI systems that goes beyond simple and temporary tips and tricks. We explain what we mean by AI Fluency: it is the ability to collaborate with AI in ways that are effective, efficient, ethical, and safe. We also outline the course structure, which covers each of the AI Fluency core competencies (the 4Ds) as well as key technical and practical concepts. By the end of the course, you'll have a framework for thoughtful AI interaction, confidence in choosing when and how to work with AI effectively, practical collaboration skills, and the ability to evaluate and disseminate AI-assisted work responsibly.</p><h4>Key takeaways</h4><ul><li>This course focuses on human-AI collaboration, not just understanding AI as a technology</li><li>AI Fluency means engaging with AI systems effectively, efficiently, ethically, and safely</li><li>The AI Fluency Framework centers on the \"4D\" competencies of Delegation, Description, Discernment, and Diligence</li><li>The goal is to develop lasting skills that remain relevant as AI technology evolves</li><li>Effective AI collaboration requires both practical skills and a fundamental shift in how we think about working with AI</li></ul>",
+      "vi": "<p><em>(4 phút)</em></p><p>Chào mừng! Video này giới thiệu trọng tâm của khóa học: phát triển sự cộng tác có ý nghĩa với AI thay vì chỉ học về công nghệ AI. Chúng tôi giải thích rằng khóa học này khám phá cách xây dựng một khung làm việc bền vững với các hệ thống AI, vượt ra ngoài những mẹo và thủ thuật đơn giản, tạm thời. Chúng tôi giải thích ý nghĩa của AI Fluency: đó là khả năng cộng tác với AI theo cách hiệu quả, năng suất, có đạo đức và an toàn. Chúng tôi cũng phác thảo cấu trúc khóa học, bao gồm từng năng lực cốt lõi của AI Fluency (4D) cũng như các khái niệm kỹ thuật và thực tiễn quan trọng. Đến cuối khóa học, bạn sẽ có một khung tư duy cho việc tương tác AI có chủ đích, sự tự tin trong việc lựa chọn khi nào và cách làm việc với AI hiệu quả, kỹ năng cộng tác thực tiễn và khả năng đánh giá, phổ biến công việc được hỗ trợ bởi AI một cách có trách nhiệm.</p><h4>Điểm chính</h4><ul><li>Khóa học này tập trung vào sự cộng tác giữa con người và AI, không chỉ là hiểu AI như một công nghệ</li><li>AI Fluency có nghĩa là tương tác với các hệ thống AI một cách hiệu quả, năng suất, có đạo đức và an toàn</li><li>Khung AI Fluency xoay quanh các năng lực \"4D\": Delegation (Ủy thác), Description (Mô tả), Discernment (Phán đoán) và Diligence (Cẩn trọng)</li><li>Mục tiêu là phát triển các kỹ năng bền vững, còn giá trị khi công nghệ AI tiếp tục phát triển</li><li>Cộng tác AI hiệu quả đòi hỏi cả kỹ năng thực tiễn lẫn sự thay đổi tư duy cơ bản về cách làm việc với AI</li></ul>",
+      "image": "",
+      "video": "<div class=\"lesson-video\"><iframe src=\"https://www.youtube.com/embed/JpGtOfSgR-c\" title=\"Introduction to AI Fluency\" width=\"560\" height=\"315\" frameborder=\"0\" allowfullscreen></iframe></div>"
+    },
+    {
+      "id": "exercises",
+      "titleEn": "Exercises: Putting things into practice",
+      "titleVi": "Bài tập: Đưa vào thực tiễn",
+      "en": "<p><em>You'll need access to a language model (5–10 mins)</em></p><p>Throughout this course, you'll practice what you're learning by working directly with a language model. While our examples feature Claude (Anthropic's AI assistant), you're welcome to work with any language model you prefer. The principles and skills we'll explore apply across different AI systems.</p><p>Getting started is simple and free:</p><ul><li>Claude: Visit <a href=\"https://claude.ai\" target=\"_blank\" rel=\"noopener noreferrer\">claude.ai</a> to create a free account</li><li>No paid subscriptions required to complete course activities</li><li>You can also use other AI chatbots as you prefer</li></ul><p>New to Claude? No worries! We'll provide clear guidance with each exercise to help you get started.</p>",
+      "vi": "<p><em>Bạn sẽ cần truy cập vào một mô hình ngôn ngữ (5–10 phút)</em></p><p>Xuyên suốt khóa học này, bạn sẽ thực hành những gì mình đang học bằng cách làm việc trực tiếp với một mô hình ngôn ngữ. Trong khi các ví dụ của chúng tôi sử dụng Claude (trợ lý AI của Anthropic), bạn hoàn toàn có thể làm việc với bất kỳ mô hình ngôn ngữ nào bạn thích. Các nguyên tắc và kỹ năng chúng tôi sẽ khám phá áp dụng cho nhiều hệ thống AI khác nhau.</p><p>Bắt đầu rất đơn giản và miễn phí:</p><ul><li>Claude: Truy cập <a href=\"https://claude.ai\" target=\"_blank\" rel=\"noopener noreferrer\">claude.ai</a> để tạo tài khoản miễn phí</li><li>Không cần đăng ký trả phí để hoàn thành các bài tập trong khóa học</li><li>Bạn cũng có thể sử dụng các chatbot AI khác theo sở thích</li></ul><p>Chưa quen với Claude? Không sao! Chúng tôi sẽ cung cấp hướng dẫn rõ ràng cho từng bài tập để giúp bạn bắt đầu.</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "reflection",
+      "titleEn": "Reflection",
+      "titleVi": "Suy ngẫm",
+      "en": "<p>Before moving on, take a moment to consider your own experiences with AI:</p><ul><li>What challenges have you encountered when working with AI to achieve specific outcomes?</li><li>What possibilities for AI collaboration excite you most?</li><li>What do you hope to gain from this course?</li></ul>",
+      "vi": "<p>Trước khi tiếp tục, hãy dành một chút thời gian để suy ngẫm về trải nghiệm của bạn với AI:</p><ul><li>Bạn đã gặp phải những thách thức nào khi làm việc với AI để đạt được kết quả cụ thể?</li><li>Những khả năng cộng tác với AI nào khiến bạn hào hứng nhất?</li><li>Bạn hy vọng đạt được điều gì từ khóa học này?</li></ul>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "whats-next",
+      "titleEn": "What's next",
+      "titleVi": "Tiếp theo",
+      "en": "<p>In the next lesson, we'll explore why AI Fluency matters in today's rapidly evolving technological landscape. We'll introduce three key ways people collaborate with AI (Automation, Augmentation, and Agency) and the core competencies of the AI Fluency Framework: the \"4Ds\" of Delegation, Description, Discernment, and Diligence.</p><hr><h4>Feedback on this course</h4><p>As you progress through the course, we'd love to hear from you about how you are using concepts from the course in your life, work, or classes and any feedback you may have. <a href=\"https://forms.gle/zURqLbVgdDqGhHZk9\" target=\"_blank\" rel=\"noopener\">Share your feedback here.</a></p><hr><p><em>Copyright 2025 Rick Dakan, Joseph Feller, and Anthropic. Released under the CC BY-NC-SA 4.0 license. This course is based on The AI Fluency Framework by Dakan and Feller. Supported in part by the Higher Education Authority, Ireland, through the National Forum for the Enhancement of Teaching and Learning.</em></p>",
+      "vi": "<p>Trong bài học tiếp theo, chúng ta sẽ khám phá lý do tại sao AI Fluency lại quan trọng trong bối cảnh công nghệ đang phát triển nhanh chóng ngày nay. Chúng ta sẽ giới thiệu ba cách chính mà con người cộng tác với AI (Tự động hóa, Tăng cường và Tác nhân) và các năng lực cốt lõi của Khung AI Fluency: \"4D\" gồm Delegation (Ủy thác), Description (Mô tả), Discernment (Phán đoán) và Diligence (Cẩn trọng).</p><hr><h4>Phản hồi về khóa học</h4><p>Khi bạn tiến qua khóa học, chúng tôi rất muốn nghe từ bạn về cách bạn đang áp dụng các khái niệm trong khóa học vào cuộc sống, công việc hoặc lớp học của mình và bất kỳ phản hồi nào bạn có. <a href=\"https://forms.gle/zURqLbVgdDqGhHZk9\" target=\"_blank\" rel=\"noopener\">Chia sẻ phản hồi của bạn tại đây.</a></p><hr><p><em>Bản quyền 2025 Rick Dakan, Joseph Feller và Anthropic. Phát hành theo giấy phép CC BY-NC-SA 4.0. Khóa học này dựa trên Khung AI Fluency của Dakan và Feller. Được hỗ trợ một phần bởi Cơ quan Giáo dục Đại học Ireland, thông qua Diễn đàn Quốc gia về Nâng cao Giảng dạy và Học tập.</em></p>",
+      "image": "",
+      "video": ""
+    }
+  ]
+}

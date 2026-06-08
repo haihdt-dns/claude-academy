@@ -40,9 +40,6 @@
     padding-top: 120px;
     min-height: calc(100vh - 60px);
     background-color: var(--color-bg);
-    &__inner {
-      padding: 70px 0 150px;
-    }
   }
 
   .text {

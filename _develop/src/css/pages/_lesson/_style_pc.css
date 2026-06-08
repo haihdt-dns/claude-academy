@@ -147,6 +147,7 @@
       color: var(--color-text-sub);
       font-size: rem(12);
       font-weight: 600;
+      white-space: nowrap;
       cursor: pointer;
       transition:
         background-color 0.15s ease,
@@ -269,6 +270,7 @@
     a {
       color: var(--primary-color);
       text-decoration: underline;
+      text-underline-offset: 3px;
 
       @media (--hover) {
         &:hover {
@@ -462,44 +464,35 @@
   .lesson-summary-btn {
     position: fixed;
     right: 24px;
-    bottom: 24px;
+    bottom: 84px;
     z-index: 300;
     display: flex;
-    gap: 7px;
     align-items: center;
-    padding: 10px 16px;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
     border: none;
-    border-radius: 999px;
+    border-radius: 50%;
     background-color: var(--primary-color);
     color: var(--color-white);
-    font-size: rem(13);
-    font-weight: 700;
     cursor: pointer;
     box-shadow: 0 4px 16px rgb(0 0 0 / 0.18);
     transition:
-      background-color 0.15s ease,
       box-shadow 0.15s ease,
       transform 0.15s ease;
 
     @media (--hover) {
       &:hover {
-        /* background-color: var(--primary-dark); */
         box-shadow: 0 6px 20px rgb(0 0 0 / 0.22);
         transform: translateY(-2px);
       }
     }
   }
 
+  .lesson-summary-btn__label-en,
   .lesson-summary-btn__label-vi {
     display: none;
-  }
-
-  [data-lang='vi'] .lesson-summary-btn__label-en {
-    display: none;
-  }
-
-  [data-lang='vi'] .lesson-summary-btn__label-vi {
-    display: inline;
   }
 
   /* summary modal */
@@ -633,17 +626,11 @@
     position: relative;
     padding: 18px;
     border: 1px solid var(--color-border);
-    border-left-width: 3px;
-    border-radius: 0 8px 8px 0;
+    border-radius: 8px;
     background-color: var(--color-white);
 
-    &--en {
-      border-left-color: #4a90d9;
-    }
-
-    &--vi {
-      border-left-color: var(--primary-color);
-    }
+    &--en,
+    &--vi {}
 
     ul {
       margin: 0;
@@ -715,8 +702,14 @@
     border-top: 1px solid var(--color-border);
   }
 
-  .lesson-nav-footer__spacer {
-    flex: 1;
+  .lesson-nav-footer--only-prev .lesson-nav-footer__prev,
+  .lesson-nav-footer--only-next .lesson-nav-footer__next {
+    flex: 0 0 calc(50% - 6px);
+    max-width: calc(50% - 6px);
+  }
+
+  .lesson-nav-footer--only-next .lesson-nav-footer__next {
+    margin-left: auto;
   }
 
   .lesson-nav-footer__prev,
