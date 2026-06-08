@@ -1,0 +1,41 @@
+@media (--pc) {
+  .breadcrumb {
+    margin: 7px 3px 70px;
+    ul {
+      display: flex;
+      overflow-x: auto;
+    }
+    li {
+      flex-shrink: 0;
+      color: var(--primary-color);
+      font-family: var(--font-base);
+      font-size: rem(14);
+      transition: color 0.4s ease-out;
+      letter-spacing: ls(100);
+
+      &:last-of-type {
+        flex: 1;
+        margin-left: 1px;
+        white-space: nowrap;
+        color: #000;
+      }
+
+      &:not(:last-of-type) {
+        &:after {
+          content: '>';
+          margin: 0 3px -4px;
+          color: #000;
+        }
+      }
+
+      &:hover {
+        &:not(:last-of-type) {
+          color: var(--primary-color);
+          a {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

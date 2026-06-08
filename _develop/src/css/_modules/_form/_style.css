@@ -1,0 +1,24 @@
+@import './_pc';
+@import './_sp';
+
+:root {
+  --input-color: #000;
+  --input-background: #f3f3f3;
+  --input-border: #f3f3f3;
+  --step-border: #c9c9c9;
+  --step-color: #165e83;
+  --step-color-active: #fff;
+  --step-background-active: #165e83;
+  --check-background: #c9c9c9;
+  --check-border: #c9c9c9;
+  --radio-background-choose: #165e83;
+  --radio-background: #c9c9c9;
+  --radio-border: #c9c9c9;
+  --has-error-background: #fbefef;
+  --has-error-color: #f00;
+  --required-border: #165e83;
+  --required-color: #165e83;
+  --required-background: transparent;
+  --icon-back-background: #165e83;
+  --icon-back-border: #165e83;
+}

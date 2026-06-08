@@ -1,0 +1,52 @@
+@media (--sp) {
+  .paging {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 75px;
+
+    li {
+      margin: 0 6px;
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        font-size: 26px;
+        font-family: var(--font-en);
+      }
+
+      &.prev,
+      &.next {
+        margin: 0 34px;
+
+        a {
+          border: none;
+          font-size: 17px;
+          background-color: var(--primary-color);
+          border-radius: 50%;
+          width: 64px;
+          height: 64px;
+        }
+      }
+
+      &.active {
+        a {
+          font-weight: bold;
+        }
+      }
+
+      &.disable {
+        cursor: not-allowed;
+        user-select: none;
+        opacity: 0.4;
+
+        a {
+          pointer-events: none;
+          background-color: #cacaca;
+        }
+      }
+    }
+  }
+}

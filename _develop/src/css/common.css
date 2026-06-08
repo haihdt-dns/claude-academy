@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+@import './_config/_variables';
+@import './_config/_media';
+
+/* 下記はcommonだけで良い */
+@import './_config/_reset';
+/* @import './_modules/_animation/_style'; */
+@import './_modules/_layout/_style';
+@import './_modules/_header/_style';
+@import './_modules/_footer/_style';
+@import './_modules/_breadcrumb/_style';
+@import './_modules/_mv/_style';
+@import './_modules/_title/_style';
+@import './_modules/_button/_style';
+@import './_modules/_list/_style';
+@import './_modules/_table/_style';
+
+/*
+Native implementation now makes more sense, so anchorLink.js has been deprecated.
+If you have a fixed header, please use the following CSS.
+https://caniuse.com/?search=scroll-margin-block
+:target {
+  scroll-margin-block: [[fixed-header-height here]] px;
+}
+*/
+
+/*
+It is useful to create icons in black and change the color with filters.
+https://isotropic.co/tool/hex-color-to-css-filter/
+*/
+
+/*
+  leading-trim
+  https://www.tak-dcxi.com/article/use-line-height-trim-as-css-variable/
+*/
+
+:root {
+  --leading-trim: calc((1em - 1lh) / 2);
+}
+@supports not (top: 1lh) {
+  :root {
+    --leading-trim: 0px;
+  }
+}
+
+html {
+  font-size: 10px;
+}
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+.fit {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  &--contain {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+body {
+  color: var(--text-color);
+  font-family: var(--font-base);
+  font-weight: 400;
+  /* font-feature-settings: 'palt' 1; */
+  text-size-adjust: none;
+}

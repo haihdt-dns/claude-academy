@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+@import '../_config/_mixin';
+@import '../_config/_media';
+@import '../_modules/_paging/_style';
+@import '../_modules/_accordion/_style';
+
+.group_title {
+  margin-bottom: 40px;
+  h2,
+  h3,
+  h4 {
+    margin-bottom: 20px;
+  }
+}
+.btn_group {
+  .btn {
+    margin: 0 20px 20px 0;
+  }
+}

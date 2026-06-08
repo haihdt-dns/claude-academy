@@ -1,0 +1,302 @@
+@media (--pc) {
+  .detail {
+    margin-top: -4px;
+    &__title {
+      margin-bottom: 56px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid #c0c0c0;
+      &-meta {
+        display: flex;
+        align-items: center;
+        margin-bottom: 14px;
+        .date {
+          flex-shrink: 0;
+          margin-right: 24px;
+          font-size: rem(16);
+          line-height: lh(16, 23.17);
+          letter-spacing: 0;
+        }
+        &.is-new {
+          &:after {
+            content: 'NEW!';
+            margin-top: -3px;
+            color: var(--primary-color);
+            font-size: rem(15);
+            line-height: lh(15, 21.72);
+            letter-spacing: 0;
+          }
+        }
+      }
+      &-tl,
+      h1 {
+        font-size: rem(34);
+        font-weight: 700;
+        line-height: lh(34, 47.6);
+        letter-spacing: ls(30);
+      }
+    }
+    &__content {
+      a {
+        &:not(.btn) {
+          color: var(--primary-color);
+          text-decoration: underline;
+          text-underline-offset: 3px;
+        }
+      }
+      u {
+        text-underline-offset: 3px;
+      }
+      h2 {
+        font-size: rem(30);
+        font-weight: 700;
+        line-height: 1.4;
+        letter-spacing: ls(30);
+        &:first-child {
+          margin-top: 0;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+        & + * {
+          margin-top: 32px;
+        }
+        & + p,
+        & + ul,
+        & + ol {
+          margin-top: -16px;
+        }
+      }
+      h3 {
+        font-size: rem(28);
+        font-weight: 700;
+        line-height: 1.4;
+        letter-spacing: ls(30);
+      }
+      h4 {
+        font-size: rem(24);
+        font-weight: 700;
+        line-height: 1.4;
+        letter-spacing: ls(30);
+      }
+      p {
+        font-size: rem(16);
+        font-weight: 400;
+        line-height: 1.8;
+        letter-spacing: ls(20);
+      }
+      figure {
+        img {
+          display: block;
+          margin: 0 auto;
+          border-radius: 10px;
+        }
+        & + h2 {
+          margin-top: -10px;
+        }
+      }
+      ul {
+        li {
+          position: relative;
+          padding-left: 17px;
+          font-weight: 400;
+          &:not(:last-of-type) {
+            margin-bottom: 6px;
+          }
+          &:before {
+            position: absolute;
+            top: 12px;
+            left: 0;
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+          }
+        }
+      }
+      ol {
+        counter-reset: item;
+        > li {
+          counter-increment: item;
+          display: flex;
+          font-weight: 400;
+          &:not(:last-of-type) {
+            margin-bottom: 8px;
+          }
+          &:before {
+            content: counter(item) '.';
+            flex-shrink: 0;
+            margin-right: 6px;
+            color: var(--primary-color);
+            font-weight: 500;
+          }
+        }
+      }
+      blockquote {
+        padding: 34px 40px 40px;
+        background-color: #f7f7f7;
+        border-radius: 10px;
+        border-left: 8px solid var(--primary-color);
+      }
+      .file-block {
+        line-height: 1.8;
+        letter-spacing: ls(20);
+        &:first-child {
+          margin-top: 0;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        a {
+          position: relative;
+          display: inline-block;
+          min-height: 29px;
+          color: var(--text-color);
+          padding-left: 29px;
+          &:before {
+            position: absolute;
+            top: 3px;
+            left: 0;
+            content: '';
+            width: 19px;
+            height: 25px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+          }
+        }
+        &.is-pdf {
+          a {
+            &:before {
+              background-image: url('../images/common/ic_pdf.png');
+            }
+          }
+        }
+        &.is-doc {
+          a {
+            &:before {
+              background-image: url('../images/common/ic_doc.png');
+            }
+          }
+        }
+        &.is-xls {
+          a {
+            &:before {
+              background-image: url('../images/common/ic_xls.png');
+            }
+          }
+        }
+      }
+      .buttons-block {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        > * {
+          margin: 0 10px;
+        }
+        &.is-flex-start {
+          justify-content: flex-start;
+        }
+        &.is-flex-end {
+          justify-content: flex-end;
+        }
+      }
+      .table {
+        table {
+          width: 100%;
+          table-layout: fixed;
+          border-collapse: collapse;
+          table-layout: fixed;
+          border-radius: 10px;
+          overflow: hidden;
+          border-style: hidden;
+          box-shadow: 0 0 0 1px #fff; 
+          th,
+          td {
+            padding: 11px 24px 12px;
+            border: 1px solid #fff;
+            font-size: rem(16);
+            font-weight: 400;
+          }
+          td {
+            background-color: #f7f7f7;
+            > * {
+              margin: 0;
+            }
+          }
+          th {
+            text-align: center;
+          }
+          tbody {
+            th {
+              width: 200px;
+              background-color: var(--primary-color);
+              color: #fff;
+            }
+          }
+          thead {
+            th {
+              background-color: var(--primary-color);
+              color: #fff;
+            }
+            & + tbody {
+              th {
+                text-align: center;
+                background-color: #ffe9e9;
+                color: var(--text-color)
+              }
+            }
+          }
+        }
+      }
+      .text-photo-block {
+        &:after {
+          content: '';
+          display: block;
+          clear: both;
+        }
+        .photo {
+          width: 530px;
+          float: left;
+          margin-right: 40px;
+        }
+        .text {
+          p {
+            margin: 20px 0;
+            &:first-child {
+              margin-top: 0;
+            }
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+        &.is-reverse {
+          .photo {
+            float: right;
+            margin-right: 0;
+            margin-left: 40px;
+          }
+        }
+      }
+      .video-block {
+        iframe,
+        video {
+          position: relative;
+          display: block;
+          width: 100%;
+          max-width: 708px;
+          aspect-ratio: 16/9;
+          margin: 0 auto;
+          border-radius: 10px;
+        }
+      }
+    }
+    &__footer {
+      margin-top: 56px;
+      text-align: center;
+      font-size: 0;
+    }
+  }
+}

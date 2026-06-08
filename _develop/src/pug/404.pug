@@ -1,0 +1,43 @@
+extends ./utils/_base.pug
+
+
+
+
+block append meta
+  -
+    noIndex = true;
+
+
+
+block append stylesheet
+  link(rel="stylesheet", href=assetPath + 'css/404.css')
+
+block ld
+  +breadcrumbList([
+    { url: '/404.html', name: '404' },
+  ])
+
+
+block main
+  -
+    var breadcrumbData = [
+      {name: '404'}
+    ];
+  
+  +breadcrumb(breadcrumbData)
+  .main__inner
+    .row
+      p.title
+        span.text-color 4
+        | 0
+        span.text-color 4
+      p.sub-title Not Found
+      p.txt
+        | お探しのページは一時的にアクセスできない状況にあるか、
+        br.show_pc
+        | 移動もしくは削除された可能性があります。
+        br
+        | 恐れ入りますが、トップページよりお探しください。
+      .button: a.btn(href=pathLink) トップページ
+
+

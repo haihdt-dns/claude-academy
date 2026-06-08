@@ -1,0 +1,68 @@
+extends ../../utils/_base.pug
+
+
+block append meta
+  -
+    description = '';
+    canonicalURL = `${baseURL}second/form`;
+
+
+block append page
+  - var pageTitle = 'お問い合わせ'
+
+block append vars
+  - var pageClass ='page-contact'
+
+
+block append stylesheet
+  link(rel="stylesheet", href=assetPath + 'css/contact.css')
+
+block main
+  include ./_mixin
+  -
+    var breadcrumbList = [
+      {
+        name: 'お問い合わせ',
+      }
+    ];
+  .main__inner
+    +mv('お問い合わせ', 'CONTACT')
+    +breadcrumb(breadcrumbList)
+    .form-wrapper.row
+      +formStep()
+      p.form-desc 以下の項目をご記入のうえ、送信をお願いします。
+      form.form-action(action="./confirm.html", method="POST")
+        .form-row
+          p.form-row__label.required お名前
+          .form-row__input
+            input(type="text", name="txtName").has-error
+            p.txtErr エラーメッセージがはいります
+        .form-row
+          p.form-row__label.required フリガナ
+          .form-row__input
+            input(type="text", name="txtFurigana").has-error
+            p.txtErr エラーメッセージがはいります
+        .form-row
+          p.form-row__label.required 電話番号
+          .form-row__input
+            input(type="text", name="txtPhone", placeholder="半角数字").has-error
+        .form-row
+          p.form-row__label.required メールアドレス
+          .form-row__input
+            input(type="text", name="txtMail", placeholder="半角英数字").has-error
+            p.txtErr エラーメッセージがはいります
+        .form-row
+          p.form-row__label.required お問い合わせ内容
+          .form-row__input
+            textarea(name="txtInquiry", placeholder="お問い合わせ内容をご入力ください。").has-error
+            p.txtErr エラーメッセージがはいります
+        .form-row
+          p.form-row__label.not-space-top プライバシーポリシー
+          .form-row__input
+            label.check-container
+              | 同意する
+              input(type="checkbox")
+              span.check-mark
+            p.txtErr エラーメッセージがはいります
+        .form-buttons
+          button.btn-primary(type="submit") 確認する

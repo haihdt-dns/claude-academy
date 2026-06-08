@@ -1,0 +1,20 @@
+:root {
+  /* color */
+  --primary-color: #c96a3a;
+  --primary-light: #f5e6da;
+  --color-text: #1a1a1a;
+  --color-text-sub: #666;
+  --color-bg: #faf9f7;
+  --color-bg-alt: #f0ece6;
+  --color-border: #e0d9d0;
+  --color-white: #fff;
+
+  /* font family */
+  --font-base: 'Roboto', sans-serif;
+  --font-en: 'Roboto', sans-serif;
+
+  /* z-index */
+  --z_upper: 30000;
+  --z_middle: 20000;
+  --z_low: 10000;
+}

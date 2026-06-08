@@ -1,0 +1,11 @@
+mixin formStep(activePos=1)
+  ol.form-steps
+    li.form-steps__item(class=activePos === 1 ? 'active' : null)
+      span.form-steps__position 01
+      span.form-steps__label 入力
+    li.form-steps__item(class=activePos === 2 ? 'active' : null)
+      span.form-steps__position 02
+      span.form-steps__label 確認
+    li.form-steps__item(class=activePos === 3 ? 'active' : null)
+      span.form-steps__position 03
+      span.form-steps__label 完了

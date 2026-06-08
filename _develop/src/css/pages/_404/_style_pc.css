@@ -1,0 +1,26 @@
+@media (--pc) {
+  .title {
+    font-family: var(--font-en);
+    font-size: rem(56);
+    font-weight: 300;
+    text-align: center;
+    line-height: 1.6;
+    letter-spacing: ls(30);
+  }
+  .sub-title {
+    margin: -10px 0 20px;
+    font-family: var(--font-en);
+    font-size: rem(22);
+    font-weight: 300;
+    text-align: center;
+    line-height: 1.6;
+    letter-spacing: ls(30);
+  }
+  .txt {
+    text-align: center;
+  }
+  .button {
+    margin-top: 65px;
+    text-align: center;
+  }
+}

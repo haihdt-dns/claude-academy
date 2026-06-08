@@ -1,0 +1,114 @@
+extends ../../utils/_base.pug
+
+
+block append meta
+  -
+    description = '';
+    canonicalURL = `${baseURL}second/form`;
+
+
+
+block append page
+  - var pageTitle = 'お問い合わせ'
+
+block append vars
+  - var pageClass ='page-contact'
+
+
+block append stylesheet
+  link(rel="stylesheet", href=assetPath + 'css/contact.css')
+
+block main
+  include ./_mixin
+  -
+    var breadcrumbList = [
+      {
+        name: 'お問い合わせ',
+      }
+    ];
+  .main__inner
+    +mv('お問い合わせ', 'CONTACT')
+    +breadcrumb(breadcrumbList)
+    .form-wrapper.row
+      +formStep()
+      p.form-desc 以下の項目をご記入のうえ、送信をお願いします。
+      form.form-action(action="./confirm.html", method="POST")
+        .form-row
+          p.form-row__label.required 参加イベント
+          .form-row__input
+            +SelectField(
+              name="txtPrefecture", 
+              options=[
+                {value: "", label: "選択してください"},
+                {value: "1", label: "Option 01"},
+                {value: "2", label: "Option 02"}
+              ]
+            )
+        .form-row
+          p.form-row__label.required 参加希望日時
+          .form-row__input
+            dl.group-event
+              dt.group-event__date 2月17日(土)
+              dd.group-event__content
+                .group-radio
+                  +RadioField(name="txtParticipation", value="1", label="Radio1", checked)
+                  +RadioField(name="txtParticipation", value="2", label="Radio2", disabled)
+                  +RadioField(name="txtParticipation", value="3", label="Radio3", hasError)
+            dl.group-event
+              dt.group-event__date 2月18日(日)
+              dd.group-event__content
+                .group-check
+                  +CheckField(name="txtParticipation1[]", value="1", label="Check 01", checked)
+                  +CheckField(name="txtParticipation1[]", value="2", label="Check 02", disabled)
+                  +CheckField(name="txtParticipation1[]", value="3", label="Check 03" hasError)
+        .form-row
+          p.form-row__label.required お名前
+          .form-row__input
+            +TextField(name="txtName", placeholder="例）山田 太郎")
+        .form-row
+          p.form-row__label.required フリガナ
+          .form-row__input
+            +TextField(name="txtFurigana", placeholder="例）ヤマダ タロウ")
+        .form-row
+          p.form-row__label.required 住所
+          .form-row__input
+            .group-address
+              .group-address__item
+                +TextField(name="txtZipCode", placeholder="000-0000").zip-code
+              .group-address__item
+                +SelectField(
+                  name="txtPrefecture02", 
+                  options=[
+                    {value: "", label: "都道府県を選択してください"},
+                    {value: "北海道", label: "北海道"},
+                    {value: "宮城県", label: "宮城県"},
+                    {value: "福島県", label: "福島県"},
+                  ]
+                ).city
+              
+              .group-address__item
+                +TextField(name="txtAddress1", placeholder="例）宇都宮市中央本町1-2-3")
+              .group-address__item
+                +TextField(name="txtAddress2", placeholder="例）ABCマンション101号室")
+        .form-row
+          p.form-row__label.required 電話番号
+          .form-row__input
+            +TextField(name="txtPhone", placeholder="例）00000000000")
+        .form-row
+          p.form-row__label.required メールアドレス
+          .form-row__input
+            +TextField(name="txtMail", placeholder="例）sample@kato-koumuten.co.jp")
+        .form-row
+          p.form-row__label その他
+          .form-row__input
+            +TextareaField(name="txtInquiry", placeholder="ご質問や事前にご共有いただけることなど、ご自由にご記入ください。")
+        
+        .form-acceptance
+          label.check-container
+            a(href="#", target="_blank", rel="noopener noreferrer")  プライバシーポリシー
+            | に同意する
+            input(type="checkbox" name="acceptance")
+            span.check-mark
+
+        .form-buttons
+          button.btn(type="submit") 確認する

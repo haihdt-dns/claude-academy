@@ -1,0 +1,31 @@
+@media (--sp) {
+  .breadcrumb {
+    margin: 9px 0 58px -4px;
+    ul {
+      display: flex;
+      overflow-x: auto;
+    }
+
+    li {
+      flex-shrink: 0;
+      color: var(--primary-color);
+      font-family: var(--font-base);
+      font-size: 24px;
+      letter-spacing: ls(100);
+
+      &:last-of-type {
+        flex: 1;
+        color: #000;
+        white-space: nowrap;
+      }
+
+      &:not(:last-of-type) {
+        &:after {
+          content: '>';
+          margin: 0 9px;
+          color: #000;
+        }
+      }
+    }
+  }
+}

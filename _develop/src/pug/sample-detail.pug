@@ -1,0 +1,34 @@
+extends ./utils/_base.pug
+
+
+block append meta
+  -
+    description = '';
+    canonicalPath = 'sample-detail.html';
+
+
+
+
+block append stylesheet
+  link(rel="stylesheet", href=assetPath + 'css/detail.css')
+
+block ld
+  +breadcrumbList([
+    { url: '/sample-detail.html', name: 'Sample Detail' }
+  ])
+
+block main
+  -
+    var breadcrumbList = [
+      {
+        name: 'お知らせ',
+        link: 'news/'
+      },
+      {
+        name: 'タイトルが入ります。タイトルが入ります。'
+      }
+    ];
+  .main__inner
+    //- +mv('NEWS', 'お知らせ')
+    +breadcrumb(breadcrumbList)
+    include utils/_util_cms_detail

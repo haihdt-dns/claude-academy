@@ -1,0 +1,12 @@
+extends ../utils/_lesson.pug
+
+block append meta
+  -
+    var courseId = 'claude-101'
+    var currentSlug = 'creating-with-artifacts'
+    var lessonData = JSON.parse(nodeFs.readFileSync(nodePath.join(process.cwd(), '../data/claude-101/creating-with-artifacts.json'), 'utf8'))
+    title = lessonData.titleEn + ' · Claude 101 · Claude Academy'
+    description = 'Learn how to create, share, and publish artifacts in Claude — from documents and code to interactive React components and diagrams.'
+    baseURL = 'https://chobadon.com/claude-academy/'
+    ogImageURL = baseURL + 'assets/images/ogp.png'
+    canonicalURL = `${baseURL}${courseId}/${currentSlug}/`

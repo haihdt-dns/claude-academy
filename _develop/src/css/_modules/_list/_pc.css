@@ -1,0 +1,30 @@
+@media (--pc) {
+  .page-listDot {
+    &__item {
+      position: relative;
+      padding-left: 23px;
+      &:not(:last-of-type) {
+        margin-bottom: 20px;
+      }
+      &:before {
+        position: absolute;
+        top: 11px;
+        left: 0;
+        content: '';
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: var(--primary-color);
+      }
+    }
+  }
+  .page-listNum {
+    list-style: decimal;
+    padding-left: 24px;
+    &__item {
+      &::marker {
+        /* font-weight: bold; */
+      }
+    }
+  }
+}

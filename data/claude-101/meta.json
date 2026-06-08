@@ -1,0 +1,50 @@
+{
+  "id": "claude-101",
+  "title": "Claude 101",
+  "sections": [
+    {
+      "titleEn": "Meet Claude",
+      "titleVi": "Làm quen với Claude",
+      "lessons": [
+        { "slug": "what-is-claude", "titleEn": "What is Claude?", "titleVi": "Claude là gì?" },
+        { "slug": "your-first-conversation", "titleEn": "Your first conversation with Claude", "titleVi": "Cuộc hội thoại đầu tiên với Claude" },
+        { "slug": "getting-better-results", "titleEn": "Getting better results", "titleVi": "Cách đạt kết quả tốt hơn" },
+        { "slug": "claude-desktop-app", "titleEn": "Claude desktop app: Chat, Cowork, Code", "titleVi": "Ứng dụng desktop Claude: Chat, Cowork, Code" }
+      ]
+    },
+    {
+      "titleEn": "Organizing your work and knowledge",
+      "titleVi": "Tổ chức công việc và kiến thức",
+      "lessons": [
+        { "slug": "introduction-to-projects", "titleEn": "Introduction to projects", "titleVi": "Giới thiệu về Projects" },
+        { "slug": "creating-with-artifacts", "titleEn": "Creating with artifacts", "titleVi": "Tạo nội dung với Artifacts" },
+        { "slug": "working-with-skills", "titleEn": "Working with skills", "titleVi": "Làm việc với Skills" }
+      ]
+    },
+    {
+      "titleEn": "Expanding Claude's reach",
+      "titleVi": "Mở rộng phạm vi của Claude",
+      "lessons": [
+        { "slug": "connecting-your-tools", "titleEn": "Connecting your tools", "titleVi": "Kết nối công cụ của bạn" },
+        { "slug": "enterprise-search", "titleEn": "Enterprise search", "titleVi": "Tìm kiếm doanh nghiệp" },
+        { "slug": "research-mode", "titleEn": "Research mode for deep dives", "titleVi": "Chế độ nghiên cứu chuyên sâu" }
+      ]
+    },
+    {
+      "titleEn": "Putting it all together",
+      "titleVi": "Tổng hợp tất cả",
+      "lessons": [
+        { "slug": "use-cases-by-role", "titleEn": "Claude in action: use-cases by role", "titleVi": "Claude trong thực tế: ứng dụng theo vai trò" },
+        { "slug": "other-ways-to-work", "titleEn": "Other ways to work with Claude", "titleVi": "Các cách khác làm việc với Claude" }
+      ]
+    },
+    {
+      "titleEn": "Conclusion & certificate",
+      "titleVi": "Kết luận & chứng chỉ",
+      "lessons": [
+        { "slug": "whats-next", "titleEn": "What's next?", "titleVi": "Tiếp theo là gì?" },
+        { "slug": "certificate", "titleEn": "Certificate of completion", "titleVi": "Chứng chỉ hoàn thành" }
+      ]
+    }
+  ]
+}

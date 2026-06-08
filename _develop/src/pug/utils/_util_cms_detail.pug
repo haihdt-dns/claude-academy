@@ -1,0 +1,141 @@
+//- e.g.
+  include ./utils/_util_cms_detail.pug
+  記事のコンテンツ部分の構造はできるだけこの構造でスタイリングするようにしてください。
+  それ以外の構造は自由で大丈夫です。
+
+div
+  article.row
+    // 記事のヘッダー部分 START--------------------------------
+    div
+      h1 記事タイトル
+      div
+        time(datetime='2026-05-13')
+          | 2026年05月13日
+        span 更新日: 2026年05月13日
+        div
+          span カテゴリ:
+          div
+            span お知らせ
+        div
+          span タグ:
+          div
+            span news
+            span info
+    // 記事のヘッダー部分 END------------------------------------
+
+    // メイン画像
+    figure
+      img(src='#' alt='メイン画像のaltテキストサンプル')
+
+    // 記事のコンテンツ部分 START--------------------------------
+    .article-content.wysiwyg
+
+      // 見出しブロック
+      h2 見出しh2
+      h3 見出しh3
+      h4 見出しh4
+      h5 見出しh5
+
+      // 本文ブロック START（wysiwyg）----------------------------------
+      p
+        strong テキストボールド
+      p
+        u テキストアンダーライン
+      p
+        s テキスト取り消し線
+      p
+        i テキスト斜線
+      p
+        span.text-tiny テキスト極小フォント
+      p
+        span.text-small テキスト小フォント
+      p テキストデフォルト
+      p
+        span.text-big テキスト大
+      p
+        span.text-huge テキスト極大
+      p
+        span(style='color:hsl(0,75%,60%);') フォントカラーRed
+      p
+        a(href='https://wingits.co.jp') リンクテキスト
+      ul
+        li 箇条書きテキスト
+        li 箇条書きテキスト
+        li 箇条書きテキスト
+      p  
+      ol
+        li olテキスト
+        li olテキスト
+        li olテキスト
+        li olテキスト
+      p  
+      p 左揃えテキスト
+      p.text-center 中央揃えテキスト
+      p.text-right 右揃えテキスト
+      figure.table
+        table
+          tbody
+            tr
+              td テーブルヘッダー
+              td テーブルヘッダー
+              td テーブルヘッダー
+            tr
+              td テーブルテキスト
+              td テーブルテキスト
+              td テーブルテキスト
+      // 本文ブロック END（wysiwyg）----------------------------------
+
+      // 画像ブロック
+      figure.detail__thumb
+        a(href='#')
+          img(src='#' alt='サンプル画像' loading='lazy' decoding='async')
+
+      // 画像回り込みブロック（画像が左）
+      .float-left.mr-6.mb-2
+        div
+          a(href='#')
+            img(src='#' alt='altテキスト')
+        div
+          p 画像回り込みウィジウィグテキスト画像回り込みウィジウィグテキスト画像回り込みウィジウィグテキスト画像回り込みウィジウィグテキスト
+      
+      // 画像回り込みブロック（画像が右）
+      .float-right.ml-6.mb-2
+        div
+          img(src='#' alt='altテキスト')
+        div
+          p 画像回り込みウィジウィグテキスト画像回り込みウィジウィグテキスト画像回り込みウィジウィグテキスト画像回り込みウィジウィグテキスト
+      
+      // ファイルブロック（PDF）
+      .file-block.is-pdf
+        a(href='#' target='_blank' rel='noopener noreferrer') N000126.pdf (3.08 KB)
+      
+      // ファイルブロック（Excel）
+      .file-block.is-xls
+        a(href='#' target='_blank' rel='noopener noreferrer') 326社カテル様提出一括登録めんにゃんす登録リスト.xlsx (33.77 KB)
+
+      // リンクブロック
+      .buttons-block
+        a.btn(href='#')
+          | サンプルリンク
+
+      // 区切り線ブロック
+      hr
+
+      // 枠内ブロック
+      .frame-content
+        h2 枠内見出しh2
+        p
+          | 枠内本文テキスト枠内本文テキスト枠内本文テキスト枠内本文テキスト枠内本文テキスト枠内本文テキスト枠内本文テキスト枠内本文テキスト枠内本文テキスト枠内本文テキスト枠内本文テキスト枠内本文テキスト枠内本文テキスト枠内本文テキスト
+    // 記事のコンテンツ部分 END----------------------------------
+  
+  // 記事のフッター部分 START--------------------------------
+  div
+    div
+      div
+      a(href='#')
+        span トリミングテスト2
+        span →
+  div
+    a(href='#')
+      | 記事一覧に戻る
+  // 記事のフッター部分 END--------------------------------

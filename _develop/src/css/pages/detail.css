@@ -1,0 +1,7 @@
+@charset "utf-8";
+
+@import '../_config/_mixin';
+@import '../_config/_media';
+
+@import './_detail/_style_pc';
+@import './_detail/_style_sp';

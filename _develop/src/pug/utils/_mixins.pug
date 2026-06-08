@@ -1,0 +1,280 @@
+-
+  const getImageDimension = (src) => {
+    const targetSrc = `${ src }`
+    let targetPath = `images/${targetSrc}`
+      .replace(/["']/g, '')
+      .replace(/\.\.\//g, '')
+      .replace(/^\//i, '');
+    targetPath = nodePath.resolve(nodeDest, `${ process.env.npm_package_config_assetPath }/`, targetPath);
+    let isError = false;
+    let dimensions = null;
+    try {
+      let file = nodeFs.readFileSync(targetPath);
+    } catch(e) {
+      isError = true;
+    }
+    if (!isError) {
+      dimensions = nodeSize(targetPath);
+    }
+    return dimensions;
+  }
+  const getSizeImage = (size, isHalfSize) => {
+    if(!isHalfSize) return size;
+    return size/2;
+  }
+//-  pictureタグ
+//-  imagesからでいいです。例) +pic('images/utils/logo.png', 'images/utils/logo_sp.png', 'alt');
+-
+  const getWepPPath = (src) => {
+    return `${pathImgMin}${src}`.replace(/\.jpg$|\.jpeg$|\.png$/g, '.webp')
+  }
+
+-
+  const errorMsg = (msg) => {
+    console.log('\033[41m【HTML ERROR】\033[0m \033[33m'+ msg +'\033[0m');
+  }
+
+-
+  const ErrorCheck = () => {
+    if (!title.length) errorMsg('タイトルが入っていないです。');
+    if (!description.length) errorMsg('Descriptionが入っていないです。');
+    if (!hasAnalysis) errorMsg('アクセス解析を確認の上base.pug参照。');
+
+    const absoluteURLPattern = /^(https?:\/\/)([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/i;
+
+    if (!absoluteURLPattern.test(baseURL)) {
+      errorMsg(`警告: baseURLは有効な絶対パス形式であるべきです。現在の値: ${ baseURL || 'null' }`);
+      errorMsg(`Warning: baseURL should be in absolute path format. Current value: ${ baseURL || 'null' }`);
+    }
+
+    if (!absoluteURLPattern.test(ogImageURL)) {
+      errorMsg(`警告: ogImageURLは有効な絶対パス形式であるべきです。現在の値: ${ ogImageURL || 'null' }`);
+      errorMsg(`Warning: ogImageURL should be in absolute path format. Current value: ${ ogImageURL || 'null' }`);
+    }
+  }
+
+mixin breadcrumbList(items)
+  - const validItems = Array.isArray(items) ? [{ url: '/', name: 'TOP' }].concat(items) : [{ url: '/', name: 'TOP' }]
+  if validItems.length
+    script(type='application/ld+json')
+      | {
+      |   "@context": "https://schema.org/",
+      |   "@type": "BreadcrumbList",
+      |   "itemListElement": [
+      |
+      each item, index in validItems
+        - const isAbsolute = item.url && item.url.startsWith('http')
+        - const path = item.url ? item.url.replace(/^\/+/, '') : ''
+        - const fullUrl = isAbsolute ? item.url : `${baseURL}/${path}`
+        |     {
+        |       "@type": "ListItem",
+        |       "position": #{index + 1},
+        |       "item": {
+        |         "@id": "#{fullUrl}",
+        |         "name": "#{item.name || 'Untitled'}"
+        |       }
+        |     }#{index < validItems.length - 1 ? ',' : ''}
+      | 
+      |   ]
+      | }
+
+mixin pic(pc, sp, alt)
+  -
+    const dimensionsPc = getImageDimension(pc);
+    const dimensionsSp = getImageDimension(sp);
+    const ratioPC = 768;
+    const isExplicitEmpty = (typeof alt === 'string' && alt.trim() === '' && arguments[1] !== undefined);
+    const isDecorative = isExplicitEmpty || (!alt || alt.trim() === '');
+
+    if (!isExplicitEmpty && (!alt || alt.trim() === '')) {
+      errorMsg(`TODO: +pic() alt属性が抜けています！ 画像「${pc}」に適切な説明を付けてください（装飾画像なら明示的に第3引数に '' を渡してください）`);
+      errorMsg(`TODO: +pic() Missing alt for "${pc}". Add alt text (or pass '' for decorative images).`);
+    }
+
+  picture
+    if process.env.npm_package_config_enableWebP && pc.match(/\.jpg$|\.jpeg$|\.png$/g)
+      if (dimensionsPc)
+        source(srcset=getWepPPath(pc), media=`(min-width:${ ratioPC }px)`, type='image/webp', width=dimensionsPc.width, height=dimensionsPc.height)
+      else
+        source(srcset=getWepPPath(pc), media=`(min-width:${ ratioPC }px)`, type='image/webp')
+    else
+      if (dimensionsPc)
+        source(srcset=pathImg + pc, media=`(min-width:${ ratioPC }px)`, width=dimensionsPc.width, height=dimensionsPc.height)
+      else
+        source(srcset=pathImg + pc, media=`(min-width:${ ratioPC }px)`)
+
+    if process.env.npm_package_config_enableWebP && sp.match(/\.jpg$|\.jpeg$|\.png$/g)
+      != '\n          '
+      if (dimensionsSp)
+        img(src=getWepPPath(sp), alt=alt, class=attributes.class, width=dimensionsSp.width, height=dimensionsSp.height)&attributes(isDecorative ? {role: 'presentation', 'aria-hidden': 'true'} : {})
+      else
+        img(src=getWepPPath(sp), alt=alt, class=attributes.class)&attributes(isDecorative ? {role: 'presentation', 'aria-hidden': 'true'} : {})
+    else
+      != '\n          '
+      if (dimensionsSp)
+        img(src=pathImg + sp, alt=alt, class=attributes.class, width=dimensionsSp.width, height=dimensionsSp.height)&attributes(isDecorative ? {role: 'presentation', 'aria-hidden': 'true'} : {})
+      else
+        img(src=pathImg + sp, alt=alt, class=attributes.class)&attributes(isDecorative ? {role: 'presentation', 'aria-hidden': 'true'} : {})
+
+
+
+mixin img(src, alt, isLazy = true, isHalfSize = false)
+  -
+    const dimensions = getImageDimension(src);
+    const isExplicitEmpty = (typeof alt === 'string' && alt.trim() === '' && arguments[1] !== undefined);
+    const isDecorative = isExplicitEmpty || (!alt || alt.trim() === '');
+
+    if (!isExplicitEmpty && (!alt || alt.trim() === '')) {
+      errorMsg(`TODO: +img() alt属性が抜けています！ 画像「${src}」に適切な説明を付けてください（装飾画像なら明示的に第2引数に '' を渡してください）`);
+      errorMsg(`TODO: Missing alt for "${src}". Add alt text (or pass '' for decorative images).`);
+    }
+
+  if process.env.npm_package_config_enableWebP && src.match(/\.jpg$|\.jpeg$|\.png$/g)
+    if dimensions
+      img(src=getWepPPath(src), alt=alt, width=dimensions.width, height=dimensions.height, loading="lazy", decoding="async", class=attributes.class)&attributes(isDecorative ? {role: 'presentation', 'aria-hidden': 'true'} : {})
+    else
+      img(src=getWepPPath(src), alt=alt, loading="lazy", decoding="async", class=attributes.class)&attributes(isDecorative ? {role: 'presentation', 'aria-hidden': 'true'} : {})
+  else
+    if dimensions
+      img(src=pathImg + src, alt=alt, width=dimensions.width, height=dimensions.height, loading="lazy", decoding="async", class=attributes.class)&attributes(isDecorative ? {role: 'presentation', 'aria-hidden': 'true'} : {})
+    else
+      img(src=pathImg + src, alt=alt, loading="lazy", decoding="async", class=attributes.class)&attributes(isDecorative ? {role: 'presentation', 'aria-hidden': 'true'} : {})
+
+
+//-
+  ** Create main visual element
+  **
+  * @enTitle String
+  * @jpTitle String
+mixin mv(enTitle, jpTitle)
+  .mv
+    .row.mv__inner
+      h2.mv-title
+        span.mv-title__en!=enTitle
+        span.mv-title__ja!=jpTitle
+
+//-
+  ** Create main visual element
+  **
+  * @list Array
+  
+mixin breadcrumb(list = [])
+  .breadcrumb
+    ul.row
+      li
+        a(href=pathLink) Home
+      each item in list
+        li
+          if (item.link)
+            a(href=`${pathLink}${item.link}`)=item.name
+          else
+            span=item.name
+
+//- For menu
+mixin menu(listMenu)
+  ul 
+    each menu in listMenu
+      li
+        if menu.isOutside
+          a(href=menu.link target="_blank", rel="noopener noreferrer") !{menu.label}
+        else
+            a(href=menu.link) !{menu.label}
+         
+mixin accordion(triggerName, checked=false)
+  .accordion
+    label.accordion__trigger
+      input(type="checkbox", hidden, checked=checked)
+      | #{triggerName}
+    .accordion__target
+      .accordion__inner
+        block
+
+mixin pagination()
+  ul.paging
+    li.prev
+      a(href="#")
+    li
+      a(href="#") 1
+    li.dot
+      //- a(href="#") ...
+    li
+      a(href="#") 5
+    li.active
+      a(href="#") 6
+    li
+      a(href="#") 7
+    li.dot
+      //- a(href="#") ...
+    li
+      a(href="#") 10
+    li.next
+      a(href="#")
+
+mixin TextField
+  .textfield(class=attributes.class)
+    input(
+      type=attributes.type ? attributes.type : 'text'
+      name=attributes.name
+      value=attributes.value
+      placeholder=attributes.placeholder
+      min=attributes.type==='number' && attributes.min ? attributes.min : undefined
+      max=attributes.type==='number' && attributes.max ? attributes.max : undefined
+      step=attributes.type==='number' && attributes.step ? attributes.step : undefined
+      class=attributes.hasError ? 'has-error' : undefined
+      tabindex=attributes.tabindex,
+    )
+          
+mixin SelectField
+  .select-field(class=attributes.class)
+    select(
+      name=attributes.name
+      class=attributes.hasError ? 'has-error' : undefined
+      tabindex=attributes.tabindex
+      data-show=attributes.dataShow
+      id=attributes.selectId
+    )
+      each option in attributes.options
+        if Array.isArray(option.value)
+          optgroup(label=option.label)
+            each subOption in option.value
+              option(value=subOption.subValue, data-show=subOption.dataShow) !{subOption.subLabel}
+        else
+          option(value=option.value, data-show=option.dataShow) !{option.label}
+
+mixin RadioField
+  label.radio-container(class=attributes.class, id=attributes.id)
+    !=attributes.label.replace(/&gt;/g, '>').replace(/&lt;/g, '<').replace(/&quot;/g, '"')
+    input(type="radio", name=attributes.name, value=attributes.value, checked=attributes.checked, class=attributes.hasError ? 'has-error' : undefined, disabled=attributes.disabled, tabindex=attributes.tabindex, hidden)
+    span.radio-mark
+
+mixin CheckField
+  label.check-container(class=attributes.class, id=attributes.id)
+    if attributes.label
+      !=attributes.label.replace(/&gt;/g, '>').replace(/&lt;/g, '<').replace(/&quot;/g, '"')
+    input(type="checkbox", name=attributes.name, value=attributes.value, checked=attributes.checked, class=attributes.hasError ? 'has-error' : undefined, disabled=attributes.disabled, tabindex=attributes.tabindex, hidden)
+    span.check-mark
+
+mixin FileField
+  - var textDesc = attributes.file ? '' : '選択されていません'
+  .file-field(class=attributes.class)
+    if attributes.label
+      p.file-field__label !{attributes.label}
+    .file-field__input
+      input(
+        type="file"
+        name=attributes.name
+        accept=attributes.accept ? attributes.accept : undefined
+        tabindex=attributes.tabindex
+      )
+      button.upload-btn(type="button") ファイルをアップする
+    .file-field__desc !{textDesc}
+
+mixin TextareaField
+  .textarea-field(class=attributes.class)
+    textarea(
+      name=attributes.name
+      placeholder=attributes.placeholder
+      class=attributes.hasError ? 'has-error' : undefined
+      tabindex=attributes.tabindex
+      disabled=attributes.disabled
+    ) !{attributes.value}

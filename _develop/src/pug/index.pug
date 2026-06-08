@@ -1,0 +1,70 @@
+extends ./utils/_base.pug
+
+block meta
+  -
+    var title = 'Claude Academy';
+    var description = 'Tổng hợp các khóa học về Claude của Anthropic, song ngữ Anh–Việt.';
+    var keywords = '';
+    var baseURL = 'https://chobadon.com/claude-academy/';
+    var ogImageURL = `${baseURL}assets/images/ogp.png`;
+    var noIndex = true;
+    var canonicalURL = baseURL;
+
+block page
+  - var pageTitle = ''
+
+block vars
+  - var pageClass = 'p-top';
+
+block append stylesheet
+  link(rel="stylesheet", href=assetPath + 'css/top.css')
+
+block ld
+  +breadcrumbList([])
+
+block main
+  .top
+    .top__hero
+      .top__hero-inner
+        h1.top__title
+          | Khóa học Claude · Song ngữ Anh - Việt
+
+    .top__catalog
+      .top__catalog-inner
+        p.top__catalog-heading Khóa học
+        ul.course-list
+          li.course-list__item
+            a.course-card(href=`${pathLink}claude-101/what-is-claude.html`)
+              .course-card__thumb
+                img(src=pathImg + 'top/claude-101.png' alt='Claude 101')
+              .course-card__body
+                h2.course-card__title Claude 101
+                p.course-card__desc Giới thiệu về Claude — nền tảng để làm việc hiệu quả với AI
+                span.course-card__cta Bắt đầu học
+
+          li.course-list__item
+            a.course-card(href=`${pathLink}ai-fluency/`)
+              .course-card__thumb
+                img(src=pathImg + 'top/ai-fluency.svg' alt='AI Fluency')
+              .course-card__body
+                h2.course-card__title AI Fluency
+                p.course-card__desc Phát triển tư duy và kỹ năng làm việc với AI trong thực tế
+                span.course-card__cta Bắt đầu học
+
+          li.course-list__item
+            a.course-card(href=`${pathLink}building-with-claude-api/`)
+              .course-card__thumb
+                img(src=pathImg + 'top/building-with-claude-api.svg' alt='Building with Claude API')
+              .course-card__body
+                h2.course-card__title Building with Claude API
+                p.course-card__desc Xây dựng ứng dụng thực tế với Claude API
+                span.course-card__cta Bắt đầu học
+
+          li.course-list__item
+            a.course-card(href=`${pathLink}claude-code-101/`)
+              .course-card__thumb
+                img(src=pathImg + 'top/claude-code-101.png' alt='Claude Code 101')
+              .course-card__body
+                h2.course-card__title Claude Code 101
+                p.course-card__desc Làm chủ Claude Code — công cụ lập trình AI trực tiếp trong terminal
+                span.course-card__cta Bắt đầu học

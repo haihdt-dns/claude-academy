@@ -1,0 +1,26 @@
+//- 相対にしたい時はisRelativeをtrue =================================================================== */
+-
+  const isRelative = process.env.npm_package_config_isRelative;
+  let relativePrefix = '';
+  if (isRelative) {
+    const relativePath = nodePath.relative('src/pug/', filename);
+    const pathLevels = relativePath.split(nodePath.sep).length - 1;
+    relativePrefix = pathLevels === 0 ? './' : new Array(pathLevels).fill('../').join('');
+  }
+
+  //- 基本設定 =================================================================== */
+  
+  var subDirectory = process.env.npm_package_config_subDirectory;
+  const basePath = isRelative ? relativePrefix : `/${ subDirectory }`;
+  var assetPath = `${ basePath }${ process.env.npm_package_config_assetPath }/`;
+  var pathLink = `/${ subDirectory }`;
+  var pathImg = `${assetPath}images/`;
+  var pathImgMin = `${assetPath}images_min/`;
+
+
+//- エラー防止。GAや解析を入れたらhasAnalysisをtrueに（ヒューマンエラー回避用チェック機構）
+//- Error prevention. hasAnalysis is set to true when GA or analysis is added (to avoid human error).
+
+-
+  const isSSI = true;
+  const hasAnalysis = false;

@@ -1,0 +1,15 @@
+.accordion {
+  box-sizing: border-box;
+  position: relative;
+  &__trigger {
+    cursor: pointer;
+    &.active {
+      display: block;
+    }
+  }
+  &__target {
+    overflow: hidden;
+    height: 0;
+    box-sizing: border-box;
+  }
+}

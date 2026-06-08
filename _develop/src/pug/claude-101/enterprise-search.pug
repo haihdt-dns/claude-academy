@@ -1,0 +1,12 @@
+extends ../utils/_lesson.pug
+
+block append meta
+  -
+    var courseId = 'claude-101'
+    var currentSlug = 'enterprise-search'
+    var lessonData = JSON.parse(nodeFs.readFileSync(nodePath.join(process.cwd(), '../data/claude-101/enterprise-search.json'), 'utf8'))
+    title = lessonData.titleEn + ' · Claude 101 · Claude Academy'
+    description = 'Learn how Enterprise Search gives Claude access to your organization\'s knowledge base, letting you query across company tools with proper permission controls.'
+    baseURL = 'https://chobadon.com/claude-academy/'
+    ogImageURL = baseURL + 'assets/images/ogp.png'
+    canonicalURL = `${baseURL}${courseId}/${currentSlug}/`

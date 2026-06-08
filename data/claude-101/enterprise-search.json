@@ -1,0 +1,76 @@
+{
+  "slug": "enterprise-search",
+  "titleEn": "Enterprise Search",
+  "titleVi": "Enterprise Search",
+  "estimatedTimeEn": "15 minutes",
+  "estimatedTimeVi": "15 phút",
+  "prevLesson": "connecting-your-tools",
+  "nextLesson": "research-mode",
+  "summaryEn": "Enterprise Search adds a dedicated organizational knowledge base to Claude, letting you query across your company's tools and data sources with proper permission controls.",
+  "summaryVi": "Enterprise Search bổ sung cơ sở kiến thức tổ chức chuyên dụng vào Claude, cho phép bạn truy vấn trên các công cụ và nguồn dữ liệu của công ty với kiểm soát quyền truy cập phù hợp.",
+  "sections": [
+    {
+      "id": "objectives",
+      "titleEn": "Learning objectives",
+      "titleVi": "Mục tiêu học tập",
+      "en": "<p>By the end of this lesson, you will be able to:</p><ul><li>Explain what Enterprise Search is and the types of questions Enterprise Search can answer</li><li>Understand how the setup process works for both admins and users</li><li>Recognize how security and permissions protect organizational data</li></ul><hr><blockquote><strong>Plan availability:</strong> Enterprise Search is available on Team and Enterprise plans, and must be enabled by a workspace admin. If you're on a Free, Pro, or Max plan, you can skip this lesson.</blockquote>",
+      "vi": "<p>Sau khi hoàn thành bài học này, bạn sẽ có thể:</p><ul><li>Giải thích Enterprise Search là gì và những loại câu hỏi Enterprise Search có thể trả lời</li><li>Hiểu quy trình thiết lập hoạt động như thế nào đối với cả admin và người dùng</li><li>Nhận biết cách bảo mật và quyền truy cập bảo vệ dữ liệu tổ chức</li></ul><hr><blockquote><strong>Khả năng sử dụng theo gói:</strong> Enterprise Search có sẵn trên gói Team và Enterprise, và phải được bật bởi workspace admin. Nếu bạn đang dùng gói Free, Pro hoặc Max, bạn có thể bỏ qua bài học này.</blockquote>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "what-is-enterprise-search",
+      "titleEn": "What is Enterprise Search?",
+      "titleVi": "Enterprise Search là gì?",
+      "en": "<p>Enterprise Search adds a dedicated <strong>\"Ask {Your Org Name}\"</strong> option to your sidebar. This is designed specifically for finding and synthesizing knowledge buried across your company's tools and data sources. Think of Enterprise Search as a pre-built Project for your entire organization — your company's knowledge base is already loaded, so you can jump right in to get context-aware responses to your questions.</p><p>Unlike regular chats with connectors enabled, Enterprise Search is specifically designed for information gathering, using custom instructions configured by the Anthropic team.</p>",
+      "vi": "<p>Enterprise Search bổ sung tùy chọn <strong>\"Ask {Your Org Name}\"</strong> vào thanh bên của bạn. Tính năng này được thiết kế đặc biệt để tìm kiếm và tổng hợp kiến thức ẩn trong các công cụ và nguồn dữ liệu của công ty bạn. Hãy coi Enterprise Search như một Project được xây dựng sẵn cho toàn bộ tổ chức — cơ sở kiến thức của công ty đã được tải sẵn, vì vậy bạn có thể bắt đầu ngay để nhận phản hồi theo ngữ cảnh cho câu hỏi của mình.</p><p>Không giống như các cuộc trò chuyện thông thường với connectors được bật, Enterprise Search được thiết kế đặc biệt để thu thập thông tin, sử dụng hướng dẫn tùy chỉnh được cấu hình bởi nhóm Anthropic.</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "what-can-you-ask",
+      "titleEn": "What can you ask?",
+      "titleVi": "Bạn có thể hỏi gì?",
+      "en": "<p>Enterprise Search is particularly valuable for questions that span multiple sources or require synthesizing information from across your organization. Here are some common use cases:</p><p><strong>Getting up to speed</strong></p><ul><li>\"What happened yesterday while I was out?\"</li><li>\"Summarize key updates across the business from the last week\"</li><li>\"What are the current blockers on the Platform project?\"</li></ul><p><strong>Policy and process questions</strong></p><ul><li>\"What is our company's remote work policy?\"</li><li>\"How do I submit an expense report?\"</li><li>\"What's the process for requesting time off?\"</li></ul><p><strong>Research and analysis</strong></p><ul><li>\"What are the main reasons customers cite for choosing competitors?\"</li><li>\"Summarize discussions about the Q4 product roadmap\"</li><li>\"Find information about our customer onboarding process\"</li></ul><p><strong>Onboarding new team members</strong></p><ul><li>\"How does our authentication system work?\"</li><li>\"Who should I talk to about learning the billing system?\"</li><li>\"What tools does the engineering team use for deployment?\"</li></ul><p><strong>Performance and project tracking</strong></p><ul><li>\"Find discussions and documents related to the marketing campaign\"</li><li>\"What were the key decisions from last week's leadership meetings?\"</li><li>\"Summarize team contributions to the Infrastructure initiative\"</li></ul><p>When you ask a question, Claude searches across all your connected tools—such as SharePoint documents, Slack conversations, Gmail threads, and Google Drive files—and synthesizes information into a unified response. Plus, it always cites its sources so you can get the full context.</p>",
+      "vi": "<p>Enterprise Search đặc biệt có giá trị cho các câu hỏi trải rộng nhiều nguồn hoặc yêu cầu tổng hợp thông tin từ toàn bộ tổ chức. Dưới đây là một số trường hợp sử dụng phổ biến:</p><p><strong>Nắm bắt tình hình</strong></p><ul><li>\"Hôm qua khi tôi vắng mặt có chuyện gì xảy ra?\"</li><li>\"Tóm tắt các cập nhật quan trọng trong tuần qua\"</li><li>\"Hiện tại có những vấn đề gì đang cản trở dự án Platform?\"</li></ul><p><strong>Câu hỏi về chính sách và quy trình</strong></p><ul><li>\"Chính sách làm việc từ xa của công ty là gì?\"</li><li>\"Làm thế nào để nộp báo cáo chi phí?\"</li><li>\"Quy trình xin nghỉ phép là gì?\"</li></ul><p><strong>Nghiên cứu và phân tích</strong></p><ul><li>\"Lý do chính khiến khách hàng chọn đối thủ cạnh tranh là gì?\"</li><li>\"Tóm tắt các thảo luận về lộ trình sản phẩm Q4\"</li><li>\"Tìm thông tin về quy trình onboarding khách hàng của chúng tôi\"</li></ul><p><strong>Onboarding thành viên mới</strong></p><ul><li>\"Hệ thống xác thực của chúng tôi hoạt động như thế nào?\"</li><li>\"Tôi nên nói chuyện với ai để tìm hiểu về hệ thống thanh toán?\"</li><li>\"Nhóm kỹ thuật dùng công cụ gì để triển khai?\"</li></ul><p><strong>Theo dõi hiệu suất và dự án</strong></p><ul><li>\"Tìm các cuộc thảo luận và tài liệu liên quan đến chiến dịch marketing\"</li><li>\"Những quyết định quan trọng nào đã được đưa ra trong các cuộc họp lãnh đạo tuần trước?\"</li><li>\"Tóm tắt đóng góp của nhóm cho sáng kiến Infrastructure\"</li></ul><p>Khi bạn đặt câu hỏi, Claude tìm kiếm trên tất cả các công cụ được kết nối của bạn — chẳng hạn như tài liệu SharePoint, cuộc trò chuyện Slack, chuỗi Gmail và tệp Google Drive — và tổng hợp thông tin thành một phản hồi thống nhất. Thêm vào đó, nó luôn trích dẫn nguồn để bạn có thể có đầy đủ ngữ cảnh.</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "setup",
+      "titleEn": "Setting up Enterprise Search",
+      "titleVi": "Thiết lập Enterprise Search",
+      "en": "<p>Enterprise Search requires a <strong>two-step setup process</strong>: first an admin configures it for the organization, then individual users authenticate with their personal accounts.</p><h4>For admins (Owners)</h4><p>The Enterprise Search project is enabled by default for all Team and Enterprise organizations, but an Owner needs to complete the initial setup before team members can use it:</p><ol><li>Click <strong>\"Ask Your Org\"</strong> in the left sidebar.</li><li>Click <strong>\"Set up for your org\"</strong> to continue (or \"Disable\" to turn the feature off).</li><li>Connect your organization's tools. You'll be required to choose a connector for <strong>Documents</strong> (like Google Drive or SharePoint) and <strong>Chat</strong> (like Slack or Microsoft Teams). Email is recommended but optional.</li><li>Click <strong>\"+ Add more\"</strong> to set up any additional tools your team needs.</li><li>Customize the project name. Whatever you enter will appear as <strong>\"Ask [Name]\"</strong> in everyone's sidebar.</li><li>Add a description, then click <strong>\"Finish set up.\"</strong></li></ol><p>Once setup is complete, the project becomes available to all members of your organization.</p><h4>For users</h4><p>After an admin has set up Enterprise Search, you'll see the \"Ask {Org Name}\" project starred in your sidebar. Here's how to get started:</p><ol><li>Click on the project in your sidebar.</li><li>Follow the guided onboarding flow to connect to the recommended services.</li><li>Authenticate with each service you want to search (Slack, Google, Microsoft 365, etc.).</li><li>Start asking Claude questions about your organization's knowledge.</li></ol><p>The more connectors you enable, the more comprehensive your search results will be. You can always add more connectors later by clicking <strong>\"Connect\"</strong> in the project's Instructions section.</p>",
+      "vi": "<p>Enterprise Search yêu cầu <strong>quy trình thiết lập hai bước</strong>: đầu tiên admin cấu hình cho tổ chức, sau đó người dùng cá nhân xác thực bằng tài khoản của họ.</p><h4>Dành cho admin (Owner)</h4><p>Dự án Enterprise Search được bật theo mặc định cho tất cả tổ chức Team và Enterprise, nhưng Owner cần hoàn tất thiết lập ban đầu trước khi các thành viên có thể sử dụng:</p><ol><li>Nhấp vào <strong>\"Ask Your Org\"</strong> trong thanh bên trái.</li><li>Nhấp vào <strong>\"Set up for your org\"</strong> để tiếp tục (hoặc \"Disable\" để tắt tính năng).</li><li>Kết nối các công cụ của tổ chức. Bạn sẽ cần chọn connector cho <strong>Documents</strong> (như Google Drive hoặc SharePoint) và <strong>Chat</strong> (như Slack hoặc Microsoft Teams). Email được khuyến nghị nhưng không bắt buộc.</li><li>Nhấp <strong>\"+ Add more\"</strong> để thiết lập thêm các công cụ mà nhóm của bạn cần.</li><li>Tùy chỉnh tên dự án. Tên bạn nhập sẽ hiển thị là <strong>\"Ask [Name]\"</strong> trong thanh bên của mọi người.</li><li>Thêm mô tả, sau đó nhấp <strong>\"Finish set up.\"</strong></li></ol><p>Sau khi thiết lập hoàn tất, dự án sẽ có sẵn cho tất cả thành viên trong tổ chức của bạn.</p><h4>Dành cho người dùng</h4><p>Sau khi admin thiết lập Enterprise Search, bạn sẽ thấy dự án \"Ask {Org Name}\" được đánh dấu sao trong thanh bên. Đây là cách bắt đầu:</p><ol><li>Nhấp vào dự án trong thanh bên.</li><li>Làm theo hướng dẫn onboarding để kết nối với các dịch vụ được đề xuất.</li><li>Xác thực với từng dịch vụ bạn muốn tìm kiếm (Slack, Google, Microsoft 365, v.v.).</li><li>Bắt đầu đặt câu hỏi cho Claude về kiến thức của tổ chức bạn.</li></ol><p>Bạn kết nối càng nhiều connector, kết quả tìm kiếm càng toàn diện. Bạn luôn có thể thêm connector sau bằng cách nhấp vào <strong>\"Connect\"</strong> trong phần Instructions của dự án.</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "security",
+      "titleEn": "That's a lot of data … is this safe?",
+      "titleVi": "Nhiều dữ liệu như vậy… có an toàn không?",
+      "en": "<p>In short, yes. Enterprise Search only shows what you already have permission to access in the original connected tool. Plus, your conversations remain private, and your connected data isn't indexed or stored separately.</p>",
+      "vi": "<p>Nói ngắn gọn, có. Enterprise Search chỉ hiển thị những gì bạn đã có quyền truy cập trong công cụ kết nối gốc. Ngoài ra, các cuộc trò chuyện của bạn vẫn riêng tư và dữ liệu được kết nối không được lập chỉ mục hoặc lưu trữ riêng.</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "reflection",
+      "titleEn": "Lesson reflection",
+      "titleVi": "Suy ngẫm về bài học",
+      "en": "<p>Before moving on, consider:</p><ul><li>What questions do you frequently ask colleagues that could be answered by searching your organization's documents and communications?</li><li>Are there onboarding or training scenarios where Enterprise Search could help new team members get up to speed faster?</li><li>Which data sources would be most valuable to connect for your specific role?</li></ul>",
+      "vi": "<p>Trước khi tiếp tục, hãy suy ngẫm:</p><ul><li>Bạn thường xuyên hỏi đồng nghiệp những câu hỏi nào có thể được trả lời bằng cách tìm kiếm trong tài liệu và thông tin liên lạc của tổ chức?</li><li>Có những tình huống onboarding hoặc đào tạo nào mà Enterprise Search có thể giúp thành viên mới nắm bắt nhanh hơn không?</li><li>Nguồn dữ liệu nào sẽ có giá trị nhất để kết nối cho vai trò cụ thể của bạn?</li></ul>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "next",
+      "titleEn": "What's next",
+      "titleVi": "Tiếp theo",
+      "en": "<p>In the next lesson, you'll learn about Research mode—Claude's capability for deep, multi-step investigations that go beyond quick lookups to comprehensive analysis.</p><p>For more information on Enterprise Search, visit the <a href=\"https://support.claude.com/en/articles/12489464-using-enterprise-search\">Anthropic Help Center</a>.</p>",
+      "vi": "<p>Trong bài học tiếp theo, bạn sẽ tìm hiểu về Research mode — khả năng điều tra chuyên sâu, nhiều bước của Claude vượt ra ngoài tra cứu nhanh để thực hiện phân tích toàn diện.</p><p>Để biết thêm thông tin về Enterprise Search, hãy truy cập <a href=\"https://support.claude.com/en/articles/12489464-using-enterprise-search\">Trung tâm Trợ giúp Anthropic</a>.</p>",
+      "image": "",
+      "video": ""
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+@media (--pc) {
+  .page-tbl {
+    width: 100%;
+    border-collapse: collapse;
+    th {
+      width: 200px;
+      background-color: #f3f3f3;
+      color: #000;
+      font-size: rem(16);
+    }
+    th,
+    td {
+      padding: 9px 19px 10px;
+      border: 1px solid #cfcfcf;
+      font-size: rem(16);
+      font-weight: 400;
+      line-height: lh(16, 30);
+      letter-spacing: ls(100);
+      color: #000;
+    }
+    thead {
+      th {
+        background: #f3f3f3;
+        text-align: center;
+      }
+    }
+  }
+}

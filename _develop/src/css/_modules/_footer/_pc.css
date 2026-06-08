@@ -1,0 +1,9 @@
+@media (--pc) {
+  .footer {
+    padding: 20px 30px;
+    background-color: #262001;
+    color: #fff;
+    font-size: rem(15);
+    text-align: center;
+  }
+}

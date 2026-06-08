@@ -1,0 +1,121 @@
+extends ./_base.pug
+
+block append vars
+  - var pageClass = 'p-lesson'
+
+block append stylesheet
+  link(rel="stylesheet", href=assetPath + 'css/lesson.css')
+
+block append script
+  script(src=assetPath + 'js/lesson.js', type="module", crossorigin)
+
+block main
+  -
+    var metaData = JSON.parse(nodeFs.readFileSync(nodePath.join(process.cwd(), `../data/${courseId}/meta.json`), 'utf8'))
+    var nextSlug = lessonData.nextLesson || ''
+    var prevSlug = lessonData.prevLesson || ''
+    var nextTitleEn = '', nextTitleVi = ''
+    var prevTitleEn = '', prevTitleVi = ''
+    for (const _sec of metaData.sections) {
+      for (const _l of _sec.lessons) {
+        if (_l.slug === nextSlug) { nextTitleEn = _l.titleEn; nextTitleVi = _l.titleVi; }
+        if (_l.slug === prevSlug) { prevTitleEn = _l.titleEn; prevTitleVi = _l.titleVi; }
+      }
+    }
+  .lesson-layout
+    aside.lesson-sidebar
+      .lesson-sidebar__inner
+        a.lesson-sidebar__back(href=`${pathLink}`)
+          | ← Home
+        nav.lesson-nav
+          each section in metaData.sections
+            .lesson-nav__section
+              p.lesson-nav__section-heading #{section.titleEn}
+              ul.lesson-nav__list
+                each lesson in section.lessons
+                  - var isActive = lesson.slug === currentSlug
+                  li.lesson-nav__item(class=isActive ? 'is-active' : '')
+                    a.lesson-nav__link(href=`${pathLink}${courseId}/${lesson.slug}.html`)
+                      | #{lesson.titleEn}
+    .lesson-body
+      .lesson-body__content
+        .lesson-header
+          h1.lesson-title
+            span.lesson-title__en #{lessonData.titleEn}
+            span.lesson-title__vi #{lessonData.titleVi}
+          .lesson-toggle
+            button.lesson-toggle__btn.is-active(type="button" data-lang="bilingual") Song ngữ
+            button.lesson-toggle__btn(type="button" data-lang="en") English
+            button.lesson-toggle__btn(type="button" data-lang="vi") Tiếng Việt
+        if lessonData.estimatedTimeEn
+          .lesson-meta
+            span.lesson-meta__item
+              svg(viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4" width="14" height="14")
+                circle(cx="7" cy="7" r="5.5")
+                path(d="M7 4v3.5l2 1.5")
+              span.lesson-meta__text-bilingual Estimated time: #{lessonData.estimatedTimeEn} (Thời gian ước tính: #{lessonData.estimatedTimeVi})
+              span.lesson-meta__text-en Estimated time: #{lessonData.estimatedTimeEn}
+              span.lesson-meta__text-vi Thời gian ước tính: #{lessonData.estimatedTimeVi}
+        .lesson-content
+          each section in lessonData.sections
+            .lesson-section(id=section.id)
+              if section.raw
+                != section.raw
+              else
+                .lesson-section__title
+                  h2.lesson-section__title-en #{section.titleEn}
+                  span.lesson-section__title-vi #{section.titleVi}
+                if section.image
+                  != section.image
+                if section.video
+                  != section.video
+                .lesson-section__card.lesson-section__card--en(data-lang-block="en")
+                  != section.en
+                .lesson-section__card.lesson-section__card--vi(data-lang-block="vi")
+                  != section.vi
+        if prevSlug || nextSlug
+          .lesson-nav-footer
+            if prevSlug
+              a.lesson-nav-footer__prev(href=`${pathLink}${courseId}/${prevSlug}.html`)
+                span.lesson-nav-footer__label
+                  span.lesson-nav-footer__label-en Previous Lesson
+                  span.lesson-nav-footer__label-vi Bài trước
+                span.lesson-nav-footer__title-en ← #{prevTitleEn}
+                span.lesson-nav-footer__title-vi #{prevTitleVi}
+            else
+              span.lesson-nav-footer__spacer
+            if nextSlug
+              a.lesson-nav-footer__next(href=`${pathLink}${courseId}/${nextSlug}.html`)
+                span.lesson-nav-footer__label
+                  span.lesson-nav-footer__label-en Next Lesson
+                  span.lesson-nav-footer__label-vi Bài sau
+                span.lesson-nav-footer__title-en #{nextTitleEn} →
+                span.lesson-nav-footer__title-vi #{nextTitleVi}
+  if lessonData.summaryEn
+    button.lesson-summary-btn(type="button" aria-label="Lesson summary")
+      svg(width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+        path(d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20")
+        path(d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z")
+      span.lesson-summary-btn__label-en Summary
+      span.lesson-summary-btn__label-vi Tóm tắt
+    .lesson-summary-modal
+      .lesson-summary-modal__overlay
+      .lesson-summary-modal__box
+        .lesson-summary-modal__header
+          .lesson-summary-modal__title
+            span.lesson-summary-modal__title-en Key Takeaways
+            span.lesson-summary-modal__title-vi Điểm chính bài học
+          .lesson-summary-modal__header-actions
+            .lesson-summary-modal__toggle
+              button.lesson-summary-modal__toggle-btn.is-active(type="button" data-lang="bilingual") Song ngữ
+              button.lesson-summary-modal__toggle-btn(type="button" data-lang="en") English
+              button.lesson-summary-modal__toggle-btn(type="button" data-lang="vi") Tiếng Việt
+            button.lesson-summary-modal__close(type="button" aria-label="Close")
+              svg(width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                line(x1="18" y1="6" x2="6" y2="18")
+                line(x1="6" y1="6" x2="18" y2="18")
+        .lesson-summary-modal__body
+          .lesson-summary-modal__card.lesson-summary-modal__card--en
+            != lessonData.summaryEn
+          .lesson-summary-modal__card.lesson-summary-modal__card--vi
+            != lessonData.summaryVi

@@ -1,0 +1,68 @@
+@media (--pc) {
+  .paging {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+
+    li {
+      margin: 0 6px;
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        font-size: rem(20);
+        font-family: var(--font-en);
+      }
+
+      @media (hover: hover) {
+        &:not(.active):not(.prev):not(.next):not(.dot) {
+          a {
+            &:hover {
+              color: var(--primary-color);
+            }
+          }
+        }
+      }
+
+      &.prev,
+      &.next {
+        margin: 0 34px;
+
+        a {
+          border: none;
+          font-size: rem(17);
+          background-color: var(--primary-color);
+          border-radius: 50%;
+          width: 24px;
+          height: 24px;
+
+          &:before {
+            color: #fff;
+            font-size: rem(8);
+            letter-spacing: 0;
+            line-height: 0;
+          }
+        }
+      }
+
+      &.active {
+        a {
+          font-weight: bold;
+        }
+      }
+
+      &.disable {
+        cursor: not-allowed;
+        user-select: none;
+        opacity: 0.4;
+        a {
+          pointer-events: none;
+          background-color: #cacaca;
+        }
+      }
+    }
+  }
+}

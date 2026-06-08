@@ -1,0 +1,37 @@
+extends ../utils/_base.pug
+
+
+block append meta
+  -
+    description = '';
+    canonicalURL = `${baseURL}second`;
+
+
+block append stylesheet
+  link(rel="stylesheet", href=assetPath + 'css/second.css')
+
+block ld
+  +breadcrumbList([
+    { url: '/second/', name: 'Second' },
+    { url: '/a.html', name: 'Second' }
+  ])
+
+block main
+  -
+    var breadcrumbData = [
+      {name: 'Index', link: 'index/'},
+      {name: 'Detail'}
+    ];
+  +mv('English title', '日本語タイトル')
+  +breadcrumb(breadcrumbData)
+  .main__inner
+    .row
+      include ../components/_seconds/_title
+      include ../components/_seconds/_button
+      //- include ../components/seconds/_table
+      include ../components/_seconds/_list
+      +pagination()
+
+
+block append script
+  script(src=assetPath + 'js/second.js', type="module", crossorigin)

@@ -1,0 +1,40 @@
+extends ../../utils/_base.pug
+
+
+block append meta
+  -
+    description = '';
+    canonicalURL = `${baseURL}second/form`;
+
+
+block append page
+  - var pageTitle = 'お問い合わせ'
+
+block append vars
+  - var pageClass ='page-contact'
+
+
+block append stylesheet
+  link(rel="stylesheet", href=assetPath + 'css/contact.css')
+
+block main
+  include ./_mixin
+  -
+    var breadcrumbList = [
+      {
+        name: 'お問い合わせ',
+      }
+    ];
+  .main__inner
+    +mv('お問い合わせ', 'CONTACT')
+    +breadcrumb(breadcrumbList)
+    .form-wrapper.form-wrapper--complete.row
+      +formStep(3)
+      h3.form-title 送信完了しました
+      p.form-notice
+        | 内容確認後、担当者よりご連絡いたしますので、
+        br.show_sp
+        | しばらくお待ちください。
+      
+      .form-buttons
+        a.btn-primary(href="#") TOPへ戻る

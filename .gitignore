@@ -1,0 +1,11 @@
+node_modules/
+/vendor
+.DS_Store
+!.gitkeep
+/apps/web/app/tmp/cache
+/apps/web/app/tmp/logs
+error.log
+debug_kit.sqlite
+public_html/**/second/
+public_html/**/*second*.*
+perfect-px

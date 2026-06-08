@@ -1,0 +1,36 @@
+@media (--sp) {
+  .btn {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 500px;
+    max-width: 600px;
+    width: 100%;
+    padding: 0 35px;
+    min-height: 90px;
+    border: max(1px, 2px) solid var(--primary-color);
+    border-radius: 9999px;
+    background: var(--primary-color);
+    cursor: pointer;
+    color: #fff;
+    font-size: 26px;
+    line-height: 1;
+    text-align: center;
+    font-weight: 500;
+    font-family: var(--font-base);
+    letter-spacing: ls(100);
+
+    &-secondary {
+      border-color: var(--foreign-color);
+      background-color: var(--foreign-color);
+    }
+
+    &.disabled {
+      user-select: none;
+      pointer-events: none;
+      background: #afadad;
+      border-color: #afadad;
+    }
+  }
+}
