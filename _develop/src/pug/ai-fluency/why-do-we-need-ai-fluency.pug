@@ -1,0 +1,12 @@
+extends ../utils/_lesson.pug
+
+block append meta
+  -
+    var courseId = 'ai-fluency'
+    var currentSlug = 'why-do-we-need-ai-fluency'
+    var lessonData = JSON.parse(nodeFs.readFileSync(nodePath.join(process.cwd(), '../data/ai-fluency/why-do-we-need-ai-fluency.json'), 'utf8'))
+    title = lessonData.titleEn + ' · AI Fluency · Claude Academy'
+    description = 'Explore what it means to be fluent with AI and discover three key ways people engage with AI: Automation, Augmentation, and Agency.'
+    baseURL = 'https://chobadon.com/claude-academy/'
+    ogImageURL = baseURL + 'assets/images/ogp.png'
+    canonicalURL = `${baseURL}${courseId}/${currentSlug}/`

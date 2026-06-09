@@ -1,0 +1,49 @@
+{
+  "slug": "effective-prompting-techniques",
+  "titleEn": "Effective prompting techniques",
+  "titleVi": "Kỹ thuật tạo prompt hiệu quả",
+  "estimatedTimeEn": "",
+  "estimatedTimeVi": "",
+  "prevLesson": "a-closer-look-at-description",
+  "nextLesson": "a-closer-look-at-discernment",
+  "summaryEn": "<ul><li>Effective prompting combines clear communication principles with AI-specific techniques</li><li>Six foundational techniques: give context, show examples, specify constraints, break complex tasks into steps, ask AI to think first, define the AI's role or tone</li><li>The \"secret weapon\": ask the AI itself to help improve your prompt</li><li>Successful prompting is iterative — expect to refine your approach based on results</li><li>Common successful patterns: clear task overview, format specifications, explicit constraints, relevant background</li></ul>",
+  "summaryVi": "<ul><li>Tạo prompt hiệu quả kết hợp nguyên tắc giao tiếp rõ ràng với các kỹ thuật dành riêng cho AI</li><li>Sáu kỹ thuật nền tảng: cung cấp ngữ cảnh, đưa ví dụ, chỉ định ràng buộc, chia nhỏ nhiệm vụ phức tạp, yêu cầu AI suy nghĩ trước, xác định vai trò hoặc tone</li><li>\"Vũ khí bí mật\": nhờ chính AI giúp cải thiện prompt của bạn</li><li>Tạo prompt hiệu quả là quá trình lặp đi lặp lại — hãy mong đợi tinh chỉnh dựa trên kết quả</li><li>Các mẫu thành công phổ biến: tổng quan nhiệm vụ rõ ràng, chỉ định định dạng, ràng buộc rõ ràng, thông tin nền liên quan</li></ul>",
+  "sections": [
+    {
+      "id": "objectives",
+      "titleEn": "What you'll learn",
+      "titleVi": "Bạn sẽ học được gì",
+      "en": "<p>By the end of this lesson, you'll be able to:</p><ul><li>Understand what prompt engineering is and why it matters for productive AI collaboration</li><li>Apply six foundational prompting techniques to improve your AI interactions</li><li>Identify common patterns that lead to successful AI interactions</li><li>Troubleshoot and refine prompts when AI responses don't meet your needs</li></ul>",
+      "vi": "<p>Sau khi hoàn thành bài học này, bạn sẽ có thể:</p><ul><li>Hiểu prompt engineering là gì và tại sao nó quan trọng cho cộng tác AI hiệu quả</li><li>Áp dụng sáu kỹ thuật tạo prompt nền tảng để cải thiện tương tác với AI</li><li>Xác định các mẫu phổ biến dẫn đến tương tác AI thành công</li><li>Xử lý sự cố và tinh chỉnh prompt khi phản hồi AI không đáp ứng nhu cầu</li></ul>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "prompting-techniques",
+      "titleEn": "Effective Prompting Techniques",
+      "titleVi": "Kỹ thuật tạo prompt hiệu quả",
+      "en": "<p>This video explores practical skills for crafting effective prompts when working with AI assistants like Claude. We explain that prompt engineering is simply the practice of designing effective instructions for AI systems, combining familiar human communication principles with AI-specific considerations. We introduce six foundational techniques: giving context, showing examples of desired outputs, specifying constraints, breaking complex tasks into steps, asking the AI to think first, and defining the AI's role or tone. We also share troubleshooting strategies for when responses aren't quite right and highlight common patterns that lead to successful interactions.</p><h4>Key takeaways</h4><ul><li>Effective prompting combines clear communication principles with AI-specific techniques</li><li>Six foundational prompting techniques:<ul><li><strong>Give context:</strong> Be specific about what you want, why you want it, and relevant background</li><li><strong>Show examples:</strong> Demonstrate the output style or format you're looking for</li><li><strong>Specify constraints:</strong> Clearly define format, length, and other output requirements</li><li><strong>Break complex tasks into steps:</strong> Guide the AI through multi-step reasoning</li><li><strong>Ask the AI to think first:</strong> Give space for the AI to work through its process</li><li><strong>Define the AI's role or tone:</strong> Specify how you want the AI to communicate</li></ul></li><li>The \"secret weapon\": Ask the AI itself to help improve your prompt</li><li>Successful prompting is iterative (and perhaps also collaborative with the AI!). Expect to refine your approach based on results</li><li>Common successful patterns include providing clear task overviews, format specifications, explicit constraints, and relevant background information</li></ul>",
+      "vi": "<p>Video này khám phá các kỹ năng thực tiễn để tạo ra prompt hiệu quả khi làm việc với các trợ lý AI như Claude. Chúng ta giải thích rằng prompt engineering đơn giản là thực hành thiết kế hướng dẫn hiệu quả cho các hệ thống AI, kết hợp các nguyên tắc giao tiếp con người quen thuộc với các cân nhắc dành riêng cho AI. Chúng ta giới thiệu sáu kỹ thuật nền tảng: cung cấp ngữ cảnh, đưa ví dụ về đầu ra mong muốn, chỉ định ràng buộc, chia nhỏ nhiệm vụ phức tạp thành các bước, yêu cầu AI suy nghĩ trước và xác định vai trò hoặc tone của AI. Chúng ta cũng chia sẻ các chiến lược xử lý sự cố khi phản hồi chưa đúng và làm nổi bật các mẫu phổ biến dẫn đến tương tác thành công.</p><h4>Điểm mấu chốt</h4><ul><li>Tạo prompt hiệu quả kết hợp nguyên tắc giao tiếp rõ ràng với các kỹ thuật dành riêng cho AI</li><li>Sáu kỹ thuật tạo prompt nền tảng:<ul><li><strong>Cung cấp ngữ cảnh:</strong> Cụ thể về những gì bạn muốn, tại sao bạn muốn và thông tin nền liên quan</li><li><strong>Đưa ví dụ:</strong> Minh họa phong cách hoặc định dạng đầu ra bạn đang tìm kiếm</li><li><strong>Chỉ định ràng buộc:</strong> Xác định rõ ràng định dạng, độ dài và các yêu cầu đầu ra khác</li><li><strong>Chia nhỏ nhiệm vụ phức tạp thành các bước:</strong> Hướng dẫn AI qua lý luận nhiều bước</li><li><strong>Yêu cầu AI suy nghĩ trước:</strong> Cho AI không gian để làm việc qua quá trình của nó</li><li><strong>Xác định vai trò hoặc tone của AI:</strong> Chỉ định cách bạn muốn AI giao tiếp</li></ul></li><li>\"Vũ khí bí mật\": Nhờ chính AI giúp cải thiện prompt của bạn</li><li>Tạo prompt thành công là quá trình lặp đi lặp lại (và có thể cả cộng tác với AI!). Hãy mong đợi tinh chỉnh cách tiếp cận dựa trên kết quả</li><li>Các mẫu thành công phổ biến bao gồm cung cấp tổng quan nhiệm vụ rõ ràng, chỉ định định dạng, ràng buộc rõ ràng và thông tin nền liên quan</li></ul>",
+      "image": "",
+      "video": "<div class=\"lesson-video\"><iframe src=\"https://www.youtube.com/embed/2YCaBqP8muw?cc_load_policy=1&cc_lang_pref=vi&hl=vi\" title=\"Effective Prompting Techniques\" width=\"560\" height=\"315\" frameborder=\"0\" allowfullscreen></iframe></div>"
+    },
+    {
+      "id": "reflection",
+      "titleEn": "Reflection",
+      "titleVi": "Suy ngẫm",
+      "en": "<p>Before moving on, take a moment to consider:</p><ul><li>Which of the six prompting techniques do you think would most enhance your current AI interactions?</li><li>Think of a recent AI interaction that didn't meet your needs. Which techniques might have improved the outcome?</li><li>How does understanding these prompting techniques connect to the Description competency from the AI Fluency Framework?</li></ul><p>If you like, revisit the Bad Prompt Makeover exercise from the previous lesson to give these prompting principles a workout.</p>",
+      "vi": "<p>Trước khi tiếp tục, hãy dành một chút thời gian suy ngẫm:</p><ul><li>Kỹ thuật nào trong sáu kỹ thuật tạo prompt mà bạn nghĩ sẽ nâng cao nhất các tương tác AI hiện tại của mình?</li><li>Hãy nghĩ về một tương tác AI gần đây không đáp ứng nhu cầu. Kỹ thuật nào có thể cải thiện kết quả?</li><li>Việc hiểu những kỹ thuật tạo prompt này kết nối như thế nào với năng lực Description từ Khung AI Fluency?</li></ul><p>Nếu muốn, hãy quay lại bài tập \"Cải thiện prompt kém\" từ bài học trước để luyện tập các nguyên tắc tạo prompt này.</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "whats-next",
+      "titleEn": "What's next",
+      "titleVi": "Tiếp theo",
+      "en": "<p>In the next lesson, we'll explore Discernment, the third core AI Fluency competency. Both this Deep Dive and the lesson preceding it focused on how to communicate effectively with AI and how to practice good Description. Discernment addresses the equally important challenge of thoughtfully evaluating what AI produces in response — the other half of the conversation!</p><hr><p><em>Copyright 2025 Rick Dakan, Joseph Feller, and Anthropic. Released under the CC BY-NC-SA 4.0 license. This course is based on The AI Fluency Framework by Dakan and Feller. Supported in part by the Higher Education Authority, Ireland, through the National Forum for the Enhancement of Teaching and Learning.</em></p>",
+      "vi": "<p>Trong bài học tiếp theo, chúng ta sẽ khám phá Discernment, năng lực cốt lõi thứ ba của AI Fluency. Cả bài Deep Dive này lẫn bài học trước đó đều tập trung vào cách giao tiếp hiệu quả với AI và thực hành Description tốt. Discernment giải quyết thách thức quan trọng không kém là đánh giá có suy nghĩ những gì AI tạo ra — nửa còn lại của cuộc trò chuyện!</p><hr><p><em>Bản quyền 2025 Rick Dakan, Joseph Feller và Anthropic. Phát hành theo giấy phép CC BY-NC-SA 4.0. Khóa học này dựa trên Khung AI Fluency của Dakan và Feller. Được hỗ trợ một phần bởi Cơ quan Giáo dục Đại học Ireland, thông qua Diễn đàn Quốc gia về Nâng cao Giảng dạy và Học tập.</em></p>",
+      "image": "",
+      "video": ""
+    }
+  ]
+}

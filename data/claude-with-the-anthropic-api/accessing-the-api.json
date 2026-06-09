@@ -1,0 +1,40 @@
+{
+  "slug": "accessing-the-api",
+  "titleEn": "Accessing the API",
+  "titleVi": "Truy cập API",
+  "estimatedTimeEn": "10 minutes",
+  "estimatedTimeVi": "10 phút",
+  "prevLesson": "overview-of-claude-models",
+  "nextLesson": "getting-an-api-key",
+  "summaryEn": "How the Anthropic API works — the request/response model, the Python SDK, and what you need to get started.",
+  "summaryVi": "Cách Anthropic API hoạt động — mô hình request/response, Python SDK và những gì bạn cần để bắt đầu.",
+  "sections": [
+    {
+      "id": "how-the-api-works",
+      "titleEn": "How the API works",
+      "titleVi": "API hoạt động như thế nào",
+      "en": "<p>The Anthropic API is a standard HTTP REST API. You send a <strong>POST request</strong> to an endpoint with a JSON body describing your message, and you receive a JSON response containing Claude's reply.</p><p>Every request includes at minimum:</p><ul><li><strong>model</strong> — which Claude model to use</li><li><strong>max_tokens</strong> — the maximum number of tokens in the response</li><li><strong>messages</strong> — an array of message objects, each with a <code>role</code> (<code>\"user\"</code> or <code>\"assistant\"</code>) and <code>content</code></li></ul><p>Authentication is handled via an <strong>API key</strong> passed in the <code>x-api-key</code> HTTP header. We'll set up your API key in the next lesson.</p>",
+      "vi": "<p>Anthropic API là một HTTP REST API tiêu chuẩn. Bạn gửi một <strong>POST request</strong> đến một endpoint với body JSON mô tả tin nhắn của bạn, và bạn nhận được JSON response chứa câu trả lời của Claude.</p><p>Mỗi request bao gồm tối thiểu:</p><ul><li><strong>model</strong> — model Claude nào sẽ sử dụng</li><li><strong>max_tokens</strong> — số token tối đa trong response</li><li><strong>messages</strong> — một mảng các message object, mỗi cái có <code>role</code> (<code>\"user\"</code> hoặc <code>\"assistant\"</code>) và <code>content</code></li></ul><p>Xác thực được thực hiện qua <strong>API key</strong> truyền trong HTTP header <code>x-api-key</code>. Chúng ta sẽ thiết lập API key của bạn trong bài học tiếp theo.</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "python-sdk",
+      "titleEn": "The Python SDK",
+      "titleVi": "Python SDK",
+      "en": "<p>While you can call the API directly with any HTTP client, Anthropic provides an official <strong>Python SDK</strong> that handles authentication, request formatting, and error handling for you.</p><p>Install it with pip:</p><pre><code>pip install anthropic</code></pre><p>A minimal example — sending a message and printing the response:</p><pre><code>import anthropic\n\nclient = anthropic.Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-3-5-sonnet-20241022\",\n    max_tokens=1024,\n    messages=[\n        {\"role\": \"user\", \"content\": \"Hello, Claude!\"}\n    ]\n)\n\nprint(message.content[0].text)</code></pre><p>The SDK automatically reads your API key from the <code>ANTHROPIC_API_KEY</code> environment variable. You can also pass it explicitly: <code>anthropic.Anthropic(api_key=\"your-key\")</code>.</p>",
+      "vi": "<p>Mặc dù bạn có thể gọi API trực tiếp bằng bất kỳ HTTP client nào, Anthropic cung cấp <strong>Python SDK</strong> chính thức xử lý xác thực, định dạng request và xử lý lỗi cho bạn.</p><p>Cài đặt bằng pip:</p><pre><code>pip install anthropic</code></pre><p>Một ví dụ tối giản — gửi tin nhắn và in response:</p><pre><code>import anthropic\n\nclient = anthropic.Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-3-5-sonnet-20241022\",\n    max_tokens=1024,\n    messages=[\n        {\"role\": \"user\", \"content\": \"Hello, Claude!\"}\n    ]\n)\n\nprint(message.content[0].text)</code></pre><p>SDK tự động đọc API key của bạn từ biến môi trường <code>ANTHROPIC_API_KEY</code>. Bạn cũng có thể truyền trực tiếp: <code>anthropic.Anthropic(api_key=\"your-key\")</code>.</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "response-structure",
+      "titleEn": "Understanding the response",
+      "titleVi": "Hiểu cấu trúc response",
+      "en": "<p>The API returns a <code>Message</code> object. Key fields you'll use regularly:</p><ul><li><code>message.content</code> — a list of content blocks. For text responses, access the text via <code>message.content[0].text</code></li><li><code>message.model</code> — the model that actually processed the request</li><li><code>message.stop_reason</code> — why the model stopped generating: <code>\"end_turn\"</code> (natural completion) or <code>\"max_tokens\"</code> (hit the token limit)</li><li><code>message.usage</code> — token counts for the request (<code>input_tokens</code>) and response (<code>output_tokens</code>), useful for cost tracking</li></ul><p>Throughout this course we'll build on this foundation — adding system prompts, multi-turn conversation history, tools, and more. The basic structure of every call stays the same.</p>",
+      "vi": "<p>API trả về một <code>Message</code> object. Các trường chính bạn sẽ dùng thường xuyên:</p><ul><li><code>message.content</code> — danh sách các content block. Với text response, truy cập text qua <code>message.content[0].text</code></li><li><code>message.model</code> — model đã thực sự xử lý request</li><li><code>message.stop_reason</code> — lý do model dừng tạo text: <code>\"end_turn\"</code> (hoàn thành tự nhiên) hoặc <code>\"max_tokens\"</code> (đạt giới hạn token)</li><li><code>message.usage</code> — số lượng token cho request (<code>input_tokens</code>) và response (<code>output_tokens</code>), hữu ích để theo dõi chi phí</li></ul><p>Trong suốt khóa học này, chúng ta sẽ xây dựng dựa trên nền tảng này — thêm system prompt, lịch sử hội thoại nhiều lượt, tools và nhiều hơn nữa. Cấu trúc cơ bản của mỗi lần gọi vẫn giữ nguyên.</p>",
+      "image": "",
+      "video": ""
+    }
+  ]
+}

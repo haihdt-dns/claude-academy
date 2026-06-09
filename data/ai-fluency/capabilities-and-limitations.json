@@ -1,0 +1,49 @@
+{
+  "slug": "capabilities-and-limitations",
+  "titleEn": "Capabilities & limitations",
+  "titleVi": "Khả năng và giới hạn",
+  "estimatedTimeEn": "7 minutes",
+  "estimatedTimeVi": "7 phút",
+  "prevLesson": "generative-ai-fundamentals",
+  "nextLesson": "a-closer-look-at-delegation",
+  "summaryEn": "<ul><li>Generative AI creates new content (text, images, code) rather than just analyzing existing data</li><li>Modern LLMs were made possible by: transformer architecture, vast training data, and dramatic increases in computing power</li><li>Generative AI learns through pre-training and fine-tuning</li><li>Current capabilities: versatility across tasks, conversational awareness, ability to connect with external tools</li><li>Current limitations: knowledge cutoff dates, hallucinations, context window constraints, challenges with complex reasoning</li><li>The most effective applications combine human and AI strengths</li></ul>",
+  "summaryVi": "<ul><li>AI tạo sinh tạo ra nội dung mới (văn bản, hình ảnh, code) thay vì chỉ phân tích dữ liệu có sẵn</li><li>LLM hiện đại được tạo ra nhờ: kiến trúc transformer, dữ liệu đào tạo khổng lồ, và sức mạnh tính toán tăng vọt</li><li>AI tạo sinh học thông qua pre-training và fine-tuning</li><li>Khả năng hiện tại: đa năng trên nhiều tác vụ, nhận thức ngữ cảnh hội thoại, kết nối với công cụ bên ngoài</li><li>Giới hạn hiện tại: ngày cắt kiến thức, ảo giác (hallucination), giới hạn context window, thách thức với lý luận phức tạp</li><li>Ứng dụng hiệu quả nhất kết hợp điểm mạnh của con người và AI</li></ul>",
+  "sections": [
+    {
+      "id": "objectives",
+      "titleEn": "What you'll learn",
+      "titleVi": "Bạn sẽ học được gì",
+      "en": "<p>By the end of this lesson, you'll be able to:</p><ul><li>Identify major capabilities and limitations of current generative AI</li></ul>",
+      "vi": "<p>Sau khi hoàn thành bài học này, bạn sẽ có thể:</p><ul><li>Xác định các khả năng và giới hạn chính của AI tạo sinh hiện tại</li></ul>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "capabilities-and-limitations",
+      "titleEn": "Capabilities & limitations",
+      "titleVi": "Khả năng và giới hạn",
+      "en": "<p><em>(7 minutes)</em></p><p>This video examines what generative AI can and cannot do effectively at this point in time. We highlight generative AI's versatility across language tasks, ability to maintain conversational flow, and capacity to switch between diverse tasks without additional training. We also address limitations including knowledge cutoff dates, hallucinations (factually incorrect outputs), context window constraints, and reasoning challenges. We emphasize how the field is evolving rapidly and explain that the most effective applications bring together the complementary strengths of humans and AI working together.</p><h4>Key takeaways</h4><ul><li>Generative AI creates new content (text, images, code) rather than just analyzing existing data</li><li>Modern systems like LLMs were made possible by three key developments:<ul><li>Algorithmic and architectural breakthroughs (especially the transformer architecture)</li><li>Vast amounts of digital training data</li><li>Dramatic increases in computational power</li></ul></li><li>Generative AI learns through two stages: pre-training (analyzing patterns across billions of examples) and fine-tuning (learning to follow instructions and provide helpful responses)</li><li>Current capabilities include versatility across tasks, conversational awareness, and the ability to connect with external tools</li><li>Current limitations include knowledge cutoff dates, potential for hallucinations, context window constraints, and challenges with complex reasoning</li><li>The most effective applications combine human and AI strengths, with humans providing critical thinking, judgment, creativity, and ethical oversight</li></ul>",
+      "vi": "<p><em>(7 phút)</em></p><p>Video này xem xét những gì AI tạo sinh có thể và không thể thực hiện hiệu quả tại thời điểm này. Chúng ta làm nổi bật tính đa năng của AI tạo sinh trên các tác vụ ngôn ngữ, khả năng duy trì luồng hội thoại và khả năng chuyển đổi giữa các tác vụ đa dạng mà không cần đào tạo thêm. Chúng ta cũng đề cập đến các giới hạn bao gồm ngày cắt kiến thức, ảo giác (kết quả sai về mặt thực tế), giới hạn context window và thách thức lý luận. Chúng ta nhấn mạnh cách lĩnh vực này đang phát triển nhanh chóng và giải thích rằng các ứng dụng hiệu quả nhất kết hợp điểm mạnh bổ sung của con người và AI làm việc cùng nhau.</p><h4>Điểm mấu chốt</h4><ul><li>AI tạo sinh tạo ra nội dung mới (văn bản, hình ảnh, code) thay vì chỉ phân tích dữ liệu có sẵn</li><li>Các hệ thống hiện đại như LLM được tạo ra nhờ ba phát triển chính:<ul><li>Đột phá về thuật toán và kiến trúc (đặc biệt là kiến trúc transformer)</li><li>Lượng dữ liệu đào tạo kỹ thuật số khổng lồ</li><li>Sức mạnh tính toán tăng vọt</li></ul></li><li>AI tạo sinh học qua hai giai đoạn: pre-training (phân tích các mẫu trên hàng tỷ ví dụ) và fine-tuning (học cách tuân theo hướng dẫn và cung cấp phản hồi hữu ích)</li><li>Khả năng hiện tại bao gồm tính đa năng trên các tác vụ, nhận thức hội thoại và khả năng kết nối với các công cụ bên ngoài</li><li>Giới hạn hiện tại bao gồm ngày cắt kiến thức, khả năng ảo giác, giới hạn context window và thách thức với lý luận phức tạp</li><li>Các ứng dụng hiệu quả nhất kết hợp điểm mạnh của con người và AI, với con người cung cấp tư duy phản biện, phán đoán, sáng tạo và giám sát đạo đức</li></ul>",
+      "image": "",
+      "video": "<div class=\"lesson-video\"><iframe src=\"https://www.youtube.com/embed/W5cga7xipRI?cc_load_policy=1&cc_lang_pref=vi&hl=vi\" title=\"Capabilities &amp; limitations\" width=\"560\" height=\"315\" frameborder=\"0\" allowfullscreen></iframe></div>"
+    },
+    {
+      "id": "reflection",
+      "titleEn": "Reflection",
+      "titleVi": "Suy ngẫm",
+      "en": "<p>Before moving on, take a moment to consider:</p><ul><li>How does understanding the technical foundations of generative AI (like training data and pre-training/fine-tuning) change how you think about working with these systems?</li><li>What ethical considerations come to mind after learning about how these systems work and their current limitations?</li></ul>",
+      "vi": "<p>Trước khi tiếp tục, hãy dành một chút thời gian suy ngẫm:</p><ul><li>Việc hiểu nền tảng kỹ thuật của AI tạo sinh (như dữ liệu đào tạo và pre-training/fine-tuning) thay đổi cách bạn nghĩ về việc làm việc với các hệ thống này như thế nào?</li><li>Những cân nhắc đạo đức nào xuất hiện trong đầu bạn sau khi tìm hiểu cách các hệ thống này hoạt động và các giới hạn hiện tại của chúng?</li></ul>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "whats-next",
+      "titleEn": "What's next",
+      "titleVi": "Tiếp theo",
+      "en": "<p>In the next lesson, we'll take a closer look at the first of the 4D competencies: Delegation. You'll learn how to make strategic decisions about dividing work between yourself and AI based on understanding both your goals and AI capabilities. This foundation will help you thoughtfully determine when and how to bring AI into your creative and problem-solving processes.</p><hr><p><em>Copyright 2025 Rick Dakan, Joseph Feller, and Anthropic. Released under the CC BY-NC-SA 4.0 license. This course is based on The AI Fluency Framework by Dakan and Feller. Supported in part by the Higher Education Authority, Ireland, through the National Forum for the Enhancement of Teaching and Learning.</em></p>",
+      "vi": "<p>Trong bài học tiếp theo, chúng ta sẽ xem xét kỹ hơn năng lực đầu tiên trong 4D: Delegation. Bạn sẽ học cách đưa ra quyết định chiến lược về việc phân chia công việc giữa bản thân và AI dựa trên việc hiểu cả mục tiêu của bạn lẫn khả năng của AI. Nền tảng này sẽ giúp bạn suy nghĩ thấu đáo khi nào và cách nào đưa AI vào quy trình sáng tạo và giải quyết vấn đề của mình.</p><hr><p><em>Bản quyền 2025 Rick Dakan, Joseph Feller và Anthropic. Phát hành theo giấy phép CC BY-NC-SA 4.0. Khóa học này dựa trên Khung AI Fluency của Dakan và Feller. Được hỗ trợ một phần bởi Cơ quan Giáo dục Đại học Ireland, thông qua Diễn đàn Quốc gia về Nâng cao Giảng dạy và Học tập.</em></p>",
+      "image": "",
+      "video": ""
+    }
+  ]
+}

@@ -235,6 +235,10 @@
       line-height: 1.5;
     }
 
+    h4:not(:first-child) {
+      margin-top: 15px;
+    }
+
     p {
       color: var(--color-text);
       font-size: rem(14);
@@ -255,6 +259,31 @@
       font-size: rem(14);
       line-height: 1.8;
       list-style-type: disc;
+    }
+
+    code {
+      padding: 2px 6px;
+      color: #4ade80;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: rem(13);
+      background: #1a1a1a;
+      border-radius: 4px;
+    }
+
+    pre {
+      margin-top: 12px;
+      margin-bottom: 12px;
+      padding: 14px 16px;
+      background: #1a1a1a;
+      border-radius: 8px;
+      overflow-x: auto;
+
+      code {
+        padding: 0;
+        font-size: rem(13);
+        background: transparent;
+        border-radius: 0;
+      }
     }
 
     strong {
@@ -370,7 +399,9 @@
 
   /* image */
   .lesson-image {
-    margin-bottom: 16px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 90%;
     border-radius: 8px;
     overflow: hidden;
 
@@ -379,6 +410,14 @@
       width: 100%;
       height: auto;
     }
+  }
+
+  .lesson-image:not(:first-child) {
+    margin-top: 15px;
+  }
+
+  .lesson-image:not(:last-child) {
+    margin-bottom: 15px;
   }
 
   /* video embed */

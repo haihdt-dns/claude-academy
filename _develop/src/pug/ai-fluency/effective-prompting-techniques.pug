@@ -1,0 +1,12 @@
+extends ../utils/_lesson.pug
+
+block append meta
+  -
+    var courseId = 'ai-fluency'
+    var currentSlug = 'effective-prompting-techniques'
+    var lessonData = JSON.parse(nodeFs.readFileSync(nodePath.join(process.cwd(), '../data/ai-fluency/effective-prompting-techniques.json'), 'utf8'))
+    title = lessonData.titleEn + ' · AI Fluency · Claude Academy'
+    description = 'Learn six foundational prompting techniques — give context, show examples, specify constraints, break tasks into steps, ask AI to think first, define role — to get better results from AI.'
+    baseURL = 'https://chobadon.com/claude-academy/'
+    ogImageURL = baseURL + 'assets/images/ogp.png'
+    canonicalURL = `${baseURL}${courseId}/${currentSlug}/`

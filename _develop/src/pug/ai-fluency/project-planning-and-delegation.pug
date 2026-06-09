@@ -1,0 +1,12 @@
+extends ../utils/_lesson.pug
+
+block append meta
+  -
+    var courseId = 'ai-fluency'
+    var currentSlug = 'project-planning-and-delegation'
+    var lessonData = JSON.parse(nodeFs.readFileSync(nodePath.join(process.cwd(), '../data/ai-fluency/project-planning-and-delegation.json'), 'utf8'))
+    title = lessonData.titleEn + ' · AI Fluency · Claude Academy'
+    description = 'Apply the Delegation framework to a real project: choose your topic, define a vision with Claude, and build a task breakdown and delegation plan.'
+    baseURL = 'https://chobadon.com/claude-academy/'
+    ogImageURL = baseURL + 'assets/images/ogp.png'
+    canonicalURL = `${baseURL}${courseId}/${currentSlug}/`

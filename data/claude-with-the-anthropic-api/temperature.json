@@ -1,0 +1,12 @@
+{
+  "slug": "temperature",
+  "titleEn": "Temperature",
+  "titleVi": "Temperature",
+  "estimatedTimeEn": "10 minutes",
+  "estimatedTimeVi": "10 phút",
+  "prevLesson": "system-prompts-exercise",
+  "nextLesson": "response-streaming",
+  "summaryEn": "",
+  "summaryVi": "",
+  "sections": []
+}

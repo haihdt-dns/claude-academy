@@ -1,0 +1,49 @@
+{
+  "slug": "the-description-discernment-loop",
+  "titleEn": "The Description-Discernment Loop",
+  "titleVi": "Vòng lặp Description-Discernment",
+  "estimatedTimeEn": "30–60 minutes",
+  "estimatedTimeVi": "30–60 phút",
+  "prevLesson": "a-closer-look-at-discernment",
+  "nextLesson": "a-closer-look-at-diligence",
+  "summaryEn": "Apply Description and Discernment skills together in a real project, practicing productive feedback loops that combine human expertise with AI capabilities.",
+  "summaryVi": "Áp dụng kỹ năng Description và Discernment vào một dự án thực tế, luyện tập vòng lặp phản hồi hiệu quả kết hợp chuyên môn của con người với khả năng của AI.",
+  "sections": [
+    {
+      "id": "objectives",
+      "titleEn": "Learning Objectives",
+      "titleVi": "Mục tiêu học tập",
+      "en": "<p>By the end of this lesson, you'll be able to:</p><ul><li>Apply Description and Discernment skills to a real project</li><li>Engage in productive Description-Discernment feedback loops</li><li>Create results through human-AI collaboration that exceed what either could achieve alone</li></ul>",
+      "vi": "<p>Sau bài học này, bạn sẽ có thể:</p><ul><li>Áp dụng kỹ năng Description và Discernment vào một dự án thực tế</li><li>Tham gia vào các vòng lặp phản hồi Description-Discernment hiệu quả</li><li>Tạo ra kết quả thông qua sự cộng tác giữa con người và AI vượt trội hơn những gì mỗi bên có thể đạt được riêng lẻ</li></ul>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "exercises",
+      "titleEn": "Exercises",
+      "titleVi": "Bài tập",
+      "en": "<h3>Exercise: Project execution with description-discernment loops</h3><p>Now it's time to put everything you've learned into practice by working on the project you planned in Lesson 5, using the Description and Discernment skills you've been developing.</p><h4>Step 1: Review your project plan</h4><ul><li>Pull up the project plan you created in Lesson 5</li><li>Quickly review your delegation decisions about which tasks would benefit from human expertise, AI capabilities, or collaboration</li><li>Feel free to refine your plan based on what you've learned since then</li></ul><h4>Step 2: Prepare your description approach</h4><p>Start a conversation with Claude and explain the project you'll be working on together. Before diving into execution, plan how you'll approach Description:</p><ul><li><strong>Product Description</strong>: What specific outputs do you need from Claude for each task? What format, style, length, and level of detail are you looking for?</li><li><strong>Process Description</strong>: How should Claude approach each task? Are there specific methods, frameworks, or steps you want it to follow?</li><li><strong>Performance Description</strong>: What kind of collaborative behavior do you want from Claude during this project? Should it be concise or detailed, challenging or supportive, focused on ideas or analysis?</li></ul><p>Discuss these questions with Claude to establish clear expectations for your collaboration.</p><h4>Step 3: Execute your project using description-discernment loops</h4><p>Now, work through your planned project tasks with Claude. For each task:</p><ol><li><strong>Describe</strong> what you need clearly, using the Description skills you've learned:<ul><li>Be specific about what you want (Product)</li><li>Guide how Claude should approach or think about the task (Process)</li><li>Specify how you want Claude to engage with you during the process (Performance)</li></ul></li><li><strong>Discern</strong> the quality of what you receive:<ul><li>Evaluate the output itself (Product Discernment)</li><li>Assess how Claude approached the task (Process Discernment)</li><li>Consider if Claude's behavior is most helpful for what you need (Performance Discernment)</li></ul></li><li><strong>Refine</strong> based on your discernment:<ul><li>Provide feedback on what worked and what didn't</li><li>Clarify or adjust your description as needed</li><li>Request iterations until you're satisfied with the result</li></ul></li><li><strong>Integrate</strong> your own expertise and judgment:<ul><li>Add your unique perspective, creativity, or domain knowledge</li><li>Make the final decisions about what to keep, modify, or discard</li><li>Take responsibility for the final output</li></ul></li></ol><p>Continue this Description-Discernment loop for each task in your project until completion.</p>",
+      "vi": "<h3>Bài tập: Thực hiện dự án với vòng lặp description-discernment</h3><p>Đã đến lúc áp dụng mọi thứ bạn đã học vào thực tế bằng cách làm việc trên dự án bạn đã lên kế hoạch ở Bài 5, sử dụng kỹ năng Description và Discernment bạn đã phát triển.</p><h4>Bước 1: Xem lại kế hoạch dự án</h4><ul><li>Lấy kế hoạch dự án bạn đã tạo ở Bài 5</li><li>Nhanh chóng xem lại các quyết định ủy thác — nhiệm vụ nào hưởng lợi từ chuyên môn con người, khả năng AI, hoặc sự cộng tác</li><li>Thoải mái tinh chỉnh kế hoạch dựa trên những gì bạn đã học từ đó đến nay</li></ul><h4>Bước 2: Chuẩn bị phương pháp description</h4><p>Bắt đầu cuộc trò chuyện với Claude và giải thích dự án bạn sẽ cùng nhau thực hiện. Trước khi bắt tay vào thực hiện, hãy lên kế hoạch tiếp cận Description:</p><ul><li><strong>Product Description</strong>: Bạn cần đầu ra cụ thể nào từ Claude cho mỗi nhiệm vụ? Định dạng, phong cách, độ dài và mức độ chi tiết nào bạn muốn?</li><li><strong>Process Description</strong>: Claude nên tiếp cận mỗi nhiệm vụ như thế nào? Có phương pháp, framework hoặc các bước cụ thể nào bạn muốn nó tuân theo không?</li><li><strong>Performance Description</strong>: Bạn muốn Claude có hành vi cộng tác như thế nào trong dự án này? Nên ngắn gọn hay chi tiết, thách thức hay hỗ trợ, tập trung vào ý tưởng hay phân tích?</li></ul><p>Thảo luận những câu hỏi này với Claude để thiết lập kỳ vọng rõ ràng cho sự cộng tác.</p><h4>Bước 3: Thực hiện dự án bằng vòng lặp description-discernment</h4><p>Giờ hãy làm việc qua các nhiệm vụ dự án đã lên kế hoạch cùng Claude. Với mỗi nhiệm vụ:</p><ol><li><strong>Describe (Mô tả)</strong> rõ ràng những gì bạn cần, sử dụng kỹ năng Description đã học:<ul><li>Cụ thể về những gì bạn muốn (Product)</li><li>Hướng dẫn cách Claude nên tiếp cận hoặc suy nghĩ về nhiệm vụ (Process)</li><li>Chỉ định cách bạn muốn Claude tương tác với bạn trong quá trình thực hiện (Performance)</li></ul></li><li><strong>Discern (Đánh giá)</strong> chất lượng những gì nhận được:<ul><li>Đánh giá bản thân đầu ra (Product Discernment)</li><li>Đánh giá cách Claude tiếp cận nhiệm vụ (Process Discernment)</li><li>Xem xét liệu hành vi của Claude có hữu ích nhất cho nhu cầu của bạn không (Performance Discernment)</li></ul></li><li><strong>Refine (Tinh chỉnh)</strong> dựa trên đánh giá:<ul><li>Cung cấp phản hồi về điều gì hiệu quả và điều gì chưa</li><li>Làm rõ hoặc điều chỉnh description khi cần</li><li>Yêu cầu các phiên bản lặp lại cho đến khi hài lòng với kết quả</li></ul></li><li><strong>Integrate (Tích hợp)</strong> chuyên môn và phán đoán của bạn:<ul><li>Thêm quan điểm độc đáo, sự sáng tạo hoặc kiến thức chuyên môn của bạn</li><li>Đưa ra quyết định cuối cùng về những gì cần giữ lại, chỉnh sửa hoặc bỏ đi</li><li>Chịu trách nhiệm về đầu ra cuối cùng</li></ul></li></ol><p>Tiếp tục vòng lặp Description-Discernment này cho mỗi nhiệm vụ trong dự án cho đến khi hoàn thành.</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "reflection",
+      "titleEn": "Reflection",
+      "titleVi": "Suy ngẫm",
+      "en": "<p>Before moving on, take a moment to consider:</p><ul><li>What patterns did you notice in the types of descriptions that led to the best outcomes?</li><li>Which required more effort from you: Description or Discernment? Why do you think that was the case?</li><li>How did your actual project execution compare to your initial plan from Lesson 5? What adjustments did you make along the way?</li></ul>",
+      "vi": "<p>Trước khi tiếp tục, hãy dành một chút thời gian để suy ngẫm:</p><ul><li>Bạn nhận thấy những mẫu nào trong các loại description dẫn đến kết quả tốt nhất?</li><li>Điều nào đòi hỏi nhiều nỗ lực hơn từ bạn: Description hay Discernment? Tại sao bạn nghĩ như vậy?</li><li>Việc thực hiện dự án thực tế của bạn so sánh như thế nào với kế hoạch ban đầu từ Bài 5? Bạn đã thực hiện những điều chỉnh nào trong quá trình thực hiện?</li></ul>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "whats-next",
+      "titleEn": "What's Next",
+      "titleVi": "Tiếp theo",
+      "en": "<p>In the next lesson, we'll explore the final competency in the AI Fluency Framework: Diligence. While Delegation, Description, and Discernment focus primarily on effectiveness and efficiency, Diligence addresses the ethical and safety aspects of working with AI. You'll learn how to ensure your AI collaborations are responsible, transparent, and accountable.</p><hr><p><em>Copyright 2025 Rick Dakan, Joseph Feller, and Anthropic. Released under the CC BY-NC-SA 4.0 license. This course is based on The AI Fluency Framework by Dakan and Feller. Supported in part by the Higher Education Authority, Ireland, through the National Forum for the Enhancement of Teaching and Learning.</em></p>",
+      "vi": "<p>Trong bài tiếp theo, chúng ta sẽ khám phá năng lực cuối cùng trong AI Fluency Framework: Diligence (Siêng năng). Trong khi Delegation, Description và Discernment tập trung chủ yếu vào hiệu quả và năng suất, Diligence đề cập đến các khía cạnh đạo đức và an toàn khi làm việc với AI. Bạn sẽ học cách đảm bảo sự cộng tác AI của mình có trách nhiệm, minh bạch và có khả năng giải trình.</p><hr><p><em>Bản quyền 2025 Rick Dakan, Joseph Feller và Anthropic. Phát hành theo giấy phép CC BY-NC-SA 4.0. Khóa học này dựa trên The AI Fluency Framework của Dakan và Feller. Được hỗ trợ một phần bởi Higher Education Authority, Ireland, thông qua National Forum for the Enhancement of Teaching and Learning.</em></p>",
+      "image": "",
+      "video": ""
+    }
+  ]
+}

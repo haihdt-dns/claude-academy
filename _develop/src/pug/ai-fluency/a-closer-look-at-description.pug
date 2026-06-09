@@ -1,0 +1,12 @@
+extends ../utils/_lesson.pug
+
+block append meta
+  -
+    var courseId = 'ai-fluency'
+    var currentSlug = 'a-closer-look-at-description'
+    var lessonData = JSON.parse(nodeFs.readFileSync(nodePath.join(process.cwd(), '../data/ai-fluency/a-closer-look-at-description.json'), 'utf8'))
+    title = lessonData.titleEn + ' · AI Fluency · Claude Academy'
+    description = 'Master the three types of Description — Product, Process, and Performance — to communicate your intentions clearly and get better results from AI.'
+    baseURL = 'https://chobadon.com/claude-academy/'
+    ogImageURL = baseURL + 'assets/images/ogp.png'
+    canonicalURL = `${baseURL}${courseId}/${currentSlug}/`

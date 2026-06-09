@@ -1,0 +1,12 @@
+{
+  "slug": "chaining-workflows",
+  "titleEn": "Chaining workflows",
+  "titleVi": "Workflows chuỗi",
+  "estimatedTimeEn": "10 minutes",
+  "estimatedTimeVi": "10 phút",
+  "prevLesson": "parallelization-workflows",
+  "nextLesson": "routing-workflows",
+  "summaryEn": "",
+  "summaryVi": "",
+  "sections": []
+}

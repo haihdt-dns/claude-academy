@@ -1,0 +1,12 @@
+{
+  "slug": "text-embeddings",
+  "titleEn": "Text embeddings",
+  "titleVi": "Text embeddings",
+  "estimatedTimeEn": "10 minutes",
+  "estimatedTimeVi": "10 phút",
+  "prevLesson": "text-chunking-strategies",
+  "nextLesson": "the-full-rag-flow",
+  "summaryEn": "",
+  "summaryVi": "",
+  "sections": []
+}

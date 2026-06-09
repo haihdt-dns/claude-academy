@@ -1,0 +1,40 @@
+{
+  "slug": "why-do-we-need-ai-fluency",
+  "titleEn": "Why do we need AI Fluency?",
+  "titleVi": "Tại sao chúng ta cần AI Fluency?",
+  "estimatedTimeEn": "",
+  "estimatedTimeVi": "",
+  "prevLesson": "introduction-to-ai-fluency",
+  "nextLesson": "the-4d-framework",
+  "summaryEn": "<ul><li>AI Fluency involves developing practical skills, knowledge, insights, and values to interact with AI effectively, efficiently, ethically, and safely</li><li>Automation: The AI completes specific tasks based on your instructions</li><li>Augmentation: You and AI collaborate as creative thinking and task execution partners</li><li>Agency: You configure AI to work independently on your behalf, establishing its knowledge and behavior patterns</li></ul>",
+  "summaryVi": "<ul><li>AI Fluency bao gồm phát triển kỹ năng thực tiễn, kiến thức, hiểu biết và giá trị để tương tác với AI một cách hiệu quả, năng suất, có đạo đức và an toàn</li><li>Tự động hóa (Automation): AI hoàn thành các nhiệm vụ cụ thể dựa trên hướng dẫn của bạn</li><li>Tăng cường (Augmentation): Bạn và AI cộng tác như những đối tác tư duy sáng tạo và thực thi nhiệm vụ</li><li>Tác nhân (Agency): Bạn cấu hình AI để làm việc độc lập thay mặt bạn, thiết lập kiến thức và mô hình hành vi của nó</li></ul>",
+  "sections": [
+    {
+      "id": "objectives",
+      "titleEn": "What you'll learn",
+      "titleVi": "Bạn sẽ học được gì",
+      "en": "<p>By the end of this lesson, you'll be able to:</p><ul><li>Understand what AI Fluency means and why it matters in today's rapidly evolving technological landscape</li><li>Recognize three emerging ways we collaborate with AI: Automation, Augmentation, and Agency</li></ul>",
+      "vi": "<p>Sau khi hoàn thành bài học này, bạn sẽ có thể:</p><ul><li>Hiểu AI Fluency có nghĩa là gì và tại sao nó quan trọng trong bối cảnh công nghệ đang phát triển nhanh chóng ngày nay</li><li>Nhận biết ba cách cộng tác mới nổi với AI: Tự động hóa, Tăng cường và Tác nhân</li></ul>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "why-ai-fluency",
+      "titleEn": "Why do we need AI Fluency?",
+      "titleVi": "Tại sao chúng ta cần AI Fluency?",
+      "en": "<p>This video explores what it really means to be \"fluent\" with AI and why this matters. We discuss how AI Fluency involves developing practical skills, knowledge, insights, and values that help you interact with AI systems in ways that are effective, efficient, ethical, and safe. We also introduce three ways people engage with AI:</p><ul><li><strong>Automation:</strong> The AI completes specific tasks based on your instructions.</li><li><strong>Augmentation:</strong> You and AI collaborate as creative thinking and task execution partners.</li><li><strong>Agency:</strong> You configure AI to work independently on your behalf, establishing its knowledge and behavior patterns rather than just giving it specific tasks.</li></ul>",
+      "vi": "<p>Video này khám phá ý nghĩa thực sự của việc \"thành thạo\" AI và tại sao điều này lại quan trọng. Chúng ta thảo luận về cách AI Fluency bao gồm việc phát triển các kỹ năng thực tiễn, kiến thức, hiểu biết và giá trị giúp bạn tương tác với các hệ thống AI theo cách hiệu quả, năng suất, có đạo đức và an toàn. Chúng ta cũng giới thiệu ba cách mà con người tương tác với AI:</p><ul><li><strong>Tự động hóa (Automation):</strong> AI hoàn thành các nhiệm vụ cụ thể dựa trên hướng dẫn của bạn.</li><li><strong>Tăng cường (Augmentation):</strong> Bạn và AI cộng tác như những đối tác tư duy sáng tạo và thực thi nhiệm vụ.</li><li><strong>Tác nhân (Agency):</strong> Bạn cấu hình AI để làm việc độc lập thay mặt bạn, thiết lập kiến thức và mô hình hành vi của nó thay vì chỉ giao cho nó các nhiệm vụ cụ thể.</li></ul>",
+      "image": "",
+      "video": "<div class=\"lesson-video\"><iframe src=\"https://www.youtube.com/embed/4szRHy_CT7s?cc_load_policy=1&cc_lang_pref=vi&hl=vi\" title=\"Why do we need AI Fluency?\" width=\"560\" height=\"315\" frameborder=\"0\" allowfullscreen></iframe></div>"
+    },
+    {
+      "id": "whats-next",
+      "titleEn": "What's next",
+      "titleVi": "Tiếp theo",
+      "en": "<p>In the next lesson, we'll explore the 4D Framework — the four core competencies of AI Fluency: Delegation, Description, Discernment, and Diligence.</p><hr><p><em>Copyright 2025 Rick Dakan, Joseph Feller, and Anthropic. Released under the CC BY-NC-SA 4.0 license. This course is based on The AI Fluency Framework by Dakan and Feller. Supported in part by the Higher Education Authority, Ireland, through the National Forum for the Enhancement of Teaching and Learning.</em></p>",
+      "vi": "<p>Trong bài học tiếp theo, chúng ta sẽ khám phá Khung 4D — bốn năng lực cốt lõi của AI Fluency: Delegation (Ủy thác), Description (Mô tả), Discernment (Phán đoán) và Diligence (Cẩn trọng).</p><hr><p><em>Bản quyền 2025 Rick Dakan, Joseph Feller và Anthropic. Phát hành theo giấy phép CC BY-NC-SA 4.0. Khóa học này dựa trên Khung AI Fluency của Dakan và Feller. Được hỗ trợ một phần bởi Cơ quan Giáo dục Đại học Ireland, thông qua Diễn đàn Quốc gia về Nâng cao Giảng dạy và Học tập.</em></p>",
+      "image": "",
+      "video": ""
+    }
+  ]
+}

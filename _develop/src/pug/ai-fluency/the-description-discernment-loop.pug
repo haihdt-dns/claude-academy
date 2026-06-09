@@ -1,0 +1,12 @@
+extends ../utils/_lesson.pug
+
+block append meta
+  -
+    var courseId = 'ai-fluency'
+    var currentSlug = 'the-description-discernment-loop'
+    var lessonData = JSON.parse(nodeFs.readFileSync(nodePath.join(process.cwd(), '../data/ai-fluency/the-description-discernment-loop.json'), 'utf8'))
+    title = lessonData.titleEn + ' · AI Fluency · Claude Academy'
+    description = 'Apply Description and Discernment skills together in a hands-on project, practicing the four-step Description-Discernment loop: Describe, Discern, Refine, and Integrate.'
+    baseURL = 'https://chobadon.com/claude-academy/'
+    ogImageURL = baseURL + 'assets/images/ogp.png'
+    canonicalURL = `${baseURL}${courseId}/${currentSlug}/`

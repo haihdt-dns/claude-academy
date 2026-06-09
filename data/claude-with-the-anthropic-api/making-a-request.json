@@ -1,0 +1,40 @@
+{
+  "slug": "making-a-request",
+  "titleEn": "Making a request",
+  "titleVi": "Thực hiện request",
+  "estimatedTimeEn": "10 minutes",
+  "estimatedTimeVi": "10 phút",
+  "prevLesson": "getting-an-api-key",
+  "nextLesson": "multi-turn-conversations",
+  "summaryEn": "How to make your first API call to Claude — request structure, required parameters, and reading the response.",
+  "summaryVi": "Cách thực hiện API call đầu tiên đến Claude — cấu trúc request, các tham số bắt buộc và đọc response.",
+  "sections": [
+    {
+      "id": "your-first-request",
+      "titleEn": "Your first request",
+      "titleVi": "Request đầu tiên của bạn",
+      "en": "<p>With your API key set as an environment variable, you're ready to make your first call. Here's the complete minimal example:</p><pre><code>import anthropic\n\nclient = anthropic.Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-3-5-sonnet-20241022\",\n    max_tokens=1024,\n    messages=[\n        {\"role\": \"user\", \"content\": \"What is the capital of France?\"}\n    ]\n)\n\nprint(message.content[0].text)</code></pre><p>Run this and you should see Claude's response printed to the terminal. Let's break down what each parameter does.</p>",
+      "vi": "<p>Với API key đã được đặt làm biến môi trường, bạn đã sẵn sàng thực hiện lần gọi đầu tiên. Đây là ví dụ tối giản hoàn chỉnh:</p><pre><code>import anthropic\n\nclient = anthropic.Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-3-5-sonnet-20241022\",\n    max_tokens=1024,\n    messages=[\n        {\"role\": \"user\", \"content\": \"What is the capital of France?\"}\n    ]\n)\n\nprint(message.content[0].text)</code></pre><p>Chạy đoạn code này và bạn sẽ thấy response của Claude được in ra terminal. Hãy phân tích từng tham số.</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "request-parameters",
+      "titleEn": "Request parameters",
+      "titleVi": "Các tham số request",
+      "en": "<h4>model</h4><p>The model ID to use. We recommend using a pinned version like <code>claude-3-5-sonnet-20241022</code> for predictable behavior. See the <a href=\"https://docs.anthropic.com/en/docs/about-claude/models\" target=\"_blank\" rel=\"noopener\">models documentation</a> for the full list.</p><h4>max_tokens</h4><p>The maximum number of tokens Claude can generate in its response. This is a hard limit — Claude will stop generating when it reaches this number. A token is roughly 3–4 characters of English text. <code>1024</code> tokens is a good default for most short responses.</p><h4>messages</h4><p>An array of message objects representing the conversation. Each message has:</p><ul><li><code>role</code> — either <code>\"user\"</code> (your input) or <code>\"assistant\"</code> (Claude's output)</li><li><code>content</code> — the text of the message</li></ul><p>For a single-turn request, you only need one message with <code>role: \"user\"</code>. Multi-turn conversations build on this by adding more messages — covered in the next lesson.</p>",
+      "vi": "<h4>model</h4><p>Model ID để sử dụng. Chúng ta khuyến nghị dùng phiên bản đã ghim như <code>claude-3-5-sonnet-20241022</code> để có hành vi ổn định. Xem <a href=\"https://docs.anthropic.com/en/docs/about-claude/models\" target=\"_blank\" rel=\"noopener\">tài liệu về models</a> để biết danh sách đầy đủ.</p><h4>max_tokens</h4><p>Số token tối đa Claude có thể tạo trong response. Đây là giới hạn cứng — Claude sẽ dừng tạo khi đạt đến con số này. Một token xấp xỉ 3–4 ký tự tiếng Anh. <code>1024</code> token là giá trị mặc định tốt cho hầu hết các response ngắn.</p><h4>messages</h4><p>Một mảng các message object đại diện cho cuộc hội thoại. Mỗi message có:</p><ul><li><code>role</code> — là <code>\"user\"</code> (input của bạn) hoặc <code>\"assistant\"</code> (output của Claude)</li><li><code>content</code> — nội dung text của tin nhắn</li></ul><p>Với request một lượt, bạn chỉ cần một message với <code>role: \"user\"</code>. Hội thoại nhiều lượt xây dựng dựa trên điều này bằng cách thêm nhiều message hơn — được đề cập trong bài học tiếp theo.</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "reading-the-response",
+      "titleEn": "Reading the response",
+      "titleVi": "Đọc response",
+      "en": "<p>The <code>client.messages.create()</code> call returns a <code>Message</code> object. The key fields:</p><pre><code># The text of Claude's reply\nprint(message.content[0].text)\n\n# Why did Claude stop generating?\nprint(message.stop_reason)   # 'end_turn' or 'max_tokens'\n\n# Token usage for cost tracking\nprint(message.usage.input_tokens)\nprint(message.usage.output_tokens)</code></pre><p><strong>Why <code>content[0]</code>?</strong> The <code>content</code> field is a list because Claude can return multiple content blocks (text, tool calls, etc.). For a simple text response, there will be exactly one block at index <code>0</code>.</p><p>If <code>stop_reason</code> is <code>\"max_tokens\"</code> rather than <code>\"end_turn\"</code>, Claude's response was cut off — increase <code>max_tokens</code> if you need the full reply.</p>",
+      "vi": "<p>Lệnh <code>client.messages.create()</code> trả về một <code>Message</code> object. Các trường chính:</p><pre><code># Text trong câu trả lời của Claude\nprint(message.content[0].text)\n\n# Tại sao Claude dừng tạo?\nprint(message.stop_reason)   # 'end_turn' hoặc 'max_tokens'\n\n# Số token để theo dõi chi phí\nprint(message.usage.input_tokens)\nprint(message.usage.output_tokens)</code></pre><p><strong>Tại sao lại <code>content[0]</code>?</strong> Trường <code>content</code> là một list vì Claude có thể trả về nhiều content block (text, tool call, v.v.). Với response text đơn giản, sẽ có chính xác một block tại index <code>0</code>.</p><p>Nếu <code>stop_reason</code> là <code>\"max_tokens\"</code> thay vì <code>\"end_turn\"</code>, response của Claude đã bị cắt — hãy tăng <code>max_tokens</code> nếu bạn cần toàn bộ câu trả lời.</p>",
+      "image": "",
+      "video": ""
+    }
+  ]
+}

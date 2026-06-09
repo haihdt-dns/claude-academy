@@ -1,0 +1,12 @@
+extends ../utils/_lesson.pug
+
+block append meta
+  -
+    var courseId = 'claude-code-101'
+    var currentSlug = 'mcp-servers-with-claude-code'
+    var lessonData = JSON.parse(nodeFs.readFileSync(nodePath.join(process.cwd(), '../data/claude-code-101/mcp-servers-with-claude-code.json'), 'utf8'))
+    title = lessonData.titleEn + ' · Claude Code 101 · Claude Academy'
+    description = 'MCP servers with Claude Code.'
+    baseURL = 'https://chobadon.com/claude-academy/'
+    ogImageURL = baseURL + 'assets/images/ogp.png'
+    canonicalURL = `//`

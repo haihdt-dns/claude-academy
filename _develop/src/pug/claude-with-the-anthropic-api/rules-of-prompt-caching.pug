@@ -1,0 +1,12 @@
+extends ../utils/_lesson.pug
+
+block append meta
+  -
+    var courseId = 'claude-with-the-anthropic-api'
+    var currentSlug = 'rules-of-prompt-caching'
+    var lessonData = JSON.parse(nodeFs.readFileSync(nodePath.join(process.cwd(), '../data/claude-with-the-anthropic-api/rules-of-prompt-caching.json'), 'utf8'))
+    title = lessonData.titleEn + ' · Claude with the Anthropic API · Claude Academy'
+    description = ''
+    baseURL = 'https://chobadon.com/claude-academy/'
+    ogImageURL = baseURL + 'assets/images/ogp.png'
+    canonicalURL = `${baseURL}${courseId}/rules-of-prompt-caching/`

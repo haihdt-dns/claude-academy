@@ -1,0 +1,154 @@
+{
+  "id": "claude-with-the-anthropic-api",
+  "title": "Claude with the Anthropic API",
+  "sections": [
+    {
+      "titleEn": "Introduction",
+      "titleVi": "Giới thiệu",
+      "lessons": [
+        { "slug": "welcome-to-the-course", "titleEn": "Welcome to the course", "titleVi": "Chào mừng đến với khóa học" }
+      ]
+    },
+    {
+      "titleEn": "Anthropic overview",
+      "titleVi": "Tổng quan về Anthropic",
+      "lessons": [
+        { "slug": "overview-of-claude-models", "titleEn": "Overview of Claude models", "titleVi": "Tổng quan về các model Claude" }
+      ]
+    },
+    {
+      "titleEn": "Accessing Claude with the API",
+      "titleVi": "Truy cập Claude qua API",
+      "lessons": [
+        { "slug": "accessing-the-api", "titleEn": "Accessing the API", "titleVi": "Truy cập API" },
+        { "slug": "getting-an-api-key", "titleEn": "Getting an API key", "titleVi": "Lấy API key" },
+        { "slug": "making-a-request", "titleEn": "Making a request", "titleVi": "Thực hiện request" },
+        { "slug": "multi-turn-conversations", "titleEn": "Multi-Turn conversations", "titleVi": "Hội thoại nhiều lượt" },
+        { "slug": "chat-exercise", "titleEn": "Chat exercise", "titleVi": "Bài tập chat" },
+        { "slug": "system-prompts", "titleEn": "System prompts", "titleVi": "System prompts" },
+        { "slug": "system-prompts-exercise", "titleEn": "System prompts exercise", "titleVi": "Bài tập system prompts" },
+        { "slug": "temperature", "titleEn": "Temperature", "titleVi": "Temperature" },
+        { "slug": "response-streaming", "titleEn": "Response streaming", "titleVi": "Response streaming" },
+        { "slug": "structured-data", "titleEn": "Structured data", "titleVi": "Dữ liệu có cấu trúc" },
+        { "slug": "structured-data-exercise", "titleEn": "Structured data exercise", "titleVi": "Bài tập dữ liệu có cấu trúc" }
+      ]
+    },
+    {
+      "titleEn": "Prompt evaluation",
+      "titleVi": "Đánh giá prompt",
+      "lessons": [
+        { "slug": "prompt-evaluation", "titleEn": "Prompt evaluation", "titleVi": "Đánh giá prompt" },
+        { "slug": "a-typical-eval-workflow", "titleEn": "A typical eval workflow", "titleVi": "Quy trình eval điển hình" },
+        { "slug": "generating-test-datasets", "titleEn": "Generating test datasets", "titleVi": "Tạo test dataset" },
+        { "slug": "running-the-eval", "titleEn": "Running the eval", "titleVi": "Chạy eval" },
+        { "slug": "model-based-grading", "titleEn": "Model based grading", "titleVi": "Chấm điểm bằng model" },
+        { "slug": "code-based-grading", "titleEn": "Code based grading", "titleVi": "Chấm điểm bằng code" },
+        { "slug": "exercise-on-prompt-evals", "titleEn": "Exercise on prompt evals", "titleVi": "Bài tập prompt evals" }
+      ]
+    },
+    {
+      "titleEn": "Prompt engineering techniques",
+      "titleVi": "Kỹ thuật prompt engineering",
+      "lessons": [
+        { "slug": "prompt-engineering", "titleEn": "Prompt engineering", "titleVi": "Prompt engineering" },
+        { "slug": "being-clear-and-direct", "titleEn": "Being clear and direct", "titleVi": "Rõ ràng và trực tiếp" },
+        { "slug": "being-specific", "titleEn": "Being specific", "titleVi": "Cụ thể hóa" },
+        { "slug": "structure-with-xml-tags", "titleEn": "Structure with XML tags", "titleVi": "Cấu trúc với XML tags" },
+        { "slug": "providing-examples", "titleEn": "Providing examples", "titleVi": "Cung cấp ví dụ" },
+        { "slug": "exercise-on-prompting", "titleEn": "Exercise on prompting", "titleVi": "Bài tập prompting" }
+      ]
+    },
+    {
+      "titleEn": "Tool use with Claude",
+      "titleVi": "Sử dụng tool với Claude",
+      "lessons": [
+        { "slug": "introducing-tool-use", "titleEn": "Introducing tool use", "titleVi": "Giới thiệu tool use" },
+        { "slug": "project-overview", "titleEn": "Project overview", "titleVi": "Tổng quan dự án" },
+        { "slug": "tool-functions", "titleEn": "Tool functions", "titleVi": "Các hàm tool" },
+        { "slug": "tool-schemas", "titleEn": "Tool schemas", "titleVi": "Tool schemas" },
+        { "slug": "handling-message-blocks", "titleEn": "Handling message blocks", "titleVi": "Xử lý message blocks" },
+        { "slug": "sending-tool-results", "titleEn": "Sending tool results", "titleVi": "Gửi kết quả tool" },
+        { "slug": "multi-turn-conversations-with-tools", "titleEn": "Multi-turn conversations with tools", "titleVi": "Hội thoại nhiều lượt với tools" },
+        { "slug": "implementing-multiple-turns", "titleEn": "Implementing multiple turns", "titleVi": "Triển khai nhiều lượt" },
+        { "slug": "using-multiple-tools", "titleEn": "Using multiple tools", "titleVi": "Sử dụng nhiều tools" },
+        { "slug": "fine-grained-tool-calling", "titleEn": "Fine grained tool calling", "titleVi": "Gọi tool chi tiết" },
+        { "slug": "the-text-edit-tool", "titleEn": "The text edit tool", "titleVi": "Tool chỉnh sửa văn bản" },
+        { "slug": "the-web-search-tool", "titleEn": "The web search tool", "titleVi": "Tool tìm kiếm web" }
+      ]
+    },
+    {
+      "titleEn": "RAG and Agentic Search",
+      "titleVi": "RAG và Agentic Search",
+      "lessons": [
+        { "slug": "introducing-retrieval-augmented-generation", "titleEn": "Introducing Retrieval Augmented Generation", "titleVi": "Giới thiệu Retrieval Augmented Generation" },
+        { "slug": "text-chunking-strategies", "titleEn": "Text chunking strategies", "titleVi": "Chiến lược phân đoạn văn bản" },
+        { "slug": "text-embeddings", "titleEn": "Text embeddings", "titleVi": "Text embeddings" },
+        { "slug": "the-full-rag-flow", "titleEn": "The full RAG flow", "titleVi": "Luồng RAG đầy đủ" },
+        { "slug": "implementing-the-rag-flow", "titleEn": "Implementing the RAG flow", "titleVi": "Triển khai luồng RAG" },
+        { "slug": "bm25-lexical-search", "titleEn": "BM25 lexical search", "titleVi": "Tìm kiếm từ vựng BM25" },
+        { "slug": "a-multi-index-rag-pipeline", "titleEn": "A Multi-Index RAG pipeline", "titleVi": "Pipeline RAG đa chỉ mục" }
+      ]
+    },
+    {
+      "titleEn": "Features of Claude",
+      "titleVi": "Tính năng của Claude",
+      "lessons": [
+        { "slug": "extended-thinking", "titleEn": "Extended thinking", "titleVi": "Extended thinking" },
+        { "slug": "image-support", "titleEn": "Image support", "titleVi": "Hỗ trợ hình ảnh" },
+        { "slug": "pdf-support", "titleEn": "PDF support", "titleVi": "Hỗ trợ PDF" },
+        { "slug": "citations", "titleEn": "Citations", "titleVi": "Trích dẫn" },
+        { "slug": "prompt-caching", "titleEn": "Prompt caching", "titleVi": "Prompt caching" },
+        { "slug": "rules-of-prompt-caching", "titleEn": "Rules of prompt caching", "titleVi": "Quy tắc prompt caching" },
+        { "slug": "prompt-caching-in-action", "titleEn": "Prompt caching in action", "titleVi": "Prompt caching trong thực tế" },
+        { "slug": "code-execution-and-the-files-api", "titleEn": "Code execution and the Files API", "titleVi": "Thực thi code và Files API" }
+      ]
+    },
+    {
+      "titleEn": "Model Context Protocol",
+      "titleVi": "Model Context Protocol",
+      "lessons": [
+        { "slug": "introducing-mcp", "titleEn": "Introducing MCP", "titleVi": "Giới thiệu MCP" },
+        { "slug": "mcp-clients", "titleEn": "MCP clients", "titleVi": "MCP clients" },
+        { "slug": "mcp-project-setup", "titleEn": "Project setup", "titleVi": "Thiết lập dự án" },
+        { "slug": "defining-tools-with-mcp", "titleEn": "Defining tools with MCP", "titleVi": "Định nghĩa tools với MCP" },
+        { "slug": "the-server-inspector", "titleEn": "The server inspector", "titleVi": "Server inspector" },
+        { "slug": "implementing-a-client", "titleEn": "Implementing a client", "titleVi": "Triển khai client" },
+        { "slug": "defining-resources", "titleEn": "Defining resources", "titleVi": "Định nghĩa resources" },
+        { "slug": "accessing-resources", "titleEn": "Accessing resources", "titleVi": "Truy cập resources" },
+        { "slug": "defining-prompts", "titleEn": "Defining prompts", "titleVi": "Định nghĩa prompts" },
+        { "slug": "prompts-in-the-client", "titleEn": "Prompts in the client", "titleVi": "Prompts trong client" },
+        { "slug": "mcp-review", "titleEn": "MCP review", "titleVi": "Ôn tập MCP" }
+      ]
+    },
+    {
+      "titleEn": "Anthropic apps — Claude Code and computer use",
+      "titleVi": "Ứng dụng Anthropic — Claude Code và computer use",
+      "lessons": [
+        { "slug": "anthropic-apps", "titleEn": "Anthropic apps", "titleVi": "Ứng dụng Anthropic" },
+        { "slug": "claude-code-setup", "titleEn": "Claude Code setup", "titleVi": "Cài đặt Claude Code" },
+        { "slug": "claude-code-in-action", "titleEn": "Claude Code in action", "titleVi": "Claude Code trong thực tế" },
+        { "slug": "enhancements-with-mcp-servers", "titleEn": "Enhancements with MCP servers", "titleVi": "Nâng cao với MCP servers" }
+      ]
+    },
+    {
+      "titleEn": "Agents and workflows",
+      "titleVi": "Agents và workflows",
+      "lessons": [
+        { "slug": "agents-and-workflows", "titleEn": "Agents and workflows", "titleVi": "Agents và workflows" },
+        { "slug": "parallelization-workflows", "titleEn": "Parallelization workflows", "titleVi": "Workflows song song hóa" },
+        { "slug": "chaining-workflows", "titleEn": "Chaining workflows", "titleVi": "Workflows chuỗi" },
+        { "slug": "routing-workflows", "titleEn": "Routing workflows", "titleVi": "Workflows định tuyến" },
+        { "slug": "agents-and-tools", "titleEn": "Agents and tools", "titleVi": "Agents và tools" },
+        { "slug": "environment-inspection", "titleEn": "Environment inspection", "titleVi": "Kiểm tra môi trường" },
+        { "slug": "workflows-vs-agents", "titleEn": "Workflows vs agents", "titleVi": "Workflows so với agents" }
+      ]
+    },
+    {
+      "titleEn": "Wrapping up!",
+      "titleVi": "Kết thúc!",
+      "lessons": [
+        { "slug": "course-wrap-up", "titleEn": "Course Wrap Up", "titleVi": "Tổng kết khóa học" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+
+    <!--#include virtual="/claude-academy/assets/include/ga_head.html" -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Making a request · Claude with the Anthropic API · Claude Academy</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="">
+    <meta property="og:title" content="Making a request · Claude with the Anthropic API · Claude Academy">
+    <meta property="og:url" content="https://chobadon.com/claude-academy/claude-with-the-anthropic-api/making-a-request/">
+    <meta property="og:image" content="https://chobadon.com/claude-academy/assets/images/ogp.png">
+    <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:description" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&amp;display=swap">
+    <link rel="stylesheet" href="/claude-academy/assets/css/common.css?v=sha384-/QRqlI0jk21piyOMDlehSThtd0HifferyFI5WzwKPcyz8PJnQwToghHciID1c3Q8">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/claude-academy/assets/css/lesson.css?v=sha384-E777OCsLaLmN4LOLX2LG5nMfCju5odkVHqoVrT0nv1HQlut3oW7GANfrpxxKUwbZ">
+    <meta name="robots" content="noindex, nofollow, nosnippet, noarchive, noimageindex, notranslate">
+    <meta name="googlebot" content="noindex, nofollow, nosnippet, noarchive, noimageindex">
+    <meta name="bingbot" content="noindex, nofollow, nosnippet, noarchive, noimageindex">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@id": "https://chobadon.com/claude-academy//",
+              "name": "TOP"
+            }
+          } 
+        ]
+      }
+    </script>
+  </head>
+  <body>
+
+    <!--#include virtual="/claude-academy/assets/include/ga_body.html" -->
+
+    <div class="root p-lesson" id="root">
+
+    <!--#include virtual="/claude-academy/assets/include/header.html" -->
+
+      <main class="main" id="main">
+        <div class="lesson-layout">
+          <aside class="lesson-sidebar">
+            <div class="lesson-sidebar__inner"><a class="lesson-sidebar__back" href="/claude-academy/index.html">← Claude Academy</a>
+              <nav class="lesson-nav">
+                <div class="lesson-nav__section">
+                  <p class="lesson-nav__section-heading">Introduction</p>
+                  <ul class="lesson-nav__list">
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/welcome-to-the-course.html">Welcome to the course</a></li>
+                  </ul>
+                </div>
+                <div class="lesson-nav__section">
+                  <p class="lesson-nav__section-heading">Anthropic overview</p>
+                  <ul class="lesson-nav__list">
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/overview-of-claude-models.html">Overview of Claude models</a></li>
+                  </ul>
+                </div>
+                <div class="lesson-nav__section">
+                  <p class="lesson-nav__section-heading">Accessing Claude with the API</p>
+                  <ul class="lesson-nav__list">
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/accessing-the-api.html">Accessing the API</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/getting-an-api-key.html">Getting an API key</a></li>
+                    <li class="lesson-nav__item is-active"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/making-a-request.html">Making a request</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/multi-turn-conversations.html">Multi-Turn conversations</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/chat-exercise.html">Chat exercise</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/system-prompts.html">System prompts</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/system-prompts-exercise.html">System prompts exercise</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/temperature.html">Temperature</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/response-streaming.html">Response streaming</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/structured-data.html">Structured data</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/structured-data-exercise.html">Structured data exercise</a></li>
+                  </ul>
+                </div>
+                <div class="lesson-nav__section">
+                  <p class="lesson-nav__section-heading">Prompt evaluation</p>
+                  <ul class="lesson-nav__list">
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/prompt-evaluation.html">Prompt evaluation</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/a-typical-eval-workflow.html">A typical eval workflow</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/generating-test-datasets.html">Generating test datasets</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/running-the-eval.html">Running the eval</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/model-based-grading.html">Model based grading</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/code-based-grading.html">Code based grading</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/exercise-on-prompt-evals.html">Exercise on prompt evals</a></li>
+                  </ul>
+                </div>
+                <div class="lesson-nav__section">
+                  <p class="lesson-nav__section-heading">Prompt engineering techniques</p>
+                  <ul class="lesson-nav__list">
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/prompt-engineering.html">Prompt engineering</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/being-clear-and-direct.html">Being clear and direct</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/being-specific.html">Being specific</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/structure-with-xml-tags.html">Structure with XML tags</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/providing-examples.html">Providing examples</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/exercise-on-prompting.html">Exercise on prompting</a></li>
+                  </ul>
+                </div>
+                <div class="lesson-nav__section">
+                  <p class="lesson-nav__section-heading">Tool use with Claude</p>
+                  <ul class="lesson-nav__list">
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/introducing-tool-use.html">Introducing tool use</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/project-overview.html">Project overview</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/tool-functions.html">Tool functions</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/tool-schemas.html">Tool schemas</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/handling-message-blocks.html">Handling message blocks</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/sending-tool-results.html">Sending tool results</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/multi-turn-conversations-with-tools.html">Multi-turn conversations with tools</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/implementing-multiple-turns.html">Implementing multiple turns</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/using-multiple-tools.html">Using multiple tools</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/fine-grained-tool-calling.html">Fine grained tool calling</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/the-text-edit-tool.html">The text edit tool</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/the-web-search-tool.html">The web search tool</a></li>
+                  </ul>
+                </div>
+                <div class="lesson-nav__section">
+                  <p class="lesson-nav__section-heading">RAG and Agentic Search</p>
+                  <ul class="lesson-nav__list">
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/introducing-retrieval-augmented-generation.html">Introducing Retrieval Augmented Generation</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/text-chunking-strategies.html">Text chunking strategies</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/text-embeddings.html">Text embeddings</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/the-full-rag-flow.html">The full RAG flow</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/implementing-the-rag-flow.html">Implementing the RAG flow</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/bm25-lexical-search.html">BM25 lexical search</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/a-multi-index-rag-pipeline.html">A Multi-Index RAG pipeline</a></li>
+                  </ul>
+                </div>
+                <div class="lesson-nav__section">
+                  <p class="lesson-nav__section-heading">Features of Claude</p>
+                  <ul class="lesson-nav__list">
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/extended-thinking.html">Extended thinking</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/image-support.html">Image support</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/pdf-support.html">PDF support</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/citations.html">Citations</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/prompt-caching.html">Prompt caching</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/rules-of-prompt-caching.html">Rules of prompt caching</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/prompt-caching-in-action.html">Prompt caching in action</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/code-execution-and-the-files-api.html">Code execution and the Files API</a></li>
+                  </ul>
+                </div>
+                <div class="lesson-nav__section">
+                  <p class="lesson-nav__section-heading">Model Context Protocol</p>
+                  <ul class="lesson-nav__list">
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/introducing-mcp.html">Introducing MCP</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/mcp-clients.html">MCP clients</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/mcp-project-setup.html">Project setup</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/defining-tools-with-mcp.html">Defining tools with MCP</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/the-server-inspector.html">The server inspector</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/implementing-a-client.html">Implementing a client</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/defining-resources.html">Defining resources</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/accessing-resources.html">Accessing resources</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/defining-prompts.html">Defining prompts</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/prompts-in-the-client.html">Prompts in the client</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/mcp-review.html">MCP review</a></li>
+                  </ul>
+                </div>
+                <div class="lesson-nav__section">
+                  <p class="lesson-nav__section-heading">Anthropic apps — Claude Code and computer use</p>
+                  <ul class="lesson-nav__list">
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/anthropic-apps.html">Anthropic apps</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/claude-code-setup.html">Claude Code setup</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/claude-code-in-action.html">Claude Code in action</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/enhancements-with-mcp-servers.html">Enhancements with MCP servers</a></li>
+                  </ul>
+                </div>
+                <div class="lesson-nav__section">
+                  <p class="lesson-nav__section-heading">Agents and workflows</p>
+                  <ul class="lesson-nav__list">
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/agents-and-workflows.html">Agents and workflows</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/parallelization-workflows.html">Parallelization workflows</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/chaining-workflows.html">Chaining workflows</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/routing-workflows.html">Routing workflows</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/agents-and-tools.html">Agents and tools</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/environment-inspection.html">Environment inspection</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/workflows-vs-agents.html">Workflows vs agents</a></li>
+                  </ul>
+                </div>
+                <div class="lesson-nav__section">
+                  <p class="lesson-nav__section-heading">Wrapping up!</p>
+                  <ul class="lesson-nav__list">
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/course-wrap-up.html">Course Wrap Up</a></li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </aside>
+          <div class="lesson-body">
+            <div class="lesson-body__content">
+              <div class="lesson-header">
+                <h1 class="lesson-title"><span class="lesson-title__en">Making a request</span><span class="lesson-title__vi">Thực hiện request</span></h1>
+                <div class="lesson-toggle">
+                  <button class="lesson-toggle__btn is-active" type="button" data-lang="bilingual">Song ngữ</button>
+                  <button class="lesson-toggle__btn" type="button" data-lang="en">English</button>
+                  <button class="lesson-toggle__btn" type="button" data-lang="vi">Tiếng Việt</button>
+                </div>
+              </div>
+              <div class="lesson-meta"><span class="lesson-meta__item">
+                  <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4" width="14" height="14">
+                    <circle cx="7" cy="7" r="5.5"></circle>
+                    <path d="M7 4v3.5l2 1.5"></path>
+                  </svg><span class="lesson-meta__text-bilingual">Estimated time: 10 minutes (Thời gian ước tính: 10 phút)</span><span class="lesson-meta__text-en">Estimated time: 10 minutes</span><span class="lesson-meta__text-vi">Thời gian ước tính: 10 phút</span></span></div>
+              <div class="lesson-content">
+                <div class="lesson-section" id="your-first-request">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Your first request</h2><span class="lesson-section__title-vi">Request đầu tiên của bạn</span>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>With your API key set as an environment variable, you're ready to make your first call. Here's the complete minimal example:</p><pre><code>import anthropic
+
+client = anthropic.Anthropic()
+
+message = client.messages.create(
+    model="claude-3-5-sonnet-20241022",
+    max_tokens=1024,
+    messages=[
+        {"role": "user", "content": "What is the capital of France?"}
+    ]
+)
+
+print(message.content[0].text)</code></pre><p>Run this and you should see Claude's response printed to the terminal. Let's break down what each parameter does.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Với API key đã được đặt làm biến môi trường, bạn đã sẵn sàng thực hiện lần gọi đầu tiên. Đây là ví dụ tối giản hoàn chỉnh:</p><pre><code>import anthropic
+
+client = anthropic.Anthropic()
+
+message = client.messages.create(
+    model="claude-3-5-sonnet-20241022",
+    max_tokens=1024,
+    messages=[
+        {"role": "user", "content": "What is the capital of France?"}
+    ]
+)
+
+print(message.content[0].text)</code></pre><p>Chạy đoạn code này và bạn sẽ thấy response của Claude được in ra terminal. Hãy phân tích từng tham số.</p>
+                  </div>
+                </div>
+                <div class="lesson-section" id="request-parameters">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Request parameters</h2><span class="lesson-section__title-vi">Các tham số request</span>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><h4>model</h4><p>The model ID to use. We recommend using a pinned version like <code>claude-3-5-sonnet-20241022</code> for predictable behavior. See the <a href="https://docs.anthropic.com/en/docs/about-claude/models" target="_blank" rel="noopener">models documentation</a> for the full list.</p><h4>max_tokens</h4><p>The maximum number of tokens Claude can generate in its response. This is a hard limit — Claude will stop generating when it reaches this number. A token is roughly 3–4 characters of English text. <code>1024</code> tokens is a good default for most short responses.</p><h4>messages</h4><p>An array of message objects representing the conversation. Each message has:</p><ul><li><code>role</code> — either <code>"user"</code> (your input) or <code>"assistant"</code> (Claude's output)</li><li><code>content</code> — the text of the message</li></ul><p>For a single-turn request, you only need one message with <code>role: "user"</code>. Multi-turn conversations build on this by adding more messages — covered in the next lesson.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><h4>model</h4><p>Model ID để sử dụng. Chúng ta khuyến nghị dùng phiên bản đã ghim như <code>claude-3-5-sonnet-20241022</code> để có hành vi ổn định. Xem <a href="https://docs.anthropic.com/en/docs/about-claude/models" target="_blank" rel="noopener">tài liệu về models</a> để biết danh sách đầy đủ.</p><h4>max_tokens</h4><p>Số token tối đa Claude có thể tạo trong response. Đây là giới hạn cứng — Claude sẽ dừng tạo khi đạt đến con số này. Một token xấp xỉ 3–4 ký tự tiếng Anh. <code>1024</code> token là giá trị mặc định tốt cho hầu hết các response ngắn.</p><h4>messages</h4><p>Một mảng các message object đại diện cho cuộc hội thoại. Mỗi message có:</p><ul><li><code>role</code> — là <code>"user"</code> (input của bạn) hoặc <code>"assistant"</code> (output của Claude)</li><li><code>content</code> — nội dung text của tin nhắn</li></ul><p>Với request một lượt, bạn chỉ cần một message với <code>role: "user"</code>. Hội thoại nhiều lượt xây dựng dựa trên điều này bằng cách thêm nhiều message hơn — được đề cập trong bài học tiếp theo.</p>
+                  </div>
+                </div>
+                <div class="lesson-section" id="reading-the-response">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Reading the response</h2><span class="lesson-section__title-vi">Đọc response</span>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>The <code>client.messages.create()</code> call returns a <code>Message</code> object. The key fields:</p><pre><code># The text of Claude's reply
+print(message.content[0].text)
+
+# Why did Claude stop generating?
+print(message.stop_reason)   # 'end_turn' or 'max_tokens'
+
+# Token usage for cost tracking
+print(message.usage.input_tokens)
+print(message.usage.output_tokens)</code></pre><p><strong>Why <code>content[0]</code>?</strong> The <code>content</code> field is a list because Claude can return multiple content blocks (text, tool calls, etc.). For a simple text response, there will be exactly one block at index <code>0</code>.</p><p>If <code>stop_reason</code> is <code>"max_tokens"</code> rather than <code>"end_turn"</code>, Claude's response was cut off — increase <code>max_tokens</code> if you need the full reply.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Lệnh <code>client.messages.create()</code> trả về một <code>Message</code> object. Các trường chính:</p><pre><code># Text trong câu trả lời của Claude
+print(message.content[0].text)
+
+# Tại sao Claude dừng tạo?
+print(message.stop_reason)   # 'end_turn' hoặc 'max_tokens'
+
+# Số token để theo dõi chi phí
+print(message.usage.input_tokens)
+print(message.usage.output_tokens)</code></pre><p><strong>Tại sao lại <code>content[0]</code>?</strong> Trường <code>content</code> là một list vì Claude có thể trả về nhiều content block (text, tool call, v.v.). Với response text đơn giản, sẽ có chính xác một block tại index <code>0</code>.</p><p>Nếu <code>stop_reason</code> là <code>"max_tokens"</code> thay vì <code>"end_turn"</code>, response của Claude đã bị cắt — hãy tăng <code>max_tokens</code> nếu bạn cần toàn bộ câu trả lời.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="lesson-nav-footer"><a class="lesson-nav-footer__prev" href="/claude-academy/claude-with-the-anthropic-api/getting-an-api-key.html"><span class="lesson-nav-footer__label"><span class="lesson-nav-footer__label-en">Previous Lesson</span><span class="lesson-nav-footer__label-vi">Bài trước</span></span><span class="lesson-nav-footer__title-en">← Getting an API key</span><span class="lesson-nav-footer__title-vi">Lấy API key</span></a><a class="lesson-nav-footer__next" href="/claude-academy/claude-with-the-anthropic-api/multi-turn-conversations.html"><span class="lesson-nav-footer__label"><span class="lesson-nav-footer__label-en">Next Lesson</span><span class="lesson-nav-footer__label-vi">Bài sau</span></span><span class="lesson-nav-footer__title-en">Multi-Turn conversations →</span><span class="lesson-nav-footer__title-vi">Hội thoại nhiều lượt</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="lesson-summary-btn" type="button" aria-label="Lesson summary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg><span class="lesson-summary-btn__label-en">Summary</span><span class="lesson-summary-btn__label-vi">Tóm tắt</span>
+        </button>
+        <div class="lesson-summary-modal">
+          <div class="lesson-summary-modal__overlay"></div>
+          <div class="lesson-summary-modal__box">
+            <div class="lesson-summary-modal__header">
+              <div class="lesson-summary-modal__title"><span class="lesson-summary-modal__title-en">Key Takeaways</span><span class="lesson-summary-modal__title-vi">Điểm chính bài học</span></div>
+              <div class="lesson-summary-modal__header-actions">
+                <div class="lesson-summary-modal__toggle">
+                  <button class="lesson-summary-modal__toggle-btn is-active" type="button" data-lang="bilingual">Song ngữ</button>
+                  <button class="lesson-summary-modal__toggle-btn" type="button" data-lang="en">English</button>
+                  <button class="lesson-summary-modal__toggle-btn" type="button" data-lang="vi">Tiếng Việt</button>
+                </div>
+                <button class="lesson-summary-modal__close" type="button" aria-label="Close">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="lesson-summary-modal__body">
+              <div class="lesson-summary-modal__card lesson-summary-modal__card--en">How to make your first API call to Claude — request structure, required parameters, and reading the response.
+              </div>
+              <div class="lesson-summary-modal__card lesson-summary-modal__card--vi">Cách thực hiện API call đầu tiên đến Claude — cấu trúc request, các tham số bắt buộc và đọc response.
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+    <!--#include virtual="/claude-academy/assets/include/footer.html" -->
+
+    </div>
+    <script src="/claude-academy/assets/js/main.js?v=sha384-kNNRbQTv526J2QIkhMOolMqrIfWyaSWL36D955JRpJTKBlmZ9+oV0Oz9FvXDnFbw" type="module" crossorigin></script>
+    <script src="/claude-academy/assets/js/lesson.js?v=sha384-5Qmu85Cv9gdc3uL8lcYsykzvcLLQEsWIr1EDy2JuakoAgOQgBlxArlt0SKLDnq+G" type="module" crossorigin></script>
+  </body>
+</html>

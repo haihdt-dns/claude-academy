@@ -1,0 +1,40 @@
+{
+  "slug": "certificate-of-completion",
+  "titleEn": "Certificate of Completion",
+  "titleVi": "Chứng chỉ hoàn thành",
+  "estimatedTimeEn": "5 minutes",
+  "estimatedTimeVi": "5 phút",
+  "prevLesson": "conclusion",
+  "nextLesson": "additional-activities",
+  "summaryEn": "Complete the final quiz to earn your AI Fluency: Framework and Foundations Certificate of Completion and share it on LinkedIn or with your team.",
+  "summaryVi": "Hoàn thành bài kiểm tra cuối để nhận Chứng chỉ Hoàn thành AI Fluency: Framework and Foundations và chia sẻ trên LinkedIn hoặc với nhóm của bạn.",
+  "sections": [
+    {
+      "id": "congrats",
+      "titleEn": "You did it!",
+      "titleVi": "Bạn đã làm được!",
+      "en": "<p>You've completed all the lessons in AI Fluency: Framework and Foundations. You now have the knowledge and skills to collaborate effectively with AI using the 4D Framework — Delegation, Description, Discernment, and Diligence.</p><p>To officially earn your certificate, complete the short quiz on the Anthropic training platform. Your certificate can be downloaded and shared on LinkedIn or with your team.</p><p><a href=\"https://anthropic.skilljar.com/ai-fluency-framework-foundations\" target=\"_blank\" rel=\"noopener\">Go to the quiz and claim your certificate →</a></p>",
+      "vi": "<p>Bạn đã hoàn thành tất cả các bài học trong AI Fluency: Framework and Foundations. Bạn hiện có kiến thức và kỹ năng để cộng tác hiệu quả với AI bằng 4D Framework — Delegation, Description, Discernment và Diligence.</p><p>Để chính thức nhận chứng chỉ, hãy hoàn thành bài kiểm tra ngắn trên nền tảng đào tạo Anthropic. Chứng chỉ của bạn có thể tải xuống và chia sẻ trên LinkedIn hoặc với nhóm của mình.</p><p><a href=\"https://anthropic.skilljar.com/ai-fluency-framework-foundations\" target=\"_blank\" rel=\"noopener\">Đến bài kiểm tra và nhận chứng chỉ của bạn →</a></p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "what-youve-earned",
+      "titleEn": "What you've earned",
+      "titleVi": "Những gì bạn đã đạt được",
+      "en": "<p>By completing this course, you can:</p><ul><li>Apply the 4D Framework (Delegation, Description, Discernment, Diligence) to any AI collaboration</li><li>Make informed decisions about when and how to work with AI</li><li>Write clear, effective prompts using Product, Process, and Performance Description</li><li>Critically evaluate AI outputs across multiple dimensions</li><li>Ensure your AI collaborations are responsible, transparent, and accountable</li><li>Build a personal AI policy for ethical and effective AI use</li></ul><p><a href=\"https://anthropic.skilljar.com/ai-fluency-framework-foundations\" target=\"_blank\" rel=\"noopener\">Claim your Certificate of Completion →</a></p>",
+      "vi": "<p>Bằng cách hoàn thành khóa học này, bạn có thể:</p><ul><li>Áp dụng 4D Framework (Delegation, Description, Discernment, Diligence) cho bất kỳ sự cộng tác AI nào</li><li>Đưa ra quyết định sáng suốt về thời điểm và cách làm việc với AI</li><li>Viết các prompt rõ ràng, hiệu quả sử dụng Product, Process và Performance Description</li><li>Đánh giá phê phán các đầu ra AI trên nhiều chiều</li><li>Đảm bảo các sự cộng tác AI của bạn có trách nhiệm, minh bạch và có khả năng giải trình</li><li>Xây dựng chính sách AI cá nhân cho việc sử dụng AI đạo đức và hiệu quả</li></ul><p><a href=\"https://anthropic.skilljar.com/ai-fluency-framework-foundations\" target=\"_blank\" rel=\"noopener\">Nhận Chứng chỉ Hoàn thành của bạn →</a></p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "keep-learning",
+      "titleEn": "Keep learning",
+      "titleVi": "Tiếp tục học",
+      "en": "<p>AI Fluency: Framework and Foundations is just the beginning. Here are some next steps to deepen your skills:</p><ul><li><a href=\"https://anthropic.skilljar.com/ai-fluency-framework-foundations\" target=\"_blank\" rel=\"noopener\">Take the quiz to get your certificate</a></li><li><a href=\"https://anthropic.skilljar.com/claude-101\" target=\"_blank\" rel=\"noopener\">Try Claude 101</a> for hands-on practice with Claude's features</li><li><a href=\"https://anthropic.skilljar.com/claude-code-in-action\" target=\"_blank\" rel=\"noopener\">Try Claude Code in Action</a> if you work with code</li><li><a href=\"https://anthropic.skilljar.com/introduction-to-claude-cowork\" target=\"_blank\" rel=\"noopener\">Learn Claude Cowork</a> for complex multi-step tasks</li><li><a href=\"https://claude.com/resources/use-cases\" target=\"_blank\" rel=\"noopener\">Browse the Use Case Gallery</a> for workflow inspiration</li></ul>",
+      "vi": "<p>AI Fluency: Framework and Foundations chỉ là khởi đầu. Dưới đây là một số bước tiếp theo để nâng cao kỹ năng:</p><ul><li><a href=\"https://anthropic.skilljar.com/ai-fluency-framework-foundations\" target=\"_blank\" rel=\"noopener\">Làm bài kiểm tra để nhận chứng chỉ</a></li><li><a href=\"https://anthropic.skilljar.com/claude-101\" target=\"_blank\" rel=\"noopener\">Thử Claude 101</a> để thực hành với các tính năng của Claude</li><li><a href=\"https://anthropic.skilljar.com/claude-code-in-action\" target=\"_blank\" rel=\"noopener\">Thử Claude Code in Action</a> nếu bạn làm việc với code</li><li><a href=\"https://anthropic.skilljar.com/introduction-to-claude-cowork\" target=\"_blank\" rel=\"noopener\">Học Claude Cowork</a> cho các tác vụ nhiều bước phức tạp</li><li><a href=\"https://claude.com/resources/use-cases\" target=\"_blank\" rel=\"noopener\">Duyệt Use Case Gallery</a> để tìm cảm hứng cho quy trình làm việc</li></ul>",
+      "image": "",
+      "video": ""
+    }
+  ]
+}

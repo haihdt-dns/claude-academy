@@ -1,0 +1,12 @@
+extends ../utils/_lesson.pug
+
+block append meta
+  -
+    var courseId = 'claude-code-101'
+    var currentSlug = 'the-claude-code-sdk'
+    var lessonData = JSON.parse(nodeFs.readFileSync(nodePath.join(process.cwd(), '../data/claude-code-101/the-claude-code-sdk.json'), 'utf8'))
+    title = lessonData.titleEn + ' · Claude Code 101 · Claude Academy'
+    description = 'The Claude Code SDK.'
+    baseURL = 'https://chobadon.com/claude-academy/'
+    ogImageURL = baseURL + 'assets/images/ogp.png'
+    canonicalURL = `//`

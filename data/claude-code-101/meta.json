@@ -1,0 +1,49 @@
+{
+  "id": "claude-code-101",
+  "title": "Claude Code 101",
+  "sections": [
+    {
+      "titleEn": "What is Claude Code?",
+      "titleVi": "Claude Code là gì?",
+      "lessons": [
+        { "slug": "introduction", "titleEn": "Introduction", "titleVi": "Giới thiệu" },
+        { "slug": "what-is-a-coding-assistant", "titleEn": "What is a coding assistant?", "titleVi": "Trợ lý lập trình là gì?" },
+        { "slug": "claude-code-in-action", "titleEn": "Claude Code in action", "titleVi": "Claude Code trong thực tế" }
+      ]
+    },
+    {
+      "titleEn": "Getting hands on",
+      "titleVi": "Bắt đầu thực hành",
+      "lessons": [
+        { "slug": "claude-code-setup", "titleEn": "Claude Code setup", "titleVi": "Cài đặt Claude Code" },
+        { "slug": "project-setup", "titleEn": "Project setup", "titleVi": "Thiết lập dự án" },
+        { "slug": "adding-context", "titleEn": "Adding context", "titleVi": "Thêm context" },
+        { "slug": "making-changes", "titleEn": "Making changes", "titleVi": "Thực hiện thay đổi" },
+        { "slug": "controlling-context", "titleEn": "Controlling context", "titleVi": "Kiểm soát context" },
+        { "slug": "custom-commands", "titleEn": "Custom commands", "titleVi": "Lệnh tùy chỉnh" },
+        { "slug": "mcp-servers-with-claude-code", "titleEn": "MCP servers with Claude Code", "titleVi": "MCP servers với Claude Code" },
+        { "slug": "github-integration", "titleEn": "Github integration", "titleVi": "Tích hợp Github" }
+      ]
+    },
+    {
+      "titleEn": "Hooks and the SDK",
+      "titleVi": "Hooks và SDK",
+      "lessons": [
+        { "slug": "introducing-hooks", "titleEn": "Introducing hooks", "titleVi": "Giới thiệu hooks" },
+        { "slug": "defining-hooks", "titleEn": "Defining hooks", "titleVi": "Định nghĩa hooks" },
+        { "slug": "implementing-a-hook", "titleEn": "Implementing a hook", "titleVi": "Triển khai một hook" },
+        { "slug": "gotchas-around-hooks", "titleEn": "Gotchas around hooks", "titleVi": "Những điều cần chú ý với hooks" },
+        { "slug": "useful-hooks", "titleEn": "Useful hooks!", "titleVi": "Các hooks hữu ích!" },
+        { "slug": "another-useful-hook", "titleEn": "Another useful hook", "titleVi": "Một hook hữu ích khác" },
+        { "slug": "the-claude-code-sdk", "titleEn": "The Claude Code SDK", "titleVi": "Claude Code SDK" }
+      ]
+    },
+    {
+      "titleEn": "Wrapping up",
+      "titleVi": "Kết thúc",
+      "lessons": [
+        { "slug": "summary-and-next-steps", "titleEn": "Summary and next steps", "titleVi": "Tóm tắt và bước tiếp theo" }
+      ]
+    }
+  ]
+}

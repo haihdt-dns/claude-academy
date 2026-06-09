@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+
+    <!--#include virtual="/claude-academy/assets/include/ga_head.html" -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>MCP review · Claude with the Anthropic API · Claude Academy</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="">
+    <meta property="og:title" content="MCP review · Claude with the Anthropic API · Claude Academy">
+    <meta property="og:url" content="https://chobadon.com/claude-academy/claude-with-the-anthropic-api/mcp-review/">
+    <meta property="og:image" content="https://chobadon.com/claude-academy/assets/images/ogp.png">
+    <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:description" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&amp;display=swap">
+    <link rel="stylesheet" href="/claude-academy/assets/css/common.css?v=sha384-/QRqlI0jk21piyOMDlehSThtd0HifferyFI5WzwKPcyz8PJnQwToghHciID1c3Q8">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/claude-academy/assets/css/lesson.css?v=sha384-E777OCsLaLmN4LOLX2LG5nMfCju5odkVHqoVrT0nv1HQlut3oW7GANfrpxxKUwbZ">
+    <meta name="robots" content="noindex, nofollow, nosnippet, noarchive, noimageindex, notranslate">
+    <meta name="googlebot" content="noindex, nofollow, nosnippet, noarchive, noimageindex">
+    <meta name="bingbot" content="noindex, nofollow, nosnippet, noarchive, noimageindex">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@id": "https://chobadon.com/claude-academy//",
+              "name": "TOP"
+            }
+          } 
+        ]
+      }
+    </script>
+  </head>
+  <body>
+
+    <!--#include virtual="/claude-academy/assets/include/ga_body.html" -->
+
+    <div class="root p-lesson" id="root">
+
+    <!--#include virtual="/claude-academy/assets/include/header.html" -->
+
+      <main class="main" id="main">
+        <div class="lesson-layout">
+          <aside class="lesson-sidebar">
+            <div class="lesson-sidebar__inner"><a class="lesson-sidebar__back" href="/claude-academy/index.html">← Claude Academy</a>
+              <nav class="lesson-nav">
+                <div class="lesson-nav__section">
+                  <p class="lesson-nav__section-heading">Introduction</p>
+                  <ul class="lesson-nav__list">
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/welcome-to-the-course.html">Welcome to the course</a></li>
+                  </ul>
+                </div>
+                <div class="lesson-nav__section">
+                  <p class="lesson-nav__section-heading">Anthropic overview</p>
+                  <ul class="lesson-nav__list">
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/overview-of-claude-models.html">Overview of Claude models</a></li>
+                  </ul>
+                </div>
+                <div class="lesson-nav__section">
+                  <p class="lesson-nav__section-heading">Accessing Claude with the API</p>
+                  <ul class="lesson-nav__list">
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/accessing-the-api.html">Accessing the API</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/getting-an-api-key.html">Getting an API key</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/making-a-request.html">Making a request</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/multi-turn-conversations.html">Multi-Turn conversations</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/chat-exercise.html">Chat exercise</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/system-prompts.html">System prompts</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/system-prompts-exercise.html">System prompts exercise</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/temperature.html">Temperature</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/response-streaming.html">Response streaming</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/structured-data.html">Structured data</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/structured-data-exercise.html">Structured data exercise</a></li>
+                  </ul>
+                </div>
+                <div class="lesson-nav__section">
+                  <p class="lesson-nav__section-heading">Prompt evaluation</p>
+                  <ul class="lesson-nav__list">
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/prompt-evaluation.html">Prompt evaluation</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/a-typical-eval-workflow.html">A typical eval workflow</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/generating-test-datasets.html">Generating test datasets</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/running-the-eval.html">Running the eval</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/model-based-grading.html">Model based grading</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/code-based-grading.html">Code based grading</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/exercise-on-prompt-evals.html">Exercise on prompt evals</a></li>
+                  </ul>
+                </div>
+                <div class="lesson-nav__section">
+                  <p class="lesson-nav__section-heading">Prompt engineering techniques</p>
+                  <ul class="lesson-nav__list">
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/prompt-engineering.html">Prompt engineering</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/being-clear-and-direct.html">Being clear and direct</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/being-specific.html">Being specific</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/structure-with-xml-tags.html">Structure with XML tags</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/providing-examples.html">Providing examples</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/exercise-on-prompting.html">Exercise on prompting</a></li>
+                  </ul>
+                </div>
+                <div class="lesson-nav__section">
+                  <p class="lesson-nav__section-heading">Tool use with Claude</p>
+                  <ul class="lesson-nav__list">
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/introducing-tool-use.html">Introducing tool use</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/project-overview.html">Project overview</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/tool-functions.html">Tool functions</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/tool-schemas.html">Tool schemas</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/handling-message-blocks.html">Handling message blocks</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/sending-tool-results.html">Sending tool results</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/multi-turn-conversations-with-tools.html">Multi-turn conversations with tools</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/implementing-multiple-turns.html">Implementing multiple turns</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/using-multiple-tools.html">Using multiple tools</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/fine-grained-tool-calling.html">Fine grained tool calling</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/the-text-edit-tool.html">The text edit tool</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/the-web-search-tool.html">The web search tool</a></li>
+                  </ul>
+                </div>
+                <div class="lesson-nav__section">
+                  <p class="lesson-nav__section-heading">RAG and Agentic Search</p>
+                  <ul class="lesson-nav__list">
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/introducing-retrieval-augmented-generation.html">Introducing Retrieval Augmented Generation</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/text-chunking-strategies.html">Text chunking strategies</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/text-embeddings.html">Text embeddings</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/the-full-rag-flow.html">The full RAG flow</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/implementing-the-rag-flow.html">Implementing the RAG flow</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/bm25-lexical-search.html">BM25 lexical search</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/a-multi-index-rag-pipeline.html">A Multi-Index RAG pipeline</a></li>
+                  </ul>
+                </div>
+                <div class="lesson-nav__section">
+                  <p class="lesson-nav__section-heading">Features of Claude</p>
+                  <ul class="lesson-nav__list">
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/extended-thinking.html">Extended thinking</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/image-support.html">Image support</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/pdf-support.html">PDF support</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/citations.html">Citations</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/prompt-caching.html">Prompt caching</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/rules-of-prompt-caching.html">Rules of prompt caching</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/prompt-caching-in-action.html">Prompt caching in action</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/code-execution-and-the-files-api.html">Code execution and the Files API</a></li>
+                  </ul>
+                </div>
+                <div class="lesson-nav__section">
+                  <p class="lesson-nav__section-heading">Model Context Protocol</p>
+                  <ul class="lesson-nav__list">
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/introducing-mcp.html">Introducing MCP</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/mcp-clients.html">MCP clients</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/mcp-project-setup.html">Project setup</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/defining-tools-with-mcp.html">Defining tools with MCP</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/the-server-inspector.html">The server inspector</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/implementing-a-client.html">Implementing a client</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/defining-resources.html">Defining resources</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/accessing-resources.html">Accessing resources</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/defining-prompts.html">Defining prompts</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/prompts-in-the-client.html">Prompts in the client</a></li>
+                    <li class="lesson-nav__item is-active"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/mcp-review.html">MCP review</a></li>
+                  </ul>
+                </div>
+                <div class="lesson-nav__section">
+                  <p class="lesson-nav__section-heading">Anthropic apps — Claude Code and computer use</p>
+                  <ul class="lesson-nav__list">
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/anthropic-apps.html">Anthropic apps</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/claude-code-setup.html">Claude Code setup</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/claude-code-in-action.html">Claude Code in action</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/enhancements-with-mcp-servers.html">Enhancements with MCP servers</a></li>
+                  </ul>
+                </div>
+                <div class="lesson-nav__section">
+                  <p class="lesson-nav__section-heading">Agents and workflows</p>
+                  <ul class="lesson-nav__list">
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/agents-and-workflows.html">Agents and workflows</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/parallelization-workflows.html">Parallelization workflows</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/chaining-workflows.html">Chaining workflows</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/routing-workflows.html">Routing workflows</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/agents-and-tools.html">Agents and tools</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/environment-inspection.html">Environment inspection</a></li>
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/workflows-vs-agents.html">Workflows vs agents</a></li>
+                  </ul>
+                </div>
+                <div class="lesson-nav__section">
+                  <p class="lesson-nav__section-heading">Wrapping up!</p>
+                  <ul class="lesson-nav__list">
+                    <li class="lesson-nav__item"><a class="lesson-nav__link" href="/claude-academy/claude-with-the-anthropic-api/course-wrap-up.html">Course Wrap Up</a></li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </aside>
+          <div class="lesson-body">
+            <div class="lesson-body__content">
+              <div class="lesson-header">
+                <h1 class="lesson-title"><span class="lesson-title__en">MCP review</span><span class="lesson-title__vi">Ôn tập MCP</span></h1>
+                <div class="lesson-toggle">
+                  <button class="lesson-toggle__btn is-active" type="button" data-lang="bilingual">Song ngữ</button>
+                  <button class="lesson-toggle__btn" type="button" data-lang="en">English</button>
+                  <button class="lesson-toggle__btn" type="button" data-lang="vi">Tiếng Việt</button>
+                </div>
+              </div>
+              <div class="lesson-meta"><span class="lesson-meta__item">
+                  <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4" width="14" height="14">
+                    <circle cx="7" cy="7" r="5.5"></circle>
+                    <path d="M7 4v3.5l2 1.5"></path>
+                  </svg><span class="lesson-meta__text-bilingual">Estimated time: 10 minutes (Thời gian ước tính: 10 phút)</span><span class="lesson-meta__text-en">Estimated time: 10 minutes</span><span class="lesson-meta__text-vi">Thời gian ước tính: 10 phút</span></span></div>
+              <div class="lesson-content">
+              </div>
+              <div class="lesson-nav-footer"><a class="lesson-nav-footer__prev" href="/claude-academy/claude-with-the-anthropic-api/prompts-in-the-client.html"><span class="lesson-nav-footer__label"><span class="lesson-nav-footer__label-en">Previous Lesson</span><span class="lesson-nav-footer__label-vi">Bài trước</span></span><span class="lesson-nav-footer__title-en">← Prompts in the client</span><span class="lesson-nav-footer__title-vi">Prompts trong client</span></a><a class="lesson-nav-footer__next" href="/claude-academy/claude-with-the-anthropic-api/anthropic-apps.html"><span class="lesson-nav-footer__label"><span class="lesson-nav-footer__label-en">Next Lesson</span><span class="lesson-nav-footer__label-vi">Bài sau</span></span><span class="lesson-nav-footer__title-en">Anthropic apps →</span><span class="lesson-nav-footer__title-vi">Ứng dụng Anthropic</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+    <!--#include virtual="/claude-academy/assets/include/footer.html" -->
+
+    </div>
+    <script src="/claude-academy/assets/js/main.js?v=sha384-kNNRbQTv526J2QIkhMOolMqrIfWyaSWL36D955JRpJTKBlmZ9+oV0Oz9FvXDnFbw" type="module" crossorigin></script>
+    <script src="/claude-academy/assets/js/lesson.js?v=sha384-5Qmu85Cv9gdc3uL8lcYsykzvcLLQEsWIr1EDy2JuakoAgOQgBlxArlt0SKLDnq+G" type="module" crossorigin></script>
+  </body>
+</html>

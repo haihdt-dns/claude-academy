@@ -140,6 +140,10 @@
       line-height: 1.5;
     }
 
+    h4:not(:first-child) {
+      margin-top: 12px;
+    }
+
     p {
       margin-bottom: 12px;
       color: var(--color-text);
@@ -157,6 +161,31 @@
       list-style-type: disc;
       &:not(:last-child) {
         margin-bottom: 4px;
+      }
+    }
+
+    code {
+      padding: 2px 5px;
+      color: #4ade80;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: rem(12);
+      background: #1a1a1a;
+      border-radius: 4px;
+    }
+
+    pre {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding: 12px 14px;
+      background: #1a1a1a;
+      border-radius: 6px;
+      overflow-x: auto;
+
+      code {
+        padding: 0;
+        font-size: rem(12);
+        background: transparent;
+        border-radius: 0;
       }
     }
 
@@ -481,7 +510,9 @@
 
   /* image */
   .lesson-image {
-    margin-bottom: 14px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 90%;
     border-radius: 6px;
     overflow: hidden;
 
@@ -490,6 +521,14 @@
       width: 100%;
       height: auto;
     }
+  }
+
+  .lesson-image:not(:first-child) {
+    margin-top: 15px;
+  }
+
+  .lesson-image:not(:last-child) {
+    margin-bottom: 15px;
   }
 
   /* roadmap */

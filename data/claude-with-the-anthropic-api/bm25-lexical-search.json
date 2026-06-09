@@ -1,0 +1,12 @@
+{
+  "slug": "bm25-lexical-search",
+  "titleEn": "BM25 lexical search",
+  "titleVi": "Tìm kiếm từ vựng BM25",
+  "estimatedTimeEn": "10 minutes",
+  "estimatedTimeVi": "10 phút",
+  "prevLesson": "implementing-the-rag-flow",
+  "nextLesson": "a-multi-index-rag-pipeline",
+  "summaryEn": "",
+  "summaryVi": "",
+  "sections": []
+}

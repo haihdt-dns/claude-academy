@@ -1,0 +1,40 @@
+{
+  "slug": "multi-turn-conversations",
+  "titleEn": "Multi-Turn conversations",
+  "titleVi": "Hội thoại nhiều lượt",
+  "estimatedTimeEn": "10 minutes",
+  "estimatedTimeVi": "10 phút",
+  "prevLesson": "making-a-request",
+  "nextLesson": "chat-exercise",
+  "summaryEn": "How to build conversational context by passing the full message history on every API call.",
+  "summaryVi": "Cách xây dựng context hội thoại bằng cách truyền toàn bộ lịch sử tin nhắn trong mỗi API call.",
+  "sections": [
+    {
+      "id": "how-context-works",
+      "titleEn": "How context works in the API",
+      "titleVi": "Context hoạt động như thế nào trong API",
+      "en": "<p>Claude has no built-in memory between calls. Each API request is stateless — Claude only knows what you include in the <code>messages</code> array of that specific request.</p><p>To create a multi-turn conversation, you pass the <strong>entire conversation history</strong> with every request: all previous user messages and all previous assistant responses. Claude reads this history and continues the conversation from where it left off.</p><p>This design gives you full control over context — you decide exactly what Claude remembers.</p>",
+      "vi": "<p>Claude không có bộ nhớ tích hợp giữa các lần gọi. Mỗi API request là stateless — Claude chỉ biết những gì bạn đưa vào mảng <code>messages</code> của request đó.</p><p>Để tạo hội thoại nhiều lượt, bạn truyền <strong>toàn bộ lịch sử hội thoại</strong> trong mỗi request: tất cả tin nhắn user trước đó và tất cả response của assistant trước đó. Claude đọc lịch sử này và tiếp tục hội thoại từ chỗ đã dừng.</p><p>Thiết kế này cho bạn toàn quyền kiểm soát context — bạn quyết định chính xác những gì Claude nhớ.</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "building-history",
+      "titleEn": "Building the message history",
+      "titleVi": "Xây dựng lịch sử tin nhắn",
+      "en": "<p>The pattern is straightforward: after each response, append both the user message and the assistant reply to your list, then send the full list on the next call.</p><pre><code>import anthropic\n\nclient = anthropic.Anthropic()\n\n# Start with an empty history\nmessages = []\n\n# --- Turn 1 ---\nmessages.append({\"role\": \"user\", \"content\": \"My name is Alice.\"})\n\nresponse = client.messages.create(\n    model=\"claude-3-5-sonnet-20241022\",\n    max_tokens=1024,\n    messages=messages\n)\n\n# Append Claude's reply to the history\nassistant_reply = response.content[0].text\nmessages.append({\"role\": \"assistant\", \"content\": assistant_reply})\n\n# --- Turn 2 ---\nmessages.append({\"role\": \"user\", \"content\": \"What is my name?\"})\n\nresponse = client.messages.create(\n    model=\"claude-3-5-sonnet-20241022\",\n    max_tokens=1024,\n    messages=messages   # full history included\n)\n\nprint(response.content[0].text)  # \"Your name is Alice.\"</code></pre><p>On Turn 2, the <code>messages</code> list contains all four messages — both user turns and the assistant reply from Turn 1. That's how Claude knows the user's name.</p>",
+      "vi": "<p>Pattern này rất đơn giản: sau mỗi response, thêm cả tin nhắn user và câu trả lời của assistant vào list, rồi gửi toàn bộ list trong lần gọi tiếp theo.</p><pre><code>import anthropic\n\nclient = anthropic.Anthropic()\n\n# Bắt đầu với lịch sử trống\nmessages = []\n\n# --- Lượt 1 ---\nmessages.append({\"role\": \"user\", \"content\": \"My name is Alice.\"})\n\nresponse = client.messages.create(\n    model=\"claude-3-5-sonnet-20241022\",\n    max_tokens=1024,\n    messages=messages\n)\n\n# Thêm câu trả lời của Claude vào lịch sử\nassistant_reply = response.content[0].text\nmessages.append({\"role\": \"assistant\", \"content\": assistant_reply})\n\n# --- Lượt 2 ---\nmessages.append({\"role\": \"user\", \"content\": \"What is my name?\"})\n\nresponse = client.messages.create(\n    model=\"claude-3-5-sonnet-20241022\",\n    max_tokens=1024,\n    messages=messages   # toàn bộ lịch sử được đưa vào\n)\n\nprint(response.content[0].text)  # \"Your name is Alice.\"</code></pre><p>Ở Lượt 2, list <code>messages</code> chứa cả bốn tin nhắn — cả hai lượt user và câu trả lời của assistant từ Lượt 1. Đó là cách Claude biết tên của user.</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "context-limits",
+      "titleEn": "Context window limits",
+      "titleVi": "Giới hạn context window",
+      "en": "<p>Every Claude model has a <strong>context window</strong> — the maximum total number of tokens it can process in a single request (input + output combined). For Claude 3.5 Sonnet, this is 200,000 tokens.</p><p>As your conversation grows, the total token count grows too. For most applications this isn't a problem, but for very long sessions you have a few options:</p><ul><li><strong>Summarize old turns</strong> — replace early messages with a summary to reduce token count while preserving key information</li><li><strong>Truncate the history</strong> — keep only the most recent N messages (sliding window)</li><li><strong>Use prompt caching</strong> — cache the stable parts of your context to reduce cost and latency (covered later in the course)</li></ul><p>You can check how many tokens a request will use with <code>message.usage.input_tokens</code> after the call, or use the token-counting endpoint before sending.</p>",
+      "vi": "<p>Mỗi model Claude có một <strong>context window</strong> — tổng số token tối đa nó có thể xử lý trong một request (input + output cộng lại). Với Claude 3.5 Sonnet, con số này là 200.000 token.</p><p>Khi hội thoại của bạn phát triển, tổng số token cũng tăng theo. Với hầu hết ứng dụng, điều này không phải vấn đề, nhưng với các phiên rất dài, bạn có một vài lựa chọn:</p><ul><li><strong>Tóm tắt các lượt cũ</strong> — thay thế các tin nhắn đầu bằng bản tóm tắt để giảm số token trong khi vẫn giữ thông tin quan trọng</li><li><strong>Cắt bớt lịch sử</strong> — chỉ giữ N tin nhắn gần nhất (sliding window)</li><li><strong>Dùng prompt caching</strong> — cache các phần ổn định trong context để giảm chi phí và độ trễ (đề cập sau trong khóa học)</li></ul><p>Bạn có thể kiểm tra số token một request sẽ dùng qua <code>message.usage.input_tokens</code> sau lần gọi, hoặc dùng endpoint đếm token trước khi gửi.</p>",
+      "image": "",
+      "video": ""
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+extends ../utils/_lesson.pug
+
+block append meta
+  -
+    var courseId = 'claude-code-101'
+    var currentSlug = 'another-useful-hook'
+    var lessonData = JSON.parse(nodeFs.readFileSync(nodePath.join(process.cwd(), '../data/claude-code-101/another-useful-hook.json'), 'utf8'))
+    title = lessonData.titleEn + ' · Claude Code 101 · Claude Academy'
+    description = 'Another useful hook.'
+    baseURL = 'https://chobadon.com/claude-academy/'
+    ogImageURL = baseURL + 'assets/images/ogp.png'
+    canonicalURL = `//`
