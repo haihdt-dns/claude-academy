@@ -8,7 +8,22 @@
 
 - npm&node
 
-  volta(https://volta.sh/) に従う
+  [mise](https://mise.jdx.dev/getting-started.html#installing-mise-cli)  
+  [移行ガイド Migration guide](https://zenn.dev/sutobu000/articles/volta-to-mise-windows)
+
+  macOSの場合、brewより `curl https://mise.run | sh` が手軽に感じられた。
+
+  以後、`volta` と共存できないのでvoltaの情報を元に（package.json、voltaセクション）.
+  nodeとnpmをpinすると良い。
+
+  例）
+
+  ```
+  mise use --pin node@xx.xx.x
+  mise use --pin npm@xx.xx.x
+  ```
+
+  それぞれ（voltaでのverに合わせる）
 
 ## フロントエンド制作
 
@@ -161,7 +176,7 @@ css/
 3. 2)に下記をペースト
 
 ```
-//npm.greensock.com/:_authToken=e488b143-d605-43bb-8a8a-16bc09042bbd
+
 @gsap:registry=https://npm.greensock.com
 ```
 
