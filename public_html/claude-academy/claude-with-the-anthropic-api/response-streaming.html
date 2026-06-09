@@ -21,9 +21,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&amp;display=swap">
-    <link rel="stylesheet" href="/claude-academy/assets/css/common.css?v=sha384-/QRqlI0jk21piyOMDlehSThtd0HifferyFI5WzwKPcyz8PJnQwToghHciID1c3Q8">
+    <link rel="stylesheet" href="/claude-academy/assets/css/common.css?v=sha384-LTuHfQryoFZ6j3Mx0pXuMVhgXfKRUXfHZVrglUi9lzh3FhlXMxROdt+isuaRIODX">
     <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/claude-academy/assets/css/lesson.css?v=sha384-E777OCsLaLmN4LOLX2LG5nMfCju5odkVHqoVrT0nv1HQlut3oW7GANfrpxxKUwbZ">
+    <link rel="stylesheet" href="/claude-academy/assets/css/lesson.css?v=sha384-809Tffxm3tiuFU/xQcS2wKjlQBgxGYSC58truKw4Kq946/f9APkH1Nt8hXBjn7iR">
     <meta name="robots" content="noindex, nofollow, nosnippet, noarchive, noimageindex, notranslate">
     <meta name="googlebot" content="noindex, nofollow, nosnippet, noarchive, noimageindex">
     <meta name="bingbot" content="noindex, nofollow, nosnippet, noarchive, noimageindex">
@@ -210,10 +210,221 @@
                   <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4" width="14" height="14">
                     <circle cx="7" cy="7" r="5.5"></circle>
                     <path d="M7 4v3.5l2 1.5"></path>
-                  </svg><span class="lesson-meta__text-bilingual">Estimated time: 10 minutes (Thời gian ước tính: 10 phút)</span><span class="lesson-meta__text-en">Estimated time: 10 minutes</span><span class="lesson-meta__text-vi">Thời gian ước tính: 10 phút</span></span></div>
+                  </svg><span class="lesson-meta__text-bilingual">Estimated time: 8 minutes (Thời gian ước tính: 8 phút)</span><span class="lesson-meta__text-en">Estimated time: 8 minutes</span><span class="lesson-meta__text-vi">Thời gian ước tính: 8 phút</span></span></div>
               <div class="lesson-content">
+                <div class="lesson-section" id="intro-video">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Response streaming</h2><span class="lesson-section__title-vi">Response streaming</span>
+                  </div><div class="lesson-video"><iframe src="https://cdn.jwplayer.com/players/WyvqnwvX-Akyo8gQO.html" frameborder="0" allowfullscreen></iframe></div>
+                </div>
+                <div class="lesson-section" id="intro">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Introduction</h2><span class="lesson-section__title-vi">Giới thiệu</span>
+                  </div><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/response-streaming-01.png?v=sha384-ye4xIEFm85tpKe11RPuOLXz+TCDZn8/l2KDlBfMLfo0VngKNUaszc/j0KZBmYoBk" alt=""></div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>When building chat applications with Claude, there's a significant user experience challenge: responses can take 10-30 seconds to generate, leaving users staring at a loading spinner. The solution is response streaming, which lets users see text appear chunk by chunk as Claude generates it, creating a much more responsive feel.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Khi xây dựng ứng dụng chat với Claude, có một thách thức đáng kể về trải nghiệm người dùng: phản hồi có thể mất 10-30 giây để tạo ra, khiến người dùng nhìn chằm chằm vào vòng quay tải. Giải pháp là response streaming, cho phép người dùng thấy văn bản xuất hiện từng đoạn khi Claude tạo ra, tạo ra cảm giác phản hồi tốt hơn nhiều.</p>
+                  </div>
+                </div>
+                <div class="lesson-section" id="problem-with-standard">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">The Problem with Standard Requests</h2><span class="lesson-section__title-vi">Vấn đề với Request thông thường</span>
+                  </div><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/response-streaming-02.png?v=sha384-TIQZmkJMPPKJf7NBT5he+bDhVGK7CvMO5N/EIepCIF1exnWB/VMMog0nwrjNPNtX" alt=""></div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>In a typical chat setup, your server sends a user message to Claude and waits for the complete response before sending anything back to the client. This creates an awkward delay where users have no feedback that anything is happening.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Trong cài đặt chat thông thường, server của bạn gửi user message đến Claude và chờ phản hồi hoàn chỉnh trước khi gửi bất cứ thứ gì trở lại cho client. Điều này tạo ra độ trễ khó chịu khi người dùng không có phản hồi nào rằng có gì đang xảy ra.</p>
+                  </div>
+                </div>
+                <div class="lesson-section" id="how-streaming-works">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">How Streaming Works</h2><span class="lesson-section__title-vi">Streaming hoạt động như thế nào</span>
+                  </div><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/response-streaming-03.png?v=sha384-PqYwheSMD6RuAVm0qv7tR9Xq0IunZRWrj9fgved2yLNp8cwgmi3b1IpxzXCRV31n" alt=""></div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>With streaming enabled, Claude immediately sends back an initial response indicating it has received your request and is starting to generate text. Then you receive a series of events, each containing a small piece of the overall response.</p><p>Your server can forward these text chunks to your client application as they arrive, allowing users to see the response building up word by word. All of these events are part of a single request to Claude.</p><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/response-streaming-04.png?v=sha384-PqYwheSMD6RuAVm0qv7tR9Xq0IunZRWrj9fgved2yLNp8cwgmi3b1IpxzXCRV31n" alt=""></div>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Với streaming được bật, Claude ngay lập tức gửi lại phản hồi ban đầu cho biết nó đã nhận được yêu cầu của bạn và đang bắt đầu tạo văn bản. Sau đó bạn nhận được một loạt các sự kiện, mỗi sự kiện chứa một phần nhỏ của phản hồi tổng thể.</p><p>Server của bạn có thể chuyển tiếp các đoạn văn bản này đến ứng dụng client khi chúng đến, cho phép người dùng thấy phản hồi được xây dựng từng từ một. Tất cả những sự kiện này là một phần của một request đơn đến Claude.</p><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/response-streaming-04.png?v=sha384-PqYwheSMD6RuAVm0qv7tR9Xq0IunZRWrj9fgved2yLNp8cwgmi3b1IpxzXCRV31n" alt=""></div>
+                  </div>
+                </div>
+                <div class="lesson-section" id="stream-events">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Stream Events</h2><span class="lesson-section__title-vi">Các Stream Event</span>
+                  </div><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/response-streaming-05.png?v=sha384-UcCOoejRr43WzA90DeI90vM2iy/D5cGOx33vdnkRJAEHnD0rlBmIbDM4GL/rnnRT" alt=""></div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>When you enable streaming, Claude sends back several types of events:</p><ul><li><strong>MessageStart</strong> — A new message is being sent</li><li><strong>ContentBlockStart</strong> — Start of a new block containing text, tool use, or other content</li><li><strong>ContentBlockDelta</strong> — Chunks of the actual generated text</li><li><strong>ContentBlockStop</strong> — The current content block has been completed</li><li><strong>MessageDelta</strong> — The current message is complete</li><li><strong>MessageStop</strong> — End of information about the current message</li></ul><p>The <code>ContentBlockDelta</code> events contain the actual generated text that you'll want to display to users.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Khi bạn bật streaming, Claude gửi lại một số loại sự kiện:</p><ul><li><strong>MessageStart</strong> — Một message mới đang được gửi</li><li><strong>ContentBlockStart</strong> — Bắt đầu một block mới chứa văn bản, tool use hoặc nội dung khác</li><li><strong>ContentBlockDelta</strong> — Các đoạn văn bản thực tế được tạo ra</li><li><strong>ContentBlockStop</strong> — Content block hiện tại đã hoàn thành</li><li><strong>MessageDelta</strong> — Message hiện tại đã hoàn chỉnh</li><li><strong>MessageStop</strong> — Kết thúc thông tin về message hiện tại</li></ul><p>Các sự kiện <code>ContentBlockDelta</code> chứa văn bản thực tế được tạo ra mà bạn sẽ muốn hiển thị cho người dùng.</p>
+                  </div>
+                </div>
+                <div class="lesson-section" id="basic-implementation">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Basic Implementation</h2><span class="lesson-section__title-vi">Triển khai cơ bản</span>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>To enable streaming, add <code>stream=True</code> to your messages.create call:</p><pre><code>messages = []
+add_user_message(messages, "Write a 1 sentence description of a fake database")
+
+stream = client.messages.create(
+    model=model,
+    max_tokens=1000,
+    messages=messages,
+    stream=True
+)
+
+for event in stream:
+    print(event)</code></pre><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/response-streaming-06.png?v=sha384-fssnM7zIp9oys4moVazxE5RXGOPlSzovC0q+f5f9VQOE7B2cHBGjeFQrXmxcBL8a" alt=""></div>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Để bật streaming, thêm <code>stream=True</code> vào lời gọi messages.create:</p><pre><code>messages = []
+add_user_message(messages, "Write a 1 sentence description of a fake database")
+
+stream = client.messages.create(
+    model=model,
+    max_tokens=1000,
+    messages=messages,
+    stream=True
+)
+
+for event in stream:
+    print(event)</code></pre><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/response-streaming-06.png?v=sha384-fssnM7zIp9oys4moVazxE5RXGOPlSzovC0q+f5f9VQOE7B2cHBGjeFQrXmxcBL8a" alt=""></div>
+                  </div>
+                </div>
+                <div class="lesson-section" id="simplified-streaming">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Simplified Streaming</h2><span class="lesson-section__title-vi">Streaming đơn giản hóa</span>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>Rather than manually parsing events, you can use the SDK's simplified streaming interface that extracts just the text content:</p><pre><code>with client.messages.stream(
+    model=model,
+    max_tokens=1000,
+    messages=messages
+) as stream:
+    for text in stream.text_stream:
+        print(text, end="")</code></pre><p>This approach automatically filters out everything except the actual text content, which is usually what you need for displaying responses to users.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Thay vì phân tích sự kiện thủ công, bạn có thể sử dụng giao diện streaming đơn giản hóa của SDK chỉ trích xuất nội dung văn bản:</p><pre><code>with client.messages.stream(
+    model=model,
+    max_tokens=1000,
+    messages=messages
+) as stream:
+    for text in stream.text_stream:
+        print(text, end="")</code></pre><p>Cách này tự động lọc ra mọi thứ ngoại trừ nội dung văn bản thực tế, đây thường là những gì bạn cần để hiển thị phản hồi cho người dùng.</p>
+                  </div>
+                </div>
+                <div class="lesson-section" id="getting-complete-message">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Getting the Complete Message</h2><span class="lesson-section__title-vi">Lấy Message hoàn chỉnh</span>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>While streaming individual chunks is great for user experience, you often need the complete message for storage or further processing. After streaming completes, you can get the assembled final message:</p><pre><code>with client.messages.stream(
+    model=model,
+    max_tokens=1000,
+    messages=messages
+) as stream:
+    for text in stream.text_stream:
+        # Send each chunk to your client
+        pass
+    
+    # Get the complete message for database storage
+    final_message = stream.get_final_message()</code></pre><p>This gives you the best of both worlds: real-time streaming for users and a complete message object for your application logic.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Trong khi streaming từng đoạn tuyệt vời cho trải nghiệm người dùng, bạn thường cần message hoàn chỉnh để lưu trữ hoặc xử lý tiếp. Sau khi streaming hoàn tất, bạn có thể lấy message cuối cùng được ghép lại:</p><pre><code>with client.messages.stream(
+    model=model,
+    max_tokens=1000,
+    messages=messages
+) as stream:
+    for text in stream.text_stream:
+        # Gửi từng đoạn đến client
+        pass
+    
+    # Lấy message hoàn chỉnh để lưu database
+    final_message = stream.get_final_message()</code></pre><p>Điều này cho bạn điều tốt nhất của cả hai thế giới: streaming thời gian thực cho người dùng và một message object hoàn chỉnh cho logic ứng dụng của bạn.</p>
+                  </div>
+                </div>
               </div>
               <div class="lesson-nav-footer"><a class="lesson-nav-footer__prev" href="/claude-academy/claude-with-the-anthropic-api/temperature.html"><span class="lesson-nav-footer__label"><span class="lesson-nav-footer__label-en">Previous Lesson</span><span class="lesson-nav-footer__label-vi">Bài trước</span></span><span class="lesson-nav-footer__title-en">← Temperature</span><span class="lesson-nav-footer__title-vi">Temperature</span></a><a class="lesson-nav-footer__next" href="/claude-academy/claude-with-the-anthropic-api/structured-data.html"><span class="lesson-nav-footer__label"><span class="lesson-nav-footer__label-en">Next Lesson</span><span class="lesson-nav-footer__label-vi">Bài sau</span></span><span class="lesson-nav-footer__title-en">Structured data →</span><span class="lesson-nav-footer__title-vi">Dữ liệu có cấu trúc</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="lesson-deepdive-btn" type="button" aria-label="Deep dive">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg><span class="lesson-deepdive-btn__label-en">Deep Dive</span><span class="lesson-deepdive-btn__label-vi">Tìm hiểu thêm</span>
+        </button>
+        <div class="lesson-deepdive-modal">
+          <div class="lesson-deepdive-modal__overlay"></div>
+          <div class="lesson-deepdive-modal__box">
+            <div class="lesson-deepdive-modal__header">
+              <div class="lesson-deepdive-modal__title"><span class="lesson-deepdive-modal__title-en">Deep Dive</span><span class="lesson-deepdive-modal__title-vi">Tìm hiểu thêm</span></div>
+              <div class="lesson-deepdive-modal__header-actions">
+                <div class="lesson-deepdive-modal__toggle">
+                  <button class="lesson-deepdive-modal__toggle-btn is-active" type="button" data-lang="bilingual">Song ngữ</button>
+                  <button class="lesson-deepdive-modal__toggle-btn" type="button" data-lang="en">English</button>
+                  <button class="lesson-deepdive-modal__toggle-btn" type="button" data-lang="vi">Tiếng Việt</button>
+                </div>
+                <button class="lesson-deepdive-modal__close" type="button" aria-label="Close">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="lesson-deepdive-modal__body">
+              <div class="lesson-deepdive-modal__scroll">
+                <div class="lesson-deepdive-modal__content lesson-deepdive-modal__content--en"><h3>Why Streaming Matters</h3><p>By default, the Claude API waits until the entire response is generated before returning it. For short responses this is fine, but for longer outputs — detailed explanations, long-form writing, code — the user waits in silence until everything is ready.</p><p>Streaming solves this by sending tokens to your application as they are produced. The user sees text appearing word-by-word, just like typing. This makes your application feel significantly faster and more responsive, even if the total generation time is the same.</p><h3>How to Stream with the SDK</h3><p>The Anthropic Python SDK makes streaming straightforward. The recommended approach uses the <code>stream()</code> context manager:</p><pre><code>with client.messages.stream(
+    model="claude-opus-4-5",
+    max_tokens=1024,
+    messages=[{"role": "user", "content": "Write a short story."}]
+) as stream:
+    for text in stream.text_stream:
+        print(text, end="", flush=True)</code></pre><p>The <code>text_stream</code> property yields each text delta as a string. You can also access the final complete message after the stream ends:</p><pre><code>    message = stream.get_final_message()
+    print(message.usage)  # token counts</code></pre><h3>Raw Event Streaming</h3><p>If you need lower-level control, you can iterate over the raw server-sent events:</p><pre><code>with client.messages.stream(...) as stream:
+    for event in stream:
+        print(event.type)  # e.g. content_block_delta, message_stop</code></pre><p>Each event has a <code>type</code> field. The most common ones are:</p><ul><li><code>content_block_delta</code> — carries a text chunk in <code>event.delta.text</code></li><li><code>message_stop</code> — signals the response is complete</li><li><code>message_delta</code> — carries final usage statistics</li></ul><p>For most applications, the <code>text_stream</code> helper is sufficient and much simpler to work with.</p>
+                </div>
+                <div class="lesson-deepdive-modal__content lesson-deepdive-modal__content--vi"><h3>Tại sao Streaming quan trọng</h3><p>Theo mặc định, Claude API chờ cho đến khi toàn bộ phản hồi được tạo ra trước khi trả về. Với các phản hồi ngắn điều này ổn, nhưng với đầu ra dài hơn — giải thích chi tiết, viết dài, code — người dùng chờ trong im lặng cho đến khi mọi thứ sẵn sàng.</p><p>Streaming giải quyết vấn đề này bằng cách gửi các token đến ứng dụng của bạn khi chúng được tạo ra. Người dùng thấy văn bản xuất hiện từng từ một, giống như gõ phím. Điều này khiến ứng dụng của bạn cảm thấy nhanh hơn đáng kể và phản hồi hơn, ngay cả khi tổng thời gian tạo giống nhau.</p><h3>Cách Stream với SDK</h3><p>Anthropic Python SDK làm cho streaming đơn giản. Cách tiếp cận được khuyến nghị sử dụng context manager <code>stream()</code>:</p><pre><code>with client.messages.stream(
+    model="claude-opus-4-5",
+    max_tokens=1024,
+    messages=[{"role": "user", "content": "Write a short story."}]
+) as stream:
+    for text in stream.text_stream:
+        print(text, end="", flush=True)</code></pre><p>Thuộc tính <code>text_stream</code> trả ra từng delta văn bản dưới dạng chuỗi. Bạn cũng có thể truy cập message hoàn chỉnh cuối cùng sau khi stream kết thúc:</p><pre><code>    message = stream.get_final_message()
+    print(message.usage)  # số lượng token</code></pre><h3>Raw Event Streaming</h3><p>Nếu bạn cần kiểm soát cấp thấp hơn, bạn có thể lặp qua các raw server-sent event:</p><pre><code>with client.messages.stream(...) as stream:
+    for event in stream:
+        print(event.type)  # ví dụ: content_block_delta, message_stop</code></pre><p>Mỗi event có trường <code>type</code>. Những loại phổ biến nhất là:</p><ul><li><code>content_block_delta</code> — mang một đoạn văn bản trong <code>event.delta.text</code></li><li><code>message_stop</code> — báo hiệu phản hồi hoàn tất</li><li><code>message_delta</code> — mang thống kê sử dụng cuối cùng</li></ul><p>Với hầu hết các ứng dụng, helper <code>text_stream</code> là đủ và đơn giản hơn nhiều để làm việc.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="lesson-summary-btn" type="button" aria-label="Lesson summary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg><span class="lesson-summary-btn__label-en">Summary</span><span class="lesson-summary-btn__label-vi">Tóm tắt</span>
+        </button>
+        <div class="lesson-summary-modal">
+          <div class="lesson-summary-modal__overlay"></div>
+          <div class="lesson-summary-modal__box">
+            <div class="lesson-summary-modal__header">
+              <div class="lesson-summary-modal__title"><span class="lesson-summary-modal__title-en">Key Takeaways</span><span class="lesson-summary-modal__title-vi">Điểm chính bài học</span></div>
+              <div class="lesson-summary-modal__header-actions">
+                <div class="lesson-summary-modal__toggle">
+                  <button class="lesson-summary-modal__toggle-btn is-active" type="button" data-lang="bilingual">Song ngữ</button>
+                  <button class="lesson-summary-modal__toggle-btn" type="button" data-lang="en">English</button>
+                  <button class="lesson-summary-modal__toggle-btn" type="button" data-lang="vi">Tiếng Việt</button>
+                </div>
+                <button class="lesson-summary-modal__close" type="button" aria-label="Close">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="lesson-summary-modal__body">
+              <div class="lesson-summary-modal__scroll">
+                <div class="lesson-summary-modal__card lesson-summary-modal__card--en"><ul><li>Streaming lets you receive Claude's response token-by-token as it is generated, rather than waiting for the full response</li><li>Use <code>stream=True</code> (Python) to enable streaming; iterate over the returned event stream to process each chunk</li><li>Streaming dramatically improves perceived latency in chat UIs — users see output immediately instead of waiting</li><li>The SDK provides helper methods (<code>stream()</code>, <code>text_stream</code>) that handle the event loop for you</li></ul>
+                </div>
+                <div class="lesson-summary-modal__card lesson-summary-modal__card--vi"><ul><li>Streaming cho phép bạn nhận phản hồi của Claude từng token một khi nó được tạo ra, thay vì chờ toàn bộ phản hồi</li><li>Sử dụng <code>stream=True</code> (Python) để bật streaming; lặp qua luồng sự kiện được trả về để xử lý từng đoạn</li><li>Streaming cải thiện đáng kể độ trễ cảm nhận trong giao diện chat — người dùng thấy đầu ra ngay lập tức thay vì phải chờ</li><li>SDK cung cấp các phương thức trợ giúp (<code>stream()</code>, <code>text_stream</code>) xử lý vòng lặp sự kiện cho bạn</li></ul>
+                </div>
               </div>
             </div>
           </div>
@@ -224,6 +435,6 @@
 
     </div>
     <script src="/claude-academy/assets/js/main.js?v=sha384-kNNRbQTv526J2QIkhMOolMqrIfWyaSWL36D955JRpJTKBlmZ9+oV0Oz9FvXDnFbw" type="module" crossorigin></script>
-    <script src="/claude-academy/assets/js/lesson.js?v=sha384-5Qmu85Cv9gdc3uL8lcYsykzvcLLQEsWIr1EDy2JuakoAgOQgBlxArlt0SKLDnq+G" type="module" crossorigin></script>
+    <script src="/claude-academy/assets/js/lesson.js?v=sha384-3oOOFql/wce7ZCPEcNMUnG6et9JtKoz3iVP4pwwTVwSWm6vNSiY9hnQtC4CVpnCt" type="module" crossorigin></script>
   </body>
 </html>

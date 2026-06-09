@@ -2,11 +2,68 @@
   "slug": "temperature",
   "titleEn": "Temperature",
   "titleVi": "Temperature",
-  "estimatedTimeEn": "10 minutes",
-  "estimatedTimeVi": "10 phút",
+  "estimatedTimeEn": "8 minutes",
+  "estimatedTimeVi": "8 phút",
   "prevLesson": "system-prompts-exercise",
   "nextLesson": "response-streaming",
-  "summaryEn": "",
-  "summaryVi": "",
-  "sections": []
+  "summaryEn": "<ul><li>Temperature controls the randomness of Claude's responses — lower values are more deterministic, higher values are more creative</li><li>Temperature ranges from <code>0.0</code> to <code>1.0</code>; the default is <code>1.0</code></li><li>Use low temperature (0.0–0.3) for factual, consistent, or structured tasks; use higher temperature (0.7–1.0) for brainstorming, creative writing, or varied outputs</li><li>Temperature is set via the <code>temperature</code> parameter in the API request</li></ul>",
+  "summaryVi": "<ul><li>Temperature kiểm soát tính ngẫu nhiên trong phản hồi của Claude — giá trị thấp hơn cho kết quả nhất quán hơn, giá trị cao hơn cho kết quả sáng tạo hơn</li><li>Temperature dao động từ <code>0.0</code> đến <code>1.0</code>; giá trị mặc định là <code>1.0</code></li><li>Dùng temperature thấp (0.0–0.3) cho các tác vụ thực tế, nhất quán hoặc có cấu trúc; dùng temperature cao hơn (0.7–1.0) cho brainstorming, viết sáng tạo hoặc đầu ra đa dạng</li><li>Temperature được đặt qua tham số <code>temperature</code> trong API request</li></ul>",
+  "supplementEn": "<h3>What is Temperature?</h3><p>Temperature is a parameter that controls how random or deterministic Claude's outputs are. It is set as a float between <code>0.0</code> and <code>1.0</code> in the API request:</p><pre><code>client.messages.create(\n    model=\"claude-opus-4-5\",\n    max_tokens=1024,\n    temperature=0.2,\n    messages=[\n        {\"role\": \"user\", \"content\": \"Summarize this document.\"}\n    ]\n)</code></pre><p>At <strong>temperature 0</strong>, Claude always picks the most likely next token — producing consistent, predictable output. At <strong>temperature 1</strong> (the default), there is more variation in word choice, making responses feel more natural and less repetitive.</p><h3>When to Use Low vs. High Temperature</h3><p>Choosing the right temperature depends on your use case:</p><ul><li><strong>Low temperature (0.0–0.3)</strong>: Best for tasks that require accuracy and consistency — data extraction, classification, structured output, Q&amp;A over documents, code generation</li><li><strong>Medium temperature (0.4–0.7)</strong>: A balance between creativity and reliability — conversational assistants, summarization, general-purpose chat</li><li><strong>High temperature (0.8–1.0)</strong>: Best for open-ended creativity — brainstorming, story writing, generating diverse options, marketing copy</li></ul><p>A common pattern is to use <code>temperature=0</code> during evaluation and testing (for reproducibility), then tune upward for production if the use case benefits from variety.</p>",
+  "supplementVi": "<h3>Temperature là gì?</h3><p>Temperature là một tham số kiểm soát mức độ ngẫu nhiên hay xác định trong đầu ra của Claude. Nó được đặt là một số thực giữa <code>0.0</code> và <code>1.0</code> trong API request:</p><pre><code>client.messages.create(\n    model=\"claude-opus-4-5\",\n    max_tokens=1024,\n    temperature=0.2,\n    messages=[\n        {\"role\": \"user\", \"content\": \"Summarize this document.\"}\n    ]\n)</code></pre><p>Ở <strong>temperature 0</strong>, Claude luôn chọn token có xác suất cao nhất — tạo ra đầu ra nhất quán, có thể dự đoán. Ở <strong>temperature 1</strong> (mặc định), có sự biến đổi nhiều hơn trong cách chọn từ, khiến phản hồi cảm thấy tự nhiên hơn và ít lặp lại hơn.</p><h3>Khi nào dùng Temperature thấp vs. cao</h3><p>Chọn temperature phù hợp phụ thuộc vào trường hợp sử dụng của bạn:</p><ul><li><strong>Temperature thấp (0.0–0.3)</strong>: Tốt nhất cho các tác vụ yêu cầu độ chính xác và nhất quán — trích xuất dữ liệu, phân loại, đầu ra có cấu trúc, Q&amp;A trên tài liệu, tạo code</li><li><strong>Temperature trung bình (0.4–0.7)</strong>: Cân bằng giữa sáng tạo và độ tin cậy — trợ lý hội thoại, tóm tắt, chat đa mục đích</li><li><strong>Temperature cao (0.8–1.0)</strong>: Tốt nhất cho sáng tạo mở — brainstorming, viết truyện, tạo các tùy chọn đa dạng, nội dung marketing</li></ul><p>Một pattern phổ biến là dùng <code>temperature=0</code> trong quá trình đánh giá và kiểm thử (để tái tạo được), sau đó tăng dần cho production nếu trường hợp sử dụng được hưởng lợi từ sự đa dạng.</p>",
+  "sections": [
+    {
+      "id": "intro-video",
+      "titleEn": "Temperature",
+      "titleVi": "Temperature",
+      "en": "",
+      "vi": "",
+      "image": "",
+      "video": "<div class=\"lesson-video\"><iframe src=\"https://cdn.jwplayer.com/players/D87GKJt3-Akyo8gQO.html\" frameborder=\"0\" allowfullscreen></iframe></div>"
+    },
+    {
+      "id": "how-text-generation-works",
+      "titleEn": "How Text Generation Works",
+      "titleVi": "Cách tạo văn bản hoạt động",
+      "en": "<p>Temperature is a powerful parameter that controls how predictable or creative Claude's responses will be. Understanding how to use it effectively can dramatically improve your AI applications.</p><p>Before diving into temperature, it helps to understand Claude's text generation process. When you send Claude a prompt like \"What do you think?\", it goes through three key steps:</p><ul><li><strong>Tokenization</strong> — Breaking your input into smaller chunks</li><li><strong>Prediction</strong> — Calculating probabilities for possible next words</li><li><strong>Sampling</strong> — Choosing a token based on those probabilities</li></ul><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/temperature-02.png\" alt=\"\"></div><p>In this example, Claude might assign a 30% probability to \"about\", 20% to \"would\", 10% to \"of\", and so on. The model then selects one token and repeats this entire process to build complete sentences.</p>",
+      "vi": "<p>Temperature là một tham số mạnh mẽ kiểm soát mức độ có thể dự đoán hay sáng tạo trong phản hồi của Claude. Hiểu cách sử dụng hiệu quả có thể cải thiện đáng kể các ứng dụng AI của bạn.</p><p>Trước khi đi vào temperature, sẽ hữu ích khi hiểu quy trình tạo văn bản của Claude. Khi bạn gửi cho Claude một prompt như \"What do you think?\", nó đi qua ba bước chính:</p><ul><li><strong>Tokenization</strong> — Chia nhỏ đầu vào của bạn thành các đoạn nhỏ hơn</li><li><strong>Prediction</strong> — Tính xác suất cho các từ tiếp theo có thể có</li><li><strong>Sampling</strong> — Chọn một token dựa trên những xác suất đó</li></ul><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/temperature-02.png\" alt=\"\"></div><p>Trong ví dụ này, Claude có thể gán xác suất 30% cho \"about\", 20% cho \"would\", 10% cho \"of\", v.v. Model sau đó chọn một token và lặp lại toàn bộ quy trình này để tạo ra các câu hoàn chỉnh.</p>",
+      "image": "<div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/temperature-01.png\" alt=\"\"></div>",
+      "video": ""
+    },
+    {
+      "id": "what-temperature-does",
+      "titleEn": "What Temperature Does",
+      "titleVi": "Temperature làm gì",
+      "en": "<p>Temperature is a decimal value between 0 and 1 that directly influences these selection probabilities. It's like adjusting the \"creativity dial\" on Claude's responses.</p><p>At low temperatures (near 0), Claude becomes very deterministic — it almost always picks the highest probability token. At high temperatures (near 1), Claude distributes probability more evenly across options, leading to more varied and creative outputs.</p>",
+      "vi": "<p>Temperature là một giá trị thập phân từ 0 đến 1 ảnh hưởng trực tiếp đến các xác suất lựa chọn này. Nó giống như điều chỉnh \"núm sáng tạo\" trong phản hồi của Claude.</p><p>Ở temperature thấp (gần 0), Claude trở nên rất xác định — nó hầu như luôn chọn token có xác suất cao nhất. Ở temperature cao (gần 1), Claude phân phối xác suất đều hơn trên các tùy chọn, dẫn đến đầu ra đa dạng và sáng tạo hơn.</p>",
+      "image": "<div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/temperature-03.png\" alt=\"\"></div>",
+      "video": ""
+    },
+    {
+      "id": "interactive-demo",
+      "titleEn": "Interactive Demo",
+      "titleVi": "Demo tương tác",
+      "en": "<p>You can see temperature in action with an interactive demo. Watch how the probability distribution changes as you adjust the temperature slider:</p><p>At temperature 0.0, \"about\" gets 100% probability — completely deterministic. At temperature 1.0, probabilities spread more evenly across all possible tokens, introducing randomness and creativity.</p>",
+      "vi": "<p>Bạn có thể thấy temperature hoạt động với một demo tương tác. Xem xác suất phân phối thay đổi như thế nào khi bạn điều chỉnh thanh trượt temperature:</p><p>Ở temperature 0.0, \"about\" nhận 100% xác suất — hoàn toàn xác định. Ở temperature 1.0, xác suất phân phối đều hơn trên tất cả các token có thể, tạo ra tính ngẫu nhiên và sáng tạo.</p>",
+      "image": "<div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/temperature-04.png\" alt=\"\"></div>",
+      "video": ""
+    },
+    {
+      "id": "choosing-right-temperature",
+      "titleEn": "Choosing the Right Temperature",
+      "titleVi": "Chọn Temperature phù hợp",
+      "en": "<p>Different tasks call for different temperature ranges:</p><h3>Low Temperature (0.0 – 0.3)</h3><ul><li>Factual responses</li><li>Coding assistance</li><li>Data extraction</li><li>Content moderation</li></ul><h3>Medium Temperature (0.4 – 0.7)</h3><ul><li>Summarization</li><li>Educational content</li><li>Problem-solving</li><li>Creative writing with constraints</li></ul><h3>High Temperature (0.8 – 1.0)</h3><ul><li>Brainstorming</li><li>Creative writing</li><li>Marketing content</li><li>Joke generation</li></ul>",
+      "vi": "<p>Các tác vụ khác nhau đòi hỏi các dải temperature khác nhau:</p><h3>Temperature thấp (0.0 – 0.3)</h3><ul><li>Phản hồi thực tế</li><li>Hỗ trợ lập trình</li><li>Trích xuất dữ liệu</li><li>Kiểm duyệt nội dung</li></ul><h3>Temperature trung bình (0.4 – 0.7)</h3><ul><li>Tóm tắt</li><li>Nội dung giáo dục</li><li>Giải quyết vấn đề</li><li>Viết sáng tạo có ràng buộc</li></ul><h3>Temperature cao (0.8 – 1.0)</h3><ul><li>Brainstorming</li><li>Viết sáng tạo</li><li>Nội dung marketing</li><li>Tạo câu đùa</li></ul>",
+      "image": "<div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/temperature-05.png\" alt=\"\"></div>",
+      "video": ""
+    },
+    {
+      "id": "implementing-in-code",
+      "titleEn": "Implementing in Code",
+      "titleVi": "Triển khai trong Code",
+      "en": "<p>Adding temperature support to your chat function is straightforward. Here's how to modify your existing function:</p><pre><code>def chat(messages, system=None, temperature=1.0):\n    params = {\n        \"model\": model,\n        \"max_tokens\": 1000,\n        \"messages\": messages,\n        \"temperature\": temperature\n    }\n    \n    if system:\n        params[\"system\"] = system\n    \n    message = client.messages.create(**params)\n    return message.content[0].text</code></pre><p>The key changes are adding <code>temperature=1.0</code> as a parameter and including <code>\"temperature\": temperature</code> in the params dictionary.</p><p>To see temperature in action, try generating movie ideas with different settings:</p><pre><code># Low temperature - more predictable\nanswer = chat(messages, temperature=0.0)\n\n# High temperature - more creative\nanswer = chat(messages, temperature=1.0)</code></pre><p>Remember that temperature doesn't guarantee different outputs — it just changes the probability of getting them. The key is matching your temperature choice to your specific use case.</p>",
+      "vi": "<p>Thêm hỗ trợ temperature vào hàm chat của bạn rất đơn giản. Đây là cách sửa đổi hàm hiện có của bạn:</p><pre><code>def chat(messages, system=None, temperature=1.0):\n    params = {\n        \"model\": model,\n        \"max_tokens\": 1000,\n        \"messages\": messages,\n        \"temperature\": temperature\n    }\n    \n    if system:\n        params[\"system\"] = system\n    \n    message = client.messages.create(**params)\n    return message.content[0].text</code></pre><p>Các thay đổi chính là thêm <code>temperature=1.0</code> làm tham số và bao gồm <code>\"temperature\": temperature</code> trong dictionary params.</p><p>Để thấy temperature hoạt động, hãy thử tạo ý tưởng phim với các cài đặt khác nhau:</p><pre><code># Temperature thấp - dự đoán hơn\nanswer = chat(messages, temperature=0.0)\n\n# Temperature cao - sáng tạo hơn\nanswer = chat(messages, temperature=1.0)</code></pre><p>Hãy nhớ rằng temperature không đảm bảo đầu ra khác nhau — nó chỉ thay đổi xác suất nhận được chúng. Điều quan trọng là khớp lựa chọn temperature của bạn với trường hợp sử dụng cụ thể.</p>",
+      "image": "",
+      "video": ""
+    }
+  ]
 }

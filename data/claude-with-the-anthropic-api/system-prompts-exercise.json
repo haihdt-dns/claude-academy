@@ -2,11 +2,30 @@
   "slug": "system-prompts-exercise",
   "titleEn": "System prompts exercise",
   "titleVi": "Bài tập system prompts",
-  "estimatedTimeEn": "10 minutes",
-  "estimatedTimeVi": "10 phút",
+  "estimatedTimeEn": "4 minutes",
+  "estimatedTimeVi": "4 phút",
   "prevLesson": "system-prompts",
   "nextLesson": "temperature",
-  "summaryEn": "",
-  "summaryVi": "",
-  "sections": []
+  "summaryEn": "<ul><li>Practice adding a <code>system</code> parameter to a Claude API request to control its behavior</li><li>Combine a crafted system prompt with user messages to build a role-specific assistant</li><li>Observe how the system prompt shapes every response throughout the session</li></ul>",
+  "summaryVi": "<ul><li>Thực hành thêm tham số <code>system</code> vào API request Claude để kiểm soát hành vi của nó</li><li>Kết hợp system prompt được soạn thảo với tin nhắn người dùng để xây dựng trợ lý theo vai trò cụ thể</li><li>Quan sát cách system prompt định hình mọi phản hồi trong suốt phiên làm việc</li></ul>",
+  "sections": [
+    {
+      "id": "intro-video",
+      "titleEn": "System prompts exercise",
+      "titleVi": "Bài tập system prompts",
+      "en": "",
+      "vi": "",
+      "image": "",
+      "video": "<div class=\"lesson-video\"><iframe src=\"https://cdn.jwplayer.com/players/7nj15ANp-Akyo8gQO.html\" frameborder=\"0\" allowfullscreen></iframe></div>"
+    },
+    {
+      "id": "exercise",
+      "titleEn": "System prompts exercise",
+      "titleVi": "Bài tập system prompts",
+      "en": "<p><em>(~4 minutes)</em></p><p>In this exercise, you'll extend your chat application from the previous exercise by adding a system prompt — putting Claude into a specific role before the conversation begins.</p><h4>What you'll build</h4><p>An enhanced chat loop that includes a <code>system</code> parameter to:</p><ul><li>Define Claude's persona (e.g. a customer support agent, a coding tutor, a formal writing assistant)</li><li>Set behavioral constraints that persist across every turn</li><li>Combine persistent configuration with dynamic user input</li></ul><h4>Key concepts applied</h4><ul><li><strong>The <code>system</code> parameter</strong>: Passed separately from the <code>messages</code> array — it's processed before any user message</li><li><strong>Role definition</strong>: Use the system prompt to give Claude a job description, tone, and rules</li><li><strong>Separation of concerns</strong>: The system prompt is your configuration layer; user messages are the runtime input</li></ul><p>Follow along with the video on the <a href=\"https://anthropic.skilljar.com/claude-with-the-anthropic-api\" target=\"_blank\" rel=\"noopener\">original Skilljar course</a> to see a live walkthrough of the implementation.</p>",
+      "vi": "<p><em>(~4 phút)</em></p><p>Trong bài tập này, bạn sẽ mở rộng ứng dụng chat từ bài tập trước bằng cách thêm system prompt — đặt Claude vào một vai trò cụ thể trước khi cuộc hội thoại bắt đầu.</p><h4>Bạn sẽ xây dựng gì</h4><p>Một vòng lặp chat nâng cao có tham số <code>system</code> để:</p><ul><li>Định nghĩa nhân cách của Claude (ví dụ: nhân viên hỗ trợ khách hàng, gia sư lập trình, trợ lý viết văn phong trang trọng)</li><li>Đặt các ràng buộc hành vi duy trì qua mọi lượt hội thoại</li><li>Kết hợp cấu hình liên tục với đầu vào động từ người dùng</li></ul><h4>Các khái niệm được áp dụng</h4><ul><li><strong>Tham số <code>system</code></strong>: Được truyền riêng biệt khỏi mảng <code>messages</code> — được xử lý trước bất kỳ tin nhắn người dùng nào</li><li><strong>Định nghĩa vai trò</strong>: Sử dụng system prompt để cung cấp cho Claude mô tả công việc, giọng điệu và quy tắc</li><li><strong>Phân tách mối quan tâm</strong>: System prompt là lớp cấu hình của bạn; tin nhắn người dùng là đầu vào thời gian chạy</li></ul><p>Theo dõi video trên <a href=\"https://anthropic.skilljar.com/claude-with-the-anthropic-api\" target=\"_blank\" rel=\"noopener\">khóa học Skilljar gốc</a> để xem hướng dẫn triển khai trực tiếp.</p>",
+      "image": "",
+      "video": ""
+    }
+  ]
 }

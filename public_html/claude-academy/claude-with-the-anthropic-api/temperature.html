@@ -21,9 +21,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&amp;display=swap">
-    <link rel="stylesheet" href="/claude-academy/assets/css/common.css?v=sha384-/QRqlI0jk21piyOMDlehSThtd0HifferyFI5WzwKPcyz8PJnQwToghHciID1c3Q8">
+    <link rel="stylesheet" href="/claude-academy/assets/css/common.css?v=sha384-LTuHfQryoFZ6j3Mx0pXuMVhgXfKRUXfHZVrglUi9lzh3FhlXMxROdt+isuaRIODX">
     <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/claude-academy/assets/css/lesson.css?v=sha384-E777OCsLaLmN4LOLX2LG5nMfCju5odkVHqoVrT0nv1HQlut3oW7GANfrpxxKUwbZ">
+    <link rel="stylesheet" href="/claude-academy/assets/css/lesson.css?v=sha384-809Tffxm3tiuFU/xQcS2wKjlQBgxGYSC58truKw4Kq946/f9APkH1Nt8hXBjn7iR">
     <meta name="robots" content="noindex, nofollow, nosnippet, noarchive, noimageindex, notranslate">
     <meta name="googlebot" content="noindex, nofollow, nosnippet, noarchive, noimageindex">
     <meta name="bingbot" content="noindex, nofollow, nosnippet, noarchive, noimageindex">
@@ -210,10 +210,177 @@
                   <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4" width="14" height="14">
                     <circle cx="7" cy="7" r="5.5"></circle>
                     <path d="M7 4v3.5l2 1.5"></path>
-                  </svg><span class="lesson-meta__text-bilingual">Estimated time: 10 minutes (Thời gian ước tính: 10 phút)</span><span class="lesson-meta__text-en">Estimated time: 10 minutes</span><span class="lesson-meta__text-vi">Thời gian ước tính: 10 phút</span></span></div>
+                  </svg><span class="lesson-meta__text-bilingual">Estimated time: 8 minutes (Thời gian ước tính: 8 phút)</span><span class="lesson-meta__text-en">Estimated time: 8 minutes</span><span class="lesson-meta__text-vi">Thời gian ước tính: 8 phút</span></span></div>
               <div class="lesson-content">
+                <div class="lesson-section" id="intro-video">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Temperature</h2><span class="lesson-section__title-vi">Temperature</span>
+                  </div><div class="lesson-video"><iframe src="https://cdn.jwplayer.com/players/D87GKJt3-Akyo8gQO.html" frameborder="0" allowfullscreen></iframe></div>
+                </div>
+                <div class="lesson-section" id="how-text-generation-works">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">How Text Generation Works</h2><span class="lesson-section__title-vi">Cách tạo văn bản hoạt động</span>
+                  </div><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/temperature-01.png?v=sha384-H784srTAuRk+G4aPPJWw8nbDl4fyd55FXJ2QB+pvJ6dm+CwE8+MNdRABxeHX1Kh9" alt=""></div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>Temperature is a powerful parameter that controls how predictable or creative Claude's responses will be. Understanding how to use it effectively can dramatically improve your AI applications.</p><p>Before diving into temperature, it helps to understand Claude's text generation process. When you send Claude a prompt like "What do you think?", it goes through three key steps:</p><ul><li><strong>Tokenization</strong> — Breaking your input into smaller chunks</li><li><strong>Prediction</strong> — Calculating probabilities for possible next words</li><li><strong>Sampling</strong> — Choosing a token based on those probabilities</li></ul><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/temperature-02.png?v=sha384-LrSF9uxi3B5RGK2/ATt+6h4zNXhM+xxLLMcd1cxJxb40aJ/EMicVknPH+lg3/92b" alt=""></div><p>In this example, Claude might assign a 30% probability to "about", 20% to "would", 10% to "of", and so on. The model then selects one token and repeats this entire process to build complete sentences.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Temperature là một tham số mạnh mẽ kiểm soát mức độ có thể dự đoán hay sáng tạo trong phản hồi của Claude. Hiểu cách sử dụng hiệu quả có thể cải thiện đáng kể các ứng dụng AI của bạn.</p><p>Trước khi đi vào temperature, sẽ hữu ích khi hiểu quy trình tạo văn bản của Claude. Khi bạn gửi cho Claude một prompt như "What do you think?", nó đi qua ba bước chính:</p><ul><li><strong>Tokenization</strong> — Chia nhỏ đầu vào của bạn thành các đoạn nhỏ hơn</li><li><strong>Prediction</strong> — Tính xác suất cho các từ tiếp theo có thể có</li><li><strong>Sampling</strong> — Chọn một token dựa trên những xác suất đó</li></ul><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/temperature-02.png?v=sha384-LrSF9uxi3B5RGK2/ATt+6h4zNXhM+xxLLMcd1cxJxb40aJ/EMicVknPH+lg3/92b" alt=""></div><p>Trong ví dụ này, Claude có thể gán xác suất 30% cho "about", 20% cho "would", 10% cho "of", v.v. Model sau đó chọn một token và lặp lại toàn bộ quy trình này để tạo ra các câu hoàn chỉnh.</p>
+                  </div>
+                </div>
+                <div class="lesson-section" id="what-temperature-does">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">What Temperature Does</h2><span class="lesson-section__title-vi">Temperature làm gì</span>
+                  </div><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/temperature-03.png?v=sha384-NZf9IcBVsN7ugIrmxKBp+MkzazNWvB6cHYTLyCkWIkbt0aKnBVE1QrzKk335Barc" alt=""></div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>Temperature is a decimal value between 0 and 1 that directly influences these selection probabilities. It's like adjusting the "creativity dial" on Claude's responses.</p><p>At low temperatures (near 0), Claude becomes very deterministic — it almost always picks the highest probability token. At high temperatures (near 1), Claude distributes probability more evenly across options, leading to more varied and creative outputs.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Temperature là một giá trị thập phân từ 0 đến 1 ảnh hưởng trực tiếp đến các xác suất lựa chọn này. Nó giống như điều chỉnh "núm sáng tạo" trong phản hồi của Claude.</p><p>Ở temperature thấp (gần 0), Claude trở nên rất xác định — nó hầu như luôn chọn token có xác suất cao nhất. Ở temperature cao (gần 1), Claude phân phối xác suất đều hơn trên các tùy chọn, dẫn đến đầu ra đa dạng và sáng tạo hơn.</p>
+                  </div>
+                </div>
+                <div class="lesson-section" id="interactive-demo">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Interactive Demo</h2><span class="lesson-section__title-vi">Demo tương tác</span>
+                  </div><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/temperature-04.png?v=sha384-Y38qpdbO9xtr9B51Ws9HzxByMtHzt2NrRtgDcogatCGk1eymN1mxyLoirh07Vc+Y" alt=""></div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>You can see temperature in action with an interactive demo. Watch how the probability distribution changes as you adjust the temperature slider:</p><p>At temperature 0.0, "about" gets 100% probability — completely deterministic. At temperature 1.0, probabilities spread more evenly across all possible tokens, introducing randomness and creativity.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Bạn có thể thấy temperature hoạt động với một demo tương tác. Xem xác suất phân phối thay đổi như thế nào khi bạn điều chỉnh thanh trượt temperature:</p><p>Ở temperature 0.0, "about" nhận 100% xác suất — hoàn toàn xác định. Ở temperature 1.0, xác suất phân phối đều hơn trên tất cả các token có thể, tạo ra tính ngẫu nhiên và sáng tạo.</p>
+                  </div>
+                </div>
+                <div class="lesson-section" id="choosing-right-temperature">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Choosing the Right Temperature</h2><span class="lesson-section__title-vi">Chọn Temperature phù hợp</span>
+                  </div><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/temperature-05.png?v=sha384-bt7eOkPUlao9sjo7z1quT8A9FfYAtXwrWuL7xWaewE6/mQD3B0rSxIXCRu/mJzsV" alt=""></div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>Different tasks call for different temperature ranges:</p><h3>Low Temperature (0.0 – 0.3)</h3><ul><li>Factual responses</li><li>Coding assistance</li><li>Data extraction</li><li>Content moderation</li></ul><h3>Medium Temperature (0.4 – 0.7)</h3><ul><li>Summarization</li><li>Educational content</li><li>Problem-solving</li><li>Creative writing with constraints</li></ul><h3>High Temperature (0.8 – 1.0)</h3><ul><li>Brainstorming</li><li>Creative writing</li><li>Marketing content</li><li>Joke generation</li></ul>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Các tác vụ khác nhau đòi hỏi các dải temperature khác nhau:</p><h3>Temperature thấp (0.0 – 0.3)</h3><ul><li>Phản hồi thực tế</li><li>Hỗ trợ lập trình</li><li>Trích xuất dữ liệu</li><li>Kiểm duyệt nội dung</li></ul><h3>Temperature trung bình (0.4 – 0.7)</h3><ul><li>Tóm tắt</li><li>Nội dung giáo dục</li><li>Giải quyết vấn đề</li><li>Viết sáng tạo có ràng buộc</li></ul><h3>Temperature cao (0.8 – 1.0)</h3><ul><li>Brainstorming</li><li>Viết sáng tạo</li><li>Nội dung marketing</li><li>Tạo câu đùa</li></ul>
+                  </div>
+                </div>
+                <div class="lesson-section" id="implementing-in-code">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Implementing in Code</h2><span class="lesson-section__title-vi">Triển khai trong Code</span>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>Adding temperature support to your chat function is straightforward. Here's how to modify your existing function:</p><pre><code>def chat(messages, system=None, temperature=1.0):
+    params = {
+        "model": model,
+        "max_tokens": 1000,
+        "messages": messages,
+        "temperature": temperature
+    }
+    
+    if system:
+        params["system"] = system
+    
+    message = client.messages.create(**params)
+    return message.content[0].text</code></pre><p>The key changes are adding <code>temperature=1.0</code> as a parameter and including <code>"temperature": temperature</code> in the params dictionary.</p><p>To see temperature in action, try generating movie ideas with different settings:</p><pre><code># Low temperature - more predictable
+answer = chat(messages, temperature=0.0)
+
+# High temperature - more creative
+answer = chat(messages, temperature=1.0)</code></pre><p>Remember that temperature doesn't guarantee different outputs — it just changes the probability of getting them. The key is matching your temperature choice to your specific use case.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Thêm hỗ trợ temperature vào hàm chat của bạn rất đơn giản. Đây là cách sửa đổi hàm hiện có của bạn:</p><pre><code>def chat(messages, system=None, temperature=1.0):
+    params = {
+        "model": model,
+        "max_tokens": 1000,
+        "messages": messages,
+        "temperature": temperature
+    }
+    
+    if system:
+        params["system"] = system
+    
+    message = client.messages.create(**params)
+    return message.content[0].text</code></pre><p>Các thay đổi chính là thêm <code>temperature=1.0</code> làm tham số và bao gồm <code>"temperature": temperature</code> trong dictionary params.</p><p>Để thấy temperature hoạt động, hãy thử tạo ý tưởng phim với các cài đặt khác nhau:</p><pre><code># Temperature thấp - dự đoán hơn
+answer = chat(messages, temperature=0.0)
+
+# Temperature cao - sáng tạo hơn
+answer = chat(messages, temperature=1.0)</code></pre><p>Hãy nhớ rằng temperature không đảm bảo đầu ra khác nhau — nó chỉ thay đổi xác suất nhận được chúng. Điều quan trọng là khớp lựa chọn temperature của bạn với trường hợp sử dụng cụ thể.</p>
+                  </div>
+                </div>
               </div>
               <div class="lesson-nav-footer"><a class="lesson-nav-footer__prev" href="/claude-academy/claude-with-the-anthropic-api/system-prompts-exercise.html"><span class="lesson-nav-footer__label"><span class="lesson-nav-footer__label-en">Previous Lesson</span><span class="lesson-nav-footer__label-vi">Bài trước</span></span><span class="lesson-nav-footer__title-en">← System prompts exercise</span><span class="lesson-nav-footer__title-vi">Bài tập system prompts</span></a><a class="lesson-nav-footer__next" href="/claude-academy/claude-with-the-anthropic-api/response-streaming.html"><span class="lesson-nav-footer__label"><span class="lesson-nav-footer__label-en">Next Lesson</span><span class="lesson-nav-footer__label-vi">Bài sau</span></span><span class="lesson-nav-footer__title-en">Response streaming →</span><span class="lesson-nav-footer__title-vi">Response streaming</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="lesson-deepdive-btn" type="button" aria-label="Deep dive">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg><span class="lesson-deepdive-btn__label-en">Deep Dive</span><span class="lesson-deepdive-btn__label-vi">Tìm hiểu thêm</span>
+        </button>
+        <div class="lesson-deepdive-modal">
+          <div class="lesson-deepdive-modal__overlay"></div>
+          <div class="lesson-deepdive-modal__box">
+            <div class="lesson-deepdive-modal__header">
+              <div class="lesson-deepdive-modal__title"><span class="lesson-deepdive-modal__title-en">Deep Dive</span><span class="lesson-deepdive-modal__title-vi">Tìm hiểu thêm</span></div>
+              <div class="lesson-deepdive-modal__header-actions">
+                <div class="lesson-deepdive-modal__toggle">
+                  <button class="lesson-deepdive-modal__toggle-btn is-active" type="button" data-lang="bilingual">Song ngữ</button>
+                  <button class="lesson-deepdive-modal__toggle-btn" type="button" data-lang="en">English</button>
+                  <button class="lesson-deepdive-modal__toggle-btn" type="button" data-lang="vi">Tiếng Việt</button>
+                </div>
+                <button class="lesson-deepdive-modal__close" type="button" aria-label="Close">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="lesson-deepdive-modal__body">
+              <div class="lesson-deepdive-modal__scroll">
+                <div class="lesson-deepdive-modal__content lesson-deepdive-modal__content--en"><h3>What is Temperature?</h3><p>Temperature is a parameter that controls how random or deterministic Claude's outputs are. It is set as a float between <code>0.0</code> and <code>1.0</code> in the API request:</p><pre><code>client.messages.create(
+    model="claude-opus-4-5",
+    max_tokens=1024,
+    temperature=0.2,
+    messages=[
+        {"role": "user", "content": "Summarize this document."}
+    ]
+)</code></pre><p>At <strong>temperature 0</strong>, Claude always picks the most likely next token — producing consistent, predictable output. At <strong>temperature 1</strong> (the default), there is more variation in word choice, making responses feel more natural and less repetitive.</p><h3>When to Use Low vs. High Temperature</h3><p>Choosing the right temperature depends on your use case:</p><ul><li><strong>Low temperature (0.0–0.3)</strong>: Best for tasks that require accuracy and consistency — data extraction, classification, structured output, Q&amp;A over documents, code generation</li><li><strong>Medium temperature (0.4–0.7)</strong>: A balance between creativity and reliability — conversational assistants, summarization, general-purpose chat</li><li><strong>High temperature (0.8–1.0)</strong>: Best for open-ended creativity — brainstorming, story writing, generating diverse options, marketing copy</li></ul><p>A common pattern is to use <code>temperature=0</code> during evaluation and testing (for reproducibility), then tune upward for production if the use case benefits from variety.</p>
+                </div>
+                <div class="lesson-deepdive-modal__content lesson-deepdive-modal__content--vi"><h3>Temperature là gì?</h3><p>Temperature là một tham số kiểm soát mức độ ngẫu nhiên hay xác định trong đầu ra của Claude. Nó được đặt là một số thực giữa <code>0.0</code> và <code>1.0</code> trong API request:</p><pre><code>client.messages.create(
+    model="claude-opus-4-5",
+    max_tokens=1024,
+    temperature=0.2,
+    messages=[
+        {"role": "user", "content": "Summarize this document."}
+    ]
+)</code></pre><p>Ở <strong>temperature 0</strong>, Claude luôn chọn token có xác suất cao nhất — tạo ra đầu ra nhất quán, có thể dự đoán. Ở <strong>temperature 1</strong> (mặc định), có sự biến đổi nhiều hơn trong cách chọn từ, khiến phản hồi cảm thấy tự nhiên hơn và ít lặp lại hơn.</p><h3>Khi nào dùng Temperature thấp vs. cao</h3><p>Chọn temperature phù hợp phụ thuộc vào trường hợp sử dụng của bạn:</p><ul><li><strong>Temperature thấp (0.0–0.3)</strong>: Tốt nhất cho các tác vụ yêu cầu độ chính xác và nhất quán — trích xuất dữ liệu, phân loại, đầu ra có cấu trúc, Q&amp;A trên tài liệu, tạo code</li><li><strong>Temperature trung bình (0.4–0.7)</strong>: Cân bằng giữa sáng tạo và độ tin cậy — trợ lý hội thoại, tóm tắt, chat đa mục đích</li><li><strong>Temperature cao (0.8–1.0)</strong>: Tốt nhất cho sáng tạo mở — brainstorming, viết truyện, tạo các tùy chọn đa dạng, nội dung marketing</li></ul><p>Một pattern phổ biến là dùng <code>temperature=0</code> trong quá trình đánh giá và kiểm thử (để tái tạo được), sau đó tăng dần cho production nếu trường hợp sử dụng được hưởng lợi từ sự đa dạng.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="lesson-summary-btn" type="button" aria-label="Lesson summary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg><span class="lesson-summary-btn__label-en">Summary</span><span class="lesson-summary-btn__label-vi">Tóm tắt</span>
+        </button>
+        <div class="lesson-summary-modal">
+          <div class="lesson-summary-modal__overlay"></div>
+          <div class="lesson-summary-modal__box">
+            <div class="lesson-summary-modal__header">
+              <div class="lesson-summary-modal__title"><span class="lesson-summary-modal__title-en">Key Takeaways</span><span class="lesson-summary-modal__title-vi">Điểm chính bài học</span></div>
+              <div class="lesson-summary-modal__header-actions">
+                <div class="lesson-summary-modal__toggle">
+                  <button class="lesson-summary-modal__toggle-btn is-active" type="button" data-lang="bilingual">Song ngữ</button>
+                  <button class="lesson-summary-modal__toggle-btn" type="button" data-lang="en">English</button>
+                  <button class="lesson-summary-modal__toggle-btn" type="button" data-lang="vi">Tiếng Việt</button>
+                </div>
+                <button class="lesson-summary-modal__close" type="button" aria-label="Close">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="lesson-summary-modal__body">
+              <div class="lesson-summary-modal__scroll">
+                <div class="lesson-summary-modal__card lesson-summary-modal__card--en"><ul><li>Temperature controls the randomness of Claude's responses — lower values are more deterministic, higher values are more creative</li><li>Temperature ranges from <code>0.0</code> to <code>1.0</code>; the default is <code>1.0</code></li><li>Use low temperature (0.0–0.3) for factual, consistent, or structured tasks; use higher temperature (0.7–1.0) for brainstorming, creative writing, or varied outputs</li><li>Temperature is set via the <code>temperature</code> parameter in the API request</li></ul>
+                </div>
+                <div class="lesson-summary-modal__card lesson-summary-modal__card--vi"><ul><li>Temperature kiểm soát tính ngẫu nhiên trong phản hồi của Claude — giá trị thấp hơn cho kết quả nhất quán hơn, giá trị cao hơn cho kết quả sáng tạo hơn</li><li>Temperature dao động từ <code>0.0</code> đến <code>1.0</code>; giá trị mặc định là <code>1.0</code></li><li>Dùng temperature thấp (0.0–0.3) cho các tác vụ thực tế, nhất quán hoặc có cấu trúc; dùng temperature cao hơn (0.7–1.0) cho brainstorming, viết sáng tạo hoặc đầu ra đa dạng</li><li>Temperature được đặt qua tham số <code>temperature</code> trong API request</li></ul>
+                </div>
               </div>
             </div>
           </div>
@@ -224,6 +391,6 @@
 
     </div>
     <script src="/claude-academy/assets/js/main.js?v=sha384-kNNRbQTv526J2QIkhMOolMqrIfWyaSWL36D955JRpJTKBlmZ9+oV0Oz9FvXDnFbw" type="module" crossorigin></script>
-    <script src="/claude-academy/assets/js/lesson.js?v=sha384-5Qmu85Cv9gdc3uL8lcYsykzvcLLQEsWIr1EDy2JuakoAgOQgBlxArlt0SKLDnq+G" type="module" crossorigin></script>
+    <script src="/claude-academy/assets/js/lesson.js?v=sha384-3oOOFql/wce7ZCPEcNMUnG6et9JtKoz3iVP4pwwTVwSWm6vNSiY9hnQtC4CVpnCt" type="module" crossorigin></script>
   </body>
 </html>

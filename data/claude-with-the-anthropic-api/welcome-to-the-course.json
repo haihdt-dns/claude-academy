@@ -10,6 +10,15 @@
   "summaryVi": "Giới thiệu khóa học Claude with the Anthropic API — những gì bạn sẽ học, điều kiện tiên quyết và đối tượng phù hợp.",
   "sections": [
     {
+      "id": "intro-video",
+      "titleEn": "Welcome to the course",
+      "titleVi": "Chào mừng đến với khóa học",
+      "en": "",
+      "vi": "",
+      "image": "",
+      "video": "<div class=\"lesson-video\"><iframe src=\"https://cdn.jwplayer.com/players/OXpTVHvp-Akyo8gQO.html\" frameborder=\"0\" allowfullscreen></iframe></div>"
+    },
+    {
       "id": "overview",
       "titleEn": "Course Overview",
       "titleVi": "Tổng quan khóa học",

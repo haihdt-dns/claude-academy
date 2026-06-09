@@ -110,6 +110,106 @@ block append meta
 
 ---
 
+## Workflow: When User Provides a Folder Path
+
+When the user provides a folder path and asks to add or fix a lesson:
+
+1. **Find the HTML file** — search inside the given folder for the `.html` file (Skilljar lesson export)
+2. **Extract content** from `div.lesson-description-content` inside `#details-pane` (NOT from the main video area)
+3. **Images** — download all images from the `_files/` subfolder next to the HTML, copy to `_develop/src/images/lesson/` with clean names (e.g. `{slug}-01.png`), then run `npm run build:image`. Use path `/claude-academy/assets/images/lesson/{filename}` in JSON
+4. **Video** — if the lesson has a JW Player video, confirm with the user and ask them to provide the manifest URL (`https://cdn.jwplayer.com/manifests/{mediaId}.m3u8`). Do NOT proceed with video embed until URL is confirmed
+5. **Content rules**:
+   - Anthropic's original content → inline lesson `sections[]`
+   - Any supplementary/explanatory content written by Claude → `supplementEn` / `supplementVi` fields (rendered in the Deep Dive modal, NOT inline)
+6. Run `npm run build:pug` after all JSON/Pug changes
+
+---
+
+## claude-with-the-anthropic-api — Lesson Status
+
+Legend: ✅ done (Anthropic content + supplement) | 📝 self-written (no supplement yet) | 💬 exercise/stub with content | ⬜ stub (empty)
+
+| Section | Slug | Status |
+|---------|------|--------|
+| Introduction | `welcome-to-the-course` | 💬 exercise |
+| Anthropic overview | `overview-of-claude-models` | 📝 self-written |
+| Accessing Claude with the API | `accessing-the-api` | ✅ done |
+| | `getting-an-api-key` | 📝 self-written |
+| | `making-a-request` | ✅ done |
+| | `multi-turn-conversations` | 📝 self-written |
+| | `chat-exercise` | 💬 exercise |
+| | `system-prompts` | ✅ done |
+| | `system-prompts-exercise` | 💬 exercise |
+| | `temperature` | ✅ done |
+| | `response-streaming` | ✅ done |
+| | `structured-data` | ✅ done |
+| | `structured-data-exercise` | ⬜ stub |
+| Prompt evaluation | `prompt-evaluation` | ⬜ stub |
+| | `a-typical-eval-workflow` | ⬜ stub |
+| | `generating-test-datasets` | ⬜ stub |
+| | `running-the-eval` | ⬜ stub |
+| | `model-based-grading` | ⬜ stub |
+| | `code-based-grading` | ⬜ stub |
+| | `exercise-on-prompt-evals` | ⬜ stub |
+| Prompt engineering techniques | `prompt-engineering` | ⬜ stub |
+| | `being-clear-and-direct` | ⬜ stub |
+| | `being-specific` | ⬜ stub |
+| | `structure-with-xml-tags` | ⬜ stub |
+| | `providing-examples` | ⬜ stub |
+| | `exercise-on-prompting` | ⬜ stub |
+| Tool use with Claude | `introducing-tool-use` | ⬜ stub |
+| | `project-overview` | ⬜ stub |
+| | `tool-functions` | ⬜ stub |
+| | `tool-schemas` | ⬜ stub |
+| | `handling-message-blocks` | ⬜ stub |
+| | `sending-tool-results` | ⬜ stub |
+| | `multi-turn-conversations-with-tools` | ⬜ stub |
+| | `implementing-multiple-turns` | ⬜ stub |
+| | `using-multiple-tools` | ⬜ stub |
+| | `fine-grained-tool-calling` | ⬜ stub |
+| | `the-text-edit-tool` | ⬜ stub |
+| | `the-web-search-tool` | ⬜ stub |
+| RAG and Agentic Search | `introducing-retrieval-augmented-generation` | ⬜ stub |
+| | `text-chunking-strategies` | ⬜ stub |
+| | `text-embeddings` | ⬜ stub |
+| | `the-full-rag-flow` | ⬜ stub |
+| | `implementing-the-rag-flow` | ⬜ stub |
+| | `bm25-lexical-search` | ⬜ stub |
+| | `a-multi-index-rag-pipeline` | ⬜ stub |
+| Features of Claude | `extended-thinking` | ⬜ stub |
+| | `image-support` | ⬜ stub |
+| | `pdf-support` | ⬜ stub |
+| | `citations` | ⬜ stub |
+| | `prompt-caching` | ⬜ stub |
+| | `rules-of-prompt-caching` | ⬜ stub |
+| | `prompt-caching-in-action` | ⬜ stub |
+| | `code-execution-and-the-files-api` | ⬜ stub |
+| Model Context Protocol | `introducing-mcp` | ⬜ stub |
+| | `mcp-clients` | ⬜ stub |
+| | `mcp-project-setup` | ⬜ stub |
+| | `defining-tools-with-mcp` | ⬜ stub |
+| | `the-server-inspector` | ⬜ stub |
+| | `implementing-a-client` | ⬜ stub |
+| | `defining-resources` | ⬜ stub |
+| | `accessing-resources` | ⬜ stub |
+| | `defining-prompts` | ⬜ stub |
+| | `prompts-in-the-client` | ⬜ stub |
+| | `mcp-review` | ⬜ stub |
+| Anthropic apps | `anthropic-apps` | ⬜ stub |
+| | `claude-code-setup` | ⬜ stub |
+| | `claude-code-in-action` | ⬜ stub |
+| | `enhancements-with-mcp-servers` | ⬜ stub |
+| Agents and workflows | `agents-and-workflows` | ⬜ stub |
+| | `parallelization-workflows` | ⬜ stub |
+| | `chaining-workflows` | ⬜ stub |
+| | `routing-workflows` | ⬜ stub |
+| | `agents-and-tools` | ⬜ stub |
+| | `environment-inspection` | ⬜ stub |
+| | `workflows-vs-agents` | ⬜ stub |
+| Wrapping up! | `course-wrap-up` | ⬜ stub |
+
+---
+
 ## Claude 101 — Lesson Chain
 
 | Order | Slug | Status |

@@ -21,9 +21,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&amp;display=swap">
-    <link rel="stylesheet" href="/claude-academy/assets/css/common.css?v=sha384-/QRqlI0jk21piyOMDlehSThtd0HifferyFI5WzwKPcyz8PJnQwToghHciID1c3Q8">
+    <link rel="stylesheet" href="/claude-academy/assets/css/common.css?v=sha384-LTuHfQryoFZ6j3Mx0pXuMVhgXfKRUXfHZVrglUi9lzh3FhlXMxROdt+isuaRIODX">
     <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/claude-academy/assets/css/lesson.css?v=sha384-E777OCsLaLmN4LOLX2LG5nMfCju5odkVHqoVrT0nv1HQlut3oW7GANfrpxxKUwbZ">
+    <link rel="stylesheet" href="/claude-academy/assets/css/lesson.css?v=sha384-809Tffxm3tiuFU/xQcS2wKjlQBgxGYSC58truKw4Kq946/f9APkH1Nt8hXBjn7iR">
     <meta name="robots" content="noindex, nofollow, nosnippet, noarchive, noimageindex, notranslate">
     <meta name="googlebot" content="noindex, nofollow, nosnippet, noarchive, noimageindex">
     <meta name="bingbot" content="noindex, nofollow, nosnippet, noarchive, noimageindex">
@@ -212,8 +212,205 @@
                     <path d="M7 4v3.5l2 1.5"></path>
                   </svg><span class="lesson-meta__text-bilingual">Estimated time: 10 minutes (Thời gian ước tính: 10 phút)</span><span class="lesson-meta__text-en">Estimated time: 10 minutes</span><span class="lesson-meta__text-vi">Thời gian ước tính: 10 phút</span></span></div>
               <div class="lesson-content">
+                <div class="lesson-section" id="intro-video">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">System prompts</h2><span class="lesson-section__title-vi">System prompts</span>
+                  </div><div class="lesson-video"><iframe src="https://cdn.jwplayer.com/players/9LaPc46s-Akyo8gQO.html" frameborder="0" allowfullscreen></iframe></div>
+                </div>
+                <div class="lesson-section" id="overview">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">System Prompts Overview</h2><span class="lesson-section__title-vi">Tổng quan System Prompts</span>
+                  </div><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/system-prompts-01.png?v=sha384-XpXQvj082CbxlvtutNK4YBFck4i+JE93GKrmUPtMwwvojilATJD6ojbeeT8GnLZD" alt=""></div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>System prompts are a powerful way to customize how Claude responds to user input. Instead of getting generic answers, you can shape Claude's tone, style, and approach to match your specific use case.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>System prompt là một cách mạnh mẽ để tùy chỉnh cách Claude phản hồi đầu vào của người dùng. Thay vì nhận câu trả lời chung chung, bạn có thể định hình giọng điệu, phong cách và cách tiếp cận của Claude để phù hợp với trường hợp sử dụng cụ thể của bạn.</p>
+                  </div>
+                </div>
+                <div class="lesson-section" id="why-system-prompts-matter">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Why System Prompts Matter</h2><span class="lesson-section__title-vi">Tại sao System Prompts quan trọng</span>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>Consider building a math tutor chatbot. When a student asks "How do I solve 5x + 2 = 3 for x?", you want Claude to act like a real tutor, not just spit out the answer. A good math tutor should:</p><ul><li>Initially give hints rather than complete solutions</li><li>Patiently walk students through problems step by step</li><li>Show solutions for similar problems as examples</li></ul><p>You definitely don't want Claude to:</p><ul><li>Immediately give direct answers</li><li>Tell students to just use a calculator</li></ul>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Hãy xem xét việc xây dựng một chatbot gia sư toán. Khi học sinh hỏi "Làm thế nào để giải 5x + 2 = 3 cho x?", bạn muốn Claude hành động như một gia sư thực sự, không chỉ đưa ra câu trả lời. Một gia sư toán giỏi nên:</p><ul><li>Ban đầu đưa ra gợi ý thay vì giải pháp hoàn chỉnh</li><li>Kiên nhẫn hướng dẫn học sinh từng bước</li><li>Đưa ra giải pháp cho các bài toán tương tự làm ví dụ</li></ul><p>Bạn chắc chắn không muốn Claude:</p><ul><li>Đưa ra câu trả lời trực tiếp ngay lập tức</li><li>Bảo học sinh dùng máy tính</li></ul>
+                  </div>
+                </div>
+                <div class="lesson-section" id="how-system-prompts-work">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">How System Prompts Work</h2><span class="lesson-section__title-vi">System Prompts hoạt động như thế nào</span>
+                  </div><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/system-prompts-02.png?v=sha384-CnuBd6ZAe8VE3Eg4KOYf60VonuADWnFHFVm/4LS/7xIvrtM21EaevmwY6QkaZh8f" alt=""></div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>System prompts provide Claude with guidance on how to respond. You define them as plain strings and pass them into the create function call. The key benefits are:</p><ul><li>System prompts provide Claude guidance on how to respond</li><li>Claude will try to respond in the same way someone in the specified role would respond</li><li>Helps keep Claude on task</li></ul><p>Here's the basic structure:</p><pre><code>system_prompt = """
+You are a patient math tutor.
+Do not directly answer a student's questions.
+Guide them to a solution step by step.
+"""
+
+client.messages.create(
+    model=model,
+    messages=messages,
+    max_tokens=1000,
+    system=system_prompt
+)</code></pre>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>System prompt cung cấp cho Claude hướng dẫn về cách phản hồi. Bạn định nghĩa chúng dưới dạng chuỗi thuần và truyền vào lời gọi hàm create. Các lợi ích chính là:</p><ul><li>System prompt cung cấp cho Claude hướng dẫn về cách phản hồi</li><li>Claude sẽ cố gắng phản hồi theo cách mà người trong vai trò được chỉ định sẽ phản hồi</li><li>Giúp Claude tập trung vào nhiệm vụ</li></ul><p>Đây là cấu trúc cơ bản:</p><pre><code>system_prompt = """
+You are a patient math tutor.
+Do not directly answer a student's questions.
+Guide them to a solution step by step.
+"""
+
+client.messages.create(
+    model=model,
+    messages=messages,
+    max_tokens=1000,
+    system=system_prompt
+)</code></pre>
+                  </div>
+                </div>
+                <div class="lesson-section" id="seeing-the-difference">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Seeing the Difference</h2><span class="lesson-section__title-vi">Thấy sự khác biệt</span>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>Without a system prompt, Claude gives a complete step-by-step solution immediately. This might be helpful, but it doesn't encourage the student to think through the problem themselves.</p><p>With the math tutor system prompt, Claude's response changes dramatically. Instead of providing the full solution, Claude asks guiding questions like "What do you think would be a good first step to isolate x? Consider what operation we might need to perform on both sides to start moving terms around."</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Không có system prompt, Claude đưa ra giải pháp từng bước đầy đủ ngay lập tức. Điều này có thể hữu ích, nhưng không khuyến khích học sinh tự suy nghĩ về bài toán.</p><p>Với system prompt gia sư toán, phản hồi của Claude thay đổi đáng kể. Thay vì cung cấp giải pháp đầy đủ, Claude đặt câu hỏi hướng dẫn như "Bạn nghĩ bước đầu tiên tốt để cô lập x là gì? Hãy xem xét phép tính nào chúng ta có thể cần thực hiện trên cả hai vế để bắt đầu di chuyển các số hạng."</p>
+                  </div>
+                </div>
+                <div class="lesson-section" id="building-a-flexible-chat-function">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Building a Flexible Chat Function</h2><span class="lesson-section__title-vi">Xây dựng hàm Chat linh hoạt</span>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>Rather than hard-coding system prompts, you can make your chat function more reusable by accepting system prompts as parameters:</p><pre><code>def chat(messages, system=None):
+    params = {
+        "model": model,
+        "max_tokens": 1000,
+        "messages": messages,
+    }
+    
+    if system:
+        params["system"] = system
+    
+    message = client.messages.create(**params)
+    return message.content[0].text</code></pre><p>This approach handles an important detail: Claude's API doesn't accept <code>system=None</code>, so you need to conditionally include the system parameter only when it's provided.</p><p>Now you can call your chat function with or without a system prompt:</p><pre><code># Without system prompt
+answer = chat(messages)
+
+# With system prompt
+system = """
+You are a patient math tutor.
+Do not directly answer a student's questions.
+Guide them to a solution step by step.
+"""
+answer = chat(messages, system=system)</code></pre><p>System prompts are essential for creating AI applications that behave consistently and appropriately for their intended purpose.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Thay vì hard-code system prompt, bạn có thể làm cho hàm chat linh hoạt hơn bằng cách nhận system prompt như tham số:</p><pre><code>def chat(messages, system=None):
+    params = {
+        "model": model,
+        "max_tokens": 1000,
+        "messages": messages,
+    }
+    
+    if system:
+        params["system"] = system
+    
+    message = client.messages.create(**params)
+    return message.content[0].text</code></pre><p>Cách này xử lý một chi tiết quan trọng: Claude API không chấp nhận <code>system=None</code>, vì vậy bạn cần đưa tham số system vào có điều kiện chỉ khi nó được cung cấp.</p><p>Bây giờ bạn có thể gọi hàm chat với hoặc không có system prompt:</p><pre><code># Không có system prompt
+answer = chat(messages)
+
+# Có system prompt
+system = """
+You are a patient math tutor.
+Do not directly answer a student's questions.
+Guide them to a solution step by step.
+"""
+answer = chat(messages, system=system)</code></pre><p>System prompt rất cần thiết để tạo ra các ứng dụng AI hoạt động nhất quán và phù hợp với mục đích của chúng.</p>
+                  </div>
+                </div>
               </div>
               <div class="lesson-nav-footer"><a class="lesson-nav-footer__prev" href="/claude-academy/claude-with-the-anthropic-api/chat-exercise.html"><span class="lesson-nav-footer__label"><span class="lesson-nav-footer__label-en">Previous Lesson</span><span class="lesson-nav-footer__label-vi">Bài trước</span></span><span class="lesson-nav-footer__title-en">← Chat exercise</span><span class="lesson-nav-footer__title-vi">Bài tập chat</span></a><a class="lesson-nav-footer__next" href="/claude-academy/claude-with-the-anthropic-api/system-prompts-exercise.html"><span class="lesson-nav-footer__label"><span class="lesson-nav-footer__label-en">Next Lesson</span><span class="lesson-nav-footer__label-vi">Bài sau</span></span><span class="lesson-nav-footer__title-en">System prompts exercise →</span><span class="lesson-nav-footer__title-vi">Bài tập system prompts</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="lesson-deepdive-btn" type="button" aria-label="Deep dive">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg><span class="lesson-deepdive-btn__label-en">Deep Dive</span><span class="lesson-deepdive-btn__label-vi">Tìm hiểu thêm</span>
+        </button>
+        <div class="lesson-deepdive-modal">
+          <div class="lesson-deepdive-modal__overlay"></div>
+          <div class="lesson-deepdive-modal__box">
+            <div class="lesson-deepdive-modal__header">
+              <div class="lesson-deepdive-modal__title"><span class="lesson-deepdive-modal__title-en">Deep Dive</span><span class="lesson-deepdive-modal__title-vi">Tìm hiểu thêm</span></div>
+              <div class="lesson-deepdive-modal__header-actions">
+                <div class="lesson-deepdive-modal__toggle">
+                  <button class="lesson-deepdive-modal__toggle-btn is-active" type="button" data-lang="bilingual">Song ngữ</button>
+                  <button class="lesson-deepdive-modal__toggle-btn" type="button" data-lang="en">English</button>
+                  <button class="lesson-deepdive-modal__toggle-btn" type="button" data-lang="vi">Tiếng Việt</button>
+                </div>
+                <button class="lesson-deepdive-modal__close" type="button" aria-label="Close">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="lesson-deepdive-modal__body">
+              <div class="lesson-deepdive-modal__scroll">
+                <div class="lesson-deepdive-modal__content lesson-deepdive-modal__content--en"><h3>What Is a System Prompt?</h3><p>A system prompt is a special set of instructions you provide to Claude before the conversation begins. Unlike user messages, it is passed via the <code>system</code> parameter in the API request rather than inside the <code>messages</code> array.</p><pre><code>client.messages.create(
+    model="claude-opus-4-5",
+    max_tokens=1024,
+    system="You are a helpful assistant that always responds in formal English.",
+    messages=[
+        {"role": "user", "content": "Hello!"}
+    ]
+)</code></pre><p>The system prompt is processed before any user message, so it shapes every response Claude gives throughout the session.</p><h3>What to Put in System Prompts</h3><p>System prompts are ideal for:</p><ul><li><strong>Role definition</strong> — "You are a customer support agent for Acme Corp"</li><li><strong>Tone and style</strong> — "Always respond concisely in plain language. Avoid jargon."</li><li><strong>Behavioral rules</strong> — "Never discuss competitor products. If asked, politely redirect."</li><li><strong>Context injection</strong> — Background knowledge the model needs, such as company policies or product details</li><li><strong>Output format</strong> — "Always respond with a JSON object containing <code>answer</code> and <code>confidence</code> fields"</li></ul><p>Think of the system prompt as the job description you give Claude before it starts working for you.</p><h3>System vs. User Messages</h3><p>Understanding the difference between the system prompt and user messages is critical:</p><ul><li><strong>System prompt</strong>: Set by the developer. Hidden from the end user. Applied once per session. Used for persistent configuration.</li><li><strong>User messages</strong>: Sent by the end user (or constructed by your app). Visible to Claude as part of the conversation. Change with every turn.</li></ul><p>In practice, the system prompt is your opportunity to customize Claude's behavior for your specific use case — before the user ever types a single word.</p>
+                </div>
+                <div class="lesson-deepdive-modal__content lesson-deepdive-modal__content--vi"><h3>System Prompt là gì?</h3><p>System prompt là một tập hợp hướng dẫn đặc biệt bạn cung cấp cho Claude trước khi cuộc hội thoại bắt đầu. Khác với user message, nó được truyền qua tham số <code>system</code> trong API request thay vì bên trong mảng <code>messages</code>.</p><pre><code>client.messages.create(
+    model="claude-opus-4-5",
+    max_tokens=1024,
+    system="You are a helpful assistant that always responds in formal English.",
+    messages=[
+        {"role": "user", "content": "Hello!"}
+    ]
+)</code></pre><p>System prompt được xử lý trước bất kỳ user message nào, vì vậy nó định hình mọi phản hồi Claude đưa ra trong suốt phiên làm việc.</p><h3>Nên đặt gì trong System Prompt</h3><p>System prompt lý tưởng cho:</p><ul><li><strong>Định nghĩa vai trò</strong> — "You are a customer support agent for Acme Corp"</li><li><strong>Giọng điệu và phong cách</strong> — "Always respond concisely in plain language. Avoid jargon."</li><li><strong>Quy tắc hành vi</strong> — "Never discuss competitor products. If asked, politely redirect."</li><li><strong>Chèn ngữ cảnh</strong> — Kiến thức nền model cần, như chính sách công ty hoặc chi tiết sản phẩm</li><li><strong>Định dạng output</strong> — "Always respond with a JSON object containing <code>answer</code> and <code>confidence</code> fields"</li></ul><p>Hãy nghĩ system prompt như bản mô tả công việc bạn đưa cho Claude trước khi nó bắt đầu làm việc cho bạn.</p><h3>System vs. User Messages</h3><p>Hiểu sự khác biệt giữa system prompt và user message rất quan trọng:</p><ul><li><strong>System prompt</strong>: Được đặt bởi developer. Ẩn với người dùng cuối. Áp dụng một lần mỗi phiên. Dùng cho cấu hình lâu dài.</li><li><strong>User messages</strong>: Được gửi bởi người dùng cuối (hoặc được xây dựng bởi app của bạn). Hiển thị cho Claude như một phần của cuộc hội thoại. Thay đổi với mỗi lượt.</li></ul><p>Trong thực tế, system prompt là cơ hội của bạn để tùy chỉnh hành vi của Claude cho trường hợp sử dụng cụ thể — trước khi người dùng gõ một từ nào.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="lesson-summary-btn" type="button" aria-label="Lesson summary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg><span class="lesson-summary-btn__label-en">Summary</span><span class="lesson-summary-btn__label-vi">Tóm tắt</span>
+        </button>
+        <div class="lesson-summary-modal">
+          <div class="lesson-summary-modal__overlay"></div>
+          <div class="lesson-summary-modal__box">
+            <div class="lesson-summary-modal__header">
+              <div class="lesson-summary-modal__title"><span class="lesson-summary-modal__title-en">Key Takeaways</span><span class="lesson-summary-modal__title-vi">Điểm chính bài học</span></div>
+              <div class="lesson-summary-modal__header-actions">
+                <div class="lesson-summary-modal__toggle">
+                  <button class="lesson-summary-modal__toggle-btn is-active" type="button" data-lang="bilingual">Song ngữ</button>
+                  <button class="lesson-summary-modal__toggle-btn" type="button" data-lang="en">English</button>
+                  <button class="lesson-summary-modal__toggle-btn" type="button" data-lang="vi">Tiếng Việt</button>
+                </div>
+                <button class="lesson-summary-modal__close" type="button" aria-label="Close">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="lesson-summary-modal__body">
+              <div class="lesson-summary-modal__scroll">
+                <div class="lesson-summary-modal__card lesson-summary-modal__card--en"><ul><li>The <code>system</code> parameter lets you give Claude persistent instructions that apply throughout the entire conversation</li><li>System prompts set Claude's role, personality, tone, and behavioral constraints before the user says anything</li><li>Unlike user messages, the system prompt is not visible to the end user — it's your configuration layer</li><li>Combining a well-crafted system prompt with user messages is the foundation of most real-world Claude applications</li></ul>
+                </div>
+                <div class="lesson-summary-modal__card lesson-summary-modal__card--vi"><ul><li>Tham số <code>system</code> cho phép bạn cung cấp cho Claude các hướng dẫn liên tục áp dụng trong toàn bộ cuộc hội thoại</li><li>System prompt thiết lập vai trò, tính cách, giọng điệu và các ràng buộc hành vi của Claude trước khi người dùng nói bất cứ điều gì</li><li>Khác với tin nhắn người dùng, system prompt không hiển thị với người dùng cuối — đây là lớp cấu hình của bạn</li><li>Kết hợp system prompt được soạn thảo tốt với tin nhắn người dùng là nền tảng của hầu hết các ứng dụng Claude trong thực tế</li></ul>
+                </div>
               </div>
             </div>
           </div>
@@ -224,6 +421,6 @@
 
     </div>
     <script src="/claude-academy/assets/js/main.js?v=sha384-kNNRbQTv526J2QIkhMOolMqrIfWyaSWL36D955JRpJTKBlmZ9+oV0Oz9FvXDnFbw" type="module" crossorigin></script>
-    <script src="/claude-academy/assets/js/lesson.js?v=sha384-5Qmu85Cv9gdc3uL8lcYsykzvcLLQEsWIr1EDy2JuakoAgOQgBlxArlt0SKLDnq+G" type="module" crossorigin></script>
+    <script src="/claude-academy/assets/js/lesson.js?v=sha384-3oOOFql/wce7ZCPEcNMUnG6et9JtKoz3iVP4pwwTVwSWm6vNSiY9hnQtC4CVpnCt" type="module" crossorigin></script>
   </body>
 </html>

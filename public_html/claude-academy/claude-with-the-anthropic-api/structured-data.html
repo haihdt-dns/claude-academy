@@ -21,9 +21,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&amp;display=swap">
-    <link rel="stylesheet" href="/claude-academy/assets/css/common.css?v=sha384-/QRqlI0jk21piyOMDlehSThtd0HifferyFI5WzwKPcyz8PJnQwToghHciID1c3Q8">
+    <link rel="stylesheet" href="/claude-academy/assets/css/common.css?v=sha384-LTuHfQryoFZ6j3Mx0pXuMVhgXfKRUXfHZVrglUi9lzh3FhlXMxROdt+isuaRIODX">
     <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/claude-academy/assets/css/lesson.css?v=sha384-E777OCsLaLmN4LOLX2LG5nMfCju5odkVHqoVrT0nv1HQlut3oW7GANfrpxxKUwbZ">
+    <link rel="stylesheet" href="/claude-academy/assets/css/lesson.css?v=sha384-809Tffxm3tiuFU/xQcS2wKjlQBgxGYSC58truKw4Kq946/f9APkH1Nt8hXBjn7iR">
     <meta name="robots" content="noindex, nofollow, nosnippet, noarchive, noimageindex, notranslate">
     <meta name="googlebot" content="noindex, nofollow, nosnippet, noarchive, noimageindex">
     <meta name="bingbot" content="noindex, nofollow, nosnippet, noarchive, noimageindex">
@@ -212,8 +212,215 @@
                     <path d="M7 4v3.5l2 1.5"></path>
                   </svg><span class="lesson-meta__text-bilingual">Estimated time: 10 minutes (Thời gian ước tính: 10 phút)</span><span class="lesson-meta__text-en">Estimated time: 10 minutes</span><span class="lesson-meta__text-vi">Thời gian ước tính: 10 phút</span></span></div>
               <div class="lesson-content">
+                <div class="lesson-section" id="intro-video">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Structured data</h2><span class="lesson-section__title-vi">Dữ liệu có cấu trúc</span>
+                  </div><div class="lesson-video"><iframe src="https://cdn.jwplayer.com/players/eNpA5r39-Akyo8gQO.html" frameborder="0" allowfullscreen></iframe></div>
+                </div>
+                <div class="lesson-section" id="the-problem">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">The Problem</h2><span class="lesson-section__title-vi">Vấn đề</span>
+                  </div><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/structured-data-01.png?v=sha384-7k5kKXccnjPCKkmFmPA+AAPVweoIlqREltahAnHE1tECefK1rzUwFlPWcvsVF2BR" alt=""></div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>When you need Claude to generate structured data like JSON, Python code, or bulleted lists, you'll often run into a common problem: Claude wants to be helpful and add explanatory text around your content. While this is usually great, sometimes you need just the raw data with nothing else.</p><p>Consider building a web app that generates AWS EventBridge rules. Users enter a description, click generate, and expect to see clean JSON they can immediately copy and use. If Claude returns the JSON wrapped in markdown code blocks with explanatory text, users can't simply copy the entire response — they have to manually select just the JSON portion.</p><p>By default, when you ask Claude to generate JSON, you might get something like this:</p><pre><code>```json
+{
+  "source": ["aws.ec2"],
+  "detail-type": ["EC2 Instance State-change Notification"],
+  "detail": {
+    "state": ["running"]
+  }
+}
+```
+
+This rule captures EC2 instance state changes when instances start running.</code></pre><p>The JSON is correct, but it's wrapped in markdown formatting and includes explanatory text. For a web app where users need to copy the raw JSON, this creates friction in the user experience.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Khi bạn cần Claude tạo dữ liệu có cấu trúc như JSON, code Python hoặc danh sách có dấu đầu dòng, bạn thường gặp phải một vấn đề phổ biến: Claude muốn hữu ích và thêm văn bản giải thích xung quanh nội dung của bạn. Mặc dù điều này thường tốt, đôi khi bạn chỉ cần dữ liệu thô không có gì khác.</p><p>Hãy xem xét việc xây dựng một web app tạo các AWS EventBridge rule. Người dùng nhập mô tả, nhấp tạo và mong đợi thấy JSON sạch mà họ có thể sao chép và sử dụng ngay. Nếu Claude trả về JSON được bọc trong các code block markdown với văn bản giải thích, người dùng không thể đơn giản sao chép toàn bộ phản hồi — họ phải chọn thủ công chỉ phần JSON.</p><p>Theo mặc định, khi bạn yêu cầu Claude tạo JSON, bạn có thể nhận được như sau:</p><pre><code>```json
+{
+  "source": ["aws.ec2"],
+  "detail-type": ["EC2 Instance State-change Notification"],
+  "detail": {
+    "state": ["running"]
+  }
+}
+```
+
+This rule captures EC2 instance state changes when instances start running.</code></pre><p>JSON là đúng, nhưng nó được bọc trong định dạng markdown và bao gồm văn bản giải thích. Với web app nơi người dùng cần sao chép JSON thô, điều này tạo ra ma sát trong trải nghiệm người dùng.</p>
+                  </div>
+                </div>
+                <div class="lesson-section" id="solution">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">The Solution: Prefilling and Stop Sequences</h2><span class="lesson-section__title-vi">Giải pháp: Prefilling và Stop Sequences</span>
+                  </div><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/structured-data-02.png?v=sha384-ICf3Fn0ftMZKA+NOCPW36+NLh30DZC7W55LnKh6BBGLLVn7ICyVYDbjy4Z3Q8pWI" alt=""></div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>You can combine assistant message prefilling with stop sequences to get exactly the content you want:</p><pre><code>messages = []
+
+add_user_message(messages, "Generate a very short event bridge rule as json")
+add_assistant_message(messages, "```json")
+
+text = chat(messages, stop_sequences=["```"])</code></pre><p>This technique works by:</p><ol><li>The user message tells Claude what to generate</li><li>The prefilled assistant message makes Claude think it already started a markdown code block</li><li>Claude continues by writing just the JSON content</li><li>When Claude tries to close the code block, the stop sequence immediately ends generation</li></ol><p>The result is clean JSON with no extra formatting:</p><pre><code>{
+  "source": ["aws.ec2"],
+  "detail-type": ["EC2 Instance State-change Notification"],
+  "detail": {
+    "state": ["running"]
+  }
+}</code></pre>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Bạn có thể kết hợp prefilling message trợ lý với stop sequence để nhận chính xác nội dung bạn muốn:</p><pre><code>messages = []
+
+add_user_message(messages, "Generate a very short event bridge rule as json")
+add_assistant_message(messages, "```json")
+
+text = chat(messages, stop_sequences=["```"])</code></pre><p>Kỹ thuật này hoạt động bằng cách:</p><ol><li>User message cho Claude biết phải tạo gì</li><li>Message trợ lý được điền trước khiến Claude nghĩ rằng nó đã bắt đầu một markdown code block</li><li>Claude tiếp tục bằng cách chỉ viết nội dung JSON</li><li>Khi Claude cố gắng đóng code block, stop sequence ngay lập tức kết thúc quá trình tạo</li></ol><p>Kết quả là JSON sạch không có định dạng thêm:</p><pre><code>{
+  "source": ["aws.ec2"],
+  "detail-type": ["EC2 Instance State-change Notification"],
+  "detail": {
+    "state": ["running"]
+  }
+}</code></pre>
+                  </div>
+                </div>
+                <div class="lesson-section" id="processing-and-beyond">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Processing and Beyond</h2><span class="lesson-section__title-vi">Xử lý và mở rộng</span>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>You might notice some extra newline characters in the response. These are easy to handle:</p><pre><code>import json
+
+# Clean up and parse the JSON
+clean_json = json.loads(text.strip())</code></pre><p>This technique isn't limited to JSON generation. Use it anytime you need structured data without commentary:</p><ul><li>Python code snippets</li><li>Bulleted lists</li><li>CSV data</li><li>Any formatted content where you want just the content, not explanations</li></ul><p>The key is identifying what Claude naturally wants to wrap your content in, then using that as your prefill and stop sequence. This approach gives you precise control over Claude's output format, making it much easier to integrate AI-generated content into applications where clean, structured data is essential.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Bạn có thể nhận thấy một số ký tự xuống dòng thêm trong phản hồi. Chúng dễ xử lý:</p><pre><code>import json
+
+# Làm sạch và phân tích JSON
+clean_json = json.loads(text.strip())</code></pre><p>Kỹ thuật này không giới hạn ở việc tạo JSON. Sử dụng nó bất cứ khi nào bạn cần dữ liệu có cấu trúc mà không có bình luận:</p><ul><li>Các đoạn code Python</li><li>Danh sách có dấu đầu dòng</li><li>Dữ liệu CSV</li><li>Bất kỳ nội dung có định dạng nào mà bạn chỉ muốn nội dung, không phải giải thích</li></ul><p>Điều quan trọng là xác định những gì Claude tự nhiên muốn bọc nội dung của bạn, sau đó sử dụng điều đó làm prefill và stop sequence của bạn. Cách tiếp cận này cho bạn kiểm soát chính xác định dạng đầu ra của Claude, giúp dễ dàng tích hợp nội dung do AI tạo ra vào các ứng dụng nơi dữ liệu sạch, có cấu trúc là thiết yếu.</p>
+                  </div>
+                </div>
               </div>
               <div class="lesson-nav-footer"><a class="lesson-nav-footer__prev" href="/claude-academy/claude-with-the-anthropic-api/response-streaming.html"><span class="lesson-nav-footer__label"><span class="lesson-nav-footer__label-en">Previous Lesson</span><span class="lesson-nav-footer__label-vi">Bài trước</span></span><span class="lesson-nav-footer__title-en">← Response streaming</span><span class="lesson-nav-footer__title-vi">Response streaming</span></a><a class="lesson-nav-footer__next" href="/claude-academy/claude-with-the-anthropic-api/structured-data-exercise.html"><span class="lesson-nav-footer__label"><span class="lesson-nav-footer__label-en">Next Lesson</span><span class="lesson-nav-footer__label-vi">Bài sau</span></span><span class="lesson-nav-footer__title-en">Structured data exercise →</span><span class="lesson-nav-footer__title-vi">Bài tập dữ liệu có cấu trúc</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="lesson-deepdive-btn" type="button" aria-label="Deep dive">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg><span class="lesson-deepdive-btn__label-en">Deep Dive</span><span class="lesson-deepdive-btn__label-vi">Tìm hiểu thêm</span>
+        </button>
+        <div class="lesson-deepdive-modal">
+          <div class="lesson-deepdive-modal__overlay"></div>
+          <div class="lesson-deepdive-modal__box">
+            <div class="lesson-deepdive-modal__header">
+              <div class="lesson-deepdive-modal__title"><span class="lesson-deepdive-modal__title-en">Deep Dive</span><span class="lesson-deepdive-modal__title-vi">Tìm hiểu thêm</span></div>
+              <div class="lesson-deepdive-modal__header-actions">
+                <div class="lesson-deepdive-modal__toggle">
+                  <button class="lesson-deepdive-modal__toggle-btn is-active" type="button" data-lang="bilingual">Song ngữ</button>
+                  <button class="lesson-deepdive-modal__toggle-btn" type="button" data-lang="en">English</button>
+                  <button class="lesson-deepdive-modal__toggle-btn" type="button" data-lang="vi">Tiếng Việt</button>
+                </div>
+                <button class="lesson-deepdive-modal__close" type="button" aria-label="Close">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="lesson-deepdive-modal__body">
+              <div class="lesson-deepdive-modal__scroll">
+                <div class="lesson-deepdive-modal__content lesson-deepdive-modal__content--en"><h3>Why Structured Output?</h3><p>By default, Claude returns free-form text. This is great for conversations and summaries, but many real-world applications need Claude's output to feed directly into code — a database insert, an API call, a UI component.</p><p>For these use cases, you need <strong>structured output</strong>: a predictable, machine-readable format (typically JSON) that your application can parse and use without brittle string manipulation.</p><p>Common scenarios where structured output is essential:</p><ul><li>Extracting entities from a document (names, dates, amounts)</li><li>Classifying content and returning a category + confidence score</li><li>Populating a form or database record from unstructured input</li><li>Returning multiple fields in one API call (e.g. <code>summary</code>, <code>sentiment</code>, <code>tags</code>)</li></ul><h3>Prompting for JSON Output</h3><p>The simplest approach is to instruct Claude to respond with JSON in your system prompt, and specify the exact schema you expect:</p><pre><code>client.messages.create(
+    model="claude-opus-4-5",
+    max_tokens=1024,
+    system="""You are a data extraction assistant.
+Always respond with a JSON object containing exactly these fields:
+- name (string)
+- date (string, ISO 8601 format)
+- amount (number)
+Respond with JSON only. No explanation.""",
+    messages=[
+        {"role": "user", "content": "Invoice from Acme Corp on March 5 2024 for $1,250."}
+    ]
+)</code></pre><p>Tips for reliable JSON output:</p><ul><li>Say <strong>"Respond with JSON only"</strong> — this discourages preamble text</li><li>Define the schema explicitly, including field names and types</li><li>Use <code>"No explanation"</code> or <code>"No markdown"</code> to suppress code fences</li></ul><h3>Parsing and Validation</h3><p>Once Claude returns JSON, parse and validate it in your application. A robust pattern using Pydantic:</p><pre><code>import json
+from pydantic import BaseModel
+
+class Invoice(BaseModel):
+    name: str
+    date: str
+    amount: float
+
+response_text = message.content[0].text
+
+try:
+    data = json.loads(response_text)
+    invoice = Invoice(**data)
+    print(invoice.name, invoice.amount)
+except (json.JSONDecodeError, ValueError) as e:
+    print(f"Parse error: {e}")
+    # Retry or handle gracefully</code></pre><p>Pydantic automatically validates field types and raises a clear error if Claude returns unexpected data.</p>
+                </div>
+                <div class="lesson-deepdive-modal__content lesson-deepdive-modal__content--vi"><h3>Tại sao cần Structured Output?</h3><p>Theo mặc định, Claude trả về văn bản tự do. Điều này tốt cho hội thoại và tóm tắt, nhưng nhiều ứng dụng thực tế cần đầu ra của Claude đưa trực tiếp vào code — một lệnh insert database, một API call, một UI component.</p><p>Với những trường hợp này, bạn cần <strong>structured output</strong>: một định dạng có thể dự đoán, đọc được bởi máy (thường là JSON) mà ứng dụng của bạn có thể phân tích và sử dụng mà không cần thao tác chuỗi dễ gãy.</p><p>Các tình huống phổ biến mà structured output là thiết yếu:</p><ul><li>Trích xuất thực thể từ tài liệu (tên, ngày, số tiền)</li><li>Phân loại nội dung và trả về danh mục + điểm tin cậy</li><li>Điền vào form hoặc bản ghi database từ đầu vào phi cấu trúc</li><li>Trả về nhiều trường trong một API call (ví dụ: <code>summary</code>, <code>sentiment</code>, <code>tags</code>)</li></ul><h3>Prompt để nhận JSON Output</h3><p>Cách đơn giản nhất là hướng dẫn Claude phản hồi bằng JSON trong system prompt của bạn, và chỉ định schema chính xác bạn mong đợi:</p><pre><code>client.messages.create(
+    model="claude-opus-4-5",
+    max_tokens=1024,
+    system="""You are a data extraction assistant.
+Always respond with a JSON object containing exactly these fields:
+- name (string)
+- date (string, ISO 8601 format)
+- amount (number)
+Respond with JSON only. No explanation.""",
+    messages=[
+        {"role": "user", "content": "Invoice from Acme Corp on March 5 2024 for $1,250."}
+    ]
+)</code></pre><p>Mẹo để nhận JSON output đáng tin cậy:</p><ul><li>Nói <strong>"Respond with JSON only"</strong> — điều này ngăn văn bản mở đầu</li><li>Định nghĩa schema rõ ràng, bao gồm tên trường và kiểu dữ liệu</li><li>Dùng <code>"No explanation"</code> hoặc <code>"No markdown"</code> để tắt code fence</li></ul><h3>Parsing và Validation</h3><p>Sau khi Claude trả về JSON, phân tích và xác thực nó trong ứng dụng của bạn. Một pattern mạnh mẽ sử dụng Pydantic:</p><pre><code>import json
+from pydantic import BaseModel
+
+class Invoice(BaseModel):
+    name: str
+    date: str
+    amount: float
+
+response_text = message.content[0].text
+
+try:
+    data = json.loads(response_text)
+    invoice = Invoice(**data)
+    print(invoice.name, invoice.amount)
+except (json.JSONDecodeError, ValueError) as e:
+    print(f"Parse error: {e}")
+    # Thử lại hoặc xử lý khéo léo</code></pre><p>Pydantic tự động xác thực kiểu trường và đưa ra lỗi rõ ràng nếu Claude trả về dữ liệu không mong đợi.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="lesson-summary-btn" type="button" aria-label="Lesson summary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg><span class="lesson-summary-btn__label-en">Summary</span><span class="lesson-summary-btn__label-vi">Tóm tắt</span>
+        </button>
+        <div class="lesson-summary-modal">
+          <div class="lesson-summary-modal__overlay"></div>
+          <div class="lesson-summary-modal__box">
+            <div class="lesson-summary-modal__header">
+              <div class="lesson-summary-modal__title"><span class="lesson-summary-modal__title-en">Key Takeaways</span><span class="lesson-summary-modal__title-vi">Điểm chính bài học</span></div>
+              <div class="lesson-summary-modal__header-actions">
+                <div class="lesson-summary-modal__toggle">
+                  <button class="lesson-summary-modal__toggle-btn is-active" type="button" data-lang="bilingual">Song ngữ</button>
+                  <button class="lesson-summary-modal__toggle-btn" type="button" data-lang="en">English</button>
+                  <button class="lesson-summary-modal__toggle-btn" type="button" data-lang="vi">Tiếng Việt</button>
+                </div>
+                <button class="lesson-summary-modal__close" type="button" aria-label="Close">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="lesson-summary-modal__body">
+              <div class="lesson-summary-modal__scroll">
+                <div class="lesson-summary-modal__card lesson-summary-modal__card--en"><ul><li>Claude can return structured JSON output by instructing it via the system prompt or user message</li><li>Use Pydantic models or TypedDict to define the expected schema and validate Claude's response</li><li>Structured output is essential for pipelines where Claude's response feeds into downstream code</li><li>Always validate and handle parsing errors gracefully — Claude may occasionally deviate from the schema</li></ul>
+                </div>
+                <div class="lesson-summary-modal__card lesson-summary-modal__card--vi"><ul><li>Claude có thể trả về đầu ra JSON có cấu trúc bằng cách hướng dẫn qua system prompt hoặc user message</li><li>Sử dụng Pydantic model hoặc TypedDict để định nghĩa schema mong đợi và validate response của Claude</li><li>Đầu ra có cấu trúc rất cần thiết cho các pipeline mà response của Claude được đưa vào code phía sau</li><li>Luôn validate và xử lý lỗi parsing một cách khéo léo — Claude đôi khi có thể sai lệch so với schema</li></ul>
+                </div>
               </div>
             </div>
           </div>
@@ -224,6 +431,6 @@
 
     </div>
     <script src="/claude-academy/assets/js/main.js?v=sha384-kNNRbQTv526J2QIkhMOolMqrIfWyaSWL36D955JRpJTKBlmZ9+oV0Oz9FvXDnFbw" type="module" crossorigin></script>
-    <script src="/claude-academy/assets/js/lesson.js?v=sha384-5Qmu85Cv9gdc3uL8lcYsykzvcLLQEsWIr1EDy2JuakoAgOQgBlxArlt0SKLDnq+G" type="module" crossorigin></script>
+    <script src="/claude-academy/assets/js/lesson.js?v=sha384-3oOOFql/wce7ZCPEcNMUnG6et9JtKoz3iVP4pwwTVwSWm6vNSiY9hnQtC4CVpnCt" type="module" crossorigin></script>
   </body>
 </html>

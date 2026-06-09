@@ -10,6 +10,15 @@
   "summaryVi": "Tổng quan về các dòng model Claude — khả năng, thời điểm sử dụng từng model và cách Anthropic đánh số phiên bản.",
   "sections": [
     {
+      "id": "intro-video",
+      "titleEn": "Overview of Claude models",
+      "titleVi": "Tổng quan về các model Claude",
+      "en": "",
+      "vi": "",
+      "image": "",
+      "video": "<div class=\"lesson-video\"><iframe src=\"https://cdn.jwplayer.com/players/EvdaPJYI-Akyo8gQO.html\" frameborder=\"0\" allowfullscreen></iframe></div>"
+    },
+    {
       "id": "model-families",
       "titleEn": "Claude model families",
       "titleVi": "Các dòng model Claude",

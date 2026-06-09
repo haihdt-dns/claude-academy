@@ -10,6 +10,15 @@
   "summaryVi": "Cách xây dựng context hội thoại bằng cách truyền toàn bộ lịch sử tin nhắn trong mỗi API call.",
   "sections": [
     {
+      "id": "intro-video",
+      "titleEn": "Multi-Turn conversations",
+      "titleVi": "Hội thoại nhiều lượt",
+      "en": "",
+      "vi": "",
+      "image": "",
+      "video": "<div class=\"lesson-video\"><iframe src=\"https://cdn.jwplayer.com/players/6owq0WNb-Akyo8gQO.html\" frameborder=\"0\" allowfullscreen></iframe></div>"
+    },
+    {
       "id": "how-context-works",
       "titleEn": "How context works in the API",
       "titleVi": "Context hoạt động như thế nào trong API",

@@ -21,9 +21,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&amp;display=swap">
-    <link rel="stylesheet" href="/claude-academy/assets/css/common.css?v=sha384-/QRqlI0jk21piyOMDlehSThtd0HifferyFI5WzwKPcyz8PJnQwToghHciID1c3Q8">
+    <link rel="stylesheet" href="/claude-academy/assets/css/common.css?v=sha384-LTuHfQryoFZ6j3Mx0pXuMVhgXfKRUXfHZVrglUi9lzh3FhlXMxROdt+isuaRIODX">
     <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/claude-academy/assets/css/lesson.css?v=sha384-E777OCsLaLmN4LOLX2LG5nMfCju5odkVHqoVrT0nv1HQlut3oW7GANfrpxxKUwbZ">
+    <link rel="stylesheet" href="/claude-academy/assets/css/lesson.css?v=sha384-809Tffxm3tiuFU/xQcS2wKjlQBgxGYSC58truKw4Kq946/f9APkH1Nt8hXBjn7iR">
     <meta name="robots" content="noindex, nofollow, nosnippet, noarchive, noimageindex, notranslate">
     <meta name="googlebot" content="noindex, nofollow, nosnippet, noarchive, noimageindex">
     <meta name="bingbot" content="noindex, nofollow, nosnippet, noarchive, noimageindex">
@@ -212,59 +212,118 @@
                     <path d="M7 4v3.5l2 1.5"></path>
                   </svg><span class="lesson-meta__text-bilingual">Estimated time: 10 minutes (Thời gian ước tính: 10 phút)</span><span class="lesson-meta__text-en">Estimated time: 10 minutes</span><span class="lesson-meta__text-vi">Thời gian ước tính: 10 phút</span></span></div>
               <div class="lesson-content">
-                <div class="lesson-section" id="how-the-api-works">
+                <div class="lesson-section" id="intro-video">
                   <div class="lesson-section__title">
-                    <h2 class="lesson-section__title-en">How the API works</h2><span class="lesson-section__title-vi">API hoạt động như thế nào</span>
+                    <h2 class="lesson-section__title-en">Accessing the API</h2><span class="lesson-section__title-vi">Truy cập API</span>
+                  </div><div class="lesson-video"><iframe src="https://cdn.jwplayer.com/players/Ju43Csrd-Akyo8gQO.html" frameborder="0" allowfullscreen></iframe></div>
+                </div>
+                <div class="lesson-section" id="request-flow">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">The Five-Step Request Flow</h2><span class="lesson-section__title-vi">Quy trình Request 5 bước</span>
+                  </div><img src="/claude-academy/assets/images/lesson/accessing-the-api-01.png?v=sha384-vop69m/QACXKKAhMNN0zILuWt5t1Q4lp2U1ILBv0qVYgj7O3YoJL98T4hrj42Lh5" alt="Request flow overview"><img src="/claude-academy/assets/images/lesson/accessing-the-api-02.png?v=sha384-E10kjLEDioedXncfIQumJywbJ5Py9sxVp8yFAWIJN1ffEnNOzwMajQQrvCuGNBBn" alt="Five-step request flow">
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>When building applications with Claude, understanding the complete request lifecycle helps you make better architectural decisions and debug issues more effectively. Let's walk through what happens from the moment a user clicks "send" in your chat interface to when Claude's response appears on screen.</p><p>Every interaction with Claude follows a predictable pattern with five distinct phases: request to server, request to Anthropic API, model processing, response to server, and response to client.</p>
                   </div>
-                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>The Anthropic API is a standard HTTP REST API. You send a <strong>POST request</strong> to an endpoint with a JSON body describing your message, and you receive a JSON response containing Claude's reply.</p><p>Every request includes at minimum:</p><ul><li><strong>model</strong> — which Claude model to use</li><li><strong>max_tokens</strong> — the maximum number of tokens in the response</li><li><strong>messages</strong> — an array of message objects, each with a <code>role</code> (<code>"user"</code> or <code>"assistant"</code>) and <code>content</code></li></ul><p>Authentication is handled via an <strong>API key</strong> passed in the <code>x-api-key</code> HTTP header. We'll set up your API key in the next lesson.</p>
-                  </div>
-                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Anthropic API là một HTTP REST API tiêu chuẩn. Bạn gửi một <strong>POST request</strong> đến một endpoint với body JSON mô tả tin nhắn của bạn, và bạn nhận được JSON response chứa câu trả lời của Claude.</p><p>Mỗi request bao gồm tối thiểu:</p><ul><li><strong>model</strong> — model Claude nào sẽ sử dụng</li><li><strong>max_tokens</strong> — số token tối đa trong response</li><li><strong>messages</strong> — một mảng các message object, mỗi cái có <code>role</code> (<code>"user"</code> hoặc <code>"assistant"</code>) và <code>content</code></li></ul><p>Xác thực được thực hiện qua <strong>API key</strong> truyền trong HTTP header <code>x-api-key</code>. Chúng ta sẽ thiết lập API key của bạn trong bài học tiếp theo.</p>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Khi xây dựng ứng dụng với Claude, hiểu toàn bộ vòng đời request giúp bạn đưa ra quyết định kiến trúc tốt hơn và debug hiệu quả hơn. Hãy cùng xem qua những gì xảy ra từ lúc người dùng nhấn "gửi" trong giao diện chat đến khi response của Claude xuất hiện trên màn hình.</p><p>Mỗi tương tác với Claude đều theo một quy trình có thể đoán trước với năm giai đoạn riêng biệt: request đến server, request đến Anthropic API, xử lý model, response đến server và response đến client.</p>
                   </div>
                 </div>
-                <div class="lesson-section" id="python-sdk">
+                <div class="lesson-section" id="why-server">
                   <div class="lesson-section__title">
-                    <h2 class="lesson-section__title-en">The Python SDK</h2><span class="lesson-section__title-vi">Python SDK</span>
+                    <h2 class="lesson-section__title-en">Why You Need a Server</h2><span class="lesson-section__title-vi">Tại sao cần Server</span>
                   </div>
-                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>While you can call the API directly with any HTTP client, Anthropic provides an official <strong>Python SDK</strong> that handles authentication, request formatting, and error handling for you.</p><p>Install it with pip:</p><pre><code>pip install anthropic</code></pre><p>A minimal example — sending a message and printing the response:</p><pre><code>import anthropic
-
-client = anthropic.Anthropic()
-
-message = client.messages.create(
-    model="claude-3-5-sonnet-20241022",
-    max_tokens=1024,
-    messages=[
-        {"role": "user", "content": "Hello, Claude!"}
-    ]
-)
-
-print(message.content[0].text)</code></pre><p>The SDK automatically reads your API key from the <code>ANTHROPIC_API_KEY</code> environment variable. You can also pass it explicitly: <code>anthropic.Anthropic(api_key="your-key")</code>.</p>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>You should never make requests to the Anthropic API directly from client-side code. Here's why:</p><ul><li>API requests require a secret API key for authentication</li><li>Exposing this key in client code creates a serious security vulnerability</li><li>Anyone could extract the key and make unauthorized requests</li></ul><p>Instead, your web or mobile app sends requests to your own server, which then communicates with the Anthropic API using the securely stored key.</p>
                   </div>
-                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Mặc dù bạn có thể gọi API trực tiếp bằng bất kỳ HTTP client nào, Anthropic cung cấp <strong>Python SDK</strong> chính thức xử lý xác thực, định dạng request và xử lý lỗi cho bạn.</p><p>Cài đặt bằng pip:</p><pre><code>pip install anthropic</code></pre><p>Một ví dụ tối giản — gửi tin nhắn và in response:</p><pre><code>import anthropic
-
-client = anthropic.Anthropic()
-
-message = client.messages.create(
-    model="claude-3-5-sonnet-20241022",
-    max_tokens=1024,
-    messages=[
-        {"role": "user", "content": "Hello, Claude!"}
-    ]
-)
-
-print(message.content[0].text)</code></pre><p>SDK tự động đọc API key của bạn từ biến môi trường <code>ANTHROPIC_API_KEY</code>. Bạn cũng có thể truyền trực tiếp: <code>anthropic.Anthropic(api_key="your-key")</code>.</p>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Bạn không bao giờ nên thực hiện request đến Anthropic API trực tiếp từ code phía client. Lý do:</p><ul><li>API request yêu cầu API key bí mật để xác thực</li><li>Để lộ key này trong code client tạo ra lỗ hổng bảo mật nghiêm trọng</li><li>Bất kỳ ai cũng có thể trích xuất key và thực hiện request trái phép</li></ul><p>Thay vào đó, ứng dụng web hoặc mobile của bạn gửi request đến server của riêng bạn, sau đó server này sẽ giao tiếp với Anthropic API bằng key được lưu trữ an toàn.</p>
                   </div>
                 </div>
-                <div class="lesson-section" id="response-structure">
+                <div class="lesson-section" id="making-requests">
                   <div class="lesson-section__title">
-                    <h2 class="lesson-section__title-en">Understanding the response</h2><span class="lesson-section__title-vi">Hiểu cấu trúc response</span>
+                    <h2 class="lesson-section__title-en">Making API Requests</h2><span class="lesson-section__title-vi">Thực hiện API Request</span>
+                  </div><img src="/claude-academy/assets/images/lesson/accessing-the-api-03.png?v=sha384-Jm4eLlj02QpJAG4RacSDnxdVr6NWArze4s2FTBE6w9YLpWssv+/+nfQDlrCub98L" alt="Making API requests">
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>When your server contacts the Anthropic API, you can use either an official SDK or make plain HTTP requests. Anthropic provides SDKs for Python, TypeScript, JavaScript, Go, and Ruby.</p><p>Every request must include these essential fields:</p><ul><li><strong>API Key</strong> — Identifies your request to Anthropic</li><li><strong>Model</strong> — Name of the model to use (like <code>claude-opus-4-5</code>)</li><li><strong>Messages</strong> — List containing the user's input text</li><li><strong>Max Tokens</strong> — Limit for how many tokens Claude can generate</li></ul>
                   </div>
-                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>The API returns a <code>Message</code> object. Key fields you'll use regularly:</p><ul><li><code>message.content</code> — a list of content blocks. For text responses, access the text via <code>message.content[0].text</code></li><li><code>message.model</code> — the model that actually processed the request</li><li><code>message.stop_reason</code> — why the model stopped generating: <code>"end_turn"</code> (natural completion) or <code>"max_tokens"</code> (hit the token limit)</li><li><code>message.usage</code> — token counts for the request (<code>input_tokens</code>) and response (<code>output_tokens</code>), useful for cost tracking</li></ul><p>Throughout this course we'll build on this foundation — adding system prompts, multi-turn conversation history, tools, and more. The basic structure of every call stays the same.</p>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Khi server của bạn liên hệ với Anthropic API, bạn có thể sử dụng SDK chính thức hoặc thực hiện HTTP request thông thường. Anthropic cung cấp SDK cho Python, TypeScript, JavaScript, Go và Ruby.</p><p>Mỗi request phải bao gồm các trường thiết yếu sau:</p><ul><li><strong>API Key</strong> — Xác định request của bạn với Anthropic</li><li><strong>Model</strong> — Tên model cần sử dụng (như <code>claude-opus-4-5</code>)</li><li><strong>Messages</strong> — Danh sách chứa văn bản đầu vào của người dùng</li><li><strong>Max Tokens</strong> — Giới hạn số token Claude có thể tạo ra</li></ul>
                   </div>
-                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>API trả về một <code>Message</code> object. Các trường chính bạn sẽ dùng thường xuyên:</p><ul><li><code>message.content</code> — danh sách các content block. Với text response, truy cập text qua <code>message.content[0].text</code></li><li><code>message.model</code> — model đã thực sự xử lý request</li><li><code>message.stop_reason</code> — lý do model dừng tạo text: <code>"end_turn"</code> (hoàn thành tự nhiên) hoặc <code>"max_tokens"</code> (đạt giới hạn token)</li><li><code>message.usage</code> — số lượng token cho request (<code>input_tokens</code>) và response (<code>output_tokens</code>), hữu ích để theo dõi chi phí</li></ul><p>Trong suốt khóa học này, chúng ta sẽ xây dựng dựa trên nền tảng này — thêm system prompt, lịch sử hội thoại nhiều lượt, tools và nhiều hơn nữa. Cấu trúc cơ bản của mỗi lần gọi vẫn giữ nguyên.</p>
+                </div>
+                <div class="lesson-section" id="claude-processing">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Inside Claude's Processing</h2><span class="lesson-section__title-vi">Bên trong quá trình xử lý của Claude</span>
+                  </div><img src="/claude-academy/assets/images/lesson/accessing-the-api-04.png?v=sha384-xWGYut17TXGqU1NMbXk086KpCuI4o7H7JihXL7JROw99YTrp3WbH3TABDBdqcBai" alt="Claude processing stages"><img src="/claude-academy/assets/images/lesson/accessing-the-api-05.png?v=sha384-HiMb4pJWce/tzpcvwaKdZ3mKQBvBo5KxcbXqWE2dg/K9zUqA8BJ/krDDGVH+JgYs" alt="Embedding"><img src="/claude-academy/assets/images/lesson/accessing-the-api-06.png?v=sha384-yTo5x6O7hUqx1p1fVY8gpB6XX8+YLIbhnm1WdrxqZ76odmuN6HwofgGEuTqzMmRn" alt="Contextualization"><img src="/claude-academy/assets/images/lesson/accessing-the-api-07.png?v=sha384-qqe6r/b1V0wFcTQ/zMHP98vQhBi9GMDDHb6maSqhyqylDMcni3nbL+l7kQIwJ6bN" alt="Generation">
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>Once Anthropic receives your request, Claude processes it through four main stages: tokenization, embedding, contextualization, and generation.</p><h4>Tokenization</h4><p>Claude first breaks your input text into smaller chunks called tokens. These can be whole words, parts of words, spaces, or symbols. For simplicity, think of each word as one token.</p><h4>Embedding</h4><p>Each token gets converted into an embedding — a long list of numbers that represents all possible meanings of that word. Think of embeddings as numerical definitions that capture semantic relationships.</p><p>Words often have multiple meanings. For example, "quantum" could refer to a discrete unit of physical quantity, quantum mechanics concepts, something extremely small, or quantum computing applications.</p><h4>Contextualization</h4><p>Claude refines each embedding based on surrounding words to determine the most likely meaning in context. This process adjusts the numerical representations to highlight the appropriate definition.</p><h4>Generation</h4><p>The contextualized embeddings pass through an output layer that calculates probabilities for each possible next word. Claude doesn't always pick the highest probability word — it uses a mix of probability and controlled randomness to create natural, varied responses.</p><p>After selecting each word, Claude adds it to the sequence and repeats the entire process for the next word.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Khi Anthropic nhận được request của bạn, Claude xử lý nó qua bốn giai đoạn chính: tokenization, embedding, contextualization và generation.</p><h4>Tokenization</h4><p>Claude đầu tiên chia văn bản đầu vào thành các đoạn nhỏ hơn gọi là token. Đây có thể là từ nguyên, một phần từ, khoảng trắng hoặc ký hiệu. Đơn giản hóa thì hãy coi mỗi từ là một token.</p><h4>Embedding</h4><p>Mỗi token được chuyển đổi thành embedding — một danh sách dài các số đại diện cho tất cả các nghĩa có thể của từ đó. Hãy nghĩ về embedding như định nghĩa số học nắm bắt các mối quan hệ ngữ nghĩa.</p><p>Các từ thường có nhiều nghĩa. Ví dụ, "quantum" có thể đề cập đến một đơn vị rời rạc của đại lượng vật lý, các khái niệm cơ học lượng tử, thứ gì đó cực nhỏ, hoặc các ứng dụng điện toán lượng tử.</p><h4>Contextualization</h4><p>Claude tinh chỉnh từng embedding dựa trên các từ xung quanh để xác định nghĩa có khả năng nhất trong ngữ cảnh. Quá trình này điều chỉnh các biểu diễn số để làm nổi bật định nghĩa phù hợp.</p><h4>Generation</h4><p>Các embedding đã được ngữ cảnh hóa đi qua một lớp đầu ra tính toán xác suất cho mỗi từ tiếp theo có thể. Claude không phải lúc nào cũng chọn từ có xác suất cao nhất — nó sử dụng kết hợp xác suất và tính ngẫu nhiên có kiểm soát để tạo ra các phản hồi tự nhiên, đa dạng.</p><p>Sau khi chọn mỗi từ, Claude thêm nó vào chuỗi và lặp lại toàn bộ quá trình cho từ tiếp theo.</p>
+                  </div>
+                </div>
+                <div class="lesson-section" id="stop-and-response">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">When Claude Stops &amp; The API Response</h2><span class="lesson-section__title-vi">Khi Claude dừng &amp; API Response</span>
+                  </div><img src="/claude-academy/assets/images/lesson/accessing-the-api-08.png?v=sha384-KtxVJ7XjUG7BxD5R4+1ZSz3IBU/Is/tVTHOKSUWyAe2XaLAuEATfTgyBRaHkzOum" alt="Stop conditions"><img src="/claude-academy/assets/images/lesson/accessing-the-api-09.png?v=sha384-aHKNudsXigL3S94fx81sAm5BzIaIZq0wZRzEPdpAuzqPcxNMwD0BQ4uhIfGzkUi9" alt="API response"><img src="/claude-academy/assets/images/lesson/accessing-the-api-10.png?v=sha384-bChjslSA/7889WR7DI2BxZt6CBAKWAyo0f7OUV8NqQdlM/SIKUeo1G8VqEcECxKq" alt="Response to client">
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>After each token, Claude checks several conditions to decide whether to continue:</p><ul><li><strong>Max tokens reached</strong> — Has it hit the limit you specified?</li><li><strong>Natural ending</strong> — Did it generate an end-of-sequence token?</li><li><strong>Stop sequence</strong> — Did it encounter a predefined stop phrase?</li></ul><p>When generation completes, the API sends back a structured response containing:</p><ul><li><strong>Message</strong> — The generated text</li><li><strong>Usage</strong> — Count of input and output tokens</li><li><strong>Stop Reason</strong> — Why generation ended</li></ul><p>Your server receives this response and forwards the generated text back to your client application, where it appears in the user interface.</p><p>Don't worry about memorizing every detail — the goal is familiarizing yourself with the terminology and overall process you'll encounter when working with Claude's API.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Sau mỗi token, Claude kiểm tra một số điều kiện để quyết định có tiếp tục hay không:</p><ul><li><strong>Đạt max token</strong> — Đã đạt đến giới hạn bạn chỉ định chưa?</li><li><strong>Kết thúc tự nhiên</strong> — Có tạo ra token kết thúc chuỗi không?</li><li><strong>Stop sequence</strong> — Có gặp cụm từ dừng được định nghĩa trước không?</li></ul><p>Khi quá trình generation hoàn tất, API gửi lại response có cấu trúc chứa:</p><ul><li><strong>Message</strong> — Văn bản được tạo ra</li><li><strong>Usage</strong> — Số lượng token đầu vào và đầu ra</li><li><strong>Stop Reason</strong> — Lý do generation kết thúc</li></ul><p>Server của bạn nhận response này và chuyển tiếp văn bản đã tạo trở lại ứng dụng client, nơi nó xuất hiện trong giao diện người dùng.</p><p>Đừng lo lắng về việc ghi nhớ mọi chi tiết — mục tiêu là làm quen với thuật ngữ và quy trình tổng thể bạn sẽ gặp khi làm việc với Claude's API.</p>
                   </div>
                 </div>
               </div>
               <div class="lesson-nav-footer"><a class="lesson-nav-footer__prev" href="/claude-academy/claude-with-the-anthropic-api/overview-of-claude-models.html"><span class="lesson-nav-footer__label"><span class="lesson-nav-footer__label-en">Previous Lesson</span><span class="lesson-nav-footer__label-vi">Bài trước</span></span><span class="lesson-nav-footer__title-en">← Overview of Claude models</span><span class="lesson-nav-footer__title-vi">Tổng quan về các model Claude</span></a><a class="lesson-nav-footer__next" href="/claude-academy/claude-with-the-anthropic-api/getting-an-api-key.html"><span class="lesson-nav-footer__label"><span class="lesson-nav-footer__label-en">Next Lesson</span><span class="lesson-nav-footer__label-vi">Bài sau</span></span><span class="lesson-nav-footer__title-en">Getting an API key →</span><span class="lesson-nav-footer__title-vi">Lấy API key</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="lesson-deepdive-btn" type="button" aria-label="Deep dive">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg><span class="lesson-deepdive-btn__label-en">Deep Dive</span><span class="lesson-deepdive-btn__label-vi">Tìm hiểu thêm</span>
+        </button>
+        <div class="lesson-deepdive-modal">
+          <div class="lesson-deepdive-modal__overlay"></div>
+          <div class="lesson-deepdive-modal__box">
+            <div class="lesson-deepdive-modal__header">
+              <div class="lesson-deepdive-modal__title"><span class="lesson-deepdive-modal__title-en">Deep Dive</span><span class="lesson-deepdive-modal__title-vi">Tìm hiểu thêm</span></div>
+              <div class="lesson-deepdive-modal__header-actions">
+                <div class="lesson-deepdive-modal__toggle">
+                  <button class="lesson-deepdive-modal__toggle-btn is-active" type="button" data-lang="bilingual">Song ngữ</button>
+                  <button class="lesson-deepdive-modal__toggle-btn" type="button" data-lang="en">English</button>
+                  <button class="lesson-deepdive-modal__toggle-btn" type="button" data-lang="vi">Tiếng Việt</button>
+                </div>
+                <button class="lesson-deepdive-modal__close" type="button" aria-label="Close">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="lesson-deepdive-modal__body">
+              <div class="lesson-deepdive-modal__scroll">
+                <div class="lesson-deepdive-modal__content lesson-deepdive-modal__content--en"><h3>How the API works</h3><p>The Anthropic API is a standard HTTP REST API. You send a <strong>POST request</strong> to an endpoint with a JSON body describing your message, and you receive a JSON response containing Claude's reply.</p><p>Every request includes at minimum:</p><ul><li><strong>model</strong> — which Claude model to use</li><li><strong>max_tokens</strong> — the maximum number of tokens in the response</li><li><strong>messages</strong> — an array of message objects, each with a <code>role</code> (<code>"user"</code> or <code>"assistant"</code>) and <code>content</code></li></ul><p>Authentication is handled via an <strong>API key</strong> passed in the <code>x-api-key</code> HTTP header. We'll set up your API key in the next lesson.</p><h3>The Python SDK</h3><p>While you can call the API directly with any HTTP client, Anthropic provides an official <strong>Python SDK</strong> that handles authentication, request formatting, and error handling for you.</p><p>Install it with pip:</p><pre><code>pip install anthropic</code></pre><p>A minimal example — sending a message and printing the response:</p><pre><code>import anthropic
+
+client = anthropic.Anthropic()
+
+message = client.messages.create(
+    model="claude-3-5-sonnet-20241022",
+    max_tokens=1024,
+    messages=[
+        {"role": "user", "content": "Hello, Claude!"}
+    ]
+)
+
+print(message.content[0].text)</code></pre><p>The SDK automatically reads your API key from the <code>ANTHROPIC_API_KEY</code> environment variable. You can also pass it explicitly: <code>anthropic.Anthropic(api_key="your-key")</code>.</p><h3>Understanding the response</h3><p>The API returns a <code>Message</code> object. Key fields you'll use regularly:</p><ul><li><code>message.content</code> — a list of content blocks. For text responses, access the text via <code>message.content[0].text</code></li><li><code>message.model</code> — the model that actually processed the request</li><li><code>message.stop_reason</code> — why the model stopped generating: <code>"end_turn"</code> (natural completion) or <code>"max_tokens"</code> (hit the token limit)</li><li><code>message.usage</code> — token counts for the request (<code>input_tokens</code>) and response (<code>output_tokens</code>), useful for cost tracking</li></ul><p>Throughout this course we'll build on this foundation — adding system prompts, multi-turn conversation history, tools, and more. The basic structure of every call stays the same.</p>
+                </div>
+                <div class="lesson-deepdive-modal__content lesson-deepdive-modal__content--vi"><h3>API hoạt động như thế nào</h3><p>Anthropic API là một HTTP REST API tiêu chuẩn. Bạn gửi một <strong>POST request</strong> đến một endpoint với body JSON mô tả tin nhắn của bạn, và bạn nhận được JSON response chứa câu trả lời của Claude.</p><p>Mỗi request bao gồm tối thiểu:</p><ul><li><strong>model</strong> — model Claude nào sẽ sử dụng</li><li><strong>max_tokens</strong> — số token tối đa trong response</li><li><strong>messages</strong> — một mảng các message object, mỗi cái có <code>role</code> (<code>"user"</code> hoặc <code>"assistant"</code>) và <code>content</code></li></ul><p>Xác thực được thực hiện qua <strong>API key</strong> truyền trong HTTP header <code>x-api-key</code>. Chúng ta sẽ thiết lập API key của bạn trong bài học tiếp theo.</p><h3>Python SDK</h3><p>Mặc dù bạn có thể gọi API trực tiếp bằng bất kỳ HTTP client nào, Anthropic cung cấp <strong>Python SDK</strong> chính thức xử lý xác thực, định dạng request và xử lý lỗi cho bạn.</p><p>Cài đặt bằng pip:</p><pre><code>pip install anthropic</code></pre><p>Một ví dụ tối giản — gửi tin nhắn và in response:</p><pre><code>import anthropic
+
+client = anthropic.Anthropic()
+
+message = client.messages.create(
+    model="claude-3-5-sonnet-20241022",
+    max_tokens=1024,
+    messages=[
+        {"role": "user", "content": "Hello, Claude!"}
+    ]
+)
+
+print(message.content[0].text)</code></pre><p>SDK tự động đọc API key của bạn từ biến môi trường <code>ANTHROPIC_API_KEY</code>. Bạn cũng có thể truyền trực tiếp: <code>anthropic.Anthropic(api_key="your-key")</code>.</p><h3>Hiểu cấu trúc response</h3><p>API trả về một <code>Message</code> object. Các trường chính bạn sẽ dùng thường xuyên:</p><ul><li><code>message.content</code> — danh sách các content block. Với text response, truy cập text qua <code>message.content[0].text</code></li><li><code>message.model</code> — model đã thực sự xử lý request</li><li><code>message.stop_reason</code> — lý do model dừng tạo text: <code>"end_turn"</code> (hoàn thành tự nhiên) hoặc <code>"max_tokens"</code> (đạt giới hạn token)</li><li><code>message.usage</code> — số lượng token cho request (<code>input_tokens</code>) và response (<code>output_tokens</code>), hữu ích để theo dõi chi phí</li></ul><p>Trong suốt khóa học này, chúng ta sẽ xây dựng dựa trên nền tảng này — thêm system prompt, lịch sử hội thoại nhiều lượt, tools và nhiều hơn nữa. Cấu trúc cơ bản của mỗi lần gọi vẫn giữ nguyên.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -295,9 +354,11 @@ print(message.content[0].text)</code></pre><p>SDK tự động đọc API key c�
               </div>
             </div>
             <div class="lesson-summary-modal__body">
-              <div class="lesson-summary-modal__card lesson-summary-modal__card--en">How the Anthropic API works — the request/response model, the Python SDK, and what you need to get started.
-              </div>
-              <div class="lesson-summary-modal__card lesson-summary-modal__card--vi">Cách Anthropic API hoạt động — mô hình request/response, Python SDK và những gì bạn cần để bắt đầu.
+              <div class="lesson-summary-modal__scroll">
+                <div class="lesson-summary-modal__card lesson-summary-modal__card--en"><ul><li>Every interaction with Claude follows a five-step request flow: request to server → request to Anthropic API → model processing → response to server → response to client</li><li>Never expose your API key in client-side code — always route requests through your own server</li><li>Inside Claude, text is processed through four stages: tokenization, embedding, contextualization, and generation</li><li>Generation stops when max tokens is reached, a natural end-of-sequence token is produced, or a stop sequence is encountered</li></ul>
+                </div>
+                <div class="lesson-summary-modal__card lesson-summary-modal__card--vi"><ul><li>Mỗi tương tác với Claude theo quy trình request 5 bước: request đến server → request đến Anthropic API → xử lý model → response đến server → response đến client</li><li>Không bao giờ để lộ API key trong code phía client — luôn định tuyến request qua server của bạn</li><li>Bên trong Claude, văn bản được xử lý qua bốn giai đoạn: tokenization, embedding, contextualization và generation</li><li>Quá trình generation dừng lại khi đạt max token, tạo ra token kết thúc chuỗi tự nhiên, hoặc gặp stop sequence</li></ul>
+                </div>
               </div>
             </div>
           </div>
@@ -308,6 +369,6 @@ print(message.content[0].text)</code></pre><p>SDK tự động đọc API key c�
 
     </div>
     <script src="/claude-academy/assets/js/main.js?v=sha384-kNNRbQTv526J2QIkhMOolMqrIfWyaSWL36D955JRpJTKBlmZ9+oV0Oz9FvXDnFbw" type="module" crossorigin></script>
-    <script src="/claude-academy/assets/js/lesson.js?v=sha384-5Qmu85Cv9gdc3uL8lcYsykzvcLLQEsWIr1EDy2JuakoAgOQgBlxArlt0SKLDnq+G" type="module" crossorigin></script>
+    <script src="/claude-academy/assets/js/lesson.js?v=sha384-3oOOFql/wce7ZCPEcNMUnG6et9JtKoz3iVP4pwwTVwSWm6vNSiY9hnQtC4CVpnCt" type="module" crossorigin></script>
   </body>
 </html>
