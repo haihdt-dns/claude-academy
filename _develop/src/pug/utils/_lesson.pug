@@ -62,9 +62,10 @@ block main
               if section.raw
                 != section.raw
               else
-                .lesson-section__title
-                  h2.lesson-section__title-en #{section.titleEn}
-                  span.lesson-section__title-vi #{section.titleVi}
+                if section.titleEn
+                  .lesson-section__title
+                    h2.lesson-section__title-en #{section.titleEn}
+                    span.lesson-section__title-vi #{section.titleVi}
                 if section.image
                   != section.image
                 if section.video

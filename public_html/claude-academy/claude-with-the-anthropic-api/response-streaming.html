@@ -212,50 +212,42 @@
                     <path d="M7 4v3.5l2 1.5"></path>
                   </svg><span class="lesson-meta__text-bilingual">Estimated time: 8 minutes (Thời gian ước tính: 8 phút)</span><span class="lesson-meta__text-en">Estimated time: 8 minutes</span><span class="lesson-meta__text-vi">Thời gian ước tính: 8 phút</span></span></div>
               <div class="lesson-content">
-                <div class="lesson-section" id="intro-video">
-                  <div class="lesson-section__title">
-                    <h2 class="lesson-section__title-en">Response streaming</h2><span class="lesson-section__title-vi">Response streaming</span>
-                  </div><div class="lesson-video"><iframe src="https://cdn.jwplayer.com/players/WyvqnwvX-Akyo8gQO.html" frameborder="0" allowfullscreen></iframe></div>
-                </div>
-                <div class="lesson-section" id="intro">
-                  <div class="lesson-section__title">
-                    <h2 class="lesson-section__title-en">Introduction</h2><span class="lesson-section__title-vi">Giới thiệu</span>
-                  </div><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/response-streaming-01.png?v=sha384-ye4xIEFm85tpKe11RPuOLXz+TCDZn8/l2KDlBfMLfo0VngKNUaszc/j0KZBmYoBk" alt=""></div>
-                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>When building chat applications with Claude, there's a significant user experience challenge: responses can take 10-30 seconds to generate, leaving users staring at a loading spinner. The solution is response streaming, which lets users see text appear chunk by chunk as Claude generates it, creating a much more responsive feel.</p>
+                <div class="lesson-section" id="intro-video"><div class="lesson-video"><iframe src="https://cdn.jwplayer.com/players/WyvqnwvX-Akyo8gQO.html" frameborder="0" allowfullscreen></iframe></div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>When building chat applications with Claude, there's a significant user experience challenge: responses can take 10-30 seconds to generate, leaving users staring at a loading spinner. The solution is response streaming, which lets users see text appear chunk by chunk as Claude generates it, creating a much more responsive feel.</p><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/response-streaming-01.png?v=sha384-ye4xIEFm85tpKe11RPuOLXz+TCDZn8/l2KDlBfMLfo0VngKNUaszc/j0KZBmYoBk" alt="Response streaming overview"></div>
                   </div>
-                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Khi xây dựng ứng dụng chat với Claude, có một thách thức đáng kể về trải nghiệm người dùng: phản hồi có thể mất 10-30 giây để tạo ra, khiến người dùng nhìn chằm chằm vào vòng quay tải. Giải pháp là response streaming, cho phép người dùng thấy văn bản xuất hiện từng đoạn khi Claude tạo ra, tạo ra cảm giác phản hồi tốt hơn nhiều.</p>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Khi xây dựng ứng dụng chat với Claude, có một thách thức đáng kể về trải nghiệm người dùng: phản hồi có thể mất 10-30 giây để tạo ra, khiến người dùng nhìn chằm chằm vào vòng quay tải. Giải pháp là response streaming, cho phép người dùng thấy văn bản xuất hiện từng đoạn khi Claude tạo ra, tạo ra cảm giác phản hồi tốt hơn nhiều.</p><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/response-streaming-01.png?v=sha384-ye4xIEFm85tpKe11RPuOLXz+TCDZn8/l2KDlBfMLfo0VngKNUaszc/j0KZBmYoBk" alt="Tổng quan response streaming"></div>
                   </div>
                 </div>
-                <div class="lesson-section" id="problem-with-standard">
+                <div class="lesson-section" id="the-problem-with-standard-responses">
                   <div class="lesson-section__title">
-                    <h2 class="lesson-section__title-en">The Problem with Standard Requests</h2><span class="lesson-section__title-vi">Vấn đề với Request thông thường</span>
-                  </div><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/response-streaming-02.png?v=sha384-TIQZmkJMPPKJf7NBT5he+bDhVGK7CvMO5N/EIepCIF1exnWB/VMMog0nwrjNPNtX" alt=""></div>
-                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>In a typical chat setup, your server sends a user message to Claude and waits for the complete response before sending anything back to the client. This creates an awkward delay where users have no feedback that anything is happening.</p>
+                    <h2 class="lesson-section__title-en">The Problem with Standard Responses</h2><span class="lesson-section__title-vi">Vấn đề với Response thông thường</span>
                   </div>
-                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Trong cài đặt chat thông thường, server của bạn gửi user message đến Claude và chờ phản hồi hoàn chỉnh trước khi gửi bất cứ thứ gì trở lại cho client. Điều này tạo ra độ trễ khó chịu khi người dùng không có phản hồi nào rằng có gì đang xảy ra.</p>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>In a typical chat setup, your server sends a user message to Claude and waits for the complete response before sending anything back to the client. This creates an awkward delay where users have no feedback that anything is happening.</p><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/response-streaming-02.png?v=sha384-TIQZmkJMPPKJf7NBT5he+bDhVGK7CvMO5N/EIepCIF1exnWB/VMMog0nwrjNPNtX" alt="Standard response delay"></div>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Trong cài đặt chat thông thường, server của bạn gửi user message đến Claude và chờ phản hồi hoàn chỉnh trước khi gửi bất cứ thứ gì trở lại cho client. Điều này tạo ra độ trễ khó chịu khi người dùng không có phản hồi nào rằng có gì đang xảy ra.</p><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/response-streaming-02.png?v=sha384-TIQZmkJMPPKJf7NBT5he+bDhVGK7CvMO5N/EIepCIF1exnWB/VMMog0nwrjNPNtX" alt="Độ trễ với response thông thường"></div>
                   </div>
                 </div>
                 <div class="lesson-section" id="how-streaming-works">
                   <div class="lesson-section__title">
                     <h2 class="lesson-section__title-en">How Streaming Works</h2><span class="lesson-section__title-vi">Streaming hoạt động như thế nào</span>
-                  </div><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/response-streaming-03.png?v=sha384-PqYwheSMD6RuAVm0qv7tR9Xq0IunZRWrj9fgved2yLNp8cwgmi3b1IpxzXCRV31n" alt=""></div>
-                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>With streaming enabled, Claude immediately sends back an initial response indicating it has received your request and is starting to generate text. Then you receive a series of events, each containing a small piece of the overall response.</p><p>Your server can forward these text chunks to your client application as they arrive, allowing users to see the response building up word by word. All of these events are part of a single request to Claude.</p><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/response-streaming-04.png?v=sha384-PqYwheSMD6RuAVm0qv7tR9Xq0IunZRWrj9fgved2yLNp8cwgmi3b1IpxzXCRV31n" alt=""></div>
                   </div>
-                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Với streaming được bật, Claude ngay lập tức gửi lại phản hồi ban đầu cho biết nó đã nhận được yêu cầu của bạn và đang bắt đầu tạo văn bản. Sau đó bạn nhận được một loạt các sự kiện, mỗi sự kiện chứa một phần nhỏ của phản hồi tổng thể.</p><p>Server của bạn có thể chuyển tiếp các đoạn văn bản này đến ứng dụng client khi chúng đến, cho phép người dùng thấy phản hồi được xây dựng từng từ một. Tất cả những sự kiện này là một phần của một request đơn đến Claude.</p><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/response-streaming-04.png?v=sha384-PqYwheSMD6RuAVm0qv7tR9Xq0IunZRWrj9fgved2yLNp8cwgmi3b1IpxzXCRV31n" alt=""></div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>With streaming enabled, Claude immediately sends back an initial response indicating it has received your request and is starting to generate text. Then you receive a series of events, each containing a small piece of the overall response.</p><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/response-streaming-03.png?v=sha384-PqYwheSMD6RuAVm0qv7tR9Xq0IunZRWrj9fgved2yLNp8cwgmi3b1IpxzXCRV31n" alt="How streaming works"></div><p>Your server can forward these text chunks to your client application as they arrive, allowing users to see the response building up word by word. All of these events are part of a single request to Claude.</p><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/response-streaming-04.png?v=sha384-PqYwheSMD6RuAVm0qv7tR9Xq0IunZRWrj9fgved2yLNp8cwgmi3b1IpxzXCRV31n" alt="Streaming chunk forwarding"></div>
                   </div>
-                </div>
-                <div class="lesson-section" id="stream-events">
-                  <div class="lesson-section__title">
-                    <h2 class="lesson-section__title-en">Stream Events</h2><span class="lesson-section__title-vi">Các Stream Event</span>
-                  </div><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/response-streaming-05.png?v=sha384-UcCOoejRr43WzA90DeI90vM2iy/D5cGOx33vdnkRJAEHnD0rlBmIbDM4GL/rnnRT" alt=""></div>
-                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>When you enable streaming, Claude sends back several types of events:</p><ul><li><strong>MessageStart</strong> — A new message is being sent</li><li><strong>ContentBlockStart</strong> — Start of a new block containing text, tool use, or other content</li><li><strong>ContentBlockDelta</strong> — Chunks of the actual generated text</li><li><strong>ContentBlockStop</strong> — The current content block has been completed</li><li><strong>MessageDelta</strong> — The current message is complete</li><li><strong>MessageStop</strong> — End of information about the current message</li></ul><p>The <code>ContentBlockDelta</code> events contain the actual generated text that you'll want to display to users.</p>
-                  </div>
-                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Khi bạn bật streaming, Claude gửi lại một số loại sự kiện:</p><ul><li><strong>MessageStart</strong> — Một message mới đang được gửi</li><li><strong>ContentBlockStart</strong> — Bắt đầu một block mới chứa văn bản, tool use hoặc nội dung khác</li><li><strong>ContentBlockDelta</strong> — Các đoạn văn bản thực tế được tạo ra</li><li><strong>ContentBlockStop</strong> — Content block hiện tại đã hoàn thành</li><li><strong>MessageDelta</strong> — Message hiện tại đã hoàn chỉnh</li><li><strong>MessageStop</strong> — Kết thúc thông tin về message hiện tại</li></ul><p>Các sự kiện <code>ContentBlockDelta</code> chứa văn bản thực tế được tạo ra mà bạn sẽ muốn hiển thị cho người dùng.</p>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Với streaming được bật, Claude ngay lập tức gửi lại phản hồi ban đầu cho biết nó đã nhận được yêu cầu của bạn và đang bắt đầu tạo văn bản. Sau đó bạn nhận được một loạt các sự kiện, mỗi sự kiện chứa một phần nhỏ của phản hồi tổng thể.</p><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/response-streaming-03.png?v=sha384-PqYwheSMD6RuAVm0qv7tR9Xq0IunZRWrj9fgved2yLNp8cwgmi3b1IpxzXCRV31n" alt="Cách streaming hoạt động"></div><p>Server của bạn có thể chuyển tiếp các đoạn văn bản này đến ứng dụng client khi chúng đến, cho phép người dùng thấy phản hồi được xây dựng từng từ một. Tất cả những sự kiện này là một phần của một request đơn đến Claude.</p><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/response-streaming-04.png?v=sha384-PqYwheSMD6RuAVm0qv7tR9Xq0IunZRWrj9fgved2yLNp8cwgmi3b1IpxzXCRV31n" alt="Chuyển tiếp chunk streaming"></div>
                   </div>
                 </div>
-                <div class="lesson-section" id="basic-implementation">
+                <div class="lesson-section" id="understanding-stream-events">
                   <div class="lesson-section__title">
-                    <h2 class="lesson-section__title-en">Basic Implementation</h2><span class="lesson-section__title-vi">Triển khai cơ bản</span>
+                    <h2 class="lesson-section__title-en">Understanding Stream Events</h2><span class="lesson-section__title-vi">Hiểu các Stream Event</span>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>When you enable streaming, Claude sends back several types of events:</p><ul><li><strong>MessageStart</strong> — A new message is being sent</li><li><strong>ContentBlockStart</strong> — Start of a new block containing text, tool use, or other content</li><li><strong>ContentBlockDelta</strong> — Chunks of the actual generated text</li><li><strong>ContentBlockStop</strong> — The current content block has been completed</li><li><strong>MessageDelta</strong> — The current message is complete</li><li><strong>MessageStop</strong> — End of information about the current message</li></ul><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/response-streaming-05.png?v=sha384-UcCOoejRr43WzA90DeI90vM2iy/D5cGOx33vdnkRJAEHnD0rlBmIbDM4GL/rnnRT" alt="Stream event types"></div><p>The <code>ContentBlockDelta</code> events contain the actual generated text that you'll want to display to users.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Khi bạn bật streaming, Claude gửi lại một số loại sự kiện:</p><ul><li><strong>MessageStart</strong> — Một message mới đang được gửi</li><li><strong>ContentBlockStart</strong> — Bắt đầu một block mới chứa văn bản, tool use hoặc nội dung khác</li><li><strong>ContentBlockDelta</strong> — Các đoạn văn bản thực tế được tạo ra</li><li><strong>ContentBlockStop</strong> — Content block hiện tại đã hoàn thành</li><li><strong>MessageDelta</strong> — Message hiện tại đã hoàn chỉnh</li><li><strong>MessageStop</strong> — Kết thúc thông tin về message hiện tại</li></ul><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/response-streaming-05.png?v=sha384-UcCOoejRr43WzA90DeI90vM2iy/D5cGOx33vdnkRJAEHnD0rlBmIbDM4GL/rnnRT" alt="Các loại stream event"></div><p>Các sự kiện <code>ContentBlockDelta</code> chứa văn bản thực tế được tạo ra mà bạn sẽ muốn hiển thị cho người dùng.</p>
+                  </div>
+                </div>
+                <div class="lesson-section" id="basic-streaming-implementation">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Basic Streaming Implementation</h2><span class="lesson-section__title-vi">Triển khai Streaming cơ bản</span>
                   </div>
                   <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>To enable streaming, add <code>stream=True</code> to your messages.create call:</p><pre><code>messages = []
 add_user_message(messages, "Write a 1 sentence description of a fake database")
@@ -268,7 +260,7 @@ stream = client.messages.create(
 )
 
 for event in stream:
-    print(event)</code></pre><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/response-streaming-06.png?v=sha384-fssnM7zIp9oys4moVazxE5RXGOPlSzovC0q+f5f9VQOE7B2cHBGjeFQrXmxcBL8a" alt=""></div>
+    print(event)</code></pre><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/response-streaming-06.png?v=sha384-fssnM7zIp9oys4moVazxE5RXGOPlSzovC0q+f5f9VQOE7B2cHBGjeFQrXmxcBL8a" alt="Basic streaming output"></div>
                   </div>
                   <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Để bật streaming, thêm <code>stream=True</code> vào lời gọi messages.create:</p><pre><code>messages = []
 add_user_message(messages, "Write a 1 sentence description of a fake database")
@@ -281,12 +273,12 @@ stream = client.messages.create(
 )
 
 for event in stream:
-    print(event)</code></pre><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/response-streaming-06.png?v=sha384-fssnM7zIp9oys4moVazxE5RXGOPlSzovC0q+f5f9VQOE7B2cHBGjeFQrXmxcBL8a" alt=""></div>
+    print(event)</code></pre><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/response-streaming-06.png?v=sha384-fssnM7zIp9oys4moVazxE5RXGOPlSzovC0q+f5f9VQOE7B2cHBGjeFQrXmxcBL8a" alt="Kết quả streaming cơ bản"></div>
                   </div>
                 </div>
-                <div class="lesson-section" id="simplified-streaming">
+                <div class="lesson-section" id="simplified-text-streaming">
                   <div class="lesson-section__title">
-                    <h2 class="lesson-section__title-en">Simplified Streaming</h2><span class="lesson-section__title-vi">Streaming đơn giản hóa</span>
+                    <h2 class="lesson-section__title-en">Simplified Text Streaming</h2><span class="lesson-section__title-vi">Streaming văn bản đơn giản hóa</span>
                   </div>
                   <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>Rather than manually parsing events, you can use the SDK's simplified streaming interface that extracts just the text content:</p><pre><code>with client.messages.stream(
     model=model,
@@ -305,7 +297,7 @@ for event in stream:
         print(text, end="")</code></pre><p>Cách này tự động lọc ra mọi thứ ngoại trừ nội dung văn bản thực tế, đây thường là những gì bạn cần để hiển thị phản hồi cho người dùng.</p>
                   </div>
                 </div>
-                <div class="lesson-section" id="getting-complete-message">
+                <div class="lesson-section" id="getting-the-complete-message">
                   <div class="lesson-section__title">
                     <h2 class="lesson-section__title-en">Getting the Complete Message</h2><span class="lesson-section__title-vi">Lấy Message hoàn chỉnh</span>
                   </div>

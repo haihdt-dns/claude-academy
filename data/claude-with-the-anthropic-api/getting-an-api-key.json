@@ -8,22 +8,60 @@
   "nextLesson": "making-a-request",
   "summaryEn": "A step-by-step guide to creating your Anthropic API key from the console.",
   "summaryVi": "Hướng dẫn từng bước tạo API key Anthropic từ console.",
+  "supplementEn": "<p>Your API key grants full access to your Anthropic account and is billed against your account. Treat it like a password:</p><ul><li><strong>Never commit it to version control</strong> (Git). Use environment variables or a secrets manager instead.</li><li><strong>Store it in a <code>.env</code> file</strong> and add <code>.env</code> to your <code>.gitignore</code>.</li><li><strong>Don't share it</strong> in chat messages, screenshots, or public forums.</li></ul><p>The standard way to make your key available to the SDK is to set the <code>ANTHROPIC_API_KEY</code> environment variable:</p><pre><code>export ANTHROPIC_API_KEY=\"your-key-here\"</code></pre><p>The Anthropic Python SDK reads this variable automatically, so you never need to hardcode the key in your code.</p>",
+  "supplementVi": "<p>API key của bạn cấp quyền truy cập đầy đủ vào tài khoản Anthropic và được tính phí vào tài khoản của bạn. Hãy xử lý nó như mật khẩu:</p><ul><li><strong>Không bao giờ commit vào version control</strong> (Git). Thay vào đó, hãy dùng biến môi trường hoặc secrets manager.</li><li><strong>Lưu trong file <code>.env</code></strong> và thêm <code>.env</code> vào <code>.gitignore</code>.</li><li><strong>Không chia sẻ</strong> qua tin nhắn chat, ảnh chụp màn hình hay diễn đàn công khai.</li></ul><p>Cách chuẩn để cung cấp key cho SDK là đặt biến môi trường <code>ANTHROPIC_API_KEY</code>:</p><pre><code>export ANTHROPIC_API_KEY=\"your-key-here\"</code></pre><p>Anthropic Python SDK đọc biến này tự động, vì vậy bạn không cần hardcode key trong code.</p>",
   "sections": [
     {
-      "id": "create-api-key",
-      "titleEn": "Creating your API key",
-      "titleVi": "Tạo API key của bạn",
-      "en": "<p>In the next lesson we will be making a request to the Anthropic API. To do so, you will need a secret API key. This guide will walk you through the process of creating one.</p><h4>Step 1: Navigate to the Anthropic Console</h4><p>In your browser, go to <a href=\"https://console.anthropic.com/\" target=\"_blank\" rel=\"noopener\">https://console.anthropic.com/</a> and log in to your Anthropic account.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/getting-an-api-key-001.png\" alt=\"Anthropic Console dashboard\"></div><h4>Step 2: Click the \"Get API Keys\" button</h4><p>This button can be found towards the top right of the main dashboard page.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/getting-an-api-key-002.png\" alt=\"Get API Keys button\"></div><h4>Step 3: Click the \"Create Key\" button</h4><p>At the top right of the API Keys page, find the <strong>Create Key</strong> button and click it.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/getting-an-api-key-003.png\" alt=\"Create Key button\"></div><h4>Step 4: Enter a workspace and name for your key</h4><p>Create the key in workspace <strong>Default</strong> and enter a name — for example, <code>Anthropic Course</code>. The name helps you identify which key is which when you have multiple keys.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/getting-an-api-key-004.png\" alt=\"Enter key name dialog\"></div><h4>Step 5: Copy the key</h4><p>Your API key will be displayed in a pop-up window. <strong>Copy this key and store it somewhere safe</strong> — it will only be displayed once.</p><p>If you accidentally close the window without copying it, delete the old key and generate a new one.</p>",
-      "vi": "<p>Trong bài học tiếp theo, chúng ta sẽ thực hiện một request đến Anthropic API. Để làm vậy, bạn cần một API key bí mật. Hướng dẫn này sẽ dẫn bạn qua từng bước tạo key.</p><h4>Bước 1: Truy cập Anthropic Console</h4><p>Trong trình duyệt, vào <a href=\"https://console.anthropic.com/\" target=\"_blank\" rel=\"noopener\">https://console.anthropic.com/</a> và đăng nhập vào tài khoản Anthropic của bạn.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/getting-an-api-key-001.png\" alt=\"Anthropic Console dashboard\"></div><h4>Bước 2: Nhấn nút \"Get API Keys\"</h4><p>Nút này nằm ở phía trên bên phải của trang dashboard chính.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/getting-an-api-key-002.png\" alt=\"Nút Get API Keys\"></div><h4>Bước 3: Nhấn nút \"Create Key\"</h4><p>Ở góc trên bên phải của trang API Keys, tìm nút <strong>Create Key</strong> và nhấn vào.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/getting-an-api-key-003.png\" alt=\"Nút Create Key\"></div><h4>Bước 4: Nhập workspace và tên cho key</h4><p>Tạo key trong workspace <strong>Default</strong> và nhập tên — ví dụ: <code>Anthropic Course</code>. Tên giúp bạn phân biệt các key khi có nhiều key.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/getting-an-api-key-004.png\" alt=\"Hộp thoại nhập tên key\"></div><h4>Bước 5: Sao chép key</h4><p>API key của bạn sẽ hiển thị trong cửa sổ pop-up. <strong>Sao chép key này và lưu ở nơi an toàn</strong> — nó chỉ hiển thị một lần duy nhất.</p><p>Nếu bạn vô tình đóng cửa sổ mà chưa sao chép, hãy xóa key cũ và tạo lại key mới.</p>",
+      "id": "intro",
+      "titleEn": "",
+      "titleVi": "",
+      "en": "<p>In the next video we will be making a request to the Anthropic API. To do so, you will need a secret API key. This guide will walk you through the process of creating an API key.</p>",
+      "vi": "<p>Trong video tiếp theo, chúng ta sẽ thực hiện một request đến Anthropic API. Để làm vậy, bạn cần một API key bí mật. Hướng dẫn này sẽ dẫn bạn qua từng bước tạo API key.</p>",
       "image": "",
       "video": ""
     },
     {
-      "id": "keep-key-safe",
-      "titleEn": "Keeping your API key safe",
-      "titleVi": "Bảo mật API key",
-      "en": "<p>Your API key grants full access to your Anthropic account and is billed against your account. Treat it like a password:</p><ul><li><strong>Never commit it to version control</strong> (Git). Use environment variables or a secrets manager instead.</li><li><strong>Store it in a <code>.env</code> file</strong> and add <code>.env</code> to your <code>.gitignore</code>.</li><li><strong>Don't share it</strong> in chat messages, screenshots, or public forums.</li></ul><p>The standard way to make your key available to the SDK is to set the <code>ANTHROPIC_API_KEY</code> environment variable:</p><pre><code>export ANTHROPIC_API_KEY=\"your-key-here\"</code></pre><p>The Anthropic Python SDK reads this variable automatically, so you never need to hardcode the key in your code.</p>",
-      "vi": "<p>API key của bạn cấp quyền truy cập đầy đủ vào tài khoản Anthropic và được tính phí vào tài khoản của bạn. Hãy xử lý nó như mật khẩu:</p><ul><li><strong>Không bao giờ commit vào version control</strong> (Git). Thay vào đó, hãy dùng biến môi trường hoặc secrets manager.</li><li><strong>Lưu trong file <code>.env</code></strong> và thêm <code>.env</code> vào <code>.gitignore</code>.</li><li><strong>Không chia sẻ</strong> qua tin nhắn chat, ảnh chụp màn hình hay diễn đàn công khai.</li></ul><p>Cách chuẩn để cung cấp key cho SDK là đặt biến môi trường <code>ANTHROPIC_API_KEY</code>:</p><pre><code>export ANTHROPIC_API_KEY=\"your-key-here\"</code></pre><p>Anthropic Python SDK đọc biến này tự động, vì vậy bạn không cần hardcode key trong code.</p>",
+      "id": "step-one",
+      "titleEn": "Step One: Navigate to the Anthropic API Console",
+      "titleVi": "Bước 1: Truy cập Anthropic API Console",
+      "en": "<p>In your browser, navigate to <a href=\"https://console.anthropic.com/\" target=\"_blank\" rel=\"noopener\">https://console.anthropic.com/</a> and log in to your Anthropic account. You'll then see a page like this:</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/getting-an-api-key-001.png\" alt=\"Anthropic Console dashboard\"></div>",
+      "vi": "<p>Trong trình duyệt, vào <a href=\"https://console.anthropic.com/\" target=\"_blank\" rel=\"noopener\">https://console.anthropic.com/</a> và đăng nhập vào tài khoản Anthropic của bạn. Bạn sẽ thấy trang như sau:</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/getting-an-api-key-001.png\" alt=\"Anthropic Console dashboard\"></div>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "step-two",
+      "titleEn": "Step Two: Click the 'Get API Keys' button",
+      "titleVi": "Bước 2: Nhấn nút 'Get API Keys'",
+      "en": "<p>This button can be found towards the top right of the main dashboard page.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/getting-an-api-key-002.png\" alt=\"Get API Keys button\"></div>",
+      "vi": "<p>Nút này nằm ở phía trên bên phải của trang dashboard chính.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/getting-an-api-key-002.png\" alt=\"Nút Get API Keys\"></div>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "step-three",
+      "titleEn": "Step Three: Click the 'Create Key' button",
+      "titleVi": "Bước 3: Nhấn nút 'Create Key'",
+      "en": "<p>At the top right of the page, find the 'Create Key' button and click it.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/getting-an-api-key-003.png\" alt=\"Create Key button\"></div>",
+      "vi": "<p>Ở góc trên bên phải của trang, tìm nút 'Create Key' và nhấn vào.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/getting-an-api-key-003.png\" alt=\"Nút Create Key\"></div>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "step-four",
+      "titleEn": "Step Four: Enter a workspace and name for your key",
+      "titleVi": "Bước 4: Nhập workspace và tên cho key",
+      "en": "<p>Create the key in workspace 'Default' and enter a name for your key. This name is used to help you identify the keys you generate. Let's use a name of 'Anthropic Course'.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/getting-an-api-key-004.png\" alt=\"Enter key name dialog\"></div>",
+      "vi": "<p>Tạo key trong workspace 'Default' và nhập tên cho key. Tên này giúp bạn nhận dạng các key đã tạo. Hãy dùng tên 'Anthropic Course'.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/getting-an-api-key-004.png\" alt=\"Hộp thoại nhập tên key\"></div>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "step-five",
+      "titleEn": "Step Five: Copy the Key",
+      "titleVi": "Bước 5: Sao chép Key",
+      "en": "<p>Your API key will then be displayed in a pop up window. Copy this key and hold onto it — we will use it in the next video. This key will only be displayed once, so make sure you copy it!</p><p>If you accidentally close the window, delete the old key and generate it again.</p>",
+      "vi": "<p>API key của bạn sẽ hiển thị trong cửa sổ pop-up. Sao chép key này và giữ lại — chúng ta sẽ dùng nó trong video tiếp theo. Key này chỉ hiển thị một lần, vì vậy hãy đảm bảo bạn đã sao chép!</p><p>Nếu bạn vô tình đóng cửa sổ, hãy xóa key cũ và tạo lại.</p>",
       "image": "",
       "video": ""
     }

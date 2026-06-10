@@ -6,7 +6,19 @@
   "estimatedTimeVi": "10 phút",
   "prevLesson": "structured-data",
   "nextLesson": "prompt-evaluation",
-  "summaryEn": "",
-  "summaryVi": "",
-  "sections": []
+  "summaryEn": "<ul><li>Apply the assistant message prefilling and stop sequence technique to extract clean structured output from Claude</li><li>Build a small application that generates AWS EventBridge rules as raw JSON</li><li>Practice parsing and validating Claude's structured responses in Python</li></ul>",
+  "summaryVi": "<ul><li>Áp dụng kỹ thuật assistant message prefilling và stop sequence để trích xuất đầu ra có cấu trúc từ Claude</li><li>Xây dựng ứng dụng nhỏ tạo AWS EventBridge rule dưới dạng JSON thô</li><li>Thực hành parsing và validate structured response của Claude bằng Python</li></ul>",
+  "supplementEn": "<p>In this exercise, you'll put the structured data techniques from the previous lesson into practice by building a small application that generates clean, raw JSON from Claude.</p><h4>What you'll build</h4><p>A function that takes a natural language description and returns a valid AWS EventBridge rule as raw JSON — no markdown fences, no explanatory text.</p><h4>Key concepts applied</h4><ul><li><strong>Assistant message prefilling</strong>: Pre-populate the assistant turn with <code>```json</code> to steer Claude's output</li><li><strong>Stop sequences</strong>: Pass <code>stop_sequences=[\"```\"]</code> to end generation exactly when the JSON closes</li><li><strong>Response cleanup</strong>: Use <code>json.loads(text.strip())</code> to parse and validate the result</li></ul><h4>Extension challenges</h4><ul><li>Try the same technique with Python code snippets — what prefill and stop sequence would you use?</li><li>Add error handling: if <code>json.loads</code> fails, retry the request with a more explicit prompt</li><li>Extend to generate multiple EventBridge rules in one call using a JSON array</li></ul>",
+  "supplementVi": "<p>Trong bài tập này, bạn sẽ áp dụng các kỹ thuật dữ liệu có cấu trúc từ bài học trước bằng cách xây dựng một ứng dụng nhỏ tạo JSON sạch, thô từ Claude.</p><h4>Bạn sẽ xây dựng gì</h4><p>Một hàm nhận mô tả ngôn ngữ tự nhiên và trả về AWS EventBridge rule hợp lệ dưới dạng JSON thô — không có markdown fence, không có văn bản giải thích.</p><h4>Các khái niệm được áp dụng</h4><ul><li><strong>Assistant message prefilling</strong>: Điền trước lượt trợ lý với <code>```json</code> để định hướng đầu ra của Claude</li><li><strong>Stop sequences</strong>: Truyền <code>stop_sequences=[\"```\"]</code> để kết thúc quá trình tạo đúng khi JSON đóng lại</li><li><strong>Response cleanup</strong>: Dùng <code>json.loads(text.strip())</code> để parse và validate kết quả</li></ul><h4>Thử thách mở rộng</h4><ul><li>Thử kỹ thuật tương tự với các đoạn code Python — bạn sẽ dùng prefill và stop sequence nào?</li><li>Thêm xử lý lỗi: nếu <code>json.loads</code> thất bại, thử lại request với prompt rõ ràng hơn</li><li>Mở rộng để tạo nhiều EventBridge rule trong một lần gọi bằng JSON array</li></ul>",
+  "sections": [
+    {
+      "id": "intro-video",
+      "titleEn": "",
+      "titleVi": "",
+      "en": "",
+      "vi": "",
+      "image": "",
+      "video": "<div class=\"lesson-video\"><iframe src=\"https://cdn.jwplayer.com/players/Jn5Cyd1Q-Akyo8gQO.html\" frameborder=\"0\" allowfullscreen></iframe></div>"
+    }
+  ]
 }

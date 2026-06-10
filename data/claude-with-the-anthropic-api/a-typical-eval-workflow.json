@@ -6,7 +6,73 @@
   "estimatedTimeVi": "10 phút",
   "prevLesson": "prompt-evaluation",
   "nextLesson": "generating-test-datasets",
-  "summaryEn": "",
-  "summaryVi": "",
-  "sections": []
+  "summaryEn": "<ul><li>A typical eval workflow has five steps: draft a prompt, create a dataset, run through Claude, grade the outputs, then iterate</li><li>The grader scores each response (e.g. 1–10) and the average gives you an objective baseline for your prompt</li><li>After modifying the prompt, re-run the full eval and compare scores to confirm improvement</li><li>This systematic approach removes guesswork and gives measurable confidence in prompt quality</li></ul>",
+  "summaryVi": "<ul><li>Quy trình eval điển hình có năm bước: soạn prompt, tạo dataset, chạy qua Claude, chấm điểm đầu ra, rồi lặp lại</li><li>Grader chấm điểm từng phản hồi (ví dụ: 1–10) và giá trị trung bình cho bạn baseline khách quan cho prompt</li><li>Sau khi sửa đổi prompt, chạy lại toàn bộ eval và so sánh điểm để xác nhận cải tiến</li><li>Cách tiếp cận có hệ thống này loại bỏ phỏng đoán và cho sự tự tin có thể đo lường về chất lượng prompt</li></ul>",
+  "supplementEn": "<h3>Building the Eval Loop in Code</h3><p>The five-step workflow maps directly to a Python loop:</p><pre><code>import anthropic\n\nclient = anthropic.Anthropic()\nmodel = \"claude-opus-4-5\"\n\n# Step 1: Your prompt template\ndef make_prompt(question):\n    return f\"Please answer the user's question:\\n\\n{question}\"\n\n# Step 2: Your eval dataset\nquestions = [\n    \"What's 2+2?\",\n    \"How do I make oatmeal?\",\n    \"How far away is the Moon?\",\n]\n\n# Steps 3 + 4: Run through Claude, then grade\nscores = []\nfor question in questions:\n    # Get Claude's answer\n    response = client.messages.create(\n        model=model,\n        max_tokens=512,\n        messages=[{\"role\": \"user\", \"content\": make_prompt(question)}]\n    )\n    answer = response.content[0].text\n\n    # Grade with a second Claude call\n    grade_prompt = f\"\"\"Rate this answer from 1-10. Respond with just the number.\n\nQuestion: {question}\nAnswer: {answer}\"\"\"\n    grade_response = client.messages.create(\n        model=model,\n        max_tokens=10,\n        messages=[{\"role\": \"user\", \"content\": grade_prompt}]\n    )\n    score = int(grade_response.content[0].text.strip())\n    scores.append(score)\n\n# Step 5: Report and iterate\nprint(f\"Average score: {sum(scores)/len(scores):.2f}\")</code></pre><h3>Tips for a Good Eval Dataset</h3><ul><li><strong>Cover edge cases</strong>: Include inputs that are ambiguous, very short, very long, or in unexpected formats</li><li><strong>Balance easy and hard</strong>: Mix simple cases (to confirm the prompt isn't over-engineered) with difficult ones</li><li><strong>Use real data when possible</strong>: Even a small sample of actual production inputs is more valuable than synthetic examples</li><li><strong>Version your dataset</strong>: Keep the same dataset across prompt iterations so scores are comparable</li></ul>",
+  "supplementVi": "<h3>Xây dựng vòng lặp Eval trong Code</h3><p>Quy trình năm bước ánh xạ trực tiếp sang vòng lặp Python:</p><pre><code>import anthropic\n\nclient = anthropic.Anthropic()\nmodel = \"claude-opus-4-5\"\n\n# Bước 1: Template prompt\ndef make_prompt(question):\n    return f\"Please answer the user's question:\\n\\n{question}\"\n\n# Bước 2: Eval dataset\nquestions = [\n    \"What's 2+2?\",\n    \"How do I make oatmeal?\",\n    \"How far away is the Moon?\",\n]\n\n# Bước 3 + 4: Chạy qua Claude, sau đó chấm điểm\nscores = []\nfor question in questions:\n    # Lấy câu trả lời của Claude\n    response = client.messages.create(\n        model=model,\n        max_tokens=512,\n        messages=[{\"role\": \"user\", \"content\": make_prompt(question)}]\n    )\n    answer = response.content[0].text\n\n    # Chấm điểm bằng lần gọi Claude thứ hai\n    grade_prompt = f\"\"\"Rate this answer from 1-10. Respond with just the number.\n\nQuestion: {question}\nAnswer: {answer}\"\"\"\n    grade_response = client.messages.create(\n        model=model,\n        max_tokens=10,\n        messages=[{\"role\": \"user\", \"content\": grade_prompt}]\n    )\n    score = int(grade_response.content[0].text.strip())\n    scores.append(score)\n\n# Bước 5: Báo cáo và lặp lại\nprint(f\"Average score: {sum(scores)/len(scores):.2f}\")</code></pre><h3>Mẹo cho Eval Dataset tốt</h3><ul><li><strong>Bao phủ edge case</strong>: Bao gồm các đầu vào mơ hồ, rất ngắn, rất dài hoặc ở định dạng không mong đợi</li><li><strong>Cân bằng dễ và khó</strong>: Kết hợp các trường hợp đơn giản (để xác nhận prompt không bị over-engineer) với các trường hợp khó</li><li><strong>Dùng dữ liệu thực khi có thể</strong>: Ngay cả một mẫu nhỏ các đầu vào production thực tế có giá trị hơn các ví dụ tổng hợp</li><li><strong>Version dataset</strong>: Giữ cùng dataset qua các lần lặp prompt để điểm có thể so sánh được</li></ul>",
+  "sections": [
+    {
+      "id": "intro-video",
+      "titleEn": "",
+      "titleVi": "",
+      "en": "<p>A typical prompt evaluation workflow follows five key steps that help you systematically improve your prompts through objective measurement. While there are many different ways to assemble these workflows and various open source and paid tools available, understanding the core process helps you start small and scale up as needed.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/a-typical-eval-workflow-001.png\" alt=\"Five-step eval workflow overview\"></div>",
+      "vi": "<p>Quy trình đánh giá prompt điển hình tuân theo năm bước chính giúp bạn cải thiện prompt một cách có hệ thống thông qua đo lường khách quan. Mặc dù có nhiều cách khác nhau để lắp ráp các quy trình này và có sẵn nhiều công cụ mã nguồn mở và có phí, hiểu quy trình cốt lõi giúp bạn bắt đầu nhỏ và mở rộng khi cần.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/a-typical-eval-workflow-001.png\" alt=\"Tổng quan quy trình eval 5 bước\"></div>",
+      "image": "",
+      "video": "<div class=\"lesson-video\"><iframe src=\"https://cdn.jwplayer.com/players/325SRQ3R-Akyo8gQO.html\" frameborder=\"0\" allowfullscreen></iframe></div>"
+    },
+    {
+      "id": "step-1-draft-a-prompt",
+      "titleEn": "Step 1: Draft a Prompt",
+      "titleVi": "Bước 1: Soạn Prompt",
+      "en": "<p>Start by writing an initial prompt that you want to improve. For this example, we'll use a simple prompt:</p><pre><code>prompt = f\"\"\"\nPlease answer the user's question:\n\n{question}\n\"\"\"</code></pre><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/a-typical-eval-workflow-002.png\" alt=\"Draft prompt example\"></div><p>This basic prompt will serve as our baseline for testing and improvement.</p>",
+      "vi": "<p>Bắt đầu bằng cách viết prompt ban đầu mà bạn muốn cải thiện. Trong ví dụ này, chúng ta sẽ sử dụng một prompt đơn giản:</p><pre><code>prompt = f\"\"\"\nPlease answer the user's question:\n\n{question}\n\"\"\"</code></pre><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/a-typical-eval-workflow-002.png\" alt=\"Ví dụ prompt ban đầu\"></div><p>Prompt cơ bản này sẽ là baseline để kiểm tra và cải thiện.</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "step-2-create-an-eval-dataset",
+      "titleEn": "Step 2: Create an Eval Dataset",
+      "titleVi": "Bước 2: Tạo Eval Dataset",
+      "en": "<p>Your evaluation dataset contains sample inputs that represent the types of questions or requests your prompt will handle in production. The dataset should include questions that will be interpolated into your prompt template.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/a-typical-eval-workflow-003.png\" alt=\"Eval dataset example\"></div><p>For this example, our dataset includes three questions:</p><ul><li>\"What's 2+2?\"</li><li>\"How do I make oatmeal?\"</li><li>\"How far away is the Moon?\"</li></ul><p>In real-world evaluations, you might have tens, hundreds, or even thousands of records. You can assemble these datasets by hand or use Claude to generate them for you.</p>",
+      "vi": "<p>Eval dataset của bạn chứa các đầu vào mẫu đại diện cho các loại câu hỏi hoặc yêu cầu mà prompt của bạn sẽ xử lý trong production. Dataset nên bao gồm các câu hỏi sẽ được nội suy vào template prompt của bạn.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/a-typical-eval-workflow-003.png\" alt=\"Ví dụ eval dataset\"></div><p>Trong ví dụ này, dataset của chúng ta bao gồm ba câu hỏi:</p><ul><li>\"What's 2+2?\"</li><li>\"How do I make oatmeal?\"</li><li>\"How far away is the Moon?\"</li></ul><p>Trong các đánh giá thực tế, bạn có thể có hàng chục, hàng trăm hoặc thậm chí hàng nghìn bản ghi. Bạn có thể tự lắp ráp các dataset này hoặc sử dụng Claude để tạo chúng cho bạn.</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "step-3-feed-through-claude",
+      "titleEn": "Step 3: Feed Through Claude",
+      "titleVi": "Bước 3: Chạy qua Claude",
+      "en": "<p>Take each question from your dataset and merge it with your prompt template to create complete prompts. Then send each one to Claude to get responses.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/a-typical-eval-workflow-004.png\" alt=\"Feed questions through Claude\"></div><p>For example, the first question becomes:</p><pre><code>Please answer the user's question:\nWhat's 2+2?</code></pre><p>Claude might respond with \"2 + 2 = 4\" for the math question, provide oatmeal cooking instructions for the second question, and give the distance to the Moon for the third.</p>",
+      "vi": "<p>Lấy từng câu hỏi từ dataset và kết hợp với template prompt để tạo prompt hoàn chỉnh. Sau đó gửi từng cái cho Claude để nhận phản hồi.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/a-typical-eval-workflow-004.png\" alt=\"Chạy câu hỏi qua Claude\"></div><p>Ví dụ, câu hỏi đầu tiên trở thành:</p><pre><code>Please answer the user's question:\nWhat's 2+2?</code></pre><p>Claude có thể trả lời \"2 + 2 = 4\" cho câu hỏi toán học, cung cấp hướng dẫn nấu bột yến mạch cho câu hỏi thứ hai và đưa ra khoảng cách đến Mặt Trăng cho câu hỏi thứ ba.</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "step-4-feed-through-a-grader",
+      "titleEn": "Step 4: Feed Through a Grader",
+      "titleVi": "Bước 4: Chạy qua Grader",
+      "en": "<p>The grader evaluates the quality of Claude's responses by examining both the original question and Claude's answer. This step provides objective scoring, typically on a scale from 1 to 10, where 10 represents a perfect answer and lower scores indicate room for improvement.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/a-typical-eval-workflow-005.png\" alt=\"Grader scoring responses\"></div><p>In our example, the grader might assign:</p><ul><li>Math question: 10 (perfect answer)</li><li>Oatmeal question: 4 (needs improvement)</li><li>Moon question: 9 (very good answer)</li></ul><p>The average score across all questions gives you an objective measurement: (10 + 4 + 9) ÷ 3 = 7.66</p>",
+      "vi": "<p>Grader đánh giá chất lượng phản hồi của Claude bằng cách xem xét cả câu hỏi ban đầu và câu trả lời của Claude. Bước này cung cấp điểm số khách quan, thường trên thang điểm từ 1 đến 10, trong đó 10 đại diện cho câu trả lời hoàn hảo và điểm thấp hơn cho thấy còn cần cải thiện.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/a-typical-eval-workflow-005.png\" alt=\"Grader chấm điểm phản hồi\"></div><p>Trong ví dụ của chúng ta, grader có thể gán:</p><ul><li>Câu hỏi toán: 10 (câu trả lời hoàn hảo)</li><li>Câu hỏi bột yến mạch: 4 (cần cải thiện)</li><li>Câu hỏi Mặt Trăng: 9 (câu trả lời rất tốt)</li></ul><p>Điểm trung bình của tất cả câu hỏi cho bạn đo lường khách quan: (10 + 4 + 9) ÷ 3 = 7.66</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "step-5-change-prompt-and-repeat",
+      "titleEn": "Step 5: Change Prompt and Repeat",
+      "titleVi": "Bước 5: Thay đổi Prompt và lặp lại",
+      "en": "<p>Now that you have a baseline score, you can modify your prompt and run the entire process again to see if your changes improve performance.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/a-typical-eval-workflow-006.png\" alt=\"Iterate on the prompt\"></div><p>For example, you might add more guidance to your prompt:</p><pre><code>prompt = f\"\"\"\nPlease answer the user's question:\n\n{question}\n\nAnswer the question with ample detail\n\"\"\"</code></pre><p>After running this improved prompt through the same evaluation process, you might get a higher average score of 8.7, indicating that the additional instruction helped Claude provide better responses.</p>",
+      "vi": "<p>Bây giờ bạn có điểm baseline, bạn có thể sửa đổi prompt và chạy lại toàn bộ quy trình để xem liệu các thay đổi của bạn có cải thiện hiệu suất không.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/a-typical-eval-workflow-006.png\" alt=\"Lặp lại trên prompt\"></div><p>Ví dụ, bạn có thể thêm hướng dẫn vào prompt:</p><pre><code>prompt = f\"\"\"\nPlease answer the user's question:\n\n{question}\n\nAnswer the question with ample detail\n\"\"\"</code></pre><p>Sau khi chạy prompt được cải thiện này qua cùng một quy trình đánh giá, bạn có thể nhận được điểm trung bình cao hơn là 8.7, cho thấy hướng dẫn bổ sung đã giúp Claude cung cấp phản hồi tốt hơn.</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "prompt-scoring",
+      "titleEn": "Prompt Scoring",
+      "titleVi": "Chấm điểm Prompt",
+      "en": "<p>The key benefit of this workflow is getting objective measurements of prompt performance. You can:</p><ul><li>Compare different prompt versions numerically</li><li>Use the version with the best score</li><li>Continue iterating to find even better approaches</li></ul><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/a-typical-eval-workflow-007.png\" alt=\"Prompt scoring comparison\"></div><p>This systematic approach removes guesswork from prompt engineering and gives you confidence that your changes are actually improvements rather than just different variations.</p>",
+      "vi": "<p>Lợi ích chính của quy trình này là nhận được các đo lường khách quan về hiệu suất prompt. Bạn có thể:</p><ul><li>So sánh các phiên bản prompt khác nhau theo số</li><li>Sử dụng phiên bản có điểm tốt nhất</li><li>Tiếp tục lặp lại để tìm các cách tiếp cận tốt hơn nữa</li></ul><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/a-typical-eval-workflow-007.png\" alt=\"So sánh điểm prompt\"></div><p>Cách tiếp cận có hệ thống này loại bỏ phỏng đoán khỏi prompt engineering và cho bạn sự tự tin rằng các thay đổi của bạn thực sự là cải tiến chứ không chỉ là các biến thể khác nhau.</p>",
+      "image": "",
+      "video": ""
+    }
+  ]
 }

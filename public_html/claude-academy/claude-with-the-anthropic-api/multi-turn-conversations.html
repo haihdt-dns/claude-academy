@@ -212,98 +212,137 @@
                     <path d="M7 4v3.5l2 1.5"></path>
                   </svg><span class="lesson-meta__text-bilingual">Estimated time: 10 minutes (Thời gian ước tính: 10 phút)</span><span class="lesson-meta__text-en">Estimated time: 10 minutes</span><span class="lesson-meta__text-vi">Thời gian ước tính: 10 phút</span></span></div>
               <div class="lesson-content">
-                <div class="lesson-section" id="intro-video">
-                  <div class="lesson-section__title">
-                    <h2 class="lesson-section__title-en">Multi-Turn conversations</h2><span class="lesson-section__title-vi">Hội thoại nhiều lượt</span>
-                  </div><div class="lesson-video"><iframe src="https://cdn.jwplayer.com/players/6owq0WNb-Akyo8gQO.html" frameborder="0" allowfullscreen></iframe></div>
-                </div>
-                <div class="lesson-section" id="how-context-works">
-                  <div class="lesson-section__title">
-                    <h2 class="lesson-section__title-en">How context works in the API</h2><span class="lesson-section__title-vi">Context hoạt động như thế nào trong API</span>
+                <div class="lesson-section" id="intro-video"><div class="lesson-video"><iframe src="https://cdn.jwplayer.com/players/6owq0WNb-Akyo8gQO.html" frameborder="0" allowfullscreen></iframe></div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>When working with the Anthropic API and Claude, there's a crucial concept you need to understand: <strong>Claude doesn't store any of your conversation history</strong>. Each request you make is completely independent, with no memory of previous exchanges.</p><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/multi-turn-conversations-001.png?v=sha384-pVc9LX4tUj3xQbIhnN+s9QA+n98zxOPdWKyTVgfboFT7e5ryhAhqPrY1F/2ArHHZ" alt="Claude API stateless diagram"></div><p>This means if you want to have a multi-turn conversation where Claude remembers context from earlier messages, you need to handle the conversation state yourself.</p>
                   </div>
-                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>Claude has no built-in memory between calls. Each API request is stateless — Claude only knows what you include in the <code>messages</code> array of that specific request.</p><p>To create a multi-turn conversation, you pass the <strong>entire conversation history</strong> with every request: all previous user messages and all previous assistant responses. Claude reads this history and continues the conversation from where it left off.</p><p>This design gives you full control over context — you decide exactly what Claude remembers.</p>
-                  </div>
-                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Claude không có bộ nhớ tích hợp giữa các lần gọi. Mỗi API request là stateless — Claude chỉ biết những gì bạn đưa vào mảng <code>messages</code> của request đó.</p><p>Để tạo hội thoại nhiều lượt, bạn truyền <strong>toàn bộ lịch sử hội thoại</strong> trong mỗi request: tất cả tin nhắn user trước đó và tất cả response của assistant trước đó. Claude đọc lịch sử này và tiếp tục hội thoại từ chỗ đã dừng.</p><p>Thiết kế này cho bạn toàn quyền kiểm soát context — bạn quyết định chính xác những gì Claude nhớ.</p>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Khi làm việc với Anthropic API và Claude, có một khái niệm quan trọng bạn cần hiểu: <strong>Claude không lưu trữ bất kỳ lịch sử hội thoại nào của bạn</strong>. Mỗi request bạn thực hiện hoàn toàn độc lập, không có bộ nhớ về các lần trao đổi trước.</p><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/multi-turn-conversations-001.png?v=sha384-pVc9LX4tUj3xQbIhnN+s9QA+n98zxOPdWKyTVgfboFT7e5ryhAhqPrY1F/2ArHHZ" alt="Sơ đồ API stateless của Claude"></div><p>Điều này có nghĩa là nếu bạn muốn có một hội thoại nhiều lượt trong đó Claude nhớ context từ các tin nhắn trước, bạn cần tự xử lý trạng thái hội thoại.</p>
                   </div>
                 </div>
-                <div class="lesson-section" id="building-history">
+                <div class="lesson-section" id="stateless-problem">
                   <div class="lesson-section__title">
-                    <h2 class="lesson-section__title-en">Building the message history</h2><span class="lesson-section__title-vi">Xây dựng lịch sử tin nhắn</span>
+                    <h2 class="lesson-section__title-en">The Problem with Stateless Conversations</h2><span class="lesson-section__title-vi">Vấn đề với hội thoại stateless</span>
                   </div>
-                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>The pattern is straightforward: after each response, append both the user message and the assistant reply to your list, then send the full list on the next call.</p><pre><code>import anthropic
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>Let's say you ask Claude "What is quantum computing?" and get a good response. Then you follow up with "Write another sentence" — Claude has no idea what you're referring to. It will write a sentence about something completely random because it has no memory of the quantum computing discussion.</p><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/multi-turn-conversations-002.png?v=sha384-pDSsH1qXiZk2lugTRnV3Wmw45izj+hWou3YLIu5DH7BHJtT07tDlXUNf8ajypT3K" alt="Stateless conversation problem"></div>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Giả sử bạn hỏi Claude "Quantum computing là gì?" và nhận được câu trả lời tốt. Sau đó bạn hỏi tiếp "Viết thêm một câu" — Claude không biết bạn đang đề cập đến điều gì. Nó sẽ viết một câu về thứ gì đó hoàn toàn ngẫu nhiên vì không có bộ nhớ về cuộc thảo luận quantum computing.</p><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/multi-turn-conversations-002.png?v=sha384-pDSsH1qXiZk2lugTRnV3Wmw45izj+hWou3YLIu5DH7BHJtT07tDlXUNf8ajypT3K" alt="Vấn đề hội thoại stateless"></div>
+                  </div>
+                </div>
+                <div class="lesson-section" id="how-multi-turn-works">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">How Multi-Turn Conversations Work</h2><span class="lesson-section__title-vi">Cách thức hoạt động của hội thoại nhiều lượt</span>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>To maintain conversation context, you need to do two things:</p><ul><li>Manually maintain a list of all messages in your code</li><li>Send the complete message history with every request</li></ul><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/multi-turn-conversations-003.png?v=sha384-vdvJLy93gnC/Kaki/Q0czNOh37iCuR7tIDOPQoUQe2BfHKiEv44xhp6arNtqE4Ni" alt="Multi-turn conversation flow"></div><p>Here's the flow that actually works:</p><ol><li>Send your initial user message to Claude</li><li>Take Claude's response and add it to your message list as an assistant message</li><li>Add your follow-up question as another user message</li><li>Send the entire conversation history to Claude</li></ol><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/multi-turn-conversations-004.png?v=sha384-J/X/Z+NFpFGo79n1PW0DCVodst/4jvuBJci4QbNLt83TBLPB5XeuYINozL9vLGi3" alt="Full conversation history sent each request"></div>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Để duy trì context hội thoại, bạn cần làm hai việc:</p><ul><li>Tự duy trì danh sách tất cả tin nhắn trong code</li><li>Gửi toàn bộ lịch sử tin nhắn với mỗi request</li></ul><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/multi-turn-conversations-003.png?v=sha384-vdvJLy93gnC/Kaki/Q0czNOh37iCuR7tIDOPQoUQe2BfHKiEv44xhp6arNtqE4Ni" alt="Luồng hội thoại nhiều lượt"></div><p>Đây là luồng thực sự hoạt động:</p><ol><li>Gửi tin nhắn user ban đầu đến Claude</li><li>Lấy response của Claude và thêm vào danh sách tin nhắn dưới dạng assistant message</li><li>Thêm câu hỏi tiếp theo dưới dạng user message khác</li><li>Gửi toàn bộ lịch sử hội thoại đến Claude</li></ol><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/multi-turn-conversations-004.png?v=sha384-J/X/Z+NFpFGo79n1PW0DCVodst/4jvuBJci4QbNLt83TBLPB5XeuYINozL9vLGi3" alt="Toàn bộ lịch sử hội thoại được gửi mỗi request"></div>
+                  </div>
+                </div>
+                <div class="lesson-section" id="helper-functions">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Building Helper Functions</h2><span class="lesson-section__title-vi">Xây dựng Helper Function</span>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>To make conversation management easier, you can create three helper functions:</p><pre><code>def add_user_message(messages, text):
+    user_message = {"role": "user", "content": text}
+    messages.append(user_message)
 
-client = anthropic.Anthropic()
+def add_assistant_message(messages, text):
+    assistant_message = {"role": "assistant", "content": text}
+    messages.append(assistant_message)
 
-# Start with an empty history
+def chat(messages):
+    message = client.messages.create(
+        model=model,
+        max_tokens=1000,
+        messages=messages,
+    )
+    return message.content[0].text</code></pre><h4>Putting It All Together</h4><p>Here's how you use these functions to maintain a conversation:</p><pre><code># Start with an empty message list
 messages = []
 
-# --- Turn 1 ---
-messages.append({"role": "user", "content": "My name is Alice."})
+# Add the initial user question
+add_user_message(messages, "Define quantum computing in one sentence")
 
-response = client.messages.create(
-    model="claude-3-5-sonnet-20241022",
-    max_tokens=1024,
-    messages=messages
-)
+# Get Claude's response
+answer = chat(messages)
 
-# Append Claude's reply to the history
-assistant_reply = response.content[0].text
-messages.append({"role": "assistant", "content": assistant_reply})
+# Add Claude's response to the conversation history
+add_assistant_message(messages, answer)
 
-# --- Turn 2 ---
-messages.append({"role": "user", "content": "What is my name?"})
+# Add a follow-up question
+add_user_message(messages, "Write another sentence")
 
-response = client.messages.create(
-    model="claude-3-5-sonnet-20241022",
-    max_tokens=1024,
-    messages=messages   # full history included
-)
-
-print(response.content[0].text)  # "Your name is Alice."</code></pre><p>On Turn 2, the <code>messages</code> list contains all four messages — both user turns and the assistant reply from Turn 1. That's how Claude knows the user's name.</p>
+# Get the follow-up response with full context
+final_answer = chat(messages)</code></pre><p>Now Claude will understand that "Write another sentence" refers to expanding on the quantum computing definition, because you've provided the complete conversation context.</p><p>These helper functions will be useful throughout your work with Claude, making it much easier to build applications that can maintain meaningful conversations over multiple exchanges.</p>
                   </div>
-                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Pattern này rất đơn giản: sau mỗi response, thêm cả tin nhắn user và câu trả lời của assistant vào list, rồi gửi toàn bộ list trong lần gọi tiếp theo.</p><pre><code>import anthropic
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Để quản lý hội thoại dễ dàng hơn, bạn có thể tạo ba helper function:</p><pre><code>def add_user_message(messages, text):
+    user_message = {"role": "user", "content": text}
+    messages.append(user_message)
 
-client = anthropic.Anthropic()
+def add_assistant_message(messages, text):
+    assistant_message = {"role": "assistant", "content": text}
+    messages.append(assistant_message)
 
-# Bắt đầu với lịch sử trống
+def chat(messages):
+    message = client.messages.create(
+        model=model,
+        max_tokens=1000,
+        messages=messages,
+    )
+    return message.content[0].text</code></pre><h4>Kết hợp tất cả lại</h4><p>Đây là cách bạn dùng các function này để duy trì hội thoại:</p><pre><code># Bắt đầu với danh sách tin nhắn trống
 messages = []
 
-# --- Lượt 1 ---
-messages.append({"role": "user", "content": "My name is Alice."})
+# Thêm câu hỏi ban đầu
+add_user_message(messages, "Define quantum computing in one sentence")
 
-response = client.messages.create(
-    model="claude-3-5-sonnet-20241022",
-    max_tokens=1024,
-    messages=messages
-)
+# Lấy response của Claude
+answer = chat(messages)
 
-# Thêm câu trả lời của Claude vào lịch sử
-assistant_reply = response.content[0].text
-messages.append({"role": "assistant", "content": assistant_reply})
+# Thêm response của Claude vào lịch sử hội thoại
+add_assistant_message(messages, answer)
 
-# --- Lượt 2 ---
-messages.append({"role": "user", "content": "What is my name?"})
+# Thêm câu hỏi tiếp theo
+add_user_message(messages, "Write another sentence")
 
-response = client.messages.create(
-    model="claude-3-5-sonnet-20241022",
-    max_tokens=1024,
-    messages=messages   # toàn bộ lịch sử được đưa vào
-)
-
-print(response.content[0].text)  # "Your name is Alice."</code></pre><p>Ở Lượt 2, list <code>messages</code> chứa cả bốn tin nhắn — cả hai lượt user và câu trả lời của assistant từ Lượt 1. Đó là cách Claude biết tên của user.</p>
-                  </div>
-                </div>
-                <div class="lesson-section" id="context-limits">
-                  <div class="lesson-section__title">
-                    <h2 class="lesson-section__title-en">Context window limits</h2><span class="lesson-section__title-vi">Giới hạn context window</span>
-                  </div>
-                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>Every Claude model has a <strong>context window</strong> — the maximum total number of tokens it can process in a single request (input + output combined). For Claude 3.5 Sonnet, this is 200,000 tokens.</p><p>As your conversation grows, the total token count grows too. For most applications this isn't a problem, but for very long sessions you have a few options:</p><ul><li><strong>Summarize old turns</strong> — replace early messages with a summary to reduce token count while preserving key information</li><li><strong>Truncate the history</strong> — keep only the most recent N messages (sliding window)</li><li><strong>Use prompt caching</strong> — cache the stable parts of your context to reduce cost and latency (covered later in the course)</li></ul><p>You can check how many tokens a request will use with <code>message.usage.input_tokens</code> after the call, or use the token-counting endpoint before sending.</p>
-                  </div>
-                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Mỗi model Claude có một <strong>context window</strong> — tổng số token tối đa nó có thể xử lý trong một request (input + output cộng lại). Với Claude 3.5 Sonnet, con số này là 200.000 token.</p><p>Khi hội thoại của bạn phát triển, tổng số token cũng tăng theo. Với hầu hết ứng dụng, điều này không phải vấn đề, nhưng với các phiên rất dài, bạn có một vài lựa chọn:</p><ul><li><strong>Tóm tắt các lượt cũ</strong> — thay thế các tin nhắn đầu bằng bản tóm tắt để giảm số token trong khi vẫn giữ thông tin quan trọng</li><li><strong>Cắt bớt lịch sử</strong> — chỉ giữ N tin nhắn gần nhất (sliding window)</li><li><strong>Dùng prompt caching</strong> — cache các phần ổn định trong context để giảm chi phí và độ trễ (đề cập sau trong khóa học)</li></ul><p>Bạn có thể kiểm tra số token một request sẽ dùng qua <code>message.usage.input_tokens</code> sau lần gọi, hoặc dùng endpoint đếm token trước khi gửi.</p>
+# Lấy response tiếp theo với đầy đủ context
+final_answer = chat(messages)</code></pre><p>Bây giờ Claude sẽ hiểu rằng "Write another sentence" đề cập đến việc mở rộng định nghĩa về quantum computing, vì bạn đã cung cấp đầy đủ context hội thoại.</p><p>Các helper function này sẽ hữu ích trong suốt quá trình làm việc với Claude, giúp bạn dễ dàng hơn nhiều khi xây dựng các ứng dụng duy trì hội thoại có ý nghĩa qua nhiều lần trao đổi.</p>
                   </div>
                 </div>
               </div>
               <div class="lesson-nav-footer"><a class="lesson-nav-footer__prev" href="/claude-academy/claude-with-the-anthropic-api/making-a-request.html"><span class="lesson-nav-footer__label"><span class="lesson-nav-footer__label-en">Previous Lesson</span><span class="lesson-nav-footer__label-vi">Bài trước</span></span><span class="lesson-nav-footer__title-en">← Making a request</span><span class="lesson-nav-footer__title-vi">Thực hiện request</span></a><a class="lesson-nav-footer__next" href="/claude-academy/claude-with-the-anthropic-api/chat-exercise.html"><span class="lesson-nav-footer__label"><span class="lesson-nav-footer__label-en">Next Lesson</span><span class="lesson-nav-footer__label-vi">Bài sau</span></span><span class="lesson-nav-footer__title-en">Chat exercise →</span><span class="lesson-nav-footer__title-vi">Bài tập chat</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="lesson-deepdive-btn" type="button" aria-label="Deep dive">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg><span class="lesson-deepdive-btn__label-en">Deep Dive</span><span class="lesson-deepdive-btn__label-vi">Tìm hiểu thêm</span>
+        </button>
+        <div class="lesson-deepdive-modal">
+          <div class="lesson-deepdive-modal__overlay"></div>
+          <div class="lesson-deepdive-modal__box">
+            <div class="lesson-deepdive-modal__header">
+              <div class="lesson-deepdive-modal__title"><span class="lesson-deepdive-modal__title-en">Deep Dive</span><span class="lesson-deepdive-modal__title-vi">Tìm hiểu thêm</span></div>
+              <div class="lesson-deepdive-modal__header-actions">
+                <div class="lesson-deepdive-modal__toggle">
+                  <button class="lesson-deepdive-modal__toggle-btn is-active" type="button" data-lang="bilingual">Song ngữ</button>
+                  <button class="lesson-deepdive-modal__toggle-btn" type="button" data-lang="en">English</button>
+                  <button class="lesson-deepdive-modal__toggle-btn" type="button" data-lang="vi">Tiếng Việt</button>
+                </div>
+                <button class="lesson-deepdive-modal__close" type="button" aria-label="Close">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="lesson-deepdive-modal__body">
+              <div class="lesson-deepdive-modal__scroll">
+                <div class="lesson-deepdive-modal__content lesson-deepdive-modal__content--en"><p>Every Claude model has a <strong>context window</strong> — the maximum total number of tokens it can process in a single request (input + output combined). For Claude 3.5 Sonnet, this is 200,000 tokens.</p><p>As your conversation grows, the total token count grows too. For most applications this isn't a problem, but for very long sessions you have a few options:</p><ul><li><strong>Summarize old turns</strong> — replace early messages with a summary to reduce token count while preserving key information</li><li><strong>Truncate the history</strong> — keep only the most recent N messages (sliding window)</li><li><strong>Use prompt caching</strong> — cache the stable parts of your context to reduce cost and latency (covered later in the course)</li></ul><p>You can check how many tokens a request will use with <code>message.usage.input_tokens</code> after the call, or use the token-counting endpoint before sending.</p>
+                </div>
+                <div class="lesson-deepdive-modal__content lesson-deepdive-modal__content--vi"><p>Mỗi model Claude có một <strong>context window</strong> — tổng số token tối đa nó có thể xử lý trong một request (input + output cộng lại). Với Claude 3.5 Sonnet, con số này là 200.000 token.</p><p>Khi hội thoại của bạn phát triển, tổng số token cũng tăng theo. Với hầu hết ứng dụng, điều này không phải vấn đề, nhưng với các phiên rất dài, bạn có một vài lựa chọn:</p><ul><li><strong>Tóm tắt các lượt cũ</strong> — thay thế các tin nhắn đầu bằng bản tóm tắt để giảm số token trong khi vẫn giữ thông tin quan trọng</li><li><strong>Cắt bớt lịch sử</strong> — chỉ giữ N tin nhắn gần nhất (sliding window)</li><li><strong>Dùng prompt caching</strong> — cache các phần ổn định trong context để giảm chi phí và độ trễ (đề cập sau trong khóa học)</li></ul><p>Bạn có thể kiểm tra số token một request sẽ dùng qua <code>message.usage.input_tokens</code> sau lần gọi, hoặc dùng endpoint đếm token trước khi gửi.</p>
+                </div>
               </div>
             </div>
           </div>

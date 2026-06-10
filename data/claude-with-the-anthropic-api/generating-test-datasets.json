@@ -6,7 +6,62 @@
   "estimatedTimeVi": "10 phút",
   "prevLesson": "a-typical-eval-workflow",
   "nextLesson": "running-the-eval",
-  "summaryEn": "",
-  "summaryVi": "",
-  "sections": []
+  "summaryEn": "<ul><li>An eval dataset is an array of sample inputs that represent real tasks your prompt will handle in production</li><li>You can generate test data automatically by prompting Claude — use a faster model like Haiku to keep costs low</li><li>Use assistant prefilling + stop sequences to get clean JSON output from the dataset generator</li><li>Save the dataset to a file so it stays consistent across prompt iterations</li></ul>",
+  "summaryVi": "<ul><li>Eval dataset là mảng các đầu vào mẫu đại diện cho các tác vụ thực mà prompt của bạn sẽ xử lý trong production</li><li>Bạn có thể tự động tạo test data bằng cách prompt Claude — sử dụng model nhanh hơn như Haiku để giảm chi phí</li><li>Dùng assistant prefilling + stop sequences để nhận JSON sạch từ bộ tạo dataset</li><li>Lưu dataset vào file để nó nhất quán qua các lần lặp prompt</li></ul>",
+  "sections": [
+    {
+      "id": "intro-video",
+      "titleEn": "",
+      "titleVi": "",
+      "en": "<p>Building a custom prompt evaluation workflow starts with creating a solid prompt and then generating test data to see how well it performs. Let's walk through setting up an evaluation system for a prompt that helps users write AWS-specific code.</p>",
+      "vi": "<p>Xây dựng quy trình đánh giá prompt tùy chỉnh bắt đầu bằng việc tạo một prompt vững chắc, sau đó tạo test data để xem nó hoạt động tốt đến đâu. Hãy cùng xem xét cách thiết lập hệ thống đánh giá cho một prompt giúp người dùng viết code đặc thù cho AWS.</p>",
+      "image": "",
+      "video": "<div class=\"lesson-video\"><iframe src=\"https://cdn.jwplayer.com/players/C6PbktjE-Akyo8gQO.html\" frameborder=\"0\" allowfullscreen></iframe></div>"
+    },
+    {
+      "id": "setting-up-the-goal",
+      "titleEn": "Setting Up the Goal",
+      "titleVi": "Thiết lập mục tiêu",
+      "en": "<p>Our prompt needs to assist users in writing three specific types of output for AWS use cases:</p><ul><li>Python code</li><li>JSON configuration files</li><li>Regular expressions</li></ul><p>The key requirement is that when a user requests help with a task, we return clean output in one of these formats without any extra explanations, headers, or footers.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/generating-test-datasets-001.png\" alt=\"Prompt goal: clean AWS code output\"></div><p>Here's our starting prompt (version 1):</p><pre><code>prompt = f\"\"\"\nPlease provide a solution to the following task:\n{task}\n\"\"\"</code></pre>",
+      "vi": "<p>Prompt của chúng ta cần hỗ trợ người dùng viết ba loại đầu ra cụ thể cho các trường hợp sử dụng AWS:</p><ul><li>Code Python</li><li>File cấu hình JSON</li><li>Regular expression</li></ul><p>Yêu cầu chính là khi người dùng yêu cầu trợ giúp về một tác vụ, chúng ta trả về đầu ra sạch ở một trong các định dạng này mà không có giải thích, header hay footer thêm.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/generating-test-datasets-001.png\" alt=\"Mục tiêu prompt: đầu ra code AWS sạch\"></div><p>Đây là prompt ban đầu (phiên bản 1):</p><pre><code>prompt = f\"\"\"\nPlease provide a solution to the following task:\n{task}\n\"\"\"</code></pre>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "creating-an-evaluation-dataset",
+      "titleEn": "Creating an Evaluation Dataset",
+      "titleVi": "Tạo Evaluation Dataset",
+      "en": "<p>An evaluation dataset contains inputs that we'll feed into our prompt. For each combination of prompt and input, we'll run the prompt and analyze the results.</p><p>Our dataset will be an array of JSON objects, where each object contains a \"task\" property describing what we want Claude to accomplish. We can either create this dataset by hand or generate it automatically using Claude.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/generating-test-datasets-002.png\" alt=\"Dataset structure\"></div><p>Since we're generating test data, this is a perfect opportunity to use a faster model like Haiku instead of the full Claude model.</p>",
+      "vi": "<p>Evaluation dataset chứa các đầu vào mà chúng ta sẽ đưa vào prompt. Với mỗi tổ hợp prompt và đầu vào, chúng ta sẽ chạy prompt và phân tích kết quả.</p><p>Dataset của chúng ta sẽ là mảng các JSON object, trong đó mỗi object chứa thuộc tính \"task\" mô tả những gì chúng ta muốn Claude thực hiện. Chúng ta có thể tự tạo dataset này hoặc tạo tự động bằng Claude.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/generating-test-datasets-002.png\" alt=\"Cấu trúc dataset\"></div><p>Vì chúng ta đang tạo test data, đây là cơ hội hoàn hảo để sử dụng model nhanh hơn như Haiku thay vì model Claude đầy đủ.</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "generating-test-data-with-code",
+      "titleEn": "Generating Test Data with Code",
+      "titleVi": "Tạo Test Data bằng Code",
+      "en": "<p>Let's create a function that automatically generates our test dataset. First, we'll need our helper functions for working with Claude:</p><pre><code>def add_user_message(messages, text):\n    user_message = {\"role\": \"user\", \"content\": text}\n    messages.append(user_message)\n\ndef add_assistant_message(messages, text):\n    assistant_message = {\"role\": \"assistant\", \"content\": text}\n    messages.append(assistant_message)\n\ndef chat(messages, system=None, temperature=1.0, stop_sequences=[]):\n    params = {\n        \"model\": model,\n        \"max_tokens\": 1000,\n        \"messages\": messages,\n        \"temperature\": temperature\n    }\n    if system:\n        params[\"system\"] = system\n    if stop_sequences:\n        params[\"stop_sequences\"] = stop_sequences\n    \n    response = client.messages.create(**params)\n    return response.content[0].text</code></pre><p>Now we'll create our dataset generation function:</p><pre><code>def generate_dataset():\n    prompt = \"\"\"\nGenerate an evaluation dataset for a prompt evaluation. The dataset will be used to evaluate prompts that generate Python, JSON, or Regex specifically for AWS-related tasks. Generate an array of JSON objects, each representing task that requires Python, JSON, or a Regex to complete.\n\nExample output:\n```json\n[\n  {\n    \"task\": \"Description of task\",\n  },\n  ...additional\n]\n```\n\n* Focus on tasks that can be solved by writing a single Python function, a single JSON object, or a single regex\n* Focus on tasks that do not require writing much code\n\nPlease generate 3 objects.\n\"\"\"</code></pre><p>To properly parse the JSON response, we'll use prefilling and stop sequences:</p><pre><code>    messages = []\n    add_user_message(messages, prompt)\n    add_assistant_message(messages, \"```json\")\n    text = chat(messages, stop_sequences=[\"```\"])\n    return json.loads(text)</code></pre>",
+      "vi": "<p>Hãy tạo một hàm tự động tạo test dataset của chúng ta. Đầu tiên, chúng ta sẽ cần các hàm helper để làm việc với Claude:</p><pre><code>def add_user_message(messages, text):\n    user_message = {\"role\": \"user\", \"content\": text}\n    messages.append(user_message)\n\ndef add_assistant_message(messages, text):\n    assistant_message = {\"role\": \"assistant\", \"content\": text}\n    messages.append(assistant_message)\n\ndef chat(messages, system=None, temperature=1.0, stop_sequences=[]):\n    params = {\n        \"model\": model,\n        \"max_tokens\": 1000,\n        \"messages\": messages,\n        \"temperature\": temperature\n    }\n    if system:\n        params[\"system\"] = system\n    if stop_sequences:\n        params[\"stop_sequences\"] = stop_sequences\n    \n    response = client.messages.create(**params)\n    return response.content[0].text</code></pre><p>Bây giờ chúng ta sẽ tạo hàm tạo dataset:</p><pre><code>def generate_dataset():\n    prompt = \"\"\"\nGenerate an evaluation dataset for a prompt evaluation. The dataset will be used to evaluate prompts that generate Python, JSON, or Regex specifically for AWS-related tasks. Generate an array of JSON objects, each representing task that requires Python, JSON, or a Regex to complete.\n\nExample output:\n```json\n[\n  {\n    \"task\": \"Description of task\",\n  },\n  ...additional\n]\n```\n\n* Focus on tasks that can be solved by writing a single Python function, a single JSON object, or a single regex\n* Focus on tasks that do not require writing much code\n\nPlease generate 3 objects.\n\"\"\"</code></pre><p>Để parse đúng JSON response, chúng ta sẽ dùng prefilling và stop sequences:</p><pre><code>    messages = []\n    add_user_message(messages, prompt)\n    add_assistant_message(messages, \"```json\")\n    text = chat(messages, stop_sequences=[\"```\"])\n    return json.loads(text)</code></pre>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "testing-the-dataset-generation",
+      "titleEn": "Testing the Dataset Generation",
+      "titleVi": "Kiểm tra việc tạo Dataset",
+      "en": "<p>Let's run our function and see what kind of test cases we get:</p><pre><code>dataset = generate_dataset()\nprint(dataset)</code></pre><p>This should return three different test cases covering our target outputs — Python functions, JSON configurations, and regular expressions for AWS-specific tasks.</p>",
+      "vi": "<p>Hãy chạy hàm của chúng ta và xem loại test case nào chúng ta nhận được:</p><pre><code>dataset = generate_dataset()\nprint(dataset)</code></pre><p>Điều này sẽ trả về ba test case khác nhau bao gồm các đầu ra mục tiêu — hàm Python, cấu hình JSON và regular expression cho các tác vụ đặc thù AWS.</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "saving-the-dataset",
+      "titleEn": "Saving the Dataset",
+      "titleVi": "Lưu Dataset",
+      "en": "<p>Once we have our dataset, we'll save it to a file so we can easily load it later during evaluation:</p><pre><code>with open('dataset.json', 'w') as f:\n    json.dump(dataset, f, indent=2)</code></pre><p>This creates a <code>dataset.json</code> file in the same directory as your notebook, containing your list of tasks ready for prompt evaluation.</p><p>With this foundation in place, you now have a systematic way to generate test data for evaluating how well your prompts perform across different types of AWS-related coding tasks.</p>",
+      "vi": "<p>Khi có dataset, chúng ta sẽ lưu nó vào file để có thể dễ dàng tải sau trong quá trình đánh giá:</p><pre><code>with open('dataset.json', 'w') as f:\n    json.dump(dataset, f, indent=2)</code></pre><p>Điều này tạo file <code>dataset.json</code> trong cùng thư mục với notebook của bạn, chứa danh sách các tác vụ sẵn sàng để đánh giá prompt.</p><p>Với nền tảng này, bạn giờ có cách có hệ thống để tạo test data để đánh giá mức độ hoạt động của prompt qua các loại tác vụ lập trình liên quan đến AWS khác nhau.</p>",
+      "image": "",
+      "video": ""
+    }
+  ]
 }

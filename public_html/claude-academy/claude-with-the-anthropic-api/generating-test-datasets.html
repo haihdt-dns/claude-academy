@@ -212,8 +212,190 @@
                     <path d="M7 4v3.5l2 1.5"></path>
                   </svg><span class="lesson-meta__text-bilingual">Estimated time: 10 minutes (Thời gian ước tính: 10 phút)</span><span class="lesson-meta__text-en">Estimated time: 10 minutes</span><span class="lesson-meta__text-vi">Thời gian ước tính: 10 phút</span></span></div>
               <div class="lesson-content">
+                <div class="lesson-section" id="intro-video"><div class="lesson-video"><iframe src="https://cdn.jwplayer.com/players/C6PbktjE-Akyo8gQO.html" frameborder="0" allowfullscreen></iframe></div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>Building a custom prompt evaluation workflow starts with creating a solid prompt and then generating test data to see how well it performs. Let's walk through setting up an evaluation system for a prompt that helps users write AWS-specific code.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Xây dựng quy trình đánh giá prompt tùy chỉnh bắt đầu bằng việc tạo một prompt vững chắc, sau đó tạo test data để xem nó hoạt động tốt đến đâu. Hãy cùng xem xét cách thiết lập hệ thống đánh giá cho một prompt giúp người dùng viết code đặc thù cho AWS.</p>
+                  </div>
+                </div>
+                <div class="lesson-section" id="setting-up-the-goal">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Setting Up the Goal</h2><span class="lesson-section__title-vi">Thiết lập mục tiêu</span>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>Our prompt needs to assist users in writing three specific types of output for AWS use cases:</p><ul><li>Python code</li><li>JSON configuration files</li><li>Regular expressions</li></ul><p>The key requirement is that when a user requests help with a task, we return clean output in one of these formats without any extra explanations, headers, or footers.</p><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/generating-test-datasets-001.png?v=sha384-X/Wn74cWvPVl6ZtdCWQTkjidQEdxvPTTqz8yoSd+DyKZK/iRk5Pt0HNtPYt7b//B" alt="Prompt goal: clean AWS code output"></div><p>Here's our starting prompt (version 1):</p><pre><code>prompt = f"""
+Please provide a solution to the following task:
+{task}
+"""</code></pre>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Prompt của chúng ta cần hỗ trợ người dùng viết ba loại đầu ra cụ thể cho các trường hợp sử dụng AWS:</p><ul><li>Code Python</li><li>File cấu hình JSON</li><li>Regular expression</li></ul><p>Yêu cầu chính là khi người dùng yêu cầu trợ giúp về một tác vụ, chúng ta trả về đầu ra sạch ở một trong các định dạng này mà không có giải thích, header hay footer thêm.</p><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/generating-test-datasets-001.png?v=sha384-X/Wn74cWvPVl6ZtdCWQTkjidQEdxvPTTqz8yoSd+DyKZK/iRk5Pt0HNtPYt7b//B" alt="Mục tiêu prompt: đầu ra code AWS sạch"></div><p>Đây là prompt ban đầu (phiên bản 1):</p><pre><code>prompt = f"""
+Please provide a solution to the following task:
+{task}
+"""</code></pre>
+                  </div>
+                </div>
+                <div class="lesson-section" id="creating-an-evaluation-dataset">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Creating an Evaluation Dataset</h2><span class="lesson-section__title-vi">Tạo Evaluation Dataset</span>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>An evaluation dataset contains inputs that we'll feed into our prompt. For each combination of prompt and input, we'll run the prompt and analyze the results.</p><p>Our dataset will be an array of JSON objects, where each object contains a "task" property describing what we want Claude to accomplish. We can either create this dataset by hand or generate it automatically using Claude.</p><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/generating-test-datasets-002.png?v=sha384-Z7GvokOAHuXfvxd5u2dkymwb1i0bLvDxGQbnhuEkn0QFYAtxViB98eXbUPQLLTQ1" alt="Dataset structure"></div><p>Since we're generating test data, this is a perfect opportunity to use a faster model like Haiku instead of the full Claude model.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Evaluation dataset chứa các đầu vào mà chúng ta sẽ đưa vào prompt. Với mỗi tổ hợp prompt và đầu vào, chúng ta sẽ chạy prompt và phân tích kết quả.</p><p>Dataset của chúng ta sẽ là mảng các JSON object, trong đó mỗi object chứa thuộc tính "task" mô tả những gì chúng ta muốn Claude thực hiện. Chúng ta có thể tự tạo dataset này hoặc tạo tự động bằng Claude.</p><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/generating-test-datasets-002.png?v=sha384-Z7GvokOAHuXfvxd5u2dkymwb1i0bLvDxGQbnhuEkn0QFYAtxViB98eXbUPQLLTQ1" alt="Cấu trúc dataset"></div><p>Vì chúng ta đang tạo test data, đây là cơ hội hoàn hảo để sử dụng model nhanh hơn như Haiku thay vì model Claude đầy đủ.</p>
+                  </div>
+                </div>
+                <div class="lesson-section" id="generating-test-data-with-code">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Generating Test Data with Code</h2><span class="lesson-section__title-vi">Tạo Test Data bằng Code</span>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>Let's create a function that automatically generates our test dataset. First, we'll need our helper functions for working with Claude:</p><pre><code>def add_user_message(messages, text):
+    user_message = {"role": "user", "content": text}
+    messages.append(user_message)
+
+def add_assistant_message(messages, text):
+    assistant_message = {"role": "assistant", "content": text}
+    messages.append(assistant_message)
+
+def chat(messages, system=None, temperature=1.0, stop_sequences=[]):
+    params = {
+        "model": model,
+        "max_tokens": 1000,
+        "messages": messages,
+        "temperature": temperature
+    }
+    if system:
+        params["system"] = system
+    if stop_sequences:
+        params["stop_sequences"] = stop_sequences
+    
+    response = client.messages.create(**params)
+    return response.content[0].text</code></pre><p>Now we'll create our dataset generation function:</p><pre><code>def generate_dataset():
+    prompt = """
+Generate an evaluation dataset for a prompt evaluation. The dataset will be used to evaluate prompts that generate Python, JSON, or Regex specifically for AWS-related tasks. Generate an array of JSON objects, each representing task that requires Python, JSON, or a Regex to complete.
+
+Example output:
+```json
+[
+  {
+    "task": "Description of task",
+  },
+  ...additional
+]
+```
+
+* Focus on tasks that can be solved by writing a single Python function, a single JSON object, or a single regex
+* Focus on tasks that do not require writing much code
+
+Please generate 3 objects.
+"""</code></pre><p>To properly parse the JSON response, we'll use prefilling and stop sequences:</p><pre><code>    messages = []
+    add_user_message(messages, prompt)
+    add_assistant_message(messages, "```json")
+    text = chat(messages, stop_sequences=["```"])
+    return json.loads(text)</code></pre>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Hãy tạo một hàm tự động tạo test dataset của chúng ta. Đầu tiên, chúng ta sẽ cần các hàm helper để làm việc với Claude:</p><pre><code>def add_user_message(messages, text):
+    user_message = {"role": "user", "content": text}
+    messages.append(user_message)
+
+def add_assistant_message(messages, text):
+    assistant_message = {"role": "assistant", "content": text}
+    messages.append(assistant_message)
+
+def chat(messages, system=None, temperature=1.0, stop_sequences=[]):
+    params = {
+        "model": model,
+        "max_tokens": 1000,
+        "messages": messages,
+        "temperature": temperature
+    }
+    if system:
+        params["system"] = system
+    if stop_sequences:
+        params["stop_sequences"] = stop_sequences
+    
+    response = client.messages.create(**params)
+    return response.content[0].text</code></pre><p>Bây giờ chúng ta sẽ tạo hàm tạo dataset:</p><pre><code>def generate_dataset():
+    prompt = """
+Generate an evaluation dataset for a prompt evaluation. The dataset will be used to evaluate prompts that generate Python, JSON, or Regex specifically for AWS-related tasks. Generate an array of JSON objects, each representing task that requires Python, JSON, or a Regex to complete.
+
+Example output:
+```json
+[
+  {
+    "task": "Description of task",
+  },
+  ...additional
+]
+```
+
+* Focus on tasks that can be solved by writing a single Python function, a single JSON object, or a single regex
+* Focus on tasks that do not require writing much code
+
+Please generate 3 objects.
+"""</code></pre><p>Để parse đúng JSON response, chúng ta sẽ dùng prefilling và stop sequences:</p><pre><code>    messages = []
+    add_user_message(messages, prompt)
+    add_assistant_message(messages, "```json")
+    text = chat(messages, stop_sequences=["```"])
+    return json.loads(text)</code></pre>
+                  </div>
+                </div>
+                <div class="lesson-section" id="testing-the-dataset-generation">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Testing the Dataset Generation</h2><span class="lesson-section__title-vi">Kiểm tra việc tạo Dataset</span>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>Let's run our function and see what kind of test cases we get:</p><pre><code>dataset = generate_dataset()
+print(dataset)</code></pre><p>This should return three different test cases covering our target outputs — Python functions, JSON configurations, and regular expressions for AWS-specific tasks.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Hãy chạy hàm của chúng ta và xem loại test case nào chúng ta nhận được:</p><pre><code>dataset = generate_dataset()
+print(dataset)</code></pre><p>Điều này sẽ trả về ba test case khác nhau bao gồm các đầu ra mục tiêu — hàm Python, cấu hình JSON và regular expression cho các tác vụ đặc thù AWS.</p>
+                  </div>
+                </div>
+                <div class="lesson-section" id="saving-the-dataset">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Saving the Dataset</h2><span class="lesson-section__title-vi">Lưu Dataset</span>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>Once we have our dataset, we'll save it to a file so we can easily load it later during evaluation:</p><pre><code>with open('dataset.json', 'w') as f:
+    json.dump(dataset, f, indent=2)</code></pre><p>This creates a <code>dataset.json</code> file in the same directory as your notebook, containing your list of tasks ready for prompt evaluation.</p><p>With this foundation in place, you now have a systematic way to generate test data for evaluating how well your prompts perform across different types of AWS-related coding tasks.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Khi có dataset, chúng ta sẽ lưu nó vào file để có thể dễ dàng tải sau trong quá trình đánh giá:</p><pre><code>with open('dataset.json', 'w') as f:
+    json.dump(dataset, f, indent=2)</code></pre><p>Điều này tạo file <code>dataset.json</code> trong cùng thư mục với notebook của bạn, chứa danh sách các tác vụ sẵn sàng để đánh giá prompt.</p><p>Với nền tảng này, bạn giờ có cách có hệ thống để tạo test data để đánh giá mức độ hoạt động của prompt qua các loại tác vụ lập trình liên quan đến AWS khác nhau.</p>
+                  </div>
+                </div>
               </div>
               <div class="lesson-nav-footer"><a class="lesson-nav-footer__prev" href="/claude-academy/claude-with-the-anthropic-api/a-typical-eval-workflow.html"><span class="lesson-nav-footer__label"><span class="lesson-nav-footer__label-en">Previous Lesson</span><span class="lesson-nav-footer__label-vi">Bài trước</span></span><span class="lesson-nav-footer__title-en">← A typical eval workflow</span><span class="lesson-nav-footer__title-vi">Quy trình eval điển hình</span></a><a class="lesson-nav-footer__next" href="/claude-academy/claude-with-the-anthropic-api/running-the-eval.html"><span class="lesson-nav-footer__label"><span class="lesson-nav-footer__label-en">Next Lesson</span><span class="lesson-nav-footer__label-vi">Bài sau</span></span><span class="lesson-nav-footer__title-en">Running the eval →</span><span class="lesson-nav-footer__title-vi">Chạy eval</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="lesson-summary-btn" type="button" aria-label="Lesson summary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg><span class="lesson-summary-btn__label-en">Summary</span><span class="lesson-summary-btn__label-vi">Tóm tắt</span>
+        </button>
+        <div class="lesson-summary-modal">
+          <div class="lesson-summary-modal__overlay"></div>
+          <div class="lesson-summary-modal__box">
+            <div class="lesson-summary-modal__header">
+              <div class="lesson-summary-modal__title"><span class="lesson-summary-modal__title-en">Key Takeaways</span><span class="lesson-summary-modal__title-vi">Điểm chính bài học</span></div>
+              <div class="lesson-summary-modal__header-actions">
+                <div class="lesson-summary-modal__toggle">
+                  <button class="lesson-summary-modal__toggle-btn is-active" type="button" data-lang="bilingual">Song ngữ</button>
+                  <button class="lesson-summary-modal__toggle-btn" type="button" data-lang="en">English</button>
+                  <button class="lesson-summary-modal__toggle-btn" type="button" data-lang="vi">Tiếng Việt</button>
+                </div>
+                <button class="lesson-summary-modal__close" type="button" aria-label="Close">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="lesson-summary-modal__body">
+              <div class="lesson-summary-modal__scroll">
+                <div class="lesson-summary-modal__card lesson-summary-modal__card--en"><ul><li>An eval dataset is an array of sample inputs that represent real tasks your prompt will handle in production</li><li>You can generate test data automatically by prompting Claude — use a faster model like Haiku to keep costs low</li><li>Use assistant prefilling + stop sequences to get clean JSON output from the dataset generator</li><li>Save the dataset to a file so it stays consistent across prompt iterations</li></ul>
+                </div>
+                <div class="lesson-summary-modal__card lesson-summary-modal__card--vi"><ul><li>Eval dataset là mảng các đầu vào mẫu đại diện cho các tác vụ thực mà prompt của bạn sẽ xử lý trong production</li><li>Bạn có thể tự động tạo test data bằng cách prompt Claude — sử dụng model nhanh hơn như Haiku để giảm chi phí</li><li>Dùng assistant prefilling + stop sequences để nhận JSON sạch từ bộ tạo dataset</li><li>Lưu dataset vào file để nó nhất quán qua các lần lặp prompt</li></ul>
+                </div>
               </div>
             </div>
           </div>

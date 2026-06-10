@@ -2,11 +2,59 @@
   "slug": "prompt-evaluation",
   "titleEn": "Prompt evaluation",
   "titleVi": "Đánh giá prompt",
-  "estimatedTimeEn": "10 minutes",
-  "estimatedTimeVi": "10 phút",
+  "estimatedTimeEn": "8 minutes",
+  "estimatedTimeVi": "8 phút",
   "prevLesson": "structured-data-exercise",
   "nextLesson": "a-typical-eval-workflow",
-  "summaryEn": "",
-  "summaryVi": "",
-  "sections": []
+  "summaryEn": "<ul><li>Prompt engineering focuses on writing better prompts; prompt evaluation measures how well they actually work</li><li>Testing a prompt once or twice is a common trap — real users will encounter edge cases you never anticipated</li><li>An evaluation pipeline gives you objective metrics so you can iterate with confidence</li><li>The evaluation-first approach catches problems during development rather than in production</li></ul>",
+  "summaryVi": "<ul><li>Prompt engineering tập trung vào việc viết prompt tốt hơn; prompt evaluation đo lường mức độ hiệu quả thực sự của chúng</li><li>Kiểm tra prompt một hoặc hai lần là cái bẫy phổ biến — người dùng thực sẽ gặp các edge case mà bạn không bao giờ lường trước</li><li>Pipeline đánh giá cho bạn các chỉ số khách quan để bạn có thể lặp đi lặp lại với sự tự tin</li><li>Cách tiếp cận evaluation-first phát hiện vấn đề trong quá trình phát triển thay vì trên production</li></ul>",
+  "supplementEn": "<h3>What Is Prompt Evaluation?</h3><p>Prompt evaluation (or \"evals\") is the practice of systematically testing your prompts against a set of test cases to measure their performance. Rather than manually reviewing a handful of outputs, you run your prompt against dozens or hundreds of examples and score the results automatically.</p><p>A basic eval pipeline looks like this:</p><ol><li><strong>Create a test dataset</strong> — a collection of inputs with known correct outputs</li><li><strong>Run your prompt</strong> against every input in the dataset</li><li><strong>Score each output</strong> — using exact match, a rubric, or another Claude call as the judge</li><li><strong>Review the aggregate score</strong> — identify where the prompt is failing</li><li><strong>Iterate on the prompt</strong> — make changes and re-run to see if the score improves</li></ol><h3>Why Evals Matter</h3><p>Without evals, prompt improvement is guesswork. You fix one case and inadvertently break another. With evals, every change is measurable — you can see exactly whether your prompt got better or worse, and by how much.</p><p>This is especially important when:</p><ul><li>Moving a prompt from prototype to production</li><li>Comparing two different prompting strategies</li><li>Upgrading to a new model version</li><li>Diagnosing a regression after a model update</li></ul>",
+  "supplementVi": "<h3>Prompt Evaluation là gì?</h3><p>Prompt evaluation (hay \"evals\") là thực hành kiểm tra có hệ thống các prompt của bạn với một tập test case để đo lường hiệu suất của chúng. Thay vì xem xét thủ công một vài đầu ra, bạn chạy prompt qua hàng chục hoặc hàng trăm ví dụ và tự động chấm điểm kết quả.</p><p>Pipeline eval cơ bản trông như sau:</p><ol><li><strong>Tạo test dataset</strong> — tập hợp các đầu vào với đầu ra đúng đã biết</li><li><strong>Chạy prompt</strong> qua mọi đầu vào trong dataset</li><li><strong>Chấm điểm từng đầu ra</strong> — sử dụng exact match, rubric, hoặc một lần gọi Claude khác làm giám khảo</li><li><strong>Xem điểm tổng hợp</strong> — xác định nơi prompt đang thất bại</li><li><strong>Lặp lại trên prompt</strong> — thực hiện thay đổi và chạy lại để xem điểm có cải thiện không</li></ol><h3>Tại sao Evals quan trọng</h3><p>Không có evals, việc cải thiện prompt chỉ là đoán mò. Bạn sửa một trường hợp và vô tình làm hỏng trường hợp khác. Với evals, mọi thay đổi đều có thể đo lường được — bạn có thể thấy chính xác prompt của bạn tốt hơn hay xấu hơn, và bao nhiêu.</p><p>Điều này đặc biệt quan trọng khi:</p><ul><li>Chuyển prompt từ prototype sang production</li><li>So sánh hai chiến lược prompting khác nhau</li><li>Nâng cấp lên phiên bản model mới</li><li>Chẩn đoán regression sau khi cập nhật model</li></ul>",
+  "sections": [
+    {
+      "id": "intro-video",
+      "titleEn": "",
+      "titleVi": "",
+      "en": "<p>When working with Claude, writing a good prompt is just the beginning. To build reliable AI applications, you need to understand two critical concepts: prompt engineering and prompt evaluation. Prompt engineering gives you techniques for writing better prompts, while prompt evaluation helps you measure how well those prompts actually work.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/prompt-evaluation-001.png\" alt=\"Prompt engineering vs evaluation\"></div>",
+      "vi": "<p>Khi làm việc với Claude, viết một prompt tốt chỉ là bước khởi đầu. Để xây dựng các ứng dụng AI đáng tin cậy, bạn cần hiểu hai khái niệm quan trọng: prompt engineering và prompt evaluation. Prompt engineering cho bạn các kỹ thuật để viết prompt tốt hơn, trong khi prompt evaluation giúp bạn đo lường mức độ hiệu quả thực sự của những prompt đó.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/prompt-evaluation-001.png\" alt=\"Prompt engineering và evaluation\"></div>",
+      "image": "",
+      "video": "<div class=\"lesson-video\"><iframe src=\"https://cdn.jwplayer.com/players/rDzbbZeh-Akyo8gQO.html\" frameborder=\"0\" allowfullscreen></iframe></div>"
+    },
+    {
+      "id": "prompt-engineering-vs-prompt-evaluation",
+      "titleEn": "Prompt Engineering vs Prompt Evaluation",
+      "titleVi": "Prompt Engineering và Prompt Evaluation",
+      "en": "<p>Prompt engineering is your toolkit for crafting effective prompts. It includes techniques like:</p><ul><li>Multishot prompting</li><li>Structuring with XML tags</li><li>Many other best practices</li></ul><p>These techniques help Claude understand exactly what you're asking for and how you want it to respond.</p><p>Prompt evaluation takes a different approach. Instead of focusing on how to write prompts, it's about measuring their effectiveness through automated testing. You can:</p><ul><li>Test against expected answers</li><li>Compare different versions of the same prompt</li><li>Review outputs for errors</li></ul>",
+      "vi": "<p>Prompt engineering là bộ công cụ của bạn để tạo ra các prompt hiệu quả. Nó bao gồm các kỹ thuật như:</p><ul><li>Multishot prompting</li><li>Cấu trúc với XML tag</li><li>Nhiều best practice khác</li></ul><p>Những kỹ thuật này giúp Claude hiểu chính xác những gì bạn đang yêu cầu và cách bạn muốn nó phản hồi.</p><p>Prompt evaluation có cách tiếp cận khác. Thay vì tập trung vào cách viết prompt, nó là về việc đo lường hiệu quả của chúng thông qua kiểm tra tự động. Bạn có thể:</p><ul><li>Kiểm tra với các câu trả lời mong đợi</li><li>So sánh các phiên bản khác nhau của cùng một prompt</li><li>Xem xét đầu ra để tìm lỗi</li></ul>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "three-paths-after-writing-a-prompt",
+      "titleEn": "Three Paths After Writing a Prompt",
+      "titleVi": "Ba con đường sau khi viết Prompt",
+      "en": "<p>Once you've drafted a prompt, you typically face three options for what to do next:</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/prompt-evaluation-002.png\" alt=\"Three paths after writing a prompt\"></div><p><strong>Option 1:</strong> Test the prompt once and decide it's good enough. This carries a significant risk of breaking in production when users provide unexpected inputs.</p><p><strong>Option 2:</strong> Test the prompt a few times and tweak it to handle a corner case or two. While better than option 1, users will often provide very unexpected outputs that you haven't considered.</p><p><strong>Option 3:</strong> Run the prompt through an evaluation pipeline to score it, then iterate on the prompt based on objective metrics. This approach requires more work and cost, but gives you much more confidence in your prompt's reliability.</p>",
+      "vi": "<p>Sau khi bạn đã soạn thảo xong prompt, bạn thường có ba lựa chọn:</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/prompt-evaluation-002.png\" alt=\"Ba con đường sau khi viết prompt\"></div><p><strong>Lựa chọn 1:</strong> Kiểm tra prompt một lần và quyết định rằng nó đủ tốt. Điều này mang rủi ro đáng kể khi bị lỗi trên production khi người dùng cung cấp đầu vào không mong đợi.</p><p><strong>Lựa chọn 2:</strong> Kiểm tra prompt vài lần và điều chỉnh để xử lý một hoặc hai trường hợp ngoại lệ. Mặc dù tốt hơn lựa chọn 1, người dùng thường sẽ cung cấp các đầu ra rất bất ngờ mà bạn chưa xem xét.</p><p><strong>Lựa chọn 3:</strong> Chạy prompt qua pipeline đánh giá để chấm điểm, sau đó lặp lại trên prompt dựa trên các chỉ số khách quan. Cách này đòi hỏi nhiều công việc và chi phí hơn, nhưng cho bạn sự tự tin lớn hơn nhiều về độ tin cậy của prompt.</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "why-most-engineers-fall-into-testing-traps",
+      "titleEn": "Why Most Engineers Fall Into Testing Traps",
+      "titleVi": "Tại sao hầu hết kỹ sư rơi vào bẫy kiểm tra",
+      "en": "<p>Options 1 and 2 are common traps that all engineers fall into, myself included. It's natural to write a prompt for a serious application and not test it thoroughly enough. We tend to underestimate how many edge cases real users will encounter.</p><p>The reality is that when you deploy a prompt to production, users will interact with it in ways you never anticipated. What seemed like a solid prompt during your limited testing can quickly break down when faced with the full variety of real-world inputs.</p>",
+      "vi": "<p>Lựa chọn 1 và 2 là những bẫy phổ biến mà tất cả các kỹ sư đều rơi vào, kể cả tôi. Việc viết prompt cho một ứng dụng nghiêm túc mà không kiểm tra đủ kỹ là điều tự nhiên. Chúng ta có xu hướng đánh giá thấp có bao nhiêu edge case người dùng thực sẽ gặp phải.</p><p>Thực tế là khi bạn triển khai một prompt lên production, người dùng sẽ tương tác với nó theo những cách bạn không bao giờ lường trước. Điều có vẻ là một prompt vững chắc trong quá trình kiểm tra hạn chế của bạn có thể nhanh chóng bị hỏng khi đối mặt với toàn bộ sự đa dạng của đầu vào trong thực tế.</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "the-evaluation-first-approach",
+      "titleEn": "The Evaluation-First Approach",
+      "titleVi": "Cách tiếp cận Evaluation-First",
+      "en": "<p>Option 3 represents a more systematic approach to prompt development. By running your prompt through an evaluation pipeline, you get objective metrics about its performance across a broader range of test cases. This data-driven approach lets you:</p><ul><li>Identify weaknesses before they become production issues</li><li>Compare different prompt versions objectively</li><li>Iterate with confidence based on measurable improvements</li><li>Build more reliable AI applications</li></ul><p>While this approach requires more upfront investment in time and testing infrastructure, it pays dividends in the reliability and robustness of your final application. The goal is to catch problems during development rather than after your users encounter them.</p>",
+      "vi": "<p>Lựa chọn 3 đại diện cho cách tiếp cận có hệ thống hơn để phát triển prompt. Bằng cách chạy prompt qua pipeline đánh giá, bạn nhận được các chỉ số khách quan về hiệu suất của nó trên phạm vi test case rộng hơn. Cách tiếp cận dựa trên dữ liệu này cho phép bạn:</p><ul><li>Xác định điểm yếu trước khi chúng trở thành vấn đề production</li><li>So sánh các phiên bản prompt khác nhau một cách khách quan</li><li>Lặp lại với sự tự tin dựa trên các cải tiến có thể đo lường</li><li>Xây dựng các ứng dụng AI đáng tin cậy hơn</li></ul><p>Mặc dù cách tiếp cận này đòi hỏi đầu tư ban đầu nhiều hơn về thời gian và cơ sở hạ tầng kiểm tra, nó mang lại lợi ích về độ tin cậy và tính bền vững của ứng dụng cuối cùng của bạn. Mục tiêu là phát hiện vấn đề trong quá trình phát triển thay vì sau khi người dùng gặp phải chúng.</p>",
+      "image": "",
+      "video": ""
+    }
+  ]
 }
