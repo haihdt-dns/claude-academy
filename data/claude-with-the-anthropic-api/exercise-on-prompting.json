@@ -6,7 +6,19 @@
   "estimatedTimeVi": "10 phút",
   "prevLesson": "providing-examples",
   "nextLesson": "introducing-tool-use",
-  "summaryEn": "",
-  "summaryVi": "",
-  "sections": []
+  "summaryEn": "<ul><li>Apply all four prompt engineering techniques in sequence on a single prompt</li><li>Measure the impact of each technique by running evaluations after every change</li><li>Build intuition for which techniques provide the biggest gains for your use case</li></ul>",
+  "summaryVi": "<ul><li>Áp dụng cả bốn kỹ thuật prompt engineering theo trình tự trên một prompt duy nhất</li><li>Đo lường tác động của từng kỹ thuật bằng cách chạy đánh giá sau mỗi thay đổi</li><li>Xây dựng trực giác về kỹ thuật nào mang lại cải thiện lớn nhất cho use case của bạn</li></ul>",
+  "supplementEn": "<p>In this exercise, you'll take the meal planning prompt from the previous lessons and apply all four prompt engineering techniques one by one, running an evaluation after each step to measure the improvement.</p><h4>What you'll build</h4><p>A fully engineered meal plan prompt that incorporates:</p><ol><li><strong>Being clear and direct</strong> — rewrite the opening line with a direct action verb</li><li><strong>Being specific</strong> — add output quality guidelines and/or process steps</li><li><strong>XML tags</strong> — wrap the athlete data in descriptive tags</li><li><strong>Providing examples</strong> — add one or more ideal input/output pairs</li></ol><h4>Recommended workflow</h4><ol><li>Start from your baseline prompt (the naive version)</li><li>Apply technique #1, run the eval, record the score</li><li>Apply technique #2, run the eval again, record the score</li><li>Continue for all four techniques</li><li>Compare the scores at each step to see which technique had the biggest impact</li></ol><h4>Things to watch for</h4><ul><li>Some techniques will have a bigger effect than others — that's normal and task-dependent</li><li>Occasionally a technique might slightly lower the score — don't panic, it can be a matter of prompt wording</li><li>The combination of all four is almost always better than any single technique alone</li></ul>",
+  "supplementVi": "<p>Trong bài tập này, bạn sẽ lấy prompt kế hoạch bữa ăn từ các bài học trước và áp dụng cả bốn kỹ thuật prompt engineering từng cái một, chạy đánh giá sau mỗi bước để đo lường sự cải thiện.</p><h4>Bạn sẽ xây dựng gì</h4><p>Một prompt kế hoạch bữa ăn được thiết kế hoàn chỉnh kết hợp:</p><ol><li><strong>Rõ ràng và trực tiếp</strong> — viết lại dòng mở đầu với động từ hành động trực tiếp</li><li><strong>Cụ thể hóa</strong> — thêm output quality guidelines và/hoặc process steps</li><li><strong>XML tags</strong> — bọc dữ liệu vận động viên trong các tag mô tả</li><li><strong>Cung cấp ví dụ</strong> — thêm một hoặc nhiều cặp input/output lý tưởng</li></ol><h4>Quy trình làm việc được đề xuất</h4><ol><li>Bắt đầu từ prompt baseline (phiên bản naive)</li><li>Áp dụng kỹ thuật #1, chạy eval, ghi lại điểm</li><li>Áp dụng kỹ thuật #2, chạy lại eval, ghi lại điểm</li><li>Tiếp tục với cả bốn kỹ thuật</li><li>So sánh điểm ở mỗi bước để xem kỹ thuật nào có tác động lớn nhất</li></ol><h4>Những điều cần chú ý</h4><ul><li>Một số kỹ thuật sẽ có tác động lớn hơn các kỹ thuật khác — điều đó bình thường và phụ thuộc vào nhiệm vụ</li><li>Đôi khi một kỹ thuật có thể làm giảm điểm một chút — đừng lo lắng, đó có thể là vấn đề về cách diễn đạt prompt</li><li>Sự kết hợp của cả bốn kỹ thuật hầu như luôn tốt hơn bất kỳ kỹ thuật đơn lẻ nào</li></ul>",
+  "sections": [
+    {
+      "id": "intro-video",
+      "titleEn": "",
+      "titleVi": "",
+      "en": "",
+      "vi": "",
+      "image": "",
+      "video": "<div class=\"lesson-video\"><iframe src=\"https://cdn.jwplayer.com/players/hYMCWYnk-Akyo8gQO.html\" frameborder=\"0\" allowfullscreen></iframe></div>"
+    }
+  ]
 }

@@ -212,8 +212,180 @@
                     <path d="M7 4v3.5l2 1.5"></path>
                   </svg><span class="lesson-meta__text-bilingual">Estimated time: 10 minutes (Thời gian ước tính: 10 phút)</span><span class="lesson-meta__text-en">Estimated time: 10 minutes</span><span class="lesson-meta__text-vi">Thời gian ước tính: 10 phút</span></span></div>
               <div class="lesson-content">
+                <div class="lesson-section" id="intro-video"><div class="lesson-video"><iframe src="https://cdn.jwplayer.com/players/9iyUFyZm-Akyo8gQO.html" frameborder="0" allowfullscreen></iframe></div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>When you're building prompts that include a lot of content, Claude can sometimes struggle to understand which pieces of text belong together or what different sections are supposed to represent. XML tags provide a simple way to add structure and clarity to your prompts, especially when you're interpolating large amounts of data.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Khi bạn xây dựng các prompt bao gồm nhiều nội dung, Claude đôi khi có thể gặp khó khăn trong việc hiểu những đoạn văn bản nào thuộc về nhau hoặc các phần khác nhau được cho là đại diện cho điều gì. XML tags cung cấp một cách đơn giản để thêm cấu trúc và sự rõ ràng vào prompt của bạn, đặc biệt khi bạn đang nội suy lượng lớn dữ liệu.</p>
+                  </div>
+                </div>
+                <div class="lesson-section" id="why-structure-matters">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Why Structure Matters</h2><span class="lesson-section__title-vi">Tại sao cấu trúc quan trọng</span>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>Consider a prompt where you need to analyze 20 pages of sales records. Without clear boundaries, Claude might have trouble distinguishing between your instructions and the actual data you want analyzed.</p><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/structure-with-xml-tags-001.png?v=sha384-duj/ll2UYOO7rp0Vis9WxMzhbuVI9fS/wphNr6AK7wIrIFHjBmLdn2pL5DY7blps" alt="Unclear prompt boundaries"></div><p>The example above shows how unclear boundaries can make it difficult for Claude to parse your intent. By wrapping the sales records in XML tags like <code>&lt;sales_records&gt;</code> and <code>&lt;/sales_records&gt;</code>, you create clear delimiters that help Claude understand the structure of your prompt.</p><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/structure-with-xml-tags-002.png?v=sha384-BP4HIOyV9nL0lAveS0/AehLFbmNjuNsQ2j8UWXQsgiWtOrkO4FSV6rq7Kj9fQheV" alt="Clear prompt with XML tags"></div>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Hãy xem xét một prompt nơi bạn cần phân tích 20 trang hồ sơ bán hàng. Không có ranh giới rõ ràng, Claude có thể gặp khó khăn trong việc phân biệt giữa hướng dẫn của bạn và dữ liệu thực tế bạn muốn phân tích.</p><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/structure-with-xml-tags-001.png?v=sha384-duj/ll2UYOO7rp0Vis9WxMzhbuVI9fS/wphNr6AK7wIrIFHjBmLdn2pL5DY7blps" alt="Ranh giới prompt không rõ ràng"></div><p>Ví dụ trên cho thấy ranh giới không rõ ràng có thể khiến Claude khó phân tích ý định của bạn như thế nào. Bằng cách bọc hồ sơ bán hàng trong XML tags như <code>&lt;sales_records&gt;</code> và <code>&lt;/sales_records&gt;</code>, bạn tạo ra các dấu phân cách rõ ràng giúp Claude hiểu cấu trúc prompt của bạn.</p><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/structure-with-xml-tags-002.png?v=sha384-BP4HIOyV9nL0lAveS0/AehLFbmNjuNsQ2j8UWXQsgiWtOrkO4FSV6rq7Kj9fQheV" alt="Prompt rõ ràng với XML tags"></div>
+                  </div>
+                </div>
+                <div class="lesson-section" id="practical-example-code-and-documentation">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Practical Example: Code and Documentation</h2><span class="lesson-section__title-vi">Ví dụ thực tế: Code và tài liệu</span>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>Here's a more dramatic example of why XML tags matter. If you ask Claude to debug code using provided documentation, mixing everything together creates confusion:</p><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/structure-with-xml-tags-003.png?v=sha384-SVdro2MnF2i+aC9G+YNZFw8Fxuz3pnp9rZo1xLQgyylrh0DU6JLBRpbuGgOZw4hu" alt="Code and docs with and without XML tags"></div><p>The "Not Great" version makes it nearly impossible to tell what's code versus documentation. The "Better" version uses <code>&lt;my_code&gt;</code> and <code>&lt;docs&gt;</code> tags to create clear boundaries.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Đây là một ví dụ ấn tượng hơn về lý do tại sao XML tags quan trọng. Nếu bạn yêu cầu Claude debug code bằng cách sử dụng tài liệu được cung cấp, việc trộn lẫn mọi thứ với nhau tạo ra sự nhầm lẫn:</p><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/structure-with-xml-tags-003.png?v=sha384-SVdro2MnF2i+aC9G+YNZFw8Fxuz3pnp9rZo1xLQgyylrh0DU6JLBRpbuGgOZw4hu" alt="Code và tài liệu có và không có XML tags"></div><p>Phiên bản "Not Great" khiến gần như không thể phân biệt đâu là code và đâu là tài liệu. Phiên bản "Better" sử dụng tags <code>&lt;my_code&gt;</code> và <code>&lt;docs&gt;</code> để tạo ranh giới rõ ràng.</p>
+                  </div>
+                </div>
+                <div class="lesson-section" id="custom-tag-names">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Custom Tag Names</h2><span class="lesson-section__title-vi">Tên tag tùy chỉnh</span>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>You don't need to use official XML tags. Create descriptive names that make sense for your content:</p><ul><li><code>&lt;sales_records&gt;</code> is better than <code>&lt;data&gt;</code></li><li><code>&lt;athlete_information&gt;</code> clearly identifies user details</li><li><code>&lt;my_code&gt;</code> and <code>&lt;docs&gt;</code> separate different types of content</li></ul><p>The more specific and descriptive your tag names, the better Claude can understand the purpose of each section.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Bạn không cần sử dụng các tag XML chính thức. Tạo tên mô tả có ý nghĩa cho nội dung của bạn:</p><ul><li><code>&lt;sales_records&gt;</code> tốt hơn <code>&lt;data&gt;</code></li><li><code>&lt;athlete_information&gt;</code> xác định rõ ràng thông tin người dùng</li><li><code>&lt;my_code&gt;</code> và <code>&lt;docs&gt;</code> phân tách các loại nội dung khác nhau</li></ul><p>Tên tag của bạn càng cụ thể và mô tả, Claude càng có thể hiểu mục đích của từng phần tốt hơn.</p>
+                  </div>
+                </div>
+                <div class="lesson-section" id="when-to-use-xml-tags">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">When to Use XML Tags</h2><span class="lesson-section__title-vi">Khi nào dùng XML Tags</span>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>XML tags are most useful when:</p><ul><li>Including large amounts of context or data</li><li>Mixing different types of content (code, documentation, data)</li><li>You want to be extra clear about content boundaries</li><li>Working with complex prompts that interpolate multiple variables</li></ul><p>Even for shorter content, XML tags can help serve as delimiters that make your prompt structure more obvious to Claude.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>XML tags hữu ích nhất khi:</p><ul><li>Bao gồm lượng lớn context hoặc dữ liệu</li><li>Kết hợp các loại nội dung khác nhau (code, tài liệu, dữ liệu)</li><li>Bạn muốn làm rõ hơn về ranh giới nội dung</li><li>Làm việc với các prompt phức tạp nội suy nhiều biến</li></ul><p>Ngay cả với nội dung ngắn hơn, XML tags có thể giúp làm dấu phân cách khiến cấu trúc prompt của bạn rõ ràng hơn với Claude.</p>
+                  </div>
+                </div>
+                <div class="lesson-section" id="real-world-application">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Real-World Application</h2><span class="lesson-section__title-vi">Ứng dụng thực tế</span>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>In practice, you might structure a prompt like this:</p><pre><code>&lt;athlete_information&gt;
+- Height: 6'2"
+- Weight: 180 lbs
+- Goal: Build muscle
+- Dietary restrictions: Vegetarian
+&lt;/athlete_information&gt;
+
+Generate a meal plan based on the athlete information above.</code></pre><p>This makes it crystal clear that the height, weight, goal, and restrictions are all related athlete data that should be considered together when generating the meal plan.</p><p>While you might not see dramatic improvements with simple prompts, XML tags become increasingly valuable as your prompts grow more complex and include larger amounts of varied content.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Trong thực tế, bạn có thể cấu trúc một prompt như thế này:</p><pre><code>&lt;athlete_information&gt;
+- Height: 6'2"
+- Weight: 180 lbs
+- Goal: Build muscle
+- Dietary restrictions: Vegetarian
+&lt;/athlete_information&gt;
+
+Generate a meal plan based on the athlete information above.</code></pre><p>Điều này làm rõ hoàn toàn rằng chiều cao, cân nặng, mục tiêu và hạn chế ăn uống đều là dữ liệu vận động viên liên quan cần được xem xét cùng nhau khi tạo kế hoạch bữa ăn.</p><p>Mặc dù bạn có thể không thấy sự cải thiện đáng kể với các prompt đơn giản, XML tags trở nên ngày càng có giá trị khi prompt của bạn phức tạp hơn và bao gồm lượng nội dung đa dạng lớn hơn.</p>
+                  </div>
+                </div>
               </div>
               <div class="lesson-nav-footer"><a class="lesson-nav-footer__prev" href="/claude-academy/claude-with-the-anthropic-api/being-specific.html"><span class="lesson-nav-footer__label"><span class="lesson-nav-footer__label-en">Previous Lesson</span><span class="lesson-nav-footer__label-vi">Bài trước</span></span><span class="lesson-nav-footer__title-en">← Being specific</span><span class="lesson-nav-footer__title-vi">Cụ thể hóa</span></a><a class="lesson-nav-footer__next" href="/claude-academy/claude-with-the-anthropic-api/providing-examples.html"><span class="lesson-nav-footer__label"><span class="lesson-nav-footer__label-en">Next Lesson</span><span class="lesson-nav-footer__label-vi">Bài sau</span></span><span class="lesson-nav-footer__title-en">Providing examples →</span><span class="lesson-nav-footer__title-vi">Cung cấp ví dụ</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="lesson-deepdive-btn" type="button" aria-label="Deep dive">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg><span class="lesson-deepdive-btn__label-en">Deep Dive</span><span class="lesson-deepdive-btn__label-vi">Tìm hiểu thêm</span>
+        </button>
+        <div class="lesson-deepdive-modal">
+          <div class="lesson-deepdive-modal__overlay"></div>
+          <div class="lesson-deepdive-modal__box">
+            <div class="lesson-deepdive-modal__header">
+              <div class="lesson-deepdive-modal__title"><span class="lesson-deepdive-modal__title-en">Deep Dive</span><span class="lesson-deepdive-modal__title-vi">Tìm hiểu thêm</span></div>
+              <div class="lesson-deepdive-modal__header-actions">
+                <div class="lesson-deepdive-modal__toggle">
+                  <button class="lesson-deepdive-modal__toggle-btn is-active" type="button" data-lang="bilingual">Song ngữ</button>
+                  <button class="lesson-deepdive-modal__toggle-btn" type="button" data-lang="en">English</button>
+                  <button class="lesson-deepdive-modal__toggle-btn" type="button" data-lang="vi">Tiếng Việt</button>
+                </div>
+                <button class="lesson-deepdive-modal__close" type="button" aria-label="Close">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="lesson-deepdive-modal__body">
+              <div class="lesson-deepdive-modal__scroll">
+                <div class="lesson-deepdive-modal__content lesson-deepdive-modal__content--en"><h3>XML Tags vs Other Delimiters</h3><p>You may have seen other delimiters used in prompts — triple backticks (` ``` `), triple dashes (<code>---</code>), or angle brackets. XML tags are generally preferred with Claude because:</p><ul><li>They're self-documenting — the tag name tells you what the content is</li><li>They support nesting — you can put <code>&lt;example&gt;</code> inside <code>&lt;examples&gt;</code></li><li>Claude's training includes a lot of XML, so it parses tags reliably</li><li>They work for both input structure (your prompt) and output structure (asking Claude to respond in XML)</li></ul><h3>Using XML Tags for Output Structure</h3><p>XML tags aren't just for structuring your input — you can also ask Claude to respond using tags, making the output easier to parse programmatically:</p><pre><code>Analyze this product review and respond using these tags:
+&lt;sentiment&gt;positive | negative | neutral&lt;/sentiment&gt;
+&lt;key_issues&gt;bullet list of issues mentioned&lt;/key_issues&gt;
+&lt;recommended_action&gt;one sentence&lt;/recommended_action&gt;
+
+&lt;review&gt;
+{review_text}
+&lt;/review&gt;</code></pre><p>Claude will structure its response accordingly, and you can extract each field with a simple regex or XML parser.</p><h3>Nesting Tags for Complex Prompts</h3><p>For prompts that include multiple examples or datasets, nesting helps Claude distinguish between them:</p><pre><code>&lt;examples&gt;
+  &lt;example&gt;
+    &lt;input&gt;What is the capital of France?&lt;/input&gt;
+    &lt;output&gt;Paris&lt;/output&gt;
+  &lt;/example&gt;
+  &lt;example&gt;
+    &lt;input&gt;What is the capital of Japan?&lt;/input&gt;
+    &lt;output&gt;Tokyo&lt;/output&gt;
+  &lt;/example&gt;
+&lt;/examples&gt;
+
+Now answer: What is the capital of Brazil?</code></pre><h3>Tag Naming Conventions</h3><p>Good tag names are lowercase, use underscores for spaces, and describe the content role — not just the content type:</p><ul><li><code>&lt;user_query&gt;</code> instead of <code>&lt;text&gt;</code></li><li><code>&lt;reference_document&gt;</code> instead of <code>&lt;document&gt;</code></li><li><code>&lt;previous_attempts&gt;</code> instead of <code>&lt;history&gt;</code></li><li><code>&lt;grading_criteria&gt;</code> instead of <code>&lt;criteria&gt;</code></li></ul>
+                </div>
+                <div class="lesson-deepdive-modal__content lesson-deepdive-modal__content--vi"><h3>XML Tags so với các dấu phân cách khác</h3><p>Bạn có thể đã thấy các dấu phân cách khác được dùng trong prompt — triple backticks (` ``` `), triple dashes (<code>---</code>), hoặc dấu ngoặc nhọn. XML tags thường được ưu tiên với Claude vì:</p><ul><li>Chúng tự ghi lại tài liệu — tên tag cho biết nội dung là gì</li><li>Chúng hỗ trợ lồng nhau — bạn có thể đặt <code>&lt;example&gt;</code> trong <code>&lt;examples&gt;</code></li><li>Training của Claude bao gồm nhiều XML, vì vậy nó phân tích tag một cách đáng tin cậy</li><li>Chúng hoạt động cho cả cấu trúc đầu vào (prompt của bạn) và cấu trúc đầu ra (yêu cầu Claude phản hồi bằng XML)</li></ul><h3>Dùng XML Tags cho cấu trúc đầu ra</h3><p>XML tags không chỉ để cấu trúc đầu vào của bạn — bạn cũng có thể yêu cầu Claude phản hồi bằng tags, làm cho đầu ra dễ phân tích lập trình hơn:</p><pre><code>Analyze this product review and respond using these tags:
+&lt;sentiment&gt;positive | negative | neutral&lt;/sentiment&gt;
+&lt;key_issues&gt;bullet list of issues mentioned&lt;/key_issues&gt;
+&lt;recommended_action&gt;one sentence&lt;/recommended_action&gt;
+
+&lt;review&gt;
+{review_text}
+&lt;/review&gt;</code></pre><p>Claude sẽ cấu trúc phản hồi của nó theo đó, và bạn có thể trích xuất từng trường bằng regex đơn giản hoặc XML parser.</p><h3>Lồng Tags cho Prompt phức tạp</h3><p>Với các prompt bao gồm nhiều ví dụ hoặc dataset, việc lồng nhau giúp Claude phân biệt giữa chúng:</p><pre><code>&lt;examples&gt;
+  &lt;example&gt;
+    &lt;input&gt;What is the capital of France?&lt;/input&gt;
+    &lt;output&gt;Paris&lt;/output&gt;
+  &lt;/example&gt;
+  &lt;example&gt;
+    &lt;input&gt;What is the capital of Japan?&lt;/input&gt;
+    &lt;output&gt;Tokyo&lt;/output&gt;
+  &lt;/example&gt;
+&lt;/examples&gt;
+
+Now answer: What is the capital of Brazil?</code></pre><h3>Quy ước đặt tên Tag</h3><p>Tên tag tốt là chữ thường, dùng dấu gạch dưới cho khoảng trắng và mô tả vai trò nội dung — không chỉ loại nội dung:</p><ul><li><code>&lt;user_query&gt;</code> thay vì <code>&lt;text&gt;</code></li><li><code>&lt;reference_document&gt;</code> thay vì <code>&lt;document&gt;</code></li><li><code>&lt;previous_attempts&gt;</code> thay vì <code>&lt;history&gt;</code></li><li><code>&lt;grading_criteria&gt;</code> thay vì <code>&lt;criteria&gt;</code></li></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="lesson-summary-btn" type="button" aria-label="Lesson summary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg><span class="lesson-summary-btn__label-en">Summary</span><span class="lesson-summary-btn__label-vi">Tóm tắt</span>
+        </button>
+        <div class="lesson-summary-modal">
+          <div class="lesson-summary-modal__overlay"></div>
+          <div class="lesson-summary-modal__box">
+            <div class="lesson-summary-modal__header">
+              <div class="lesson-summary-modal__title"><span class="lesson-summary-modal__title-en">Key Takeaways</span><span class="lesson-summary-modal__title-vi">Điểm chính bài học</span></div>
+              <div class="lesson-summary-modal__header-actions">
+                <div class="lesson-summary-modal__toggle">
+                  <button class="lesson-summary-modal__toggle-btn is-active" type="button" data-lang="bilingual">Song ngữ</button>
+                  <button class="lesson-summary-modal__toggle-btn" type="button" data-lang="en">English</button>
+                  <button class="lesson-summary-modal__toggle-btn" type="button" data-lang="vi">Tiếng Việt</button>
+                </div>
+                <button class="lesson-summary-modal__close" type="button" aria-label="Close">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="lesson-summary-modal__body">
+              <div class="lesson-summary-modal__scroll">
+                <div class="lesson-summary-modal__card lesson-summary-modal__card--en"><ul><li>XML tags create clear boundaries in prompts that contain large amounts of data or mixed content types</li><li>Use descriptive custom tag names — <code>&lt;sales_records&gt;</code> is clearer than <code>&lt;data&gt;</code></li><li>Tags are most valuable when mixing code, documentation, or multiple data variables in one prompt</li><li>Even simple prompts benefit from XML tags as prompts grow more complex over time</li></ul>
+                </div>
+                <div class="lesson-summary-modal__card lesson-summary-modal__card--vi"><ul><li>XML tags tạo ranh giới rõ ràng trong các prompt chứa lượng dữ liệu lớn hoặc nhiều loại nội dung khác nhau</li><li>Dùng tên tag tùy chỉnh mô tả — <code>&lt;sales_records&gt;</code> rõ ràng hơn <code>&lt;data&gt;</code></li><li>Tags hữu ích nhất khi kết hợp code, tài liệu hoặc nhiều biến dữ liệu trong một prompt</li><li>Ngay cả prompt đơn giản cũng được lợi từ XML tags khi prompt trở nên phức tạp hơn</li></ul>
+                </div>
               </div>
             </div>
           </div>
@@ -224,6 +396,6 @@
 
     </div>
     <script src="/claude-academy/assets/js/main.js?v=sha384-kNNRbQTv526J2QIkhMOolMqrIfWyaSWL36D955JRpJTKBlmZ9+oV0Oz9FvXDnFbw" type="module" crossorigin></script>
-    <script src="/claude-academy/assets/js/lesson.js?v=sha384-3oOOFql/wce7ZCPEcNMUnG6et9JtKoz3iVP4pwwTVwSWm6vNSiY9hnQtC4CVpnCt" type="module" crossorigin></script>
+    <script src="/claude-academy/assets/js/lesson.js?v=sha384-joxtqE4elNDTCPjhspFRGStz0S0O/6qN/9o83+9EviV2jk/slkfd+j6v+c9gw0TO" type="module" crossorigin></script>
   </body>
 </html>

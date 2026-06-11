@@ -212,8 +212,182 @@
                     <path d="M7 4v3.5l2 1.5"></path>
                   </svg><span class="lesson-meta__text-bilingual">Estimated time: 10 minutes (Thời gian ước tính: 10 phút)</span><span class="lesson-meta__text-en">Estimated time: 10 minutes</span><span class="lesson-meta__text-vi">Thời gian ước tính: 10 phút</span></span></div>
               <div class="lesson-content">
+                <div class="lesson-section" id="intro-video"><div class="lesson-video"><iframe src="https://cdn.jwplayer.com/players/Nn7anupZ-Akyo8gQO.html" frameborder="0" allowfullscreen></iframe></div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>Providing examples in your prompts is one of the most effective prompt engineering techniques you'll use. This approach, known as "one-shot" or "multi-shot" prompting, involves giving Claude sample input/output pairs to guide its responses.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Cung cấp ví dụ trong prompt của bạn là một trong những kỹ thuật prompt engineering hiệu quả nhất bạn sẽ sử dụng. Cách tiếp cận này, được gọi là prompting "one-shot" hoặc "multi-shot", bao gồm việc cung cấp cho Claude các cặp input/output mẫu để hướng dẫn phản hồi của nó.</p>
+                  </div>
+                </div>
+                <div class="lesson-section" id="how-examples-work">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">How Examples Work</h2><span class="lesson-section__title-vi">Cách ví dụ hoạt động</span>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>Let's look at a sentiment analysis example. Say you want Claude to categorize whether a tweet is positive or negative:</p><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/providing-examples-001.png?v=sha384-f06VoH5xl5xG3gjSc5Xreoe2vTN5Asm8sT0P7GYnbgWaLjfejo5SfLYf/q8cmAqE" alt="Sentiment analysis without examples"></div><p>The challenge here is sarcasm. A tweet like <em>"Yeah, sure, that was the best movie I've seen since 'Plan 9 from Outer Space'"</em> appears positive on the surface, but it's actually sarcastic and negative (Plan 9 is famously one of the worst movies ever made).</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Hãy xem một ví dụ phân tích cảm xúc. Giả sử bạn muốn Claude phân loại xem một tweet là tích cực hay tiêu cực:</p><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/providing-examples-001.png?v=sha384-f06VoH5xl5xG3gjSc5Xreoe2vTN5Asm8sT0P7GYnbgWaLjfejo5SfLYf/q8cmAqE" alt="Phân tích cảm xúc không có ví dụ"></div><p>Thách thức ở đây là sự châm biếm. Một tweet như <em>"Yeah, sure, that was the best movie I've seen since 'Plan 9 from Outer Space'"</em> có vẻ tích cực trên bề mặt, nhưng thực ra nó mang tính châm biếm và tiêu cực (Plan 9 nổi tiếng là một trong những bộ phim tệ nhất từng được làm).</p>
+                  </div>
+                </div>
+                <div class="lesson-section" id="adding-examples-to-handle-corner-cases">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Adding Examples to Handle Corner Cases</h2><span class="lesson-section__title-vi">Thêm ví dụ để xử lý corner case</span>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>To solve this, you can add examples that show Claude how to handle tricky cases:</p><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/providing-examples-002.png?v=sha384-YWlhlflh0/RHDIqdiIr8UPJaB0E9WM695BrX22ZGndbkQOuRGAuSynJPozIsosd4" alt="Prompt with examples for sarcasm handling"></div><p>The improved prompt includes:</p><ul><li>A clear positive example: "Great game tonight!" → "Positive"</li><li>A sarcastic example: "Oh yeah, I really needed a flight delay tonight! Excellent!" → "Negative"</li><li>Context explaining why sarcasm should be treated carefully</li></ul><p>Notice how the examples are wrapped in XML tags like <code>&lt;sample_input&gt;</code> and <code>&lt;ideal_output&gt;</code>. This structure makes it crystal clear to Claude what each part represents.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Để giải quyết vấn đề này, bạn có thể thêm các ví dụ cho Claude thấy cách xử lý các trường hợp khó:</p><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/providing-examples-002.png?v=sha384-YWlhlflh0/RHDIqdiIr8UPJaB0E9WM695BrX22ZGndbkQOuRGAuSynJPozIsosd4" alt="Prompt với ví dụ xử lý châm biếm"></div><p>Prompt được cải thiện bao gồm:</p><ul><li>Một ví dụ tích cực rõ ràng: "Great game tonight!" → "Positive"</li><li>Một ví dụ châm biếm: "Oh yeah, I really needed a flight delay tonight! Excellent!" → "Negative"</li><li>Context giải thích tại sao sự châm biếm nên được xử lý cẩn thận</li></ul><p>Lưu ý cách các ví dụ được bọc trong XML tags như <code>&lt;sample_input&gt;</code> và <code>&lt;ideal_output&gt;</code>. Cấu trúc này giúp Claude hiểu rõ từng phần đại diện cho điều gì.</p>
+                  </div>
+                </div>
+                <div class="lesson-section" id="when-to-use-examples">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">When to Use Examples</h2><span class="lesson-section__title-vi">Khi nào dùng ví dụ</span>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>Examples are particularly useful for:</p><ul><li>Capturing corner cases or edge scenarios</li><li>Defining complex output formats (like specific JSON structures)</li><li>Showing the exact style or tone you want</li><li>Demonstrating how to handle ambiguous inputs</li></ul>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Ví dụ đặc biệt hữu ích để:</p><ul><li>Nắm bắt các corner case hoặc edge scenario</li><li>Định nghĩa định dạng đầu ra phức tạp (như cấu trúc JSON cụ thể)</li><li>Thể hiện chính xác phong cách hoặc giọng điệu bạn muốn</li><li>Minh họa cách xử lý các đầu vào mơ hồ</li></ul>
+                  </div>
+                </div>
+                <div class="lesson-section" id="one-shot-vs-multi-shot">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">One-Shot vs Multi-Shot</h2><span class="lesson-section__title-vi">One-Shot và Multi-Shot</span>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p><strong>One-Shot</strong>: Provide a single example to establish the pattern</p><p><strong>Multi-Shot</strong>: Provide multiple examples to cover different scenarios</p><p>Use multi-shot when you need to handle various edge cases or want to show different types of valid responses.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p><strong>One-Shot</strong>: Cung cấp một ví dụ duy nhất để thiết lập mẫu</p><p><strong>Multi-Shot</strong>: Cung cấp nhiều ví dụ để bao gồm các tình huống khác nhau</p><p>Sử dụng multi-shot khi bạn cần xử lý nhiều edge case hoặc muốn thể hiện các loại phản hồi hợp lệ khác nhau.</p>
+                  </div>
+                </div>
+                <div class="lesson-section" id="finding-good-examples-from-evaluations">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Finding Good Examples from Evaluations</h2><span class="lesson-section__title-vi">Tìm ví dụ tốt từ đánh giá</span>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>When running prompt evaluations, look for your highest-scoring outputs to use as examples:</p><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/providing-examples-003.png?v=sha384-2XVM/edhN3ik94CF3LtlfaxR6vhw9JXe07N+ECLHRdmJHKyqTCqyovHhOAjqz/hG" alt="Finding best examples from eval results"></div><p>Find responses that scored 10 (or your highest available score) and use those input/output pairs as examples in your prompt. This helps Claude understand what "perfect" output looks like for your specific use case.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Khi chạy đánh giá prompt, hãy tìm các đầu ra có điểm cao nhất để dùng làm ví dụ:</p><div class="lesson-image"><img src="/claude-academy/assets/images/lesson/providing-examples-003.png?v=sha384-2XVM/edhN3ik94CF3LtlfaxR6vhw9JXe07N+ECLHRdmJHKyqTCqyovHhOAjqz/hG" alt="Tìm ví dụ tốt nhất từ kết quả eval"></div><p>Tìm các phản hồi có điểm 10 (hoặc điểm cao nhất có sẵn của bạn) và sử dụng các cặp input/output đó làm ví dụ trong prompt. Điều này giúp Claude hiểu "đầu ra hoàn hảo" trông như thế nào cho trường hợp sử dụng cụ thể của bạn.</p>
+                  </div>
+                </div>
+                <div class="lesson-section" id="adding-context-to-examples">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Adding Context to Examples</h2><span class="lesson-section__title-vi">Thêm context cho ví dụ</span>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><p>Don't just provide the input/output pair — explain why the output is good:</p><pre><code>&lt;ideal_output&gt;
+[Your example output here]
+&lt;/ideal_output&gt;
+
+This example is well-structured, provides detailed information 
+on food choices and quantities, and aligns with the athlete's 
+goals and restrictions.</code></pre><p>This additional context helps Claude understand the reasoning behind good responses, not just the format.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><p>Đừng chỉ cung cấp cặp input/output — hãy giải thích tại sao đầu ra là tốt:</p><pre><code>&lt;ideal_output&gt;
+[Your example output here]
+&lt;/ideal_output&gt;
+
+This example is well-structured, provides detailed information 
+on food choices and quantities, and aligns with the athlete's 
+goals and restrictions.</code></pre><p>Context bổ sung này giúp Claude hiểu lý luận đằng sau các phản hồi tốt, không chỉ là định dạng.</p>
+                  </div>
+                </div>
+                <div class="lesson-section" id="best-practices">
+                  <div class="lesson-section__title">
+                    <h2 class="lesson-section__title-en">Best Practices</h2><span class="lesson-section__title-vi">Thực hành tốt nhất</span>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--en" data-lang-block="en"><ul><li>Always use XML tags to structure your examples clearly</li><li>Be explicit about what you're showing: "Here is an example input with an ideal response"</li><li>Include examples that address your most common failure cases</li><li>Explain why your example outputs are considered ideal</li><li>Keep examples relevant to your specific task</li></ul><p>Examples are especially powerful because they show rather than tell. Instead of trying to describe exactly what you want in words, you demonstrate it directly. This makes your prompts much more reliable and helps Claude understand subtle requirements that might be hard to express in instructions alone.</p>
+                  </div>
+                  <div class="lesson-section__card lesson-section__card--vi" data-lang-block="vi"><ul><li>Luôn sử dụng XML tags để cấu trúc ví dụ của bạn rõ ràng</li><li>Nói rõ những gì bạn đang cho thấy: "Here is an example input with an ideal response"</li><li>Bao gồm các ví dụ giải quyết các trường hợp thất bại phổ biến nhất của bạn</li><li>Giải thích tại sao các đầu ra ví dụ được coi là lý tưởng</li><li>Giữ các ví dụ liên quan đến nhiệm vụ cụ thể của bạn</li></ul><p>Ví dụ đặc biệt mạnh mẽ vì chúng thể hiện thay vì nói. Thay vì cố gắng mô tả chính xác những gì bạn muốn bằng lời, bạn minh họa nó trực tiếp. Điều này làm cho prompt của bạn đáng tin cậy hơn nhiều và giúp Claude hiểu các yêu cầu tinh tế có thể khó diễn đạt chỉ bằng hướng dẫn.</p>
+                  </div>
+                </div>
               </div>
               <div class="lesson-nav-footer"><a class="lesson-nav-footer__prev" href="/claude-academy/claude-with-the-anthropic-api/structure-with-xml-tags.html"><span class="lesson-nav-footer__label"><span class="lesson-nav-footer__label-en">Previous Lesson</span><span class="lesson-nav-footer__label-vi">Bài trước</span></span><span class="lesson-nav-footer__title-en">← Structure with XML tags</span><span class="lesson-nav-footer__title-vi">Cấu trúc với XML tags</span></a><a class="lesson-nav-footer__next" href="/claude-academy/claude-with-the-anthropic-api/exercise-on-prompting.html"><span class="lesson-nav-footer__label"><span class="lesson-nav-footer__label-en">Next Lesson</span><span class="lesson-nav-footer__label-vi">Bài sau</span></span><span class="lesson-nav-footer__title-en">Exercise on prompting →</span><span class="lesson-nav-footer__title-vi">Bài tập prompting</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="lesson-deepdive-btn" type="button" aria-label="Deep dive">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg><span class="lesson-deepdive-btn__label-en">Deep Dive</span><span class="lesson-deepdive-btn__label-vi">Tìm hiểu thêm</span>
+        </button>
+        <div class="lesson-deepdive-modal">
+          <div class="lesson-deepdive-modal__overlay"></div>
+          <div class="lesson-deepdive-modal__box">
+            <div class="lesson-deepdive-modal__header">
+              <div class="lesson-deepdive-modal__title"><span class="lesson-deepdive-modal__title-en">Deep Dive</span><span class="lesson-deepdive-modal__title-vi">Tìm hiểu thêm</span></div>
+              <div class="lesson-deepdive-modal__header-actions">
+                <div class="lesson-deepdive-modal__toggle">
+                  <button class="lesson-deepdive-modal__toggle-btn is-active" type="button" data-lang="bilingual">Song ngữ</button>
+                  <button class="lesson-deepdive-modal__toggle-btn" type="button" data-lang="en">English</button>
+                  <button class="lesson-deepdive-modal__toggle-btn" type="button" data-lang="vi">Tiếng Việt</button>
+                </div>
+                <button class="lesson-deepdive-modal__close" type="button" aria-label="Close">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="lesson-deepdive-modal__body">
+              <div class="lesson-deepdive-modal__scroll">
+                <div class="lesson-deepdive-modal__content lesson-deepdive-modal__content--en"><h3>Zero-Shot, One-Shot, and Multi-Shot</h3><p>These terms describe how many examples you include in a prompt:</p><ul><li><strong>Zero-shot</strong>: No examples — just instructions. Works well for simple, well-defined tasks.</li><li><strong>One-shot</strong>: One example. Establishes the pattern and anchors Claude's output format.</li><li><strong>Multi-shot</strong>: Multiple examples (typically 3–5). Covers edge cases and demonstrates variation.</li></ul><p>More examples aren't always better. Too many examples consume token budget and can make prompts brittle — Claude might over-fit to the examples and reject valid inputs that don't match the pattern exactly.</p><h3>Where to Find Good Examples</h3><p>The best examples come from real data, not invented ones. Sources in order of preference:</p><ol><li><strong>Your eval results</strong> — highest-scoring outputs from previous eval runs</li><li><strong>Human-generated gold standard</strong> — outputs written by a domain expert as ideal answers</li><li><strong>Production data</strong> — real cases your users actually submitted, with known-good outcomes</li><li><strong>Invented examples</strong> — last resort; useful when you have no real data yet</li></ol><p>Invented examples are risky because they may not capture the actual distribution of inputs your prompt will see in production.</p><h3>Structuring Examples with XML Tags</h3><p>A consistent structure makes examples much easier for Claude to parse:</p><pre><code>Here is an example input with an ideal response:
+
+&lt;example&gt;
+  &lt;sample_input&gt;Great game tonight! #winning&lt;/sample_input&gt;
+  &lt;ideal_output&gt;Positive&lt;/ideal_output&gt;
+&lt;/example&gt;
+
+&lt;example&gt;
+  &lt;sample_input&gt;Oh yeah, I really needed a flight delay tonight! Excellent!&lt;/sample_input&gt;
+  &lt;ideal_output&gt;Negative&lt;/ideal_output&gt;
+  &lt;reasoning&gt;Sarcastic tone — the exclamation is ironic, not genuine enthusiasm.&lt;/reasoning&gt;
+&lt;/example&gt;</code></pre><p>Adding a <code>&lt;reasoning&gt;</code> tag for tricky examples helps Claude internalize the rule, not just pattern-match the surface form.</p><h3>Common Mistakes</h3><ul><li><strong>Unrepresentative examples</strong>: All your examples are easy cases — Claude still fails on hard ones.</li><li><strong>Inconsistent format</strong>: Some examples use one structure, others use a different one — Claude gets confused.</li><li><strong>Missing edge cases</strong>: You cover the happy path but not the cases most likely to cause failures.</li><li><strong>No explanation</strong>: Providing outputs without explaining why leads to surface-level pattern matching instead of genuine understanding.</li></ul>
+                </div>
+                <div class="lesson-deepdive-modal__content lesson-deepdive-modal__content--vi"><h3>Zero-Shot, One-Shot và Multi-Shot</h3><p>Các thuật ngữ này mô tả số lượng ví dụ bạn đưa vào trong một prompt:</p><ul><li><strong>Zero-shot</strong>: Không có ví dụ — chỉ hướng dẫn. Hiệu quả với các nhiệm vụ đơn giản, được xác định rõ ràng.</li><li><strong>One-shot</strong>: Một ví dụ. Thiết lập mẫu và neo định dạng đầu ra của Claude.</li><li><strong>Multi-shot</strong>: Nhiều ví dụ (thường 3–5). Bao gồm các edge case và thể hiện sự biến thể.</li></ul><p>Nhiều ví dụ hơn không phải lúc nào cũng tốt hơn. Quá nhiều ví dụ tiêu tốn token budget và có thể làm prompt trở nên giòn — Claude có thể over-fit với các ví dụ và từ chối các đầu vào hợp lệ không khớp chính xác với mẫu.</p><h3>Tìm ví dụ tốt ở đâu</h3><p>Các ví dụ tốt nhất đến từ dữ liệu thực, không phải được bịa đặt. Nguồn theo thứ tự ưu tiên:</p><ol><li><strong>Kết quả eval của bạn</strong> — đầu ra có điểm cao nhất từ các lần chạy eval trước</li><li><strong>Gold standard do con người tạo</strong> — đầu ra được viết bởi chuyên gia domain như câu trả lời lý tưởng</li><li><strong>Dữ liệu production</strong> — các trường hợp thực tế người dùng của bạn đã gửi, với kết quả đã biết là tốt</li><li><strong>Ví dụ bịa đặt</strong> — phương án cuối cùng; hữu ích khi bạn chưa có dữ liệu thực</li></ol><p>Ví dụ bịa đặt có rủi ro vì chúng có thể không nắm bắt được phân phối thực tế của các đầu vào mà prompt của bạn sẽ thấy trong production.</p><h3>Cấu trúc ví dụ với XML Tags</h3><p>Một cấu trúc nhất quán giúp Claude dễ phân tích ví dụ hơn nhiều:</p><pre><code>Here is an example input with an ideal response:
+
+&lt;example&gt;
+  &lt;sample_input&gt;Great game tonight! #winning&lt;/sample_input&gt;
+  &lt;ideal_output&gt;Positive&lt;/ideal_output&gt;
+&lt;/example&gt;
+
+&lt;example&gt;
+  &lt;sample_input&gt;Oh yeah, I really needed a flight delay tonight! Excellent!&lt;/sample_input&gt;
+  &lt;ideal_output&gt;Negative&lt;/ideal_output&gt;
+  &lt;reasoning&gt;Sarcastic tone — the exclamation is ironic, not genuine enthusiasm.&lt;/reasoning&gt;
+&lt;/example&gt;</code></pre><p>Thêm tag <code>&lt;reasoning&gt;</code> cho các ví dụ khó giúp Claude nội tâm hóa quy tắc, không chỉ khớp mẫu bề mặt.</p><h3>Lỗi thường gặp</h3><ul><li><strong>Ví dụ không đại diện</strong>: Tất cả ví dụ của bạn là các trường hợp dễ — Claude vẫn thất bại với các trường hợp khó.</li><li><strong>Định dạng không nhất quán</strong>: Một số ví dụ dùng một cấu trúc, một số dùng cấu trúc khác — Claude bị nhầm lẫn.</li><li><strong>Thiếu edge case</strong>: Bạn bao gồm happy path nhưng không bao gồm các trường hợp có khả năng gây thất bại nhất.</li><li><strong>Không có giải thích</strong>: Cung cấp đầu ra mà không giải thích lý do dẫn đến khớp mẫu bề mặt thay vì hiểu thực sự.</li></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="lesson-summary-btn" type="button" aria-label="Lesson summary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg><span class="lesson-summary-btn__label-en">Summary</span><span class="lesson-summary-btn__label-vi">Tóm tắt</span>
+        </button>
+        <div class="lesson-summary-modal">
+          <div class="lesson-summary-modal__overlay"></div>
+          <div class="lesson-summary-modal__box">
+            <div class="lesson-summary-modal__header">
+              <div class="lesson-summary-modal__title"><span class="lesson-summary-modal__title-en">Key Takeaways</span><span class="lesson-summary-modal__title-vi">Điểm chính bài học</span></div>
+              <div class="lesson-summary-modal__header-actions">
+                <div class="lesson-summary-modal__toggle">
+                  <button class="lesson-summary-modal__toggle-btn is-active" type="button" data-lang="bilingual">Song ngữ</button>
+                  <button class="lesson-summary-modal__toggle-btn" type="button" data-lang="en">English</button>
+                  <button class="lesson-summary-modal__toggle-btn" type="button" data-lang="vi">Tiếng Việt</button>
+                </div>
+                <button class="lesson-summary-modal__close" type="button" aria-label="Close">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="lesson-summary-modal__body">
+              <div class="lesson-summary-modal__scroll">
+                <div class="lesson-summary-modal__card lesson-summary-modal__card--en"><ul><li>One-shot and multi-shot prompting gives Claude sample input/output pairs to guide its responses</li><li>Examples are most powerful for handling edge cases, defining output formats, and demonstrating tone or style</li><li>Use your highest-scoring evaluation outputs as examples — they show Claude what "perfect" looks like</li><li>Always wrap examples in XML tags and explain <em>why</em> the output is good, not just what it is</li></ul>
+                </div>
+                <div class="lesson-summary-modal__card lesson-summary-modal__card--vi"><ul><li>One-shot và multi-shot prompting cung cấp cho Claude các cặp input/output mẫu để hướng dẫn phản hồi</li><li>Ví dụ mạnh mẽ nhất khi xử lý các edge case, định nghĩa định dạng đầu ra và thể hiện giọng điệu hoặc phong cách</li><li>Dùng các đầu ra có điểm cao nhất từ evaluation làm ví dụ — chúng cho Claude thấy "hoàn hảo" trông như thế nào</li><li>Luôn bọc ví dụ trong XML tags và giải thích <em>tại sao</em> đầu ra là tốt, không chỉ là nó là gì</li></ul>
+                </div>
               </div>
             </div>
           </div>
@@ -224,6 +398,6 @@
 
     </div>
     <script src="/claude-academy/assets/js/main.js?v=sha384-kNNRbQTv526J2QIkhMOolMqrIfWyaSWL36D955JRpJTKBlmZ9+oV0Oz9FvXDnFbw" type="module" crossorigin></script>
-    <script src="/claude-academy/assets/js/lesson.js?v=sha384-3oOOFql/wce7ZCPEcNMUnG6et9JtKoz3iVP4pwwTVwSWm6vNSiY9hnQtC4CVpnCt" type="module" crossorigin></script>
+    <script src="/claude-academy/assets/js/lesson.js?v=sha384-joxtqE4elNDTCPjhspFRGStz0S0O/6qN/9o83+9EviV2jk/slkfd+j6v+c9gw0TO" type="module" crossorigin></script>
   </body>
 </html>

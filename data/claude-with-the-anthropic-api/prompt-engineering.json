@@ -6,7 +6,80 @@
   "estimatedTimeVi": "10 phút",
   "prevLesson": "exercise-on-prompt-evals",
   "nextLesson": "being-clear-and-direct",
-  "summaryEn": "",
-  "summaryVi": "",
-  "sections": []
+  "summaryEn": "<ul><li>Prompt engineering is an iterative process: write a prompt, evaluate it, apply techniques, re-evaluate, and repeat</li><li>Use a <code>PromptEvaluator</code> class to automate dataset generation and model-based grading</li><li>Start with a simple naive prompt to establish a baseline score, then improve from there</li><li>Low initial scores (e.g. 2.3/10) are normal — the goal is measurable improvement with each iteration</li></ul>",
+  "summaryVi": "<ul><li>Prompt engineering là quá trình lặp: viết prompt, đánh giá, áp dụng kỹ thuật, đánh giá lại và lặp lại</li><li>Sử dụng class <code>PromptEvaluator</code> để tự động hóa việc tạo dataset và chấm điểm bằng mô hình</li><li>Bắt đầu với một prompt đơn giản để thiết lập điểm cơ sở, sau đó cải thiện từ đó</li><li>Điểm ban đầu thấp (ví dụ: 2.3/10) là bình thường — mục tiêu là cải thiện có thể đo lường qua từng lần lặp</li></ul>",
+  "sections": [
+    {
+      "id": "intro-video",
+      "titleEn": "",
+      "titleVi": "",
+      "en": "<p>Prompt engineering is about taking a prompt you've written and improving it to get more reliable, higher-quality outputs. This process involves iterative refinement — starting with a basic prompt, evaluating its performance, then systematically applying engineering techniques to improve it.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/prompt-engineering-001.png\" alt=\"Prompt engineering overview\"></div>",
+      "vi": "<p>Prompt engineering là việc lấy một prompt bạn đã viết và cải thiện nó để có đầu ra đáng tin cậy hơn, chất lượng cao hơn. Quá trình này liên quan đến việc tinh chỉnh lặp đi lặp lại — bắt đầu với một prompt cơ bản, đánh giá hiệu suất của nó, sau đó có hệ thống áp dụng các kỹ thuật engineering để cải thiện nó.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/prompt-engineering-001.png\" alt=\"Tổng quan prompt engineering\"></div>",
+      "image": "",
+      "video": "<div class=\"lesson-video\"><iframe src=\"https://cdn.jwplayer.com/players/YKw5dl7A-Akyo8gQO.html\" frameborder=\"0\" allowfullscreen></iframe></div>"
+    },
+    {
+      "id": "the-iterative-improvement-process",
+      "titleEn": "The Iterative Improvement Process",
+      "titleVi": "Quy trình cải thiện lặp đi lặp lại",
+      "en": "<p>The approach follows a clear cycle that you can repeat until you achieve your desired results:</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/prompt-engineering-002.png\" alt=\"Iterative improvement cycle\"></div><ol><li><strong>Set a goal</strong> — Define what you want your prompt to accomplish</li><li><strong>Write an initial prompt</strong> — Create a basic first attempt</li><li><strong>Evaluate the prompt</strong> — Test it against your criteria</li><li><strong>Apply prompt engineering techniques</strong> — Use specific methods to improve performance</li><li><strong>Re-evaluate</strong> — Verify that your changes actually improved the results</li></ol><p>You repeat the last two steps until you're satisfied with the performance. Each iteration should show measurable improvement in your evaluation scores.</p>",
+      "vi": "<p>Cách tiếp cận này tuân theo một chu kỳ rõ ràng mà bạn có thể lặp lại cho đến khi đạt được kết quả mong muốn:</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/prompt-engineering-002.png\" alt=\"Chu kỳ cải thiện lặp đi lặp lại\"></div><ol><li><strong>Đặt mục tiêu</strong> — Xác định những gì bạn muốn prompt của mình thực hiện</li><li><strong>Viết prompt ban đầu</strong> — Tạo ra một lần thử đầu tiên cơ bản</li><li><strong>Đánh giá prompt</strong> — Kiểm tra nó theo các tiêu chí của bạn</li><li><strong>Áp dụng kỹ thuật prompt engineering</strong> — Sử dụng các phương pháp cụ thể để cải thiện hiệu suất</li><li><strong>Đánh giá lại</strong> — Xác minh rằng những thay đổi của bạn thực sự cải thiện kết quả</li></ol><p>Bạn lặp lại hai bước cuối cho đến khi hài lòng với hiệu suất. Mỗi lần lặp nên cho thấy sự cải thiện có thể đo lường trong điểm đánh giá của bạn.</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "setting-up-your-evaluation-pipeline",
+      "titleEn": "Setting Up Your Evaluation Pipeline",
+      "titleVi": "Thiết lập Evaluation Pipeline",
+      "en": "<p>To demonstrate this process, we'll work with a practical example: creating a prompt that generates one-day meal plans for athletes. The prompt needs to take into account an athlete's height, weight, goals, and dietary restrictions, then produce a comprehensive meal plan.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/prompt-engineering-003.png\" alt=\"Meal plan prompt example\"></div><p>The evaluation setup uses a <code>PromptEvaluator</code> class that handles dataset generation and model grading. When creating your evaluator instance, you can control concurrency with the <code>max_concurrent_tasks</code> parameter:</p><pre><code>evaluator = PromptEvaluator(max_concurrent_tasks=5)</code></pre><p>Start with a low concurrency value (like 3) to avoid rate limit errors. You can increase it if your API quota allows for faster processing.</p>",
+      "vi": "<p>Để minh họa quá trình này, chúng ta sẽ làm việc với một ví dụ thực tế: tạo một prompt sinh ra kế hoạch bữa ăn một ngày cho vận động viên. Prompt cần tính đến chiều cao, cân nặng, mục tiêu và hạn chế ăn kiêng của vận động viên, sau đó tạo ra một kế hoạch bữa ăn toàn diện.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/prompt-engineering-003.png\" alt=\"Ví dụ prompt kế hoạch bữa ăn\"></div><p>Thiết lập đánh giá sử dụng class <code>PromptEvaluator</code> xử lý việc tạo dataset và chấm điểm bằng mô hình. Khi tạo instance evaluator của bạn, bạn có thể kiểm soát đồng thời với tham số <code>max_concurrent_tasks</code>:</p><pre><code>evaluator = PromptEvaluator(max_concurrent_tasks=5)</code></pre><p>Bắt đầu với giá trị đồng thời thấp (như 3) để tránh lỗi rate limit. Bạn có thể tăng nó nếu quota API của bạn cho phép xử lý nhanh hơn.</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "generating-test-data",
+      "titleEn": "Generating Test Data",
+      "titleVi": "Tạo dữ liệu kiểm thử",
+      "en": "<p>The evaluation system can automatically generate test cases based on your prompt requirements. You define what inputs your prompt needs:</p><pre><code>dataset = evaluator.generate_dataset(\n    task_description=\"Write a compact, concise 1 day meal plan for a single athlete\",\n    prompt_inputs_spec={\n        \"height\": \"Athlete's height in cm\",\n        \"weight\": \"Athlete's weight in kg\", \n        \"goal\": \"Goal of the athlete\",\n        \"restrictions\": \"Dietary restrictions of the athlete\"\n    },\n    output_file=\"dataset.json\",\n    num_cases=3\n)</code></pre><p>Keep the number of test cases low (2–3) during development to speed up your iteration cycle. You can increase this for final validation.</p>",
+      "vi": "<p>Hệ thống đánh giá có thể tự động tạo các test case dựa trên yêu cầu prompt của bạn. Bạn định nghĩa những đầu vào mà prompt của bạn cần:</p><pre><code>dataset = evaluator.generate_dataset(\n    task_description=\"Write a compact, concise 1 day meal plan for a single athlete\",\n    prompt_inputs_spec={\n        \"height\": \"Athlete's height in cm\",\n        \"weight\": \"Athlete's weight in kg\", \n        \"goal\": \"Goal of the athlete\",\n        \"restrictions\": \"Dietary restrictions of the athlete\"\n    },\n    output_file=\"dataset.json\",\n    num_cases=3\n)</code></pre><p>Giữ số lượng test case thấp (2–3) trong quá trình phát triển để tăng tốc chu kỳ lặp của bạn. Bạn có thể tăng điều này cho việc xác thực cuối cùng.</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "writing-your-initial-prompt",
+      "titleEn": "Writing Your Initial Prompt",
+      "titleVi": "Viết Prompt ban đầu",
+      "en": "<p>Start with a simple, naive prompt to establish a baseline. Here's an example of a deliberately basic first attempt:</p><pre><code>def run_prompt(prompt_inputs):\n    prompt = f\"\"\"\nWhat should this person eat?\n\n- Height: {prompt_inputs[\"height\"]}\n- Weight: {prompt_inputs[\"weight\"]}\n- Goal: {prompt_inputs[\"goal\"]}\n- Dietary restrictions: {prompt_inputs[\"restrictions\"]}\n\"\"\"\n    \n    messages = []\n    add_user_message(messages, prompt)\n    return chat(messages)</code></pre><p>This basic prompt will likely produce poor results, but it gives you a starting point to measure improvement against.</p>",
+      "vi": "<p>Bắt đầu với một prompt đơn giản, naive để thiết lập đường cơ sở. Đây là ví dụ về một lần thử đầu tiên có chủ ý đơn giản:</p><pre><code>def run_prompt(prompt_inputs):\n    prompt = f\"\"\"\nWhat should this person eat?\n\n- Height: {prompt_inputs[\"height\"]}\n- Weight: {prompt_inputs[\"weight\"]}\n- Goal: {prompt_inputs[\"goal\"]}\n- Dietary restrictions: {prompt_inputs[\"restrictions\"]}\n\"\"\"\n    \n    messages = []\n    add_user_message(messages, prompt)\n    return chat(messages)</code></pre><p>Prompt cơ bản này có thể sẽ cho kết quả kém, nhưng nó cung cấp cho bạn điểm khởi đầu để đo lường sự cải thiện.</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "adding-evaluation-criteria",
+      "titleEn": "Adding Evaluation Criteria",
+      "titleVi": "Thêm tiêu chí đánh giá",
+      "en": "<p>When running your evaluation, you can specify additional criteria that the grading model should consider:</p><pre><code>results = evaluator.run_evaluation(\n    run_prompt_function=run_prompt,\n    dataset_file=\"dataset.json\",\n    extra_criteria=\"\"\"\nThe output should include:\n- Daily caloric total\n- Macronutrient breakdown  \n- Meals with exact foods, portions, and timing\n\"\"\"\n)</code></pre><p>This helps ensure your prompt is evaluated against the specific requirements that matter for your use case.</p>",
+      "vi": "<p>Khi chạy đánh giá, bạn có thể chỉ định thêm các tiêu chí mà mô hình chấm điểm nên xem xét:</p><pre><code>results = evaluator.run_evaluation(\n    run_prompt_function=run_prompt,\n    dataset_file=\"dataset.json\",\n    extra_criteria=\"\"\"\nThe output should include:\n- Daily caloric total\n- Macronutrient breakdown  \n- Meals with exact foods, portions, and timing\n\"\"\"\n)</code></pre><p>Điều này giúp đảm bảo prompt của bạn được đánh giá theo các yêu cầu cụ thể quan trọng cho trường hợp sử dụng của bạn.</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "analyzing-results",
+      "titleEn": "Analyzing Results",
+      "titleVi": "Phân tích kết quả",
+      "en": "<p>After running an evaluation, you'll get both a numerical score and a detailed HTML report. The report shows you exactly how each test case performed, including the model's reasoning for each score.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/prompt-engineering-004.png\" alt=\"Evaluation results report\"></div><p>Don't be discouraged by low initial scores — a score of 2.3 out of 10 is typical for a first attempt. The goal is to see consistent improvement as you apply engineering techniques.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/prompt-engineering-005.png\" alt=\"Detailed evaluation breakdown\"></div><p>The detailed evaluation report helps you understand exactly where your prompt is failing and what improvements are needed. Use this feedback to guide your next iteration.</p>",
+      "vi": "<p>Sau khi chạy đánh giá, bạn sẽ nhận được cả điểm số và báo cáo HTML chi tiết. Báo cáo cho bạn thấy chính xác cách mỗi test case thực hiện, bao gồm lý luận của mô hình cho mỗi điểm số.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/prompt-engineering-004.png\" alt=\"Báo cáo kết quả đánh giá\"></div><p>Đừng nản lòng vì điểm ban đầu thấp — điểm 2.3 trên 10 là điển hình cho lần thử đầu tiên. Mục tiêu là thấy sự cải thiện nhất quán khi bạn áp dụng các kỹ thuật engineering.</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/prompt-engineering-005.png\" alt=\"Phân tích đánh giá chi tiết\"></div><p>Báo cáo đánh giá chi tiết giúp bạn hiểu chính xác nơi prompt của bạn đang thất bại và những cải tiến nào là cần thiết. Sử dụng phản hồi này để hướng dẫn lần lặp tiếp theo của bạn.</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "next-steps",
+      "titleEn": "Next Steps",
+      "titleVi": "Các bước tiếp theo",
+      "en": "<p>With your baseline established, you're ready to start applying specific prompt engineering techniques. Each technique you learn should result in measurable improvement in your evaluation scores, gradually transforming your basic prompt into a reliable, high-performing tool.</p><p>Remember that prompt engineering is an iterative process. The key is to make one change at a time, evaluate the impact, and build on what works. This systematic approach ensures you understand which techniques provide the most value for your specific use case.</p>",
+      "vi": "<p>Với đường cơ sở đã được thiết lập, bạn đã sẵn sàng bắt đầu áp dụng các kỹ thuật prompt engineering cụ thể. Mỗi kỹ thuật bạn học nên dẫn đến sự cải thiện có thể đo lường trong điểm đánh giá của bạn, dần dần biến đổi prompt cơ bản của bạn thành một công cụ đáng tin cậy, hiệu suất cao.</p><p>Hãy nhớ rằng prompt engineering là một quá trình lặp đi lặp lại. Điều quan trọng là thực hiện một thay đổi mỗi lần, đánh giá tác động và xây dựng dựa trên những gì hoạt động. Cách tiếp cận có hệ thống này đảm bảo bạn hiểu kỹ thuật nào mang lại giá trị lớn nhất cho trường hợp sử dụng cụ thể của bạn.</p>",
+      "image": "",
+      "video": ""
+    }
+  ]
 }

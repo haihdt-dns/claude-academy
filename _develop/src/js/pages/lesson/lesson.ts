@@ -51,7 +51,15 @@ export default class Lesson {
 
     const sidebar = document.querySelector<HTMLElement>('.lesson-sidebar');
     if (sidebar) {
-      new SimpleBar(sidebar, { autoHide: false });
+      const sb = new SimpleBar(sidebar, { autoHide: false });
+      const activeItem = sidebar.querySelector<HTMLElement>('.lesson-nav__item.is-active');
+      if (activeItem) {
+        const scrollEl = sb.getScrollElement();
+        const itemTop = activeItem.offsetTop;
+        const itemHeight = activeItem.offsetHeight;
+        const containerHeight = scrollEl.clientHeight;
+        scrollEl.scrollTop = itemTop - containerHeight / 2 + itemHeight / 2;
+      }
     }
   }
 

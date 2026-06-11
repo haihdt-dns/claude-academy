@@ -6,7 +6,53 @@
   "estimatedTimeVi": "10 phút",
   "prevLesson": "exercise-on-prompting",
   "nextLesson": "project-overview",
-  "summaryEn": "",
-  "summaryVi": "",
-  "sections": []
+  "summaryEn": "<ul><li>Understand why tool use is needed and what problem it solves for Claude</li><li>Learn the four-step back-and-forth pattern between your app and Claude</li><li>See a concrete weather example of the complete tool use flow</li></ul>",
+  "summaryVi": "<ul><li>Hiểu tại sao cần tool use và vấn đề nó giải quyết cho Claude</li><li>Nắm được quy trình bốn bước qua lại giữa ứng dụng và Claude</li><li>Xem ví dụ thời tiết cụ thể về toàn bộ quy trình tool use</li></ul>",
+  "sections": [
+    {
+      "id": "intro",
+      "titleEn": "",
+      "titleVi": "",
+      "en": "<p>Tools allow Claude to access information from the outside world, extending its capabilities beyond what it learned during training. By default, Claude only knows information from its training data and can't access current events, real-time data, or external systems. Tool use solves this limitation by creating a structured way for Claude to request and receive fresh information.</p>",
+      "vi": "<p>Tool cho phép Claude truy cập thông tin từ thế giới bên ngoài, mở rộng khả năng của Claude vượt ra ngoài những gì được học trong quá trình huấn luyện. Theo mặc định, Claude chỉ biết thông tin từ dữ liệu huấn luyện và không thể truy cập các sự kiện hiện tại, dữ liệu thời gian thực hay các hệ thống bên ngoài. Tool use giải quyết hạn chế này bằng cách tạo ra một cách có cấu trúc để Claude yêu cầu và nhận thông tin mới.</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "the-problem-without-tools",
+      "titleEn": "The Problem Without Tools",
+      "titleVi": "Vấn đề khi không có tool",
+      "en": "<p>When users ask Claude for current information, it hits a wall. For example, if someone asks \"What's the weather in San Francisco, California?\" Claude has to respond with something like \"I'm sorry, but I don't have access to up-to-date weather information.\"</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/introducing-tool-use-001.png\" alt=\"Claude responding that it cannot access current weather information\"></div><p>This creates a frustrating user experience when people need real-time data that Claude could theoretically help with if it just had access to current information.</p>",
+      "vi": "<p>Khi người dùng hỏi Claude về thông tin hiện tại, Claude gặp giới hạn. Ví dụ, nếu ai đó hỏi \"Thời tiết ở San Francisco, California hiện tại như thế nào?\" Claude phải trả lời kiểu như \"Xin lỗi, tôi không có quyền truy cập vào thông tin thời tiết cập nhật.\"</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/introducing-tool-use-001.png\" alt=\"Claude trả lời rằng không thể truy cập thông tin thời tiết hiện tại\"></div><p>Điều này tạo ra trải nghiệm người dùng đáng thất vọng khi họ cần dữ liệu thời gian thực mà Claude về mặt lý thuyết có thể giúp được nếu có quyền truy cập vào thông tin hiện tại.</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "how-tool-use-works",
+      "titleEn": "How Tool Use Works",
+      "titleVi": "Tool use hoạt động như thế nào",
+      "en": "<p>Tool use follows a specific back-and-forth pattern between your application and Claude. Here's the complete flow:</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/introducing-tool-use-002.png\" alt=\"Diagram of the four-step tool use flow between application and Claude\"></div><ol><li><strong>Initial Request:</strong> You send Claude a question along with instructions on how to get extra data from external sources</li><li><strong>Tool Request:</strong> Claude analyzes the question and decides it needs additional information, then asks for specific details about what data it needs</li><li><strong>Data Retrieval:</strong> Your server runs code to fetch the requested information from external APIs or databases</li><li><strong>Final Response:</strong> You send the retrieved data back to Claude, which then generates a complete response using both the original question and the fresh data</li></ol>",
+      "vi": "<p>Tool use theo một quy trình qua lại cụ thể giữa ứng dụng và Claude. Đây là toàn bộ luồng:</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/introducing-tool-use-002.png\" alt=\"Sơ đồ luồng tool use bốn bước giữa ứng dụng và Claude\"></div><ol><li><strong>Yêu cầu ban đầu:</strong> Bạn gửi cho Claude một câu hỏi kèm theo hướng dẫn cách lấy dữ liệu bổ sung từ các nguồn bên ngoài</li><li><strong>Yêu cầu tool:</strong> Claude phân tích câu hỏi và quyết định cần thêm thông tin, sau đó yêu cầu dữ liệu cụ thể mà nó cần</li><li><strong>Truy xuất dữ liệu:</strong> Server của bạn chạy code để lấy thông tin yêu cầu từ các API hoặc database bên ngoài</li><li><strong>Phản hồi cuối cùng:</strong> Bạn gửi dữ liệu đã lấy về lại cho Claude, Claude sau đó tạo ra phản hồi đầy đủ dựa trên cả câu hỏi gốc lẫn dữ liệu mới</li></ol>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "weather-example-in-practice",
+      "titleEn": "Weather Example in Practice",
+      "titleVi": "Ví dụ thời tiết thực tế",
+      "en": "<p>Let's see how this works with the weather question. The process becomes much more specific:</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/introducing-tool-use-003.png\" alt=\"Detailed weather tool use example showing the complete request and response cycle\"></div><p>When a user asks about current weather, you include instructions in your prompt about how to retrieve weather data. Claude recognizes it needs current information and requests weather data for the specific location. Your server then calls a weather API to get real-time conditions and sends that data back to Claude. Finally, Claude combines the fresh weather data with the user's question to provide an accurate, current response.</p>",
+      "vi": "<p>Hãy xem quy trình này hoạt động như thế nào với câu hỏi về thời tiết. Quy trình trở nên cụ thể hơn nhiều:</p><div class=\"lesson-image\"><img src=\"/claude-academy/assets/images/lesson/introducing-tool-use-003.png\" alt=\"Ví dụ chi tiết về tool use thời tiết cho thấy toàn bộ chu trình yêu cầu và phản hồi\"></div><p>Khi người dùng hỏi về thời tiết hiện tại, bạn đưa vào prompt hướng dẫn cách lấy dữ liệu thời tiết. Claude nhận ra nó cần thông tin hiện tại và yêu cầu dữ liệu thời tiết cho địa điểm cụ thể. Server của bạn sau đó gọi API thời tiết để lấy điều kiện thời tiết thời gian thực và gửi dữ liệu đó lại cho Claude. Cuối cùng, Claude kết hợp dữ liệu thời tiết mới với câu hỏi của người dùng để đưa ra phản hồi chính xác, cập nhật.</p>",
+      "image": "",
+      "video": ""
+    },
+    {
+      "id": "key-benefits",
+      "titleEn": "Key Benefits",
+      "titleVi": "Lợi ích chính",
+      "en": "<ul><li><strong>Real-time Information:</strong> Access current data that wasn't available during Claude's training</li><li><strong>External System Integration:</strong> Connect Claude to databases, APIs, and other services</li><li><strong>Dynamic Responses:</strong> Provide answers based on the latest available information</li><li><strong>Structured Interaction:</strong> Claude knows exactly what information it needs and how to ask for it</li></ul><p>Tool use transforms Claude from a static knowledge base into a dynamic assistant that can work with live data. This opens up possibilities for building applications that need current information, whether that's weather data, stock prices, database queries, or any other real-time information your users might need.</p>",
+      "vi": "<ul><li><strong>Thông tin thời gian thực:</strong> Truy cập dữ liệu hiện tại mà không có trong quá trình huấn luyện của Claude</li><li><strong>Tích hợp hệ thống bên ngoài:</strong> Kết nối Claude với các database, API và dịch vụ khác</li><li><strong>Phản hồi động:</strong> Đưa ra câu trả lời dựa trên thông tin mới nhất có sẵn</li><li><strong>Tương tác có cấu trúc:</strong> Claude biết chính xác thông tin nào cần thiết và cách yêu cầu nó</li></ul><p>Tool use biến Claude từ một kho kiến thức tĩnh thành một trợ lý năng động có thể làm việc với dữ liệu trực tiếp. Điều này mở ra khả năng xây dựng các ứng dụng cần thông tin hiện tại, dù đó là dữ liệu thời tiết, giá cổ phiếu, truy vấn database hay bất kỳ thông tin thời gian thực nào người dùng của bạn có thể cần.</p>",
+      "image": "",
+      "video": ""
+    }
+  ]
 }
